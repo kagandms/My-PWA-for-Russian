@@ -21,7 +21,10 @@ class DailyMode {
         if (savedDate === today && savedIds) {
             try {
                 const ids = JSON.parse(savedIds);
-                this.dailyWords = WORDS.filter(w => ids.includes(w.id));
+                this.dailyWords = window.studySelector
+                    ? window.studySelector.resolveWords(ids, WORDS)
+                    : WORDS.filter(w => ids.includes(w.id));
+
                 if (this.dailyWords.length < 5) {
                     this.dailyWords = [];
                 }
@@ -31,25 +34,10 @@ class DailyMode {
         }
 
         if (this.dailyWords.length === 0) {
-            // Yeni kelime seç
-            // Öğrenilmemiş kelimelerden seçmeye çalış
-            let savedStats;
-            try { savedStats = JSON.parse(localStorage.getItem('stats') || '{"masteredWords":[]}'); } catch (e) { savedStats = { masteredWords: [] }; }
-            const masteredIds = savedStats.masteredWords || [];
-
-            let candidates = WORDS.filter(w => !masteredIds.includes(w.id));
-
-            // Eğer hepsi öğrenildiyse, tümünden seç
-            if (candidates.length < 5) {
-                candidates = [...WORDS];
-            }
-
-            // Rastgele 5 tane
-            const selected = app.shuffleArray(candidates).slice(0, 5);
-            this.dailyWords = selected;
+            this.dailyWords = this.selectDailyWords();
 
             // Kaydet
-            const selectedIds = selected.map(w => w.id);
+            const selectedIds = this.dailyWords.map(w => w.id);
             localStorage.setItem('dailyWordsDate', today);
             localStorage.setItem('dailyWordsIds', JSON.stringify(selectedIds));
         }
@@ -57,6 +45,26 @@ class DailyMode {
         // Başlığı güncelle
         const dateStr = new Date().toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', weekday: 'long' });
         document.getElementById('dailyDate').textContent = dateStr;
+    }
+
+    selectDailyWords() {
+        if (!window.studySelector) {
+            return app.shuffleArray([...app.getLearningWords(5)]).slice(0, 5);
+        }
+
+        const learningWords = app.getLearningWords(3);
+        const dueCount = window.studySelector.getReviewCandidates(WORDS).length;
+        const reviewCount = window.studySelector.getReviewTarget({ count: 5, dueCount, ratio: 0.4 });
+        const reviewIds = window.studySelector.selectReviewIds({ words: WORDS, count: reviewCount });
+        const coverageIds = window.studySelector.selectCoverageIds({
+            words: learningWords,
+            count: 5 - reviewIds.length,
+            excludeIds: reviewIds
+        });
+        const selectedIds = app.shuffleArray([...coverageIds, ...reviewIds]);
+
+        window.studySelector.rememberIds(selectedIds);
+        return window.studySelector.resolveWords(selectedIds, WORDS);
     }
 
     renderList() {
@@ -85,9 +93,9 @@ class DailyMode {
     startTest() {
         // Use quiz mode with daily words via proper app flow
         if (window.quizMode) {
-            // Hide daily mode screen before starting quiz
             document.getElementById('dailyMode')?.classList.add('hidden');
-            app.startMode('quiz');
+            document.getElementById('quizMode')?.classList.remove('hidden');
+            app.currentMode = 'quiz';
             window.quizMode.startWithWords(this.dailyWords);
         }
     }

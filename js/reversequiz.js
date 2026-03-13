@@ -16,19 +16,32 @@ class ReverseQuizMode {
     init(questionCount = null) {
         this.questionCount = questionCount;
         this.correctCount = 0;
-        let allWords = app.shuffleArray([...WORDS]);
-
-        if (questionCount && questionCount < allWords.length) {
-            allWords = allWords.slice(0, questionCount);
-        }
-
-        this.words = allWords;
+        this.words = this.getSessionWords(questionCount);
         this.currentIndex = 0;
         this.score = 0;
         this.answered = false;
         this.setupEventListeners();
         this.showQuestion();
         this.updateScore();
+    }
+
+    getSessionWords(questionCount = null) {
+        const learningWords = app.getLearningWords(questionCount || 0);
+        const targetCount = questionCount && questionCount < learningWords.length
+            ? questionCount
+            : learningWords.length;
+
+        if (!window.studySelector) {
+            return app.shuffleArray([...learningWords]).slice(0, targetCount);
+        }
+
+        const selectedIds = window.studySelector.selectCoverageIds({
+            words: learningWords,
+            count: targetCount
+        });
+
+        window.studySelector.rememberIds(selectedIds);
+        return window.studySelector.resolveWords(selectedIds, learningWords);
     }
 
     setupEventListeners() {

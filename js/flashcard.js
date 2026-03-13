@@ -15,20 +15,32 @@ class FlashcardMode {
     init(questionCount = null) {
         this.questionCount = questionCount;
         this.correctCount = 0;
-        let allWords = app.shuffleArray([...WORDS]);
-
-        // Soru sayısını sınırla
-        if (questionCount && questionCount < allWords.length) {
-            allWords = allWords.slice(0, questionCount);
-        }
-
-        this.words = allWords;
+        this.words = this.getSessionWords(questionCount);
         this.currentIndex = 0;
         this.isFlipped = false;
         this.setupEventListeners();
         this.updateCard();
         this.updateProgress();
         this.updateFavoriteButton();
+    }
+
+    getSessionWords(questionCount = null) {
+        const learningWords = app.getLearningWords(questionCount || 0);
+        const targetCount = questionCount && questionCount < learningWords.length
+            ? questionCount
+            : learningWords.length;
+
+        if (!window.studySelector) {
+            return app.shuffleArray([...learningWords]).slice(0, targetCount);
+        }
+
+        const selectedIds = window.studySelector.selectCoverageIds({
+            words: learningWords,
+            count: targetCount
+        });
+
+        window.studySelector.rememberIds(selectedIds);
+        return window.studySelector.resolveWords(selectedIds, learningWords);
     }
 
     setupEventListeners() {
@@ -114,37 +126,12 @@ class FlashcardMode {
 
         if (this.direction === 'ru-tr') {
             document.getElementById('flashcardWord').textContent = word.russian;
-            document.getElementById('flashcardExample').textContent = word.example?.russian || '';
             document.getElementById('flashcardTranslation').textContent = word.turkish;
-            document.getElementById('flashcardExampleTr').textContent = word.example?.turkish || '';
-        } else {
-            document.getElementById('flashcardWord').textContent = word.turkish;
-            document.getElementById('flashcardExample').textContent = word.example?.turkish || '';
-            document.getElementById('flashcardTranslation').textContent = word.russian;
-            document.getElementById('flashcardExampleTr').textContent = word.example?.russian || '';
+            return;
         }
 
-        // Cümleleri Göster
-        const sentencesBox = document.getElementById('flashcardSentences');
-        const sentencesList = document.getElementById('sentencesList');
-        if (sentencesBox && sentencesList) {
-            sentencesList.innerHTML = '';
-            if (word.sentences && word.sentences.length > 0) {
-                sentencesBox.classList.remove('hidden');
-                word.sentences.forEach(s => {
-                    const li = document.createElement('li');
-                    li.style.marginBottom = '8px';
-                    if (this.direction === 'ru-tr') {
-                        li.innerHTML = `<span style="color:var(--text-primary); font-weight:600;">${s.ru}</span><br><span>${s.tr}</span>`;
-                    } else {
-                        li.innerHTML = `<span style="color:var(--text-primary); font-weight:600;">${s.tr}</span><br><span>${s.ru}</span>`;
-                    }
-                    sentencesList.appendChild(li);
-                });
-            } else {
-                sentencesBox.classList.add('hidden');
-            }
-        }
+        document.getElementById('flashcardWord').textContent = word.turkish;
+        document.getElementById('flashcardTranslation').textContent = word.russian;
     }
 
     updateProgress() {

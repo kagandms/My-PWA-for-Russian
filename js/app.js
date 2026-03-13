@@ -379,6 +379,15 @@ class App {
         this.saveStats();
     }
 
+    getLearningWords(minCount = 0) {
+        const masteredIds = new Set(this.stats.masteredWords || []);
+        const learningWords = WORDS.filter(word => !masteredIds.has(word.id));
+
+        if (learningWords.length === 0) return [...WORDS];
+        if (minCount > 0 && learningWords.length < minCount) return [...WORDS];
+        return learningWords;
+    }
+
     // Yardımcı fonksiyonlar
     showAllWords() {
         const sortedWords = [...WORDS].sort((a, b) => a.russian.localeCompare(b.russian));

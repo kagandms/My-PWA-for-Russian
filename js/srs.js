@@ -84,6 +84,15 @@ class SRSManager {
 
         return dueWords;
     }
+
+    getReviewWords(wordsArray) {
+        const now = Date.now();
+
+        return wordsArray.filter(word => {
+            const record = this.data[String(word.id)];
+            return Boolean(record && now >= record.dueDate);
+        });
+    }
 }
 
 // Global scope'a ekliyoruz

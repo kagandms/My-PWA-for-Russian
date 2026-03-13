@@ -15,31 +15,37 @@ class QuizMode {
     init(questionCount = null) {
         this.questionCount = questionCount;
         this.correctCount = 0;
-
-        let dueWords = window.srsManager ? window.srsManager.getDueWords([...WORDS]) : [...WORDS];
-        dueWords = app.shuffleArray(dueWords);
-
-        if (questionCount && dueWords.length < questionCount) {
-            const needed = questionCount - dueWords.length;
-            const remainingWords = WORDS.filter(w => !dueWords.includes(w));
-            const extraWords = app.shuffleArray(remainingWords).slice(0, needed);
-            dueWords = dueWords.concat(extraWords);
-        }
-
-        let allWords = dueWords;
-
-        // Soru sayısını sınırla
-        if (questionCount && questionCount < allWords.length) {
-            allWords = allWords.slice(0, questionCount);
-        }
-
-        this.words = allWords;
+        this.words = this.getSessionWords(questionCount);
         this.currentIndex = 0;
         this.score = 0;
         this.answered = false;
         this.setupEventListeners();
         this.showQuestion();
         this.updateScore();
+    }
+
+    getSessionWords(questionCount = null) {
+        const targetCount = questionCount && questionCount < WORDS.length
+            ? questionCount
+            : WORDS.length;
+
+        if (!window.studySelector) {
+            return app.shuffleArray([...WORDS]).slice(0, targetCount);
+        }
+
+        const learningWords = app.getLearningWords(targetCount);
+        const dueCount = window.studySelector.getReviewCandidates(WORDS).length;
+        const reviewCount = window.studySelector.getReviewTarget({ count: targetCount, dueCount, ratio: 0.3 });
+        const reviewIds = window.studySelector.selectReviewIds({ words: WORDS, count: reviewCount });
+        const coverageIds = window.studySelector.selectCoverageIds({
+            words: learningWords,
+            count: targetCount - reviewIds.length,
+            excludeIds: reviewIds
+        });
+        const selectedIds = app.shuffleArray([...coverageIds, ...reviewIds]);
+
+        window.studySelector.rememberIds(selectedIds);
+        return window.studySelector.resolveWords(selectedIds, WORDS);
     }
 
     startWithWords(specificWords) {
