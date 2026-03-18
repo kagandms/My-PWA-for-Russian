@@ -62,6 +62,12 @@ class CategoriesMode {
             'Yönler & Konum': '📍',
             'Meslek & Eğitim': '🎓',
             'İnsan & Aile': '👥',
+            'Teknoloji & Araçlar': '📱',
+            'Doğa & Hayvanlar': '🌲',
+            'Ev & Eşyalar': '🏠',
+            'Vücut & Sağlık': '🩺',
+            'Duygular & Düşünceler': '❤️',
+            'Sayılar & Miktarlar': '🔢',
             'Eş/Zıt Anlamlılar': '↔️',
             'Argo & Günlük İfadeler': '🔥',
             'Genel Kelimeler': '📚'
