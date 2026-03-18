@@ -475,7 +475,7 @@
 Свет - Темнота : Işık - Karanlık
 Пьянство - Трезвость : Sarhoşluk - Ayıklık
 Отсутствие - Присутствие : Yokluk - Mevcudiyet
-Опровергать - Подтверждать : Reddetmek - Desteklemek
+Опровергать - Подтверждать : Yalanlamak, çürütmek - Doğrulamak, teyit etmek
 Прямо - Косвенно : Direkt - Dolaylı yoldan
 Государственный - Частный : Kamu - Özel
 Заочно - Очно : Uzaktan - Yüzyüze
