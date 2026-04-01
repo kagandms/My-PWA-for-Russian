@@ -10,42 +10,82 @@ class QuizMode {
         this.answered = false;
         this.questionCount = null;
         this.correctCount = 0;
+        this.sessionOptions = { scope: 'learning' };
+        this.coverageLabel = '';
     }
 
-    init(questionCount = null) {
+    init(questionCount = null, sessionOptions = {}) {
         this.questionCount = questionCount;
         this.correctCount = 0;
+        this.sessionOptions = app.normalizeSessionOptions(sessionOptions);
         this.words = this.getSessionWords(questionCount);
         this.currentIndex = 0;
         this.score = 0;
         this.answered = false;
         this.setupEventListeners();
+        this.updateCoverageIndicator();
         this.showQuestion();
         this.updateScore();
     }
 
     getSessionWords(questionCount = null) {
-        const targetCount = questionCount && questionCount < WORDS.length
+        const poolWords = app.getStudyPool({
+            scope: this.sessionOptions.scope,
+            minCount: questionCount || 0
+        });
+        const targetCount = questionCount && questionCount < poolWords.length
             ? questionCount
-            : WORDS.length;
+            : poolWords.length;
+        this.coverageLabel = '';
 
         if (!window.studySelector) {
-            return app.shuffleArray([...WORDS]).slice(0, targetCount);
+            return app.shuffleArray([...poolWords]).slice(0, targetCount);
         }
 
-        const learningWords = app.getLearningWords(targetCount);
-        const dueCount = window.studySelector.getReviewCandidates(WORDS).length;
+        if (this.sessionOptions.scope === 'all') {
+            const deckName = 'quiz-all';
+            const beforeProgress = window.studySelector.getDeckProgress({
+                words: poolWords,
+                deckName
+            });
+            const selectedIds = window.studySelector.selectCoverageIds({
+                words: poolWords,
+                count: targetCount,
+                deckName
+            });
+            const afterProgress = window.studySelector.getDeckProgress({
+                words: poolWords,
+                deckName
+            });
+            const wrapped = afterProgress.cursor < beforeProgress.cursor;
+            this.coverageLabel = app.buildCoverageLabel({
+                scope: this.sessionOptions.scope,
+                total: afterProgress.total,
+                covered: afterProgress.cursor,
+                wrapped
+            });
+
+            window.studySelector.rememberIds(selectedIds);
+            return window.studySelector.resolveWords(selectedIds, poolWords);
+        }
+
+        const dueCount = window.studySelector.getReviewCandidates(poolWords).length;
         const reviewCount = window.studySelector.getReviewTarget({ count: targetCount, dueCount, ratio: 0.3 });
-        const reviewIds = window.studySelector.selectReviewIds({ words: WORDS, count: reviewCount });
+        const reviewIds = window.studySelector.selectReviewIds({ words: poolWords, count: reviewCount });
         const coverageIds = window.studySelector.selectCoverageIds({
-            words: learningWords,
+            words: poolWords,
             count: targetCount - reviewIds.length,
-            excludeIds: reviewIds
+            excludeIds: reviewIds,
+            deckName: 'quiz-learning'
         });
         const selectedIds = app.shuffleArray([...coverageIds, ...reviewIds]);
 
         window.studySelector.rememberIds(selectedIds);
-        return window.studySelector.resolveWords(selectedIds, WORDS);
+        return window.studySelector.resolveWords(selectedIds, poolWords);
+    }
+
+    updateCoverageIndicator() {
+        app.updateCoverageIndicator('quizCoverage', this.coverageLabel);
     }
 
     startWithWords(specificWords) {

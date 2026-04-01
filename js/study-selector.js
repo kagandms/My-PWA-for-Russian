@@ -144,6 +144,17 @@ class StudySelector {
         return this.state.decks[deckName];
     }
 
+    getDeckProgress(options = {}) {
+        const words = Array.isArray(options.words) ? options.words : [];
+        const deckName = options.deckName || this.deckKey;
+        const deck = this.getDeck(words, deckName);
+
+        return {
+            cursor: Number(deck.cursor) || 0,
+            total: Array.isArray(deck.order) ? deck.order.length : 0
+        };
+    }
+
     resetDeck(words, options = {}) {
         const deckName = options.deckName || this.deckKey;
         const blockedIds = options.blockedIds || [];

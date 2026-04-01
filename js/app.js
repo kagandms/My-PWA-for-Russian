@@ -6,6 +6,7 @@ class App {
     constructor() {
         this.currentMode = null;
         this.pendingMode = null;
+        this.pendingSessionOptions = this.normalizeSessionOptions();
         this.selectedQuestionCount = null;
         this.stats = this.loadStats();
         this.init();
@@ -137,6 +138,108 @@ class App {
         });
     }
 
+    normalizeSessionOptions(options = {}) {
+        return {
+            scope: options.scope === 'all' ? 'all' : 'learning'
+        };
+    }
+
+    getPendingWords() {
+        const masteredIds = new Set(this.stats.masteredWords || []);
+        return WORDS.filter(word => !masteredIds.has(word.id));
+    }
+
+    getStudyPool(options = {}) {
+        const sessionOptions = this.normalizeSessionOptions(options);
+
+        if (sessionOptions.scope === 'all') {
+            return [...WORDS];
+        }
+
+        return this.getLearningWords(Number(options.minCount) || 0);
+    }
+
+    buildCoverageLabel(options = {}) {
+        const sessionOptions = this.normalizeSessionOptions(options);
+        const total = Number(options.total) || 0;
+
+        if (sessionOptions.scope !== 'all' || total <= 0) {
+            return '';
+        }
+
+        const covered = Math.min(Math.max(Number(options.covered) || 0, 0), total);
+        if (options.wrapped) {
+            return `Kapsama: yeni tur ${covered}/${total}`;
+        }
+
+        return `Kapsama: ${covered}/${total}`;
+    }
+
+    updateCoverageIndicator(elementId, label = '') {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+
+        if (!label) {
+            element.textContent = '';
+            element.classList.add('hidden');
+            return;
+        }
+
+        element.textContent = label;
+        element.classList.remove('hidden');
+    }
+
+    getQuestionCountTitle() {
+        if (this.pendingMode === 'flashcard') return 'Flashcard için kaç kart çalışmak istiyorsun?';
+        if (this.pendingMode === 'quiz') return 'Quiz için kaç soru çözmek istiyorsun?';
+        if (this.pendingMode === 'reversequiz') return 'Tersine Quiz için kaç soru çözmek istiyorsun?';
+        return 'Kaç soru çalışmak istiyorsun?';
+    }
+
+    setQuestionCountScope(scope = 'learning') {
+        const normalizedScope = scope === 'all' ? 'all' : 'learning';
+        this.pendingSessionOptions = this.normalizeSessionOptions({
+            ...this.pendingSessionOptions,
+            scope: normalizedScope
+        });
+
+        document.querySelectorAll('#questionCountModal .scope-btn').forEach(button => {
+            const isActive = button.dataset.scope === normalizedScope;
+            button.classList.toggle('primary', isActive);
+            button.classList.toggle('active', isActive);
+            button.setAttribute('aria-pressed', String(isActive));
+        });
+
+        const helpText = document.getElementById('questionCountHelp');
+        if (!helpText) return;
+
+        if (normalizedScope === 'all') {
+            helpText.textContent = 'Tüm kelimeler ortak bir havuzdan gelir. Kısa oturumlarda bile seanslar arasında kaldığın yer korunur.';
+            return;
+        }
+
+        helpText.textContent = 'Öncelik öğrenilmemiş kelimelerde kalır. Havuz soru sayısına yetmezse sistem otomatik olarak tüm kelimelere genişler.';
+    }
+
+    updateQuestionCountModal() {
+        const title = document.getElementById('questionCountTitle');
+        if (title) {
+            title.textContent = this.getQuestionCountTitle();
+        }
+
+        const learningCount = document.getElementById('questionCountLearningCount');
+        if (learningCount) {
+            learningCount.textContent = `${this.getPendingWords().length} kelime`;
+        }
+
+        const allCount = document.getElementById('questionCountAllCount');
+        if (allCount) {
+            allCount.textContent = `${WORDS.length} kelime`;
+        }
+
+        this.setQuestionCountScope(this.pendingSessionOptions.scope);
+    }
+
     // ===== Navigasyon =====
     setupNavigation() {
         // Mod kartlarına tıklama
@@ -160,10 +263,17 @@ class App {
             btn.addEventListener('click', () => {
                 const count = parseInt(btn.dataset.count);
                 if (this.pendingMode) {
-                    this.startMode(this.pendingMode, count);
+                    this.startMode(this.pendingMode, count, this.pendingSessionOptions);
                     document.getElementById('questionCountModal').classList.add('hidden');
                     this.pendingMode = null;
+                    this.pendingSessionOptions = this.normalizeSessionOptions();
                 }
+            });
+        });
+
+        document.querySelectorAll('#questionCountModal .scope-btn[data-scope]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                this.setQuestionCountScope(btn.dataset.scope);
             });
         });
 
@@ -173,6 +283,7 @@ class App {
             cancelBtn.addEventListener('click', () => {
                 document.getElementById('questionCountModal').classList.add('hidden');
                 this.pendingMode = null;
+                this.pendingSessionOptions = this.normalizeSessionOptions();
             });
         }
 
@@ -225,6 +336,8 @@ class App {
 
         if (modesWithCount.includes(mode)) {
             this.pendingMode = mode;
+            this.pendingSessionOptions = this.normalizeSessionOptions();
+            this.updateQuestionCountModal();
             document.getElementById('questionCountModal').classList.remove('hidden');
         } else if (mode === 'allwords') {
             this.showAllWords();
@@ -235,9 +348,11 @@ class App {
         }
     }
 
-    startMode(mode, questionCount = null) {
+    startMode(mode, questionCount = null, sessionOptions = {}) {
         const modeScreen = document.getElementById(`${mode}Mode`);
         if (!modeScreen) return;
+
+        const normalizedOptions = this.normalizeSessionOptions(sessionOptions);
 
         {
             document.getElementById('mainMenu').classList.add('hidden');
@@ -247,13 +362,13 @@ class App {
             // Mod'u başlat
             switch (mode) {
                 case 'flashcard':
-                    window.flashcardMode?.init(questionCount);
+                    window.flashcardMode?.init(questionCount, normalizedOptions);
                     break;
                 case 'quiz':
-                    window.quizMode?.init(questionCount);
+                    window.quizMode?.init(questionCount, normalizedOptions);
                     break;
                 case 'reversequiz':
-                    window.reverseQuizMode?.init(questionCount);
+                    window.reverseQuizMode?.init(questionCount, normalizedOptions);
                     break;
                 case 'daily':
                     window.dailyMode?.init();
@@ -380,8 +495,7 @@ class App {
     }
 
     getLearningWords(minCount = 0) {
-        const masteredIds = new Set(this.stats.masteredWords || []);
-        const learningWords = WORDS.filter(word => !masteredIds.has(word.id));
+        const learningWords = this.getPendingWords();
 
         if (learningWords.length === 0) return [...WORDS];
         if (minCount > 0 && learningWords.length < minCount) return [...WORDS];

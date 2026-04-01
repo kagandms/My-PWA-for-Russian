@@ -137,9 +137,10 @@
             <div class="mode-header">
                 <button class="back-btn" data-back>← Geri</button>
                 <h2>Flashcard</h2>
-                <span class="progress-indicator">
-                    <span id="flashcardCurrent">1</span>/<span id="flashcardTotal">0</span>
-                </span>
+                <div class="progress-indicator progress-stack">
+                    <span><span id="flashcardCurrent">1</span>/<span id="flashcardTotal">0</span></span>
+                    <span class="session-meta hidden" id="flashcardCoverage"></span>
+                </div>
             </div>
             <div class="flashcard-container">
                 <div class="flashcard" id="flashcard">
@@ -177,9 +178,10 @@
             <div class="mode-header">
                 <button class="back-btn" data-back>← Geri</button>
                 <h2>Quiz</h2>
-                <span class="progress-indicator">
-                    <span id="quizScore">0</span> puan
-                </span>
+                <div class="progress-indicator progress-stack">
+                    <span><span id="quizScore">0</span> puan</span>
+                    <span class="session-meta hidden" id="quizCoverage"></span>
+                </div>
             </div>
             <div class="quiz-container">
                 <div class="quiz-question">
@@ -309,7 +311,22 @@
         <!-- Question Count Modal -->
         <div id="questionCountModal" class="modal hidden">
             <div class="modal-content">
-                <h3>Kaç soru çalışmak istiyorsun?</h3>
+                <h3 id="questionCountTitle">Kaç soru çalışmak istiyorsun?</h3>
+                <div class="modal-section">
+                    <p class="modal-section-label">Kelime havuzu</p>
+                    <div class="modal-buttons scope-buttons">
+                        <button class="modal-btn scope-btn primary active" data-scope="learning" aria-pressed="true">
+                            <span>Öğrenilecekler</span>
+                            <span class="scope-meta" id="questionCountLearningCount">0 kelime</span>
+                        </button>
+                        <button class="modal-btn scope-btn" data-scope="all" aria-pressed="false">
+                            <span>Tüm Kelimeler</span>
+                            <span class="scope-meta" id="questionCountAllCount">0 kelime</span>
+                        </button>
+                    </div>
+                    <p class="modal-help" id="questionCountHelp">Öncelik öğrenilmemiş kelimelerde kalır.</p>
+                </div>
+                <p class="modal-section-label">Soru sayısı</p>
                 <div class="modal-buttons">
                     <button class="modal-btn" data-count="5">5</button>
                     <button class="modal-btn" data-count="10">10</button>
@@ -398,9 +415,10 @@
             <div class="mode-header">
                 <button class="back-btn" data-back>← Geri</button>
                 <h2>Tersine Quiz</h2>
-                <span class="progress-indicator">
-                    <span id="reversequizScore">0</span> puan
-                </span>
+                <div class="progress-indicator progress-stack">
+                    <span><span id="reversequizScore">0</span> puan</span>
+                    <span class="session-meta hidden" id="reversequizCoverage"></span>
+                </div>
             </div>
             <div class="quiz-container">
                 <div class="quiz-question">

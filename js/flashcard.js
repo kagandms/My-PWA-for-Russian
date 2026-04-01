@@ -10,37 +10,66 @@ class FlashcardMode {
         this.isFlipped = false;
         this.questionCount = null;
         this.correctCount = 0;
+        this.sessionOptions = { scope: 'learning' };
+        this.coverageLabel = '';
     }
 
-    init(questionCount = null) {
+    init(questionCount = null, sessionOptions = {}) {
         this.questionCount = questionCount;
         this.correctCount = 0;
+        this.sessionOptions = app.normalizeSessionOptions(sessionOptions);
         this.words = this.getSessionWords(questionCount);
         this.currentIndex = 0;
         this.isFlipped = false;
         this.setupEventListeners();
+        this.updateCoverageIndicator();
         this.updateCard();
         this.updateProgress();
         this.updateFavoriteButton();
     }
 
     getSessionWords(questionCount = null) {
-        const learningWords = app.getLearningWords(questionCount || 0);
-        const targetCount = questionCount && questionCount < learningWords.length
+        const poolWords = app.getStudyPool({
+            scope: this.sessionOptions.scope,
+            minCount: questionCount || 0
+        });
+        const targetCount = questionCount && questionCount < poolWords.length
             ? questionCount
-            : learningWords.length;
+            : poolWords.length;
+        this.coverageLabel = '';
 
         if (!window.studySelector) {
-            return app.shuffleArray([...learningWords]).slice(0, targetCount);
+            return app.shuffleArray([...poolWords]).slice(0, targetCount);
         }
 
+        const deckName = `flashcard-${this.sessionOptions.scope}`;
+        const beforeProgress = window.studySelector.getDeckProgress({
+            words: poolWords,
+            deckName
+        });
         const selectedIds = window.studySelector.selectCoverageIds({
-            words: learningWords,
-            count: targetCount
+            words: poolWords,
+            count: targetCount,
+            deckName
+        });
+        const afterProgress = window.studySelector.getDeckProgress({
+            words: poolWords,
+            deckName
+        });
+        const wrapped = afterProgress.cursor < beforeProgress.cursor;
+        this.coverageLabel = app.buildCoverageLabel({
+            scope: this.sessionOptions.scope,
+            total: afterProgress.total,
+            covered: afterProgress.cursor,
+            wrapped
         });
 
         window.studySelector.rememberIds(selectedIds);
-        return window.studySelector.resolveWords(selectedIds, learningWords);
+        return window.studySelector.resolveWords(selectedIds, poolWords);
+    }
+
+    updateCoverageIndicator() {
+        app.updateCoverageIndicator('flashcardCoverage', this.coverageLabel);
     }
 
     setupEventListeners() {

@@ -574,6 +574,20 @@ body {
     /* Prevent wrapping */
 }
 
+.progress-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15rem;
+}
+
+.session-meta {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
 /* ===== Flashcard ===== */
 .flashcard-container {
     flex: 1;
@@ -1233,6 +1247,20 @@ body {
     margin-bottom: 1rem;
 }
 
+.modal-section {
+    margin-bottom: 1rem;
+}
+
+.modal-section-label {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
 .modal-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -1268,6 +1296,35 @@ body {
     border-color: var(--primary-blue-dark);
     border-bottom-color: var(--primary-blue-dark);
     color: white;
+}
+
+.scope-buttons {
+    margin-bottom: 0.75rem;
+}
+
+.scope-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    min-width: 180px;
+    text-align: left;
+}
+
+.scope-meta {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.scope-btn.primary .scope-meta {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.modal-help {
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.45;
 }
 
 /* ===== Snackbar (Gamified Bottom Feedback) ===== */
