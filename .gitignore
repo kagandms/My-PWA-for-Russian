@@ -1,17 +1,6 @@
-# .env.local - local development
-.env.local
-
-# Node modules (if any)
-node_modules/
-
-# Vercel output
-.vercel/
-
-# Translation cache (large, auto-generated)
-js/ielts_progress.json
-
-# Debug/temp files
-debug_*.txt
-__pycache__/
-*.pyc
 .DS_Store
+.env
+.env.*
+!.env.example
+node_modules
+.vercel

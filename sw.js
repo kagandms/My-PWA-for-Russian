@@ -2,7 +2,7 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v20';
+const CACHE_NAME = 'rutr-v21';
 const ASSETS = [
     './',
     './index.html',
@@ -55,6 +55,9 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
     // Only cache GET requests
     if (event.request.method !== 'GET') return;
+
+    const requestUrl = new URL(event.request.url);
+    if (requestUrl.pathname.startsWith('/api/')) return;
 
     event.respondWith(
         caches.match(event.request)
