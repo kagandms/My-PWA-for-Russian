@@ -12,6 +12,7 @@ class StorageManager {
             'ru_tr_tracker_data',
             'ru_tr_study_selector',
             'ru_tr_full_choice_quiz_progress',
+            'ru_tr_synonyms_quiz_progress',
             'dailyWordsDate',
             'dailyWordsIds',
             'theme'

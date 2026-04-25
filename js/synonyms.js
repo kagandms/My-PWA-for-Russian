@@ -3,27 +3,126 @@
  */
 class SynonymsMode {
     constructor() {
+        this.storageKey = 'ru_tr_synonyms_quiz_progress';
+        this.sessionOptions = { synonymMode: 'normal' };
+        this.progress = this.loadProgress();
         this.currentPair = null;
         this.score = 0;
         this.totalQuestions = 0;
         this.currentIndex = 0;
         this.pairs = [];
+        this.answered = false;
     }
 
-    init() {
-        if (!SYNONYMS || SYNONYMS.length === 0) {
+    createDefaultProgress() {
+        return {
+            version: 1,
+            completedPairKeys: [],
+            updatedAt: null
+        };
+    }
+
+    loadProgress() {
+        try {
+            const saved = JSON.parse(localStorage.getItem(this.storageKey) || 'null');
+            const progress = saved && typeof saved === 'object' ? saved : this.createDefaultProgress();
+            return this.normalizeProgress(progress);
+        } catch (error) {
+            console.error('Eş/Zıt kalıcı quiz ilerlemesi yüklenirken hata oluştu', error);
+            return this.createDefaultProgress();
+        }
+    }
+
+    normalizeProgress(progress) {
+        const completedPairKeys = Array.isArray(progress.completedPairKeys)
+            ? [...new Set(progress.completedPairKeys.map(key => String(key)).filter(Boolean))]
+            : [];
+
+        return {
+            ...this.createDefaultProgress(),
+            ...progress,
+            completedPairKeys
+        };
+    }
+
+    saveProgress() {
+        this.progress.updatedAt = new Date().toISOString();
+        localStorage.setItem(this.storageKey, JSON.stringify(this.progress));
+    }
+
+    init(questionCount = null, sessionOptions = {}) {
+        if (!Array.isArray(SYNONYMS) || SYNONYMS.length === 0) {
             alert("Eş/Zıt anlamlı kelime verisi bulunamadı!");
             app.closeMode();
             return;
         }
 
-        this.pairs = app.shuffleArray([...SYNONYMS]);
+        this.sessionOptions = app.normalizeSessionOptions(sessionOptions);
+        this.progress = this.loadProgress();
+        this.pairs = this.getSessionPairs(questionCount, this.getSourcePairsForSession());
         this.currentIndex = 0;
         this.score = 0;
-        this.totalQuestions = this.pairs.length; // Ya da limitli sayıda
+        this.totalQuestions = this.pairs.length;
+        this.answered = false;
 
         this.updateProgress();
         this.showQuestion();
+    }
+
+    isPersistentMode() {
+        return this.sessionOptions.synonymMode === 'persistent';
+    }
+
+    getSourcePairsForSession() {
+        if (!this.isPersistentMode()) return SYNONYMS;
+
+        const remainingPairs = this.getRemainingPersistentPairs();
+        if (remainingPairs.length > 0) return remainingPairs;
+
+        this.resetPersistentProgress();
+        return SYNONYMS;
+    }
+
+    getSessionPairs(questionCount = null, sourcePairs = SYNONYMS) {
+        const shuffledPairs = app.shuffleArray([...sourcePairs]);
+        const targetCount = Number(questionCount) || shuffledPairs.length;
+
+        return shuffledPairs.slice(0, Math.min(targetCount, shuffledPairs.length));
+    }
+
+    normalizeText(value) {
+        return String(value || '').trim().replace(/\s+/g, ' ').toLowerCase();
+    }
+
+    getSynonymWordKey(word) {
+        return `${this.normalizeText(word?.ru)}::${this.normalizeText(word?.tr)}`;
+    }
+
+    getPairKey(pair) {
+        const firstWordKey = this.getSynonymWordKey(pair?.w1);
+        const secondWordKey = this.getSynonymWordKey(pair?.w2);
+        const pairType = this.normalizeText(pair?.type || 'unknown');
+
+        return `synonym:${pairType}:${firstWordKey}::${secondWordKey}`;
+    }
+
+    getCurrentPairKeySet() {
+        return new Set(SYNONYMS.map(pair => this.getPairKey(pair)));
+    }
+
+    getCompletedPairKeySet() {
+        const currentPairKeys = this.getCurrentPairKeySet();
+        return new Set(this.progress.completedPairKeys.filter(key => currentPairKeys.has(key)));
+    }
+
+    getRemainingPersistentPairs() {
+        const completedPairKeys = this.getCompletedPairKeySet();
+        return SYNONYMS.filter(pair => !completedPairKeys.has(this.getPairKey(pair)));
+    }
+
+    resetPersistentProgress() {
+        this.progress = this.createDefaultProgress();
+        this.saveProgress();
     }
 
     showQuestion() {
@@ -33,81 +132,151 @@ class SynonymsMode {
         }
 
         const pair = this.pairs[this.currentIndex];
+        const words = this.getQuestionWords(pair);
         this.currentPair = pair;
+        this.answered = false;
+        this.updateProgress();
+        this.renderQuestion(pair, words.questionWord);
+        this.renderOptions(pair, words.answerWord);
+        document.getElementById('synonymsFeedback').classList.add('hidden');
+    }
 
-        // Soru: Rusça kelimenin eş/zıt anlamlısını bul
-        // Rastgele 1. veya 2. kelimeyi sor
+    getQuestionWords(pair) {
         const askIndex = Math.random() < 0.5 ? 0 : 1;
-        const questionWord = askIndex === 0 ? pair.w1 : pair.w2;
-        const answerWord = askIndex === 0 ? pair.w2 : pair.w1;
 
-        document.getElementById('synonymsWord').textContent = questionWord.ru + " (" + questionWord.tr + ")";
-        document.getElementById('synonymsType').textContent = pair.type === 'antonym' ? 'Zıt Anlamlısı?' : 'Eş Anlamlısı?';
+        return {
+            questionWord: askIndex === 0 ? pair.w1 : pair.w2,
+            answerWord: askIndex === 0 ? pair.w2 : pair.w1
+        };
+    }
 
-        // Seçenekler oluştur
-        const options = [answerWord];
+    renderQuestion(pair, questionWord) {
+        document.getElementById('synonymsWord').textContent = `${questionWord.ru} (${questionWord.tr})`;
+        document.getElementById('synonymsType').textContent = pair.type === 'antonym'
+            ? 'Zıt Anlamlısı?'
+            : 'Eş Anlamlısı?';
+    }
 
-        // Yanlış seçenekler (Rastgele diğer çiftlerden al)
-        const distractors = app.shuffleArray(
-            this.pairs.filter(p => p.id !== pair.id)
-        ).slice(0, 3)
-            .map(p => Math.random() < 0.5 ? p.w1 : p.w2);
-
-        options.push(...distractors);
-
-        // Karıştır
-        const shuffledOptions = app.shuffleArray(options);
+    renderOptions(pair, answerWord) {
+        const options = app.shuffleArray([
+            answerWord,
+            ...this.getDistractorWords(pair, answerWord)
+        ]);
 
         const optionsContainer = document.getElementById('synonymsOptions');
         optionsContainer.innerHTML = '';
 
-        shuffledOptions.forEach(opt => {
-            const btn = document.createElement('button');
-            btn.className = 'quiz-option';
-            btn.textContent = opt.ru; // Sadece Rusçasını göster, zor olsun
-            // ya da hem ru hem tr: btn.textContent = `${opt.ru} (${opt.tr})`;
-
-            btn.onclick = () => this.checkAnswer(opt, answerWord, btn);
-            optionsContainer.appendChild(btn);
+        options.forEach(option => {
+            const button = document.createElement('button');
+            button.className = 'quiz-option';
+            button.textContent = option.ru;
+            button.onclick = () => this.checkAnswer(option, answerWord, button);
+            optionsContainer.appendChild(button);
         });
-
-        document.getElementById('synonymsFeedback').classList.add('hidden');
     }
 
-    checkAnswer(selected, correct, btn) {
-        const buttons = document.querySelectorAll('#synonymsOptions .quiz-option');
-        buttons.forEach(b => b.classList.add('disabled'));
+    getDistractorWords(pair, answerWord) {
+        const pairKey = this.getPairKey(pair);
+        const answerKey = this.getSynonymWordKey(answerWord);
+        const distractorPairs = SYNONYMS.filter(item => this.getPairKey(item) !== pairKey);
 
-        const isCorrect = selected.ru === correct.ru;
+        return app.shuffleArray(distractorPairs)
+            .map(item => Math.random() < 0.5 ? item.w1 : item.w2)
+            .filter(word => this.getSynonymWordKey(word) !== answerKey)
+            .slice(0, 3);
+    }
+
+    checkAnswer(selected, correct, button) {
+        if (this.answered) return;
+        this.answered = true;
+
+        const isCorrect = this.getSynonymWordKey(selected) === this.getSynonymWordKey(correct);
+        this.markOptionsAnswered(button, correct);
+
         if (isCorrect) {
-            btn.classList.add('correct');
-            this.score++;
-            document.getElementById('synonymsFeedbackText').textContent = "Doğru! 🎉";
-            document.getElementById('synonymsFeedbackText').className = "correct-text";
+            this.handleCorrectAnswer(button);
         } else {
-            btn.classList.add('wrong');
-            // Doğruyu göster
-            buttons.forEach(b => {
-                if (b.textContent.includes(correct.ru)) {
-                    b.classList.add('correct');
-                }
-            });
-            document.getElementById('synonymsFeedbackText').textContent = `Yanlış! Doğru cevap: ${correct.ru} (${correct.tr})`;
-            document.getElementById('synonymsFeedbackText').className = "wrong-text";
+            this.handleWrongAnswer(correct);
         }
 
         document.getElementById('synonymsFeedback').classList.remove('hidden');
         this.updateProgress();
+        document.getElementById('synonymsNext').onclick = () => this.showNextQuestion();
+    }
 
-        document.getElementById('synonymsNext').onclick = () => {
-            this.currentIndex++;
-            this.showQuestion();
-        };
+    markOptionsAnswered(selectedButton, correctWord) {
+        document.querySelectorAll('#synonymsOptions .quiz-option').forEach(button => {
+            button.classList.add('disabled');
+            if (button.textContent === correctWord.ru) button.classList.add('correct');
+        });
+
+        if (selectedButton.textContent !== correctWord.ru) {
+            selectedButton.classList.add('wrong');
+        }
+    }
+
+    handleCorrectAnswer(button) {
+        button.classList.add('correct');
+        this.score++;
+
+        if (this.isPersistentMode()) {
+            this.markPairCompleted(this.currentPair);
+        }
+
+        const feedback = this.isPersistentMode()
+            ? 'Doğru! Bu çift kalıcı havuzdan çıktı.'
+            : "Doğru! 🎉";
+
+        document.getElementById('synonymsFeedbackText').textContent = feedback;
+        document.getElementById('synonymsFeedbackText').className = "correct-text";
+    }
+
+    handleWrongAnswer(correct) {
+        const persistentSuffix = this.isPersistentMode() ? ' Bu çift havuzda kalacak.' : '';
+        document.getElementById('synonymsFeedbackText').textContent =
+            `Yanlış! Doğru cevap: ${correct.ru} (${correct.tr}).${persistentSuffix}`;
+        document.getElementById('synonymsFeedbackText').className = "wrong-text";
+    }
+
+    markPairCompleted(pair) {
+        const pairKey = this.getPairKey(pair);
+        if (this.progress.completedPairKeys.includes(pairKey)) return;
+
+        this.progress.completedPairKeys.push(pairKey);
+        this.saveProgress();
+    }
+
+    showNextQuestion() {
+        this.currentIndex++;
+        this.showQuestion();
     }
 
     updateProgress() {
-        document.getElementById('synonymsCurrent').textContent = this.currentIndex + 1;
+        const currentQuestion = this.totalQuestions === 0
+            ? 0
+            : Math.min(this.currentIndex + 1, this.totalQuestions);
+
+        document.getElementById('synonymsCurrent').textContent = currentQuestion;
         document.getElementById('synonymsTotal').textContent = this.totalQuestions;
+        this.updatePersistentStatus();
+    }
+
+    updatePersistentStatus() {
+        const status = document.getElementById('synonymsPersistentStatus');
+        if (!status) return;
+
+        if (!this.isPersistentMode()) {
+            status.textContent = '';
+            status.classList.add('hidden');
+            return;
+        }
+
+        const total = SYNONYMS.length;
+        const completed = this.getCompletedPairKeySet().size;
+        const remaining = Math.max(total - completed, 0);
+
+        status.textContent = `Kalıcı: ${completed}/${total} • Kalan ${remaining}`;
+        status.classList.remove('hidden');
     }
 }
 

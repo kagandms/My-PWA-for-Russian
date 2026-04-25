@@ -160,7 +160,8 @@ class App {
 
     normalizeSessionOptions(options = {}) {
         return {
-            scope: options.scope === 'all' ? 'all' : 'learning'
+            scope: options.scope === 'all' ? 'all' : 'learning',
+            synonymMode: options.synonymMode === 'persistent' ? 'persistent' : 'normal'
         };
     }
 
@@ -213,7 +214,16 @@ class App {
         if (this.pendingMode === 'flashcard') return 'Flashcard için kaç kart çalışmak istiyorsun?';
         if (this.pendingMode === 'quiz') return 'Quiz için kaç soru çözmek istiyorsun?';
         if (this.pendingMode === 'reversequiz') return 'Tersine Quiz için kaç soru çözmek istiyorsun?';
+        if (this.pendingMode === 'synonyms') return 'Eş/Zıt Anlam için kaç soru çözmek istiyorsun?';
         return 'Kaç soru çalışmak istiyorsun?';
+    }
+
+    modeUsesStudyScope(mode) {
+        return ['flashcard', 'quiz', 'reversequiz'].includes(mode);
+    }
+
+    modeUsesSynonymMode(mode) {
+        return mode === 'synonyms';
     }
 
     setQuestionCountScope(scope = 'learning') {
@@ -241,10 +251,47 @@ class App {
         helpText.textContent = 'Öncelik öğrenilmemiş kelimelerde kalır. Havuz soru sayısına yetmezse sistem otomatik olarak tüm kelimelere genişler.';
     }
 
+    setQuestionCountSynonymMode(synonymMode = 'normal') {
+        const normalizedSynonymMode = synonymMode === 'persistent' ? 'persistent' : 'normal';
+        this.pendingSessionOptions = this.normalizeSessionOptions({
+            ...this.pendingSessionOptions,
+            synonymMode: normalizedSynonymMode
+        });
+
+        document.querySelectorAll('#questionCountModal .synonym-mode-btn').forEach(button => {
+            const isActive = button.dataset.synonymMode === normalizedSynonymMode;
+            button.classList.toggle('primary', isActive);
+            button.classList.toggle('active', isActive);
+            button.setAttribute('aria-pressed', String(isActive));
+        });
+
+        const helpText = document.getElementById('questionCountSynonymModeHelp');
+        if (!helpText) return;
+
+        if (normalizedSynonymMode === 'persistent') {
+            helpText.textContent = 'Kalıcı modda doğru bildiğin Eş/Zıt çiftleri bu tur bitene kadar tekrar gelmez.';
+            return;
+        }
+
+        helpText.textContent = 'Normal mod Eş/Zıt ilerlemesini kaydetmez.';
+    }
+
     updateQuestionCountModal() {
         const title = document.getElementById('questionCountTitle');
         if (title) {
             title.textContent = this.getQuestionCountTitle();
+        }
+
+        const scopeSection = document.getElementById('questionCountScopeSection');
+        const usesStudyScope = this.modeUsesStudyScope(this.pendingMode);
+        if (scopeSection) {
+            scopeSection.classList.toggle('hidden', !usesStudyScope);
+        }
+
+        const synonymModeSection = document.getElementById('questionCountSynonymModeSection');
+        const usesSynonymMode = this.modeUsesSynonymMode(this.pendingMode);
+        if (synonymModeSection) {
+            synonymModeSection.classList.toggle('hidden', !usesSynonymMode);
         }
 
         const learningCount = document.getElementById('questionCountLearningCount');
@@ -257,7 +304,13 @@ class App {
             allCount.textContent = `${WORDS.length} kelime`;
         }
 
-        this.setQuestionCountScope(this.pendingSessionOptions.scope);
+        if (usesStudyScope) {
+            this.setQuestionCountScope(this.pendingSessionOptions.scope);
+        }
+
+        if (usesSynonymMode) {
+            this.setQuestionCountSynonymMode(this.pendingSessionOptions.synonymMode);
+        }
     }
 
     // ===== Navigasyon =====
@@ -294,6 +347,12 @@ class App {
         document.querySelectorAll('#questionCountModal .scope-btn[data-scope]').forEach(btn => {
             btn.addEventListener('click', () => {
                 this.setQuestionCountScope(btn.dataset.scope);
+            });
+        });
+
+        document.querySelectorAll('#questionCountModal .synonym-mode-btn[data-synonym-mode]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                this.setQuestionCountSynonymMode(btn.dataset.synonymMode);
             });
         });
 
@@ -457,7 +516,7 @@ class App {
         }
 
         // Soru sayısı sorulacak modlar (Typing kaldırıldı)
-        const modesWithCount = ['flashcard', 'quiz', 'reversequiz'];
+        const modesWithCount = ['flashcard', 'quiz', 'reversequiz', 'synonyms'];
 
         if (modesWithCount.includes(mode)) {
             this.pendingMode = mode;
@@ -514,7 +573,7 @@ class App {
                     window.categoriesMode?.init();
                     break;
                 case 'synonyms':
-                    window.synonymsMode?.init();
+                    window.synonymsMode?.init(questionCount, normalizedOptions);
                     break;
             }
         }

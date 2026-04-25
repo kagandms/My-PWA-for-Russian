@@ -288,9 +288,10 @@
             <div class="mode-header">
                 <button class="back-btn" data-back>← Geri</button>
                 <h2>↔️ Eş & Zıt Anlam</h2>
-                <span class="progress-indicator">
-                    <span id="synonymsCurrent">1</span>/<span id="synonymsTotal">0</span>
-                </span>
+                <div class="progress-indicator progress-stack">
+                    <span><span id="synonymsCurrent">1</span>/<span id="synonymsTotal">0</span></span>
+                    <span class="session-meta hidden" id="synonymsPersistentStatus"></span>
+                </div>
             </div>
             <div class="quiz-container">
                 <div class="quiz-question">
@@ -341,7 +342,7 @@
         <div id="questionCountModal" class="modal hidden">
             <div class="modal-content">
                 <h3 id="questionCountTitle">Kaç soru çalışmak istiyorsun?</h3>
-                <div class="modal-section">
+                <div class="modal-section" id="questionCountScopeSection">
                     <p class="modal-section-label">Kelime havuzu</p>
                     <div class="modal-buttons scope-buttons">
                         <button class="modal-btn scope-btn primary active" data-scope="learning" aria-pressed="true">
@@ -355,13 +356,27 @@
                     </div>
                     <p class="modal-help" id="questionCountHelp">Öncelik öğrenilmemiş kelimelerde kalır.</p>
                 </div>
+                <div class="modal-section hidden" id="questionCountSynonymModeSection">
+                    <p class="modal-section-label">Çalışma tipi</p>
+                    <div class="modal-buttons scope-buttons">
+                        <button class="modal-btn scope-btn synonym-mode-btn primary active" data-synonym-mode="normal"
+                            aria-pressed="true">
+                            <span>Normal</span>
+                            <span class="scope-meta">Sadece bu oturum</span>
+                        </button>
+                        <button class="modal-btn scope-btn synonym-mode-btn" data-synonym-mode="persistent"
+                            aria-pressed="false">
+                            <span>Kalıcı</span>
+                            <span class="scope-meta">Doğrular havuzdan çıkar</span>
+                        </button>
+                    </div>
+                    <p class="modal-help" id="questionCountSynonymModeHelp">Normal mod Eş/Zıt ilerlemesini kaydetmez.</p>
+                </div>
                 <p class="modal-section-label">Soru sayısı</p>
                 <div class="modal-buttons">
                     <button class="modal-btn" data-count="5">5</button>
                     <button class="modal-btn" data-count="10">10</button>
                     <button class="modal-btn" data-count="20">20</button>
-                    <button class="modal-btn" data-count="50">50</button>
-                    <button class="modal-btn" data-count="100">100</button>
                 </div>
                 <button id="questionCountCancel" class="modal-btn secondary">← Geri</button>
             </div>
