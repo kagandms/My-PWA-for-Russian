@@ -56,13 +56,29 @@
         <main id="mainMenu" class="main-menu">
 
 
-            <!-- Streak & Heatmap Göstergesi -->
-            <div class="tracker-section">
-                <div class="streak-header">
-                    <h3>🔥 Günlük Seri: <span id="streakCount">0</span> Gün</h3>
+            <div class="tracker-section" aria-label="Günlük seri özeti">
+                <div class="tracker-summary">
+                    <div>
+                        <span class="tracker-eyebrow">Günlük Seri</span>
+                        <h3><span id="trackerCurrentStreak">0</span> gün</h3>
+                    </div>
+                    <div class="tracker-flame" aria-hidden="true">🔥</div>
                 </div>
-                <!-- Mini GitHub tarzı aktivite takvimi JS ile buraya dolacak -->
-                <div class="heatmap-container" id="heatmapContainer"></div>
+                <div class="tracker-metrics">
+                    <div class="tracker-metric">
+                        <span class="tracker-metric-value" id="trackerLatestStreak">0</span>
+                        <span class="tracker-metric-label">Son seri</span>
+                    </div>
+                    <div class="tracker-metric">
+                        <span class="tracker-metric-value" id="trackerBestStreak">0</span>
+                        <span class="tracker-metric-label">En uzun</span>
+                    </div>
+                    <div class="tracker-metric">
+                        <span class="tracker-metric-value" id="trackerWeekActive">0/7</span>
+                        <span class="tracker-metric-label">Bu hafta</span>
+                    </div>
+                </div>
+                <div class="heatmap-container" id="heatmapContainer" aria-label="Son 7 günlük çalışma takvimi"></div>
             </div>
 
             <div class="stats-bar">

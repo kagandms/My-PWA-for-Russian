@@ -58,6 +58,7 @@ class GoalsManager {
     recordWord() {
         this.data.todayProgress++;
         this.data.totalWordsLearned++;
+        window.trackerManager?.recordActivity?.(this.getDateString());
 
         // Bugün hedef tamamlandıysa ve streak henüz artmadıysa
         if (this.data.todayProgress === this.data.dailyGoal) {
@@ -112,6 +113,8 @@ class GoalsManager {
         if (progressTextEl) {
             progressTextEl.textContent = `${this.data.todayProgress}/${this.data.dailyGoal}`;
         }
+
+        window.trackerManager?.renderHeatmap?.();
     }
 }
 

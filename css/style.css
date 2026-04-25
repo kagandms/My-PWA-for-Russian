@@ -2141,36 +2141,89 @@ body {
 
 /* ===== Tracker & Heatmap (Oyunlaştırma) ===== */
 .tracker-section {
-    background: var(--bg-card);
-    border: 2px solid var(--border);
-    border-radius: 20px;
-    padding: 1.5rem;
+    background: var(--gradient-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 1.25rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--card-shadow);
+    text-align: left;
+}
+
+.tracker-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.tracker-eyebrow {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.tracker-summary h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.tracker-flame {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: rgba(255, 150, 0, 0.12);
+    font-size: 1.7rem;
+}
+
+.tracker-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 1rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.tracker-metric {
+    padding: 0.75rem 0.5rem;
     text-align: center;
 }
 
-.streak-header {
-    margin-bottom: 1rem;
+.tracker-metric:not(:last-child) {
+    border-right: 1px solid var(--border);
 }
 
-.streak-header h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    font-weight: 700;
+.tracker-metric-value {
+    display: block;
+    color: var(--accent);
+    font-size: 1.25rem;
+    font-weight: 900;
+    line-height: 1.1;
 }
 
-.active-streak h3 {
-    color: #ff9600;
-    /* Duolingo turuncusu/ateş */
-    text-shadow: 0 2px 4px rgba(255, 150, 0, 0.3);
+.tracker-metric-label {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--text-secondary);
+    font-size: 0.76rem;
+    font-weight: 800;
 }
 
 .heatmap-container {
     display: flex;
-    justify-content: center;
-    gap: 8px;
+    justify-content: space-between;
+    gap: 0.4rem;
     overflow-x: auto;
     padding-bottom: 0.5rem;
 }
@@ -2179,15 +2232,21 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 0.35rem;
+    min-width: 42px;
 }
 
 .heatmap-box {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
     background-color: var(--border);
-    /* empty state */
+    color: white;
+    font-size: 1rem;
+    font-weight: 900;
     transition: all 0.3s ease;
 }
 
@@ -2208,7 +2267,7 @@ body {
 /* Koyu Yeşil */
 
 .heatmap-label {
-    font-size: 0.75rem;
+    font-size: 0.76rem;
     color: var(--text-muted);
-    font-weight: 600;
+    font-weight: 800;
 }
