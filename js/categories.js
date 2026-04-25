@@ -52,32 +52,13 @@ class CategoriesMode {
 
         grid.innerHTML = '';
 
-        // Kategori kartı HTML'ini oluşturuyoruz
-        // Dinamik ikonlar
-        const icons = {
-            'Fiiller': '🏃',
-            'Sıfatlar': '🎨',
-            'Yemek & Mutfak': '🍔',
-            'Zaman & Takvim': '🕒',
-            'Yönler & Konum': '📍',
-            'Meslek & Eğitim': '🎓',
-            'İnsan & Aile': '👥',
-            'Teknoloji & Araçlar': '📱',
-            'Doğa & Hayvanlar': '🌲',
-            'Ev & Eşyalar': '🏠',
-            'Vücut & Sağlık': '🩺',
-            'Duygular & Düşünceler': '❤️',
-            'Sayılar & Miktarlar': '🔢',
-            'Eş/Zıt Anlamlılar': '↔️',
-            'Argo & Günlük İfadeler': '🔥',
-            'Genel Kelimeler': '📚'
-        };
-
-        const sortedCategories = Array.from(this.categories).sort();
+        const sortedCategories = window.wordCategoryManager
+            ? window.wordCategoryManager.sortCategories(this.categories)
+            : Array.from(this.categories).sort();
 
         sortedCategories.forEach(cat => {
             const wordCount = WORDS.filter(w => w.category === cat).length;
-            const icon = icons[cat] || '📓';
+            const icon = window.wordCategoryManager?.getIcon(cat) || '📓';
 
             const btn = document.createElement('button');
             btn.className = 'mode-card'; // index.html deki global grid yapısından devralır
