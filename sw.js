@@ -2,7 +2,7 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v21';
+const CACHE_NAME = 'rutr-v23';
 const ASSETS = [
     './',
     './index.html',
@@ -11,12 +11,14 @@ const ASSETS = [
     './css/style.css',
     './js/app.js',
     './js/data.js',
+    './js/storage.js',
     './js/study-selector.js',
     './js/favorites.js',
     './js/goals.js',
     './js/ai.js',
     './js/flashcard.js',
     './js/quiz.js',
+    './js/full-choice-quiz.js',
     './js/reversequiz.js',
     './js/synonyms.js',
     './js/daily.js',
@@ -29,6 +31,14 @@ const ASSETS = [
     './icon-192.png',
     './icon-512.png'
 ];
+
+const NETWORK_FIRST_PATHS = new Set([
+    '/',
+    '/index.html',
+    '/kelimeler_tam.txt',
+    '/sentences.json',
+    '/manifest.json'
+]);
 
 // Install - Cache assets
 self.addEventListener('install', event => {
@@ -51,6 +61,86 @@ self.addEventListener('activate', event => {
     );
 });
 
+function getAssetRequest(asset) {
+    return new Request(new URL(asset, self.registration.scope), { cache: 'reload' });
+}
+
+function isCacheableResponse(response) {
+    return response && (response.status === 200 || response.type === 'opaque');
+}
+
+function shouldUseNetworkFirst(request) {
+    if (request.mode === 'navigate') return true;
+
+    const requestUrl = new URL(request.url);
+    return requestUrl.origin === self.location.origin && NETWORK_FIRST_PATHS.has(requestUrl.pathname);
+}
+
+async function putInCache(request, response) {
+    if (!isCacheableResponse(response)) return;
+
+    const cache = await caches.open(CACHE_NAME);
+    await cache.put(request, response.clone());
+}
+
+async function fetchAndCache(request) {
+    const response = await fetch(request);
+    await putInCache(request, response);
+    return response;
+}
+
+async function networkFirst(request) {
+    try {
+        return await fetchAndCache(request);
+    } catch (error) {
+        const cachedResponse = await caches.match(request);
+        if (cachedResponse) return cachedResponse;
+
+        if (request.mode === 'navigate') {
+            return caches.match('./index.html');
+        }
+
+        throw error;
+    }
+}
+
+async function cacheFirst(request) {
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) return cachedResponse;
+
+    return fetchAndCache(request);
+}
+
+async function refreshAppCache() {
+    const cache = await caches.open(CACHE_NAME);
+    await Promise.all(ASSETS.map(asset => cache.add(getAssetRequest(asset))));
+    return { ok: true, cacheName: CACHE_NAME };
+}
+
+function postMessageResult(port, promise) {
+    if (!port) return;
+
+    promise
+        .then(result => port.postMessage(result))
+        .catch(error => port.postMessage({
+            ok: false,
+            message: error.message || 'Cache yenilenemedi.'
+        }));
+}
+
+self.addEventListener('message', event => {
+    if (event.data?.type === 'SKIP_WAITING') {
+        self.skipWaiting();
+        return;
+    }
+
+    if (event.data?.type === 'REFRESH_CACHE') {
+        const refreshPromise = refreshAppCache();
+        event.waitUntil(refreshPromise);
+        postMessageResult(event.ports[0], refreshPromise);
+    }
+});
+
 // Fetch - Serve from cache, fallback to network
 self.addEventListener('fetch', event => {
     // Only cache GET requests
@@ -60,35 +150,8 @@ self.addEventListener('fetch', event => {
     if (requestUrl.pathname.startsWith('/api/')) return;
 
     event.respondWith(
-        caches.match(event.request)
-            .then(response => {
-                if (response) {
-                    return response;
-                }
-
-                // Construct a Request that will be sent to the network.
-                const fetchRequest = event.request.clone();
-
-                return fetch(fetchRequest).then(fetchResponse => {
-                    // Check if we received a valid response.
-                    // For opaque responses (status 0), like Google Fonts, we should also cache them.
-                    if (!fetchResponse || (fetchResponse.status !== 200 && fetchResponse.type !== 'opaque')) {
-                        return fetchResponse;
-                    }
-
-                    // Cache new resources
-                    const responseToCache = fetchResponse.clone();
-                    caches.open(CACHE_NAME).then(cache => {
-                        cache.put(event.request, responseToCache);
-                    });
-
-                    return fetchResponse;
-                }).catch(() => {
-                    // Offline fallback for navigation requests
-                    if (event.request.mode === 'navigate') {
-                        return caches.match('./index.html');
-                    }
-                });
-            })
+        shouldUseNetworkFirst(event.request)
+            ? networkFirst(event.request)
+            : cacheFirst(event.request)
     );
 });

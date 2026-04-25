@@ -19,7 +19,8 @@ class StatsMode {
                 categoryData[cat] = { correct: 0, wrong: 0, totalAttempts: 0 };
             }
 
-            const wordStat = stats[String(word.id)];
+            const wordKey = app.getWordStorageKey(word.id);
+            const wordStat = stats[wordKey] || stats[String(word.id)];
             if (wordStat) {
                 categoryData[cat].correct += (wordStat.correct || 0);
                 categoryData[cat].wrong += (wordStat.wrong || 0);

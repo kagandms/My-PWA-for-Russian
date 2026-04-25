@@ -20,6 +20,8 @@ class App {
             await loadWords();
         }
 
+        window.storageManager?.migrateUserData();
+        this.reloadUserDataManagers();
         this.setupNavigation();
         this.setupModals();
         this.updateStatsDisplay();
@@ -29,6 +31,12 @@ class App {
         window.goalsManager?.updateDisplay();
 
         this.setupPWA();
+    }
+
+    reloadUserDataManagers() {
+        this.stats = this.loadStats();
+        window.favoritesManager?.reload?.();
+        window.srsManager?.reload?.();
     }
 
     // ===== PWA Kurulum Yönetimi =====
@@ -50,7 +58,7 @@ class App {
             // Kurulum prompt'unu göster
             this.deferredPrompt.prompt();
             // Kullanıcının cevabını bekle
-            const { outcome } = await this.deferredPrompt.userChoice;
+            await this.deferredPrompt.userChoice;
             // Prompt used
             // Prompt bir kez kullanılabilir, sıfırla
             this.deferredPrompt = null;
@@ -64,6 +72,18 @@ class App {
             this.deferredPrompt = null;
             // PWA installed
         });
+
+        this.requestPersistentStorage();
+    }
+
+    async requestPersistentStorage() {
+        if (!navigator.storage?.persist) return;
+
+        try {
+            await navigator.storage.persist();
+        } catch (error) {
+            console.error('Kalıcı depolama isteği başarısız oldu', error);
+        }
     }
 
     // ===== Tema Yönetimi =====
@@ -146,7 +166,7 @@ class App {
 
     getPendingWords() {
         const masteredIds = new Set(this.stats.masteredWords || []);
-        return WORDS.filter(word => !masteredIds.has(word.id));
+        return WORDS.filter(word => !masteredIds.has(this.getWordStorageKey(word.id)));
     }
 
     getStudyPool(options = {}) {
@@ -323,6 +343,111 @@ class App {
                 btn.classList.add('active');
             });
         });
+
+        this.setupDataControls();
+    }
+
+    setupDataControls() {
+        document.getElementById('refreshAppBtn')?.addEventListener('click', () => {
+            this.refreshAppContent();
+        });
+
+        document.getElementById('exportDataBtn')?.addEventListener('click', () => {
+            this.exportUserData();
+        });
+
+        document.getElementById('importDataInput')?.addEventListener('change', event => {
+            const file = event.target.files?.[0];
+            if (!file) return;
+
+            this.importUserData(file);
+            event.target.value = '';
+        });
+    }
+
+    setSettingsStatus(message, type = 'info') {
+        const status = document.getElementById('settingsStatus');
+        if (!status) return;
+
+        status.textContent = message;
+        status.dataset.type = type;
+        status.classList.toggle('hidden', !message);
+    }
+
+    async refreshAppContent() {
+        const button = document.getElementById('refreshAppBtn');
+        if (button) button.disabled = true;
+        this.setSettingsStatus('Güncelleme kontrol ediliyor...');
+
+        try {
+            await this.updateServiceWorkerRegistration();
+            await this.refreshServiceWorkerCache();
+            this.setSettingsStatus('Güncelleme alındı. Uygulama yenileniyor.', 'success');
+            window.setTimeout(() => window.location.reload(), 500);
+        } catch (error) {
+            console.error('Uygulama güncellemesi başarısız oldu', error);
+            this.setSettingsStatus('Güncelleme alınamadı. Bağlantıyı kontrol et.', 'error');
+        } finally {
+            if (button) button.disabled = false;
+        }
+    }
+
+    async updateServiceWorkerRegistration() {
+        if (!('serviceWorker' in navigator)) return;
+
+        const registration = await navigator.serviceWorker.getRegistration();
+        if (!registration) return;
+
+        await registration.update();
+        if (registration.waiting) {
+            registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+        }
+    }
+
+    refreshServiceWorkerCache() {
+        return new Promise((resolve, reject) => {
+            const controller = navigator.serviceWorker?.controller;
+            if (!controller) {
+                resolve();
+                return;
+            }
+
+            const timeout = window.setTimeout(() => reject(new Error('Service worker yanıt vermedi.')), 10000);
+            const channel = new MessageChannel();
+
+            channel.port1.onmessage = event => {
+                window.clearTimeout(timeout);
+                if (event.data?.ok) {
+                    resolve();
+                    return;
+                }
+
+                reject(new Error(event.data?.message || 'Cache güncellenemedi.'));
+            };
+
+            controller.postMessage({ type: 'REFRESH_CACHE' }, [channel.port2]);
+        });
+    }
+
+    exportUserData() {
+        try {
+            window.storageManager?.downloadUserDataBackup();
+            this.setSettingsStatus('Yedek dosyası hazırlandı.', 'success');
+        } catch (error) {
+            console.error('Yedek oluşturulamadı', error);
+            this.setSettingsStatus('Yedek oluşturulamadı.', 'error');
+        }
+    }
+
+    async importUserData(file) {
+        try {
+            await window.storageManager?.importUserDataBackup(file);
+            this.setSettingsStatus('Yedek geri yüklendi. Uygulama yenileniyor.', 'success');
+            window.setTimeout(() => window.location.reload(), 500);
+        } catch (error) {
+            console.error('Yedek geri yüklenemedi', error);
+            this.setSettingsStatus('Yedek dosyası okunamadı.', 'error');
+        }
     }
 
     openMode(mode) {
@@ -366,6 +491,9 @@ class App {
                     break;
                 case 'quiz':
                     window.quizMode?.init(questionCount, normalizedOptions);
+                    break;
+                case 'fullchoicequiz':
+                    window.fullChoiceQuizMode?.init();
                     break;
                 case 'reversequiz':
                     window.reverseQuizMode?.init(questionCount, normalizedOptions);
@@ -436,8 +564,10 @@ class App {
         };
         try {
             const saved = localStorage.getItem('stats');
-            return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+            const stats = saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+            return window.storageManager?.normalizeStats(stats) || stats;
         } catch (e) {
+            console.error('İstatistikler yüklenirken hata oluştu', e);
             return defaults;
         }
     }
@@ -457,6 +587,10 @@ class App {
         document.getElementById('accuracy').textContent = `%${accuracy}`;
     }
 
+    getWordStorageKey(wordId) {
+        return window.storageManager?.getWordStorageKey(wordId) || String(wordId);
+    }
+
     recordAnswer(wordId, isCorrect) {
         if (window.srsManager) {
             window.srsManager.updateWord(wordId, isCorrect);
@@ -471,21 +605,23 @@ class App {
         }
 
         // Kelime ilerlemesini güncelle
-        if (!this.stats.wordProgress[wordId]) {
-            this.stats.wordProgress[wordId] = { correct: 0, wrong: 0 };
+        const wordKey = this.getWordStorageKey(wordId);
+
+        if (!this.stats.wordProgress[wordKey]) {
+            this.stats.wordProgress[wordKey] = { correct: 0, wrong: 0 };
         }
 
         if (isCorrect) {
-            this.stats.wordProgress[wordId].correct++;
+            this.stats.wordProgress[wordKey].correct++;
             // 5 kez doğru cevaplarsa "öğrenildi" say
-            if (this.stats.wordProgress[wordId].correct >= 5 &&
-                !this.stats.masteredWords.includes(wordId)) {
-                this.stats.masteredWords.push(wordId);
+            if (this.stats.wordProgress[wordKey].correct >= 5 &&
+                !this.stats.masteredWords.includes(wordKey)) {
+                this.stats.masteredWords.push(wordKey);
             }
         } else {
-            this.stats.wordProgress[wordId].wrong++;
+            this.stats.wordProgress[wordKey].wrong++;
             // Yanlış cevaplarsa öğrenilmişlerden çıkar
-            const idx = this.stats.masteredWords.indexOf(wordId);
+            const idx = this.stats.masteredWords.indexOf(wordKey);
             if (idx > -1) {
                 this.stats.masteredWords.splice(idx, 1);
             }

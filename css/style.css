@@ -805,6 +805,79 @@ body {
     opacity: 0.6;
 }
 
+.full-choice-summary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.full-choice-stat {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-bottom: 4px solid var(--border-dark);
+    border-radius: 16px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.full-choice-value {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.full-choice-label {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.full-choice-progress-track {
+    height: 10px;
+    background: var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+
+.full-choice-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    transition: width 0.25s ease;
+}
+
+.full-choice-complete {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-bottom: 4px solid var(--border-dark);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.full-choice-complete h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.full-choice-complete p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.full-choice-actions {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: center;
+}
+
 @keyframes bounce {
 
     0%,
@@ -1786,6 +1859,33 @@ body {
     font-size: 0.9rem;
     color: var(--text-secondary);
     margin-bottom: 0.75rem;
+}
+
+.settings-actions .modal-btn {
+    flex: 1 1 120px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.import-data-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-status {
+    margin: 0.75rem 0 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.settings-status[data-type="success"] {
+    color: var(--success);
+}
+
+.settings-status[data-type="error"] {
+    color: var(--error);
 }
 
 .goal-btn.active {

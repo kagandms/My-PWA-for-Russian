@@ -5,6 +5,13 @@
 let WORDS = [];
 let SYNONYMS = [];
 
+Object.defineProperty(window, 'WORDS', {
+    configurable: true,
+    get() {
+        return WORDS;
+    }
+});
+
 /**
  * Automagic categorizer running in runtime
  */
@@ -77,8 +84,8 @@ async function loadWords() {
     try {
         // İki dosyayı aynı anda (paralel) asenkron çek
         const [wordsResponse, sentencesResponse] = await Promise.all([
-            fetch('kelimeler_tam.txt'),
-            fetch('sentences.json').catch(() => null) // sentences.json yoksa çökmeyi önle
+            fetch('kelimeler_tam.txt', { cache: 'reload' }),
+            fetch('sentences.json', { cache: 'reload' }).catch(() => null) // sentences.json yoksa çökmeyi önle
         ]);
 
         if (!wordsResponse.ok) {
@@ -138,14 +145,17 @@ async function loadWords() {
                     }
 
                     // Standart kelime olarak da ekle
-                    WORDS.push({
+                    const word = {
                         id: currentId,
                         russian: russian,
                         turkish: turkish,
                         category: getWordCategory(russian, turkish),
                         example: { russian: "", turkish: "" },
                         sentences: wordSentences
-                    });
+                    };
+
+                    word.key = window.storageManager?.buildWordStorageKey(word) || String(currentId);
+                    WORDS.push(word);
                 }
             } else {
                 // Zamanlar vb. (= ile ayrılanlar)
@@ -161,14 +171,17 @@ async function loadWords() {
                             wordSentences = sentencesDb[String(currentId)];
                         }
 
-                        WORDS.push({
+                        const word = {
                             id: currentId,
                             russian: russian,
                             turkish: turkish,
                             category: getWordCategory(russian, turkish),
                             example: { russian: "", turkish: "" },
                             sentences: wordSentences
-                        });
+                        };
+
+                        word.key = window.storageManager?.buildWordStorageKey(word) || String(currentId);
+                        WORDS.push(word);
                     }
                 }
             }

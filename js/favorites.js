@@ -10,25 +10,42 @@ class FavoritesManager {
     loadFavorites() {
         try {
             const saved = localStorage.getItem('favorites');
-            return saved ? JSON.parse(saved) : [];
+            const favorites = saved ? JSON.parse(saved) : [];
+
+            if (!window.storageManager?.canResolveWordKeys()) {
+                return Array.isArray(favorites) ? favorites : [];
+            }
+
+            return window.storageManager.normalizeWordKeyList(favorites);
         } catch (e) {
+            console.error('Favoriler yüklenirken hata oluştu', e);
             return [];
         }
+    }
+
+    reload() {
+        this.favorites = this.loadFavorites();
     }
 
     saveFavorites() {
         localStorage.setItem('favorites', JSON.stringify(this.favorites));
     }
 
+    getWordKey(wordId) {
+        return window.storageManager?.getWordStorageKey(wordId) || String(wordId);
+    }
+
     isFavorite(wordId) {
-        return this.favorites.includes(wordId);
+        const aliases = window.storageManager?.getWordKeyAliases(wordId) || [String(wordId), wordId];
+        return aliases.some(alias => this.favorites.includes(alias));
     }
 
     toggleFavorite(wordId) {
         if (this.isFavorite(wordId)) {
-            this.favorites = this.favorites.filter(id => id !== wordId);
+            const aliases = window.storageManager?.getWordKeyAliases(wordId) || [String(wordId), wordId];
+            this.favorites = this.favorites.filter(id => !aliases.includes(id));
         } else {
-            this.favorites.push(wordId);
+            this.favorites.push(this.getWordKey(wordId));
         }
         this.saveFavorites();
         return this.isFavorite(wordId);
@@ -39,8 +56,7 @@ class FavoritesManager {
     }
 
     getFavoriteWords() {
-        const mainFavs = WORDS.filter(word => this.isFavorite(word.id));
-        return mainFavs;
+        return WORDS.filter(word => this.isFavorite(word.id));
     }
 }
 

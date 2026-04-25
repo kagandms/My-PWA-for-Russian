@@ -5,12 +5,28 @@ class SRSManager {
     }
 
     loadData() {
-        const stored = localStorage.getItem(this.storageKey);
-        return stored ? JSON.parse(stored) : {};
+        try {
+            const stored = localStorage.getItem(this.storageKey);
+            const data = stored ? JSON.parse(stored) : {};
+
+            if (!window.storageManager?.canResolveWordKeys()) return data;
+            return window.storageManager.normalizeWordRecordMap(data);
+        } catch (error) {
+            console.error('SRS verisi yüklenirken hata oluştu', error);
+            return {};
+        }
+    }
+
+    reload() {
+        this.data = this.loadData();
     }
 
     saveData() {
         localStorage.setItem(this.storageKey, JSON.stringify(this.data));
+    }
+
+    getWordKey(wordId) {
+        return window.storageManager?.getWordStorageKey(wordId) || String(wordId);
     }
 
     /**
@@ -18,8 +34,8 @@ class SRSManager {
      * @param {boolean} isCorrect
      */
     updateWord(wordId, isCorrect) {
-        wordId = String(wordId);
-        let record = this.data[wordId];
+        const wordKey = this.getWordKey(wordId);
+        let record = this.data[wordKey];
 
         // Eğer kelime ilk kez test ediliyorsa default değerleri ata
         if (!record) {
@@ -58,7 +74,7 @@ class SRSManager {
         const dayInMs = 24 * 60 * 60 * 1000;
         record.dueDate = Date.now() + (record.interval * dayInMs);
 
-        this.data[wordId] = record;
+        this.data[wordKey] = record;
         this.saveData();
     }
 
@@ -72,7 +88,7 @@ class SRSManager {
         const dueWords = [];
 
         wordsArray.forEach(word => {
-            const record = this.data[String(word.id)];
+            const record = this.data[this.getWordKey(word.id)] || this.data[String(word.id)];
             if (!record) {
                 // Hiç sorulmamış yeni kelimeler
                 dueWords.push(word);
@@ -89,7 +105,7 @@ class SRSManager {
         const now = Date.now();
 
         return wordsArray.filter(word => {
-            const record = this.data[String(word.id)];
+            const record = this.data[this.getWordKey(word.id)] || this.data[String(word.id)];
             return Boolean(record && now >= record.dueDate);
         });
     }
