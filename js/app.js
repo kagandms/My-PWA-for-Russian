@@ -24,6 +24,7 @@ class App {
         this.reloadUserDataManagers();
         this.setupNavigation();
         this.setupModals();
+        window.notificationManager?.init?.();
         this.updateStatsDisplay();
         this.checkWords();
 
@@ -687,6 +688,7 @@ class App {
         }
 
         this.saveStats();
+        window.notificationManager?.syncProfileDebounced?.();
     }
 
     getLearningWords(minCount = 0) {

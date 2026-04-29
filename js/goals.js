@@ -77,6 +77,7 @@ class GoalsManager {
         this.data.dailyGoal = goal;
         this.saveData();
         this.updateDisplay();
+        window.notificationManager?.syncProfileDebounced?.();
     }
 
     getTodayProgress() {

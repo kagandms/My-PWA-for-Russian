@@ -2,5 +2,11 @@
     "name": "ru-tr-sozluk",
     "version": "1.0.0",
     "type": "module",
-    "dependencies": {}
+    "scripts": {
+        "generate:vapid": "node scripts/generate-vapid-keys.mjs"
+    },
+    "dependencies": {
+        "@upstash/redis": "^1.35.5",
+        "web-push": "^3.6.7"
+    }
 }

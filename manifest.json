@@ -1,6 +1,7 @@
 {
     "name": "Rusça-Türkçe Kelime",
     "short_name": "RuTr",
+    "id": "/",
     "description": "Rusça-Türkçe kelime ve kalıp çalışma uygulaması",
     "start_url": "/",
     "display": "standalone",

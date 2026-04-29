@@ -1,0 +1,24 @@
+{
+    "crons": [
+        {
+            "path": "/api/push/send-10",
+            "schedule": "0 7 * * *"
+        },
+        {
+            "path": "/api/push/send-13",
+            "schedule": "0 10 * * *"
+        },
+        {
+            "path": "/api/push/send-16",
+            "schedule": "0 13 * * *"
+        },
+        {
+            "path": "/api/push/send-19",
+            "schedule": "0 16 * * *"
+        },
+        {
+            "path": "/api/push/send-22",
+            "schedule": "0 19 * * *"
+        }
+    ]
+}

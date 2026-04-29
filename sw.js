@@ -2,7 +2,7 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v27';
+const CACHE_NAME = 'rutr-v28';
 const ASSETS = [
     './',
     './index.html',
@@ -16,6 +16,7 @@ const ASSETS = [
     './js/study-selector.js',
     './js/favorites.js',
     './js/goals.js',
+    './js/notifications.js',
     './js/ai.js',
     './js/flashcard.js',
     './js/quiz.js',
@@ -140,6 +141,60 @@ self.addEventListener('message', event => {
         event.waitUntil(refreshPromise);
         postMessageResult(event.ports[0], refreshPromise);
     }
+});
+
+function parsePushPayload(event) {
+    if (!event.data) {
+        return {
+            title: 'Rusça-Türkçe Sözlük',
+            body: 'Bugünkü tekrarını unutma.',
+            url: '/'
+        };
+    }
+
+    try {
+        return event.data.json();
+    } catch (error) {
+        return {
+            title: 'Rusça-Türkçe Sözlük',
+            body: event.data.text(),
+            url: '/'
+        };
+    }
+}
+
+self.addEventListener('push', event => {
+    const payload = parsePushPayload(event);
+    const title = payload.title || 'Rusça-Türkçe Sözlük';
+    const options = {
+        body: payload.body || 'Kısa bir tekrar zamanı.',
+        icon: payload.icon || './icon-192.png',
+        badge: payload.badge || './icon-192.png',
+        tag: payload.tag || 'ru-tr-reminder',
+        data: {
+            url: payload.url || '/',
+            type: payload.type || 'reminder'
+        }
+    };
+
+    event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', event => {
+    event.notification.close();
+
+    const targetUrl = new URL(event.notification.data?.url || '/', self.registration.scope).href;
+    event.waitUntil(
+        clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clientList => {
+            const matchingClient = clientList.find(client => client.url.startsWith(self.registration.scope));
+            if (matchingClient) {
+                return matchingClient.navigate(targetUrl)
+                    .then(client => (client || matchingClient).focus());
+            }
+
+            return clients.openWindow(targetUrl);
+        })
+    );
 });
 
 // Fetch - Serve from cache, fallback to network

@@ -29,6 +29,7 @@ class FavoritesManager {
 
     saveFavorites() {
         localStorage.setItem('favorites', JSON.stringify(this.favorites));
+        window.notificationManager?.syncProfileDebounced?.();
     }
 
     getWordKey(wordId) {
