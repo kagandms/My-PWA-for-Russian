@@ -166,7 +166,7 @@
 Холодать : Soğumak
 Дождаться : Olana kadar beklemek
 Занимать / Занять : İşgal etmek (yerini), borç almak
-Нанимать : Kiralamak
+Нанимать : Kiralamak / Наниматель (kiracı)
 Мне не о чем говорить : Söyleyecek bir şeyim yok
 Чем дальше тем лучше : Ne kadar uzak o kadar iyi
 Пойдём лучше : Gitsek daha iyi olur
@@ -266,7 +266,7 @@
 Вредное : Zararlı
 Комуналка : Ortak daire
 Кто не работает, тот не ест : Çalışmayana yemek yok
-Кружка : Bardak
+Кружка : Bardak / Кружечка
 Придаёт настроение : Keyif veriyor
 Как минимум : En az...
 Кисель : Yapısı sıvı olmayan
@@ -561,7 +561,7 @@
 Один в поле не воин : Bir elin nesi var iki elin sesi var
 Мудрый : Akıllıca
 Предположить : Sanmak
-Цена : Bedel
+Цена : Bedel / Ценник (fiyat etiketi)
 Благо : Fayda, iyilik
 Избегать : Kaçınmak
 Ограбление : Soygun
@@ -747,7 +747,7 @@
 Лентяй : Ленивый / Лодырь / Бездельник (Tembel)
 Возможно : Наверное / Может быть
 Временами : Иногда
-Базар : Рынок
+Базар : Рынок / Базарчик
 Обманывать : Лгать
 Ишак : Осёл
 Бросить : Кинуть
@@ -1001,3 +1001,429 @@
 Суицид : Самоубийство (intihar)
 Прецедент : Подобный случай (emsal)
 Экспромт : Без подготовки
+Поскольку : Иначе (çünkü, -dığı için)
+Иными словами : По другому можно сказать (başka bir deyişle)
+Вознаграждение : Награда (ödül)
+По причине чего-либо : Поэтому (bir şeyden dolayı, nedeniyle)
+Ограничиться чем-либо : Довольствоваться (yetinmek)
+Содержаться : Есть (bulunmak, içermek)
+Существенно : Сильно (önemli ölçüde)
+Оказывать что-либо : Помощь, влияние (yardım/etki göstermek)
+Согласно чему-либо : -e göre (bir şeye göre)
+Помимо чего-либо : Кроме того (-e ek olarak, -in yanı sıra)
+В качестве чего-либо : ... olarak (bir şey olarak)
+Судя по : -e bakılırsa, -e dayanarak
+Наряду с чем-либо : Вместе с (-in yanı sıra, ile birlikte)
+Относительно чего-либо : О чём-либо (hakkında, -e ilişkin, -e kıyasla)
+Ввиду чего-либо : По причине (nedeniyle, dolayı)
+В связи с чем-либо : Bağlantılı olarak, sebebiyle
+Вследствие того что : В результате (-dığı için, sonucu olarak)
+В частности : Özellikle (bilhassa)
+Свидетельствовать о чём-либо : Указывать (kanıtlamak, işaret etmek)
+Не допускается : Нельзя (izin verilmez, yasaktır)
+Отечественный : Местный (yerli)
+Уволиться : Покинуть работу (istifa etmek)
+Характерно для чего-либо : Типично (bir şey için tipik, özgü)
+Зарубежный : Иностранный (yabancı)
+Наличие чего-либо : Присутствие (-in varlığı, mevcudiyet)
+Соответствующий : Подходящий (uygun, ilgili)
+Машина : Машинка, Машиночка
+Программа : Программка, программочка
+Тетрадь : Тетрадка, Тетрадочка
+Морковь : Морковка, морковочка
+Дочь : Дочка, дочечка
+Лошадь : Лошадка, лошадочка
+Неделя : Неделька, Неделечка
+Собака : Собачка, Собачечка
+Подруга : Подружка, Подружечка
+Книга : Книжка, Книжечка
+Рука : Ручка, ручечка
+Нога : Ножка, Ножечка
+Река : Речка, Речечка
+Конфета : Конфетка, Конфеточка
+Сумка : Сумочка
+Улыбка : Улыбочка
+Открытка : Открыточка
+Карта : Карточка
+Водка : Водочка
+Лампа : Лампочка
+Картошка : Картошечка
+Подушка : Подушечка
+Кошка : Кошечка
+Книжка : Книжечка
+Ложка : Ложечка
+Билет : Билетик
+Диктант : Диктантик
+Словарь : Словарик
+Текст : Текстик
+Карандаш : Карандашик
+Самолёт : Самолётик
+Глаз : Глазик
+Нос : Носик
+Рот : Ротик
+Зуб : Зубик
+Автомобиль : Автомобильчик
+Стул : Стульчик
+Бокал : Бокальчик
+Костюм : Костюмчик
+Альбом : Альбомчик
+Лимон : Лимончик
+Апельсин : Апельсинчик
+Ресторан : Ресторанчик
+Трамвай : Трамвайчик
+Город : Городок, городочек
+Номер : Номерок, номерочек
+Остров : Островок, островочек
+Раз : Разок, разочек
+Пирог : Пирожок, пирожочек
+Друг : Дружок, дружочек
+День : Денёк, Денёчек
+Час : Часок, часочек
+Месяц : Месяцок, месяцочек
+Чай : Чаёк, чаёчек
+Кофе : Кофеёк, Кофеёчок
+Сахар : Сахарок, сахарочек
+Артист : Артистка
+Аспирант : Аспирантка
+Магистрант : Магистрантка
+Пианист : Пианистка
+Умный : Умнеть
+Танцовщик : Dansçı
+Разносчик : Разносить (satıcı, kurye gibi)
+Проситель : Ricacı
+Смотритель : Bekçi
+Мыслитель : Düşünür
+Слушатель : Dinleyici
+Спасатель : Kurtarıcı
+Двигатель : Motor
+Шутник : Şakacı
+Сборник : Kitap
+Путешественник : Gezgin
+Обидчик : Обидеть
+Обманщик : Sahtekar, dolandırıcı
+Мойщик : Temizlikçi, bulaşıkçı
+Лётчик : ПИЛОТ
+Носильщик : Taşıyıcı
+Плательщик : Mükellef
+Морозильник : Buzluk
+Умывальник : Lavabo
+Кормилец : Tedarikçi
+Лежак : Şezlong
+Бегун : Koşucu
+Говорун : Konuşmacı
+Молчун : Sessiz adam
+Знаток : Uzman
+Стрелок : Atıcı
+Заработок : Kazanç
+Каток : Buz pisti
+Пение : Şarkı Söyleme
+Заигрывание : Flört etmek
+Курение : Sigara
+Волнение : Heyecan
+Уважение : Saygı
+Путешествие : Yolculuk
+Прибытие : Varış
+Предприятие : Fabrika
+Дружба : Arkadaşlık
+Просьба : İstek
+Ходьба : Yürüyüş
+Жалоба : Şikayet
+Беготня : Kaçmak
+Инструктаж : Toplantı
+Платёж : Ödeme
+Поступок : Davranış
+Жалость : Acıma
+Дурость : Aptallık
+Удача : Şans, удаться
+Передача : Aktarım, verme
+Ненависть : Nefret
+Выигрыш : Kazanç
+Проигрыш : Kayıp
+Божество : Tanrısal (Божеский)
+Семейство : Aile (Семейный)
+Белок : Protein
+Желток : Yumurta sarısı
+Великан : Dev
+Левша : Solak
+Молодёжь : Gençlik
+Новатор : Yenilikçi/mucit
+Пустырь : Çorak
+Отчизна : Anavatan
+Доброта : İyilik
+Будущность : Gelecek
+Готовность : Hazır olma
+Общность : Birlik
+Молодость : Gençlik
+Знаменитость : Ünlü
+Большинство : Çoğunluk
+Меньшинство : Azınlık
+Братство : Kardeşlik
+Студенчество : Öğrencilik
+Спокойствие : Huzur
+Безработица : İşsizlik
+Быстрота : Çabukluk
+Новизна : Yenilik
+Дешевизна : Ucuzluk
+Дороговизна : Pahalılık
+Величина : Büyüklük
+Ширина : Genişlik
+Вышина : Yükseklik
+Низина : Ova
+Злоба : Kin
+Чайник : Çaydanlık
+Колхозник : Köylü
+Справочник : Kılavuz
+Полдник : Brunch
+Медвежонок : Ayı yavrusu
+Двоечник : Kötü öğrenci
+Травник : Aktar
+Водопроводчик : Tesisatçı
+Моряк : Denizci
+Земляк : Hemşeri
+Циркач : Sirk adamı
+Скрипач : Kemancı
+Силач : Güçlü adam
+Москвич : Moskovalı
+Киевлянин : Kievli
+Библиотекарь : Kütüphaneci
+Аптекарь : Eczacı
+Букварь : Alfabe
+Кассир : Kasiyer
+Практикант : Stajyer
+Хлебница : Ekmek kutusu
+Сахарница : Şekerlik
+Супница : Çorba kasesi (миска)
+Салатница : Salata kasesi
+Кофейня : Kafe
+Свинья : Domuz
+Баран : Koyun
+Вершина : Tepe, zirve
+Сердцевина : Çekirдек, öz
+Курятина : Tavuk eti
+Ректорат / Деканат : Rektörlük, dekanlık
+Пассажирка / Пассажир : Kadın yolcu/erkek yolcu
+Хозяйка / Хозяин : Sahip (kadın)/Sahip (erkek)
+Певица / Певец : Şarkıcı (kadın)/Şarkıcı (erkek)
+Однофамилица / Однофамилец : Aynı soyada sahip (kadın/erkek)
+Медведица / Тигрица : Ayı, Kaplan (dişi)
+Слушательница : Dinleyici (kadın)
+Богиня : Tanrıça
+Стюардесса : Hostes
+Директриса : Müdire
+Удаться : Başarılı olmak
+Гордиться : Gurur duymak
+Понадобиться : İhtiyaç duymak
+Смеркаться : Kararmak
+Нездоровиться : Hastalanmak
+Дальний : Uzak
+Примитивный : İlkel
+Ультрафиолетовый : Ultraviyole
+Жук : Böcek
+Волосатые : Kıllı
+Пенистый : Köpüklü
+Фальшивый : Sahte
+Правдивый : Doğru
+Жалостливый : Merhametli
+Кокетливая : Cilveli
+Заметные успехи : Kayda değer başarılar
+Разводной мост : Asma köprü (разводить: yetiştirmek, beslemek)
+Складной нож : Çakı (складывать: katlamak)
+Привычная работа : Alışılmış iş
+Стиральная машина : Çamaşır makinesi
+Влюбчивый парень : Aşık adam
+Улычивая : Gülümseyen
+Доверчивый : Güvenен (Güvenen)
+Отзывчивый : Sempatik (отзываться: geri çağırmak)
+Устойчивый климат : Sürdürülebilir iklim (istikrarlı)
+Забывчивый сосед : Unutkan komşu
+Обидчивый приятель : Alıngan tanıdık
+Неотложная помощь : Acil servis (неотложка: ambulans)
+Маршрутное такси : Dolmuş (маршрутка)
+Тушённое мясо : Güveç (тушёнка: yahni)
+Сгущённое молоко : Yoğunlaştırılmış süt
+Сероватый : Grimsi
+Сладковатый : Tatlımsı
+Дороговатый : Pahalı (gereğinden fazla)
+Богатейший : Çok zengin (aşırı)
+Злейший : Çok kızgın (aşırı)
+Величайший : Çok büyük/ulu (aşırı)
+Ужаснейший : Çok korkunç (aşırı)
+Легковой : Binek
+Ближний : Yakın
+Здешний : Buranın (iklimi, insanı vb.)
+Далёкий : Uzak
+Очистить : Очиститель (temizleyici)
+Потребить : Потребитель (tüketici)
+Вредить : Вредитель (haşere) (zarar vermek)
+Проигрыватель : Kaybeden
+Увлажнить : Увлажнитель (nemlendirici)
+Производитель : Üretici
+Предохранить : Предохранитель (sigorta) (korumak)
+Отражатель : Yansıtıcı
+Излучать : Излучатель (verici) (yaymak)
+Прыгун : Atlet (sporcu)
+Врун : Yalancı
+Хвастун : Хвастать (övünmek) (palavracı)
+Скакун : Скакать (atlamak, ata binmek) (at binicisi)
+Ходок : Yürüyüşçü
+Поплавок : Şamandıra
+Кипяток : Кипятить (kaynatmak) (kaynar su)
+Отпечаток : Отпечатать (basmak) (iz)
+Подросток : Подростать (büyümek) (ergen)
+Пекарь : Fırıncı
+Звонарь : Zil sesi
+Пахарь : Пахать (tarla sürmek) (süren kişi)
+Лекарь : Лечить (tedavi etmek) (hekim)
+Экзаменатор : Экзаменовать (sınav yapmak) (sınav deneticisi)
+Аккомпаниатор : Аккомпанировать (eşlik etmek) (eşlikçi)
+Репетитор : Репетировать (prova yapmak) (özel ders)
+Вентилятор : Вентилировать (nefes vermek) (vantilatör)
+Дирижёр : Дирижировать (yönetmek) (şef (orkestra))
+Абонент : Абонировать
+Ассистент : Ассистировать (yardım etmek)
+Конкурент : Конкурировать (yarışmak) (rakip)
+Симулянт : Симулировать (numara yapmak) (numara)
+Рецензент : Рецензировать (gözden geçirmek, değerlendirmek) (eleştiren)
+Оппонент : Оппонировать (rakip olmak) (muhalif)
+Аттестат : Аттестовать (sertifikalandırma) (sertifika, diploma)
+Грелка : Sıcak su torbası
+Зажигалка : Çakmak
+Открывалка : Açacak (şişe, konserve)
+Парилка : Парить (uçmak) (sauna)
+Заколка : Заколоть (bıçaklamak) (toka)
+Лейка : Лить (dökmek) (duş başlığı)
+Послание : Послать (göndermek, yollamak) (mesaj)
+Растение : Bitki
+Издание : Издать (yayınlamak) (baskı, yayın)
+Дыхание : Nefes
+Спасение : Kurtuluş
+Падение : Düşüş
+Жилище : Daire (ev)
+Заморозки : Заморозить (dondurmak) (don)
+Развитие : Развивать (geliştirmek) (geliştirme)
+Воровство : Воровать (çalmak) (hırsızlık)
+Утренник : Утренний (sabah) (parti)
+Рыжик : Рыжий (kızıl)
+Воспитанник : Воспитанный (görgülü, eğitimli) (öğrenci, çırak)
+Тайник : Zula
+Честность : Dürüstlük
+Робость : Робкий
+Сухость : Kuruluk
+Медлительность : Медлительный (yavaş hareket eden) (yavaşlık)
+Замкнутость : Замкнутый (kapalı) (izolasyon, mesafeli, gruplaşma)
+Низость : Alçaklık
+Искренность : Искренний (samimi) (samimiyet)
+Обидчивость : Обидчивый (alıngan) (alıngan, kinci)
+Двор : Дворник (kapıcı, hademe)
+Помощь : Помощник (yardımcı (her yerde olabilir))
+Виноград : Виноградник (bağ)
+Цветы : Цветник (çiçek bahçesi)
+Вопросы : Вопросник (anket)
+Задачи : Задачник (çalışma/alıştırma kitabı)
+Лёд : Ледник (buzul)
+Градус : Градусник (termometre)
+Сон : Сонник (rüya yorumu)
+Интриган : Интрига (entrika) (entrikacı, soytarı)
+Политикан : Politikacı
+Главарь : Elebaşı, Lider
+Бунтарь : Бунт (isyan) (asi, isyancı)
+Юбиляр : Юбилей (yıl dönümü) (günün kahramanı)
+Визитёр : Ziyaretçi
+Скандалист : Скандал (kavgacı)
+Теоретик : Teorisyen
+Цыганка : Цыган (çingene)
+Гречанка : Грек (yunan)
+Голубка : Голубь (güvercin)
+Полька : Поляк (Polonyalı)
+Мастерица : Мастер (usta)
+Свидетельница : Свидетель (tanık)
+Слониха : Слон (fil)
+Зайчиха : Заяц (tavşan)
+Трусиха : Трус (korkak)
+Миллионерша : Миллионер
+Библиотекарша : Библиотекарь
+Сударыня : Сударь (efendi) (madam)
+Княгиня : Князь (prens) (prenses)
+Монахиня : Монах (rahip) (rahibe)
+Рабыня : Раб (köle)
+Лгунья : Лгун (yalancı)
+Драчунья : Драчун (kavgacı)
+Баронесса : Барон (baron)
+Волчонок : Yavru kurt
+Чертёнок : Küçük şeytan
+Лисёнок : Tilki yavrusu
+Мышонок : Küçük fare
+Виноградинка : Üzüm çekirdeği
+Картофелинка : Küçük patates
+Картошинка : Küçük patates
+Макаронинка : Makarna tanesi
+Чаинка : Çay yaprağı
+Снежинка : Kar tanesi
+Дождинка : Yağmur damlası
+Пыль : Пылинка
+Жир : Жиринка (yağ)
+Льдинка : Buz tanesi
+Собачий холод : Çok soğuk
+Лисьи следы : Kurnazca iz
+Птичий рынок : Kuş pazarı
+Рыбий жир : Balık yağı
+Рыбачья лодка : Balıkçı teknesi
+Девичий смех : Kız kahkahası
+Старушечья походка : Yaşlıkadın yürüyüşü
+Ребячий смех : Çocukça kahkaha
+Комариный укус : Sivrisinek ısırığı
+Морковный сок : Havuçlu meyvesuyu
+Лаборатория : Лабораторный
+Картофель : Картофельный
+Колокол : Колокольный звон (çan sesi) (çan)
+Яблоко : Яблочный
+Парус : Парусное судно (yelkenli gemi) (yelken)
+Наука : Научный
+Праздник : Праздничный
+Война : Военный
+Беличий хвост : Белка (sincap) (sincap kuyruğu)
+Телячья отбивная : Телёнок (buzağı) (dana pirzola)
+Поросячий визг : Поросёнок (domuzcuk) (domuzcuk çığlığı)
+Лебяжий пух : Лебедь (kuğu), (kuğu tüyü)
+Черепаший суп : Черепаха
+Овечий тулуп : Koyun paltosu
+Кроличья шубка : Кролик (tavşan) (tavşan postu)
+Крысиная нора : Крыса (sıçan) (fare deliği)
+Ювелирная работа : Ювелир (kuyumcu), (kuyumculuk)
+Профсоюзный лидер : Профсоюз (sendika)
+Комплексный обед : Комплекс (kompleks) (öğle yemeği dahil)
+Болезненный вид : Hasta görünmek
+Индивидуальные занятия : Bağımsız çalışmak
+Дневной свет : Gün ışığı
+Конституционная монархия : Anayasal monarşi
+Душевная забота : Gönül rahatlığı
+Врачебная помощь : Tıbbi yardım
+Судебный процесс : Dava
+Умственный труд : Zihinsel emek
+Женственная походка : Kadınsı yürüyüş
+Телевизионные передачи : Tv şovu/program
+Экзаменационная ведомость : Sınav listesi
+Инстинктивное движение : Инстинкт (içgüdü) (içgüdüsel hareket)
+Восторженный отзыв : Восторг (hayran) (olumlu dönüt/düşünceler)
+Песчаный пляж : Kumlu plaj
+Шариковая ручка : Шарик (bilye) (tükenmez kalem)
+Кленовый лист : Клён (akçaağaç) (akçaağaç yaprağı)
+Сосновый бор : Сосна (çam) (çam ormanı)
+Шёлковый платок : Шёлк (ipek) (ipek mendil)
+Толковый словарь : Толк (anlam)
+Хреновое положение : Хрен (kapalı anlamda dick demek) (içinden çıkılmaz durum)
+Курорт : Kaplıca
+Ржаной : Рожь (çavdar)
+Стеклянные бусы : Стекло (cam) (cam boncuklar)
+Коммуникабельный : İletişim kurmaktan kaçınmayan
+Квалифицированный : Квалификация (yeterlilik) (kalifiye)
+Эрудированный : Эрудиция (bilge) (bilgili)
+Кожаное пальто : Deri ceket
+Береговая охрана : Берег (sahil, kıyı) (sahil güvenlik)
+Подростковый период : Подросток (ergen)
+Питьевая вода : İçme suyu
+Голосовая связь : Sesli iletişim
+Канцелярские товары : Канцелярия (ofis, oda) (kırtasiye)
+Соревнование : Yarışma
+Краеведческий : Краеведение (yerel tarih...)
+Героическая борьба : Kahramanca mücadele
