@@ -471,6 +471,19 @@ class App {
         }
     }
 
+    async handleHardDeleteWord(word) {
+        if (!confirm('Это слово будет удалено навсегда. Вы уверены?')) return; // Tamamen silinecek, emin misin?
+        try {
+            window.trashManager?.hardDeleteWord(word);
+            this.refreshCurrentWordList();
+            this.updateStatsDisplay();
+            await this.showSnackbar(true, 'Удалено', 'Слово удалено навсегда.');
+        } catch (error) {
+            console.error('Kelime tamamen silinemedi', error);
+            await this.showSnackbar(false, 'Ошибка', 'Не удалось удалить слово навсегда.');
+        }
+    }
+
     setSettingsStatus(message, type = 'info') {
         const status = document.getElementById('settingsStatus');
         if (!status) return;
@@ -927,6 +940,7 @@ class App {
         const actions = item.querySelector('.word-actions');
         if (mode === 'trash') {
             actions.appendChild(this.createRestoreButton(word));
+            actions.appendChild(this.createHardDeleteButton(word));
             return item;
         }
 
@@ -979,6 +993,20 @@ class App {
         button.onclick = event => {
             event.stopPropagation();
             this.handleRestoreWord(word);
+        };
+
+        return button;
+    }
+
+    createHardDeleteButton(word) {
+        const button = document.createElement('button');
+        button.className = 'word-action-btn delete-word-btn';
+        button.type = 'button';
+        button.setAttribute('aria-label', 'Удалить навсегда'); // Tamamen sil (Rusça)
+        button.textContent = '❌';
+        button.onclick = event => {
+            event.stopPropagation();
+            this.handleHardDeleteWord(word);
         };
 
         return button;

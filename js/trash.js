@@ -4,6 +4,20 @@
 class TrashManager {
     constructor() {
         this.storageKey = 'ru_tr_deleted_words';
+        this.hardDeleteStorageKey = 'ru_tr_hard_deleted_words';
+    }
+
+    readHardDeletedKeys() {
+        try {
+            const records = JSON.parse(localStorage.getItem(this.hardDeleteStorageKey) || '[]');
+            return new Set(Array.isArray(records) ? records : []);
+        } catch (e) {
+            return new Set();
+        }
+    }
+
+    writeHardDeletedKeys(keysArray) {
+        localStorage.setItem(this.hardDeleteStorageKey, JSON.stringify(keysArray));
     }
 
     readRecords() {
@@ -47,7 +61,9 @@ class TrashManager {
     }
 
     getDeletedKeySet() {
-        return new Set(this.readRecords().map(record => record.wordKey));
+        const normalDeleted = this.readRecords().map(record => record.wordKey);
+        const hardDeleted = Array.from(this.readHardDeletedKeys());
+        return new Set([...normalDeleted, ...hardDeleted]);
     }
 
     isDeleted(word) {
@@ -84,6 +100,21 @@ class TrashManager {
 
         const records = this.readRecords().filter(record => record.wordKey !== normalizedWordKey);
         this.writeRecords(records);
+    }
+
+    hardDeleteWord(word) {
+        const wordKey = this.getWordKey(word);
+        if (!wordKey) return;
+
+        // Önce normal çöpten kaldır ki UI'da görünmesin
+        this.restoreWord(wordKey);
+
+        // Hard delete listesine ekle
+        const keys = Array.from(this.readHardDeletedKeys());
+        if (!keys.includes(wordKey)) {
+            keys.push(wordKey);
+            this.writeHardDeletedKeys(keys);
+        }
     }
 
     getDeletedWords() {
