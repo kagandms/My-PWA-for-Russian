@@ -161,8 +161,7 @@ class App {
 
     normalizeSessionOptions(options = {}) {
         return {
-            scope: options.scope === 'all' ? 'all' : 'learning',
-            synonymMode: options.synonymMode === 'persistent' ? 'persistent' : 'normal'
+            scope: options.scope === 'all' ? 'all' : 'learning'
         };
     }
 
@@ -214,18 +213,12 @@ class App {
     getQuestionCountTitle() {
         if (this.pendingMode === 'flashcard') return 'Flashcard için kaç kart çalışmak istiyorsun?';
         if (this.pendingMode === 'quiz') return 'Quiz için kaç soru çözmek istiyorsun?';
-        if (this.pendingMode === 'reversequiz') return 'Tersine Quiz için kaç soru çözmek istiyorsun?';
         if (this.pendingMode === 'typing') return 'Yazma modu için kaç kelime çalışmak istiyorsun?';
-        if (this.pendingMode === 'synonyms') return 'Eş/Zıt Anlam için kaç soru çözmek istiyorsun?';
         return 'Kaç soru çalışmak istiyorsun?';
     }
 
     modeUsesStudyScope(mode) {
-        return ['flashcard', 'quiz', 'reversequiz', 'typing'].includes(mode);
-    }
-
-    modeUsesSynonymMode(mode) {
-        return mode === 'synonyms';
+        return ['flashcard', 'quiz', 'typing'].includes(mode);
     }
 
     setQuestionCountScope(scope = 'learning') {
@@ -253,31 +246,6 @@ class App {
         helpText.textContent = 'Öncelik öğrenilmemiş kelimelerde kalır. Havuz soru sayısına yetmezse sistem otomatik olarak tüm kelimelere genişler.';
     }
 
-    setQuestionCountSynonymMode(synonymMode = 'normal') {
-        const normalizedSynonymMode = synonymMode === 'persistent' ? 'persistent' : 'normal';
-        this.pendingSessionOptions = this.normalizeSessionOptions({
-            ...this.pendingSessionOptions,
-            synonymMode: normalizedSynonymMode
-        });
-
-        document.querySelectorAll('#questionCountModal .synonym-mode-btn').forEach(button => {
-            const isActive = button.dataset.synonymMode === normalizedSynonymMode;
-            button.classList.toggle('primary', isActive);
-            button.classList.toggle('active', isActive);
-            button.setAttribute('aria-pressed', String(isActive));
-        });
-
-        const helpText = document.getElementById('questionCountSynonymModeHelp');
-        if (!helpText) return;
-
-        if (normalizedSynonymMode === 'persistent') {
-            helpText.textContent = 'Kalıcı modda doğru bildiğin Eş/Zıt çiftleri bu tur bitene kadar tekrar gelmez.';
-            return;
-        }
-
-        helpText.textContent = 'Normal mod Eş/Zıt ilerlemesini kaydetmez.';
-    }
-
     updateQuestionCountModal() {
         const title = document.getElementById('questionCountTitle');
         if (title) {
@@ -288,12 +256,6 @@ class App {
         const usesStudyScope = this.modeUsesStudyScope(this.pendingMode);
         if (scopeSection) {
             scopeSection.classList.toggle('hidden', !usesStudyScope);
-        }
-
-        const synonymModeSection = document.getElementById('questionCountSynonymModeSection');
-        const usesSynonymMode = this.modeUsesSynonymMode(this.pendingMode);
-        if (synonymModeSection) {
-            synonymModeSection.classList.toggle('hidden', !usesSynonymMode);
         }
 
         const learningCount = document.getElementById('questionCountLearningCount');
@@ -308,10 +270,6 @@ class App {
 
         if (usesStudyScope) {
             this.setQuestionCountScope(this.pendingSessionOptions.scope);
-        }
-
-        if (usesSynonymMode) {
-            this.setQuestionCountSynonymMode(this.pendingSessionOptions.synonymMode);
         }
     }
 
@@ -349,12 +307,6 @@ class App {
         document.querySelectorAll('#questionCountModal .scope-btn[data-scope]').forEach(btn => {
             btn.addEventListener('click', () => {
                 this.setQuestionCountScope(btn.dataset.scope);
-            });
-        });
-
-        document.querySelectorAll('#questionCountModal .synonym-mode-btn[data-synonym-mode]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                this.setQuestionCountSynonymMode(btn.dataset.synonymMode);
             });
         });
 
@@ -440,10 +392,6 @@ class App {
         document.getElementById('addWordCancel')?.addEventListener('click', () => {
             this.closeAddWordModal();
         });
-
-        document.getElementById('addWordRelationType')?.addEventListener('change', () => {
-            this.syncAddWordRelationFields();
-        });
     }
 
     openAddWordModal() {
@@ -463,28 +411,12 @@ class App {
     resetAddWordForm() {
         document.getElementById('addWordForm')?.reset();
         this.setAddWordStatus('');
-        this.syncAddWordRelationFields();
-    }
-
-    syncAddWordRelationFields() {
-        const relationType = document.getElementById('addWordRelationType')?.value || 'none';
-        const pairFields = document.getElementById('addWordPairFields');
-        const pairedRussian = document.getElementById('addWordPairedRussian');
-        const pairedTurkish = document.getElementById('addWordPairedTurkish');
-        const usesPair = relationType !== 'none';
-
-        pairFields?.classList.toggle('hidden', !usesPair);
-        if (pairedRussian) pairedRussian.required = usesPair;
-        if (pairedTurkish) pairedTurkish.required = usesPair;
     }
 
     getAddWordFormValues() {
         return {
             russian: document.getElementById('addWordRussian')?.value || '',
-            turkish: document.getElementById('addWordTurkish')?.value || '',
-            relationType: document.getElementById('addWordRelationType')?.value || 'none',
-            pairedRussian: document.getElementById('addWordPairedRussian')?.value || '',
-            pairedTurkish: document.getElementById('addWordPairedTurkish')?.value || ''
+            turkish: document.getElementById('addWordTurkish')?.value || ''
         };
     }
 
@@ -615,12 +547,17 @@ class App {
     }
 
     openMode(mode) {
+        if (mode === 'trash') {
+            this.showTrash();
+            return;
+        }
+
         if (WORDS.length === 0) {
             this.showNoWords();
             return;
         }
 
-        const modesWithCount = ['flashcard', 'quiz', 'reversequiz', 'typing', 'synonyms'];
+        const modesWithCount = ['flashcard', 'quiz', 'typing'];
 
         if (modesWithCount.includes(mode)) {
             this.pendingMode = mode;
@@ -658,9 +595,6 @@ class App {
                 case 'fullchoicequiz':
                     window.fullChoiceQuizMode?.init();
                     break;
-                case 'reversequiz':
-                    window.reverseQuizMode?.init(questionCount, normalizedOptions);
-                    break;
                 case 'typing':
                     window.typingMode?.init(questionCount, normalizedOptions);
                     break;
@@ -678,9 +612,6 @@ class App {
                     break;
                 case 'categories':
                     window.categoriesMode?.init();
-                    break;
-                case 'synonyms':
-                    window.synonymsMode?.init(questionCount, normalizedOptions);
                     break;
             }
         }
@@ -814,18 +745,27 @@ class App {
     // Yardımcı fonksiyonlar
     showAllWords() {
         const sortedWords = [...WORDS].sort((a, b) => a.russian.localeCompare(b.russian));
-        this.renderWordList(sortedWords, '📚 Tüm Kelimeler', false);
-        // Search'i aktif et — word list'i instance'a kaydet
         this._currentWordList = sortedWords;
+        this._currentWordListMode = 'all';
+        this.renderWordList(sortedWords, { title: '📚 Tüm Kelimeler', mode: 'all' });
         this.setupAllWordsSearch();
     }
 
     showFavorites() {
         const favoriteWords = window.favoritesManager?.getFavoriteWords() || [];
         const sortedWords = [...favoriteWords].sort((a, b) => a.russian.localeCompare(b.russian));
-        this.renderWordList(sortedWords, '⭐ Favoriler', true);
-        // Search'i aktif et
         this._currentWordList = sortedWords;
+        this._currentWordListMode = 'favorites';
+        this.renderWordList(sortedWords, { title: '⭐ Favoriler', mode: 'favorites' });
+        this.setupAllWordsSearch();
+    }
+
+    showTrash() {
+        const deletedWords = window.trashManager?.getDeletedWords() || [];
+        const sortedWords = [...deletedWords].sort((a, b) => String(b.deletedAt).localeCompare(String(a.deletedAt)));
+        this._currentWordList = sortedWords;
+        this._currentWordListMode = 'trash';
+        this.renderWordList(sortedWords, { title: '🗑️ Çöp Kutusu', mode: 'trash' });
         this.setupAllWordsSearch();
     }
 
@@ -872,11 +812,6 @@ class App {
      */
     handleAllWordsSearch(query) {
         const allWords = this._currentWordList || [];
-        const container = document.getElementById('wordsList');
-        const countSpan = document.getElementById('allwordsCount');
-        if (!container) return;
-
-        // Guard: empty query shows all
         const lowerQ = query.toLowerCase();
         const filtered = query.length === 0
             ? allWords
@@ -887,65 +822,58 @@ class App {
                 return ruMatch || trMatch || enMatch;
             });
 
-        // Re-render filtered results
-        container.innerHTML = '';
-        countSpan.textContent = filtered.length;
-
-        if (filtered.length === 0) {
-            container.innerHTML = `<div class="search-no-results">🔍 "${this.sanitizeHTML(query)}" için sonuç bulunamadı.</div>`;
-            return;
-        }
-
-        // Determine if in favorites view (removeOnUnfav mode)
-        const isFavView = document.getElementById('allwordsMode')?.querySelector('h2')?.textContent?.includes('Favori');
-        const fragment = document.createDocumentFragment();
-        filtered.forEach(word => {
-            const item = document.createElement('div');
-            item.className = 'word-item';
-            const isFav = window.favoritesManager?.isFavorite(word.id);
-            const starClass = isFav ? 'active' : '';
-            const starText = isFav ? '★' : '☆';
-            let wordContent = '';
-            if (word.english) {
-                wordContent = `
-                    <div class="word-text multi-line">
-                        <span class="english" style="color:var(--accent);font-weight:bold;">${this.sanitizeHTML(word.english)}</span>
-                        <span class="russian">${this.sanitizeHTML(word.russian)}</span>
-                        <span class="turkish" style="color:var(--text-muted);font-size:0.9em;">${this.sanitizeHTML(word.turkish)}</span>
-                    </div>
-                `;
-            } else {
-                wordContent = `
-                    <div class="word-text">
-                        <span class="russian">${this.sanitizeHTML(word.russian)}</span>
-                        <span class="turkish">${this.sanitizeHTML(word.turkish)}</span>
-                    </div>
-                `;
-            }
-            item.innerHTML = `
-                ${wordContent}
-                <button class="favorite-btn ${starClass}" data-id="${word.id}">${starText}</button>
-            `;
-            const favBtn = item.querySelector('.favorite-btn');
-            favBtn.onclick = (e) => {
-                e.stopPropagation();
-                const newStatus = window.favoritesManager?.toggleFavorite(word.id);
-                favBtn.classList.toggle('active', newStatus);
-                favBtn.textContent = newStatus ? '★' : '☆';
-                if (isFavView && !newStatus) {
-                    item.remove();
-                    countSpan.textContent = parseInt(countSpan.textContent) - 1;
-                    if (parseInt(countSpan.textContent) === 0) {
-                        container.innerHTML = '<div class="no-favorites"><p>⭐ Henüz favori kelime yok</p><p>Kelime listesinden favori ekleyebilirsiniz.</p></div>';
-                    }
-                }
-            };
-            fragment.appendChild(item);
+        this.renderWordList(filtered, {
+            title: this.getWordListTitle(this._currentWordListMode),
+            mode: this._currentWordListMode,
+            query
         });
-        container.appendChild(fragment);
     }
 
-    renderWordList(words, title, removeOnUnfav) {
+    getWordListTitle(mode = 'all') {
+        if (mode === 'favorites') return '⭐ Favoriler';
+        if (mode === 'trash') return '🗑️ Çöp Kutusu';
+        return '📚 Tüm Kelimeler';
+    }
+
+    getEmptyWordListMarkup(mode = 'all', query = '') {
+        if (query) {
+            return `<div class="search-no-results">🔍 "${this.sanitizeHTML(query)}" için sonuç bulunamadı.</div>`;
+        }
+
+        if (mode === 'favorites') {
+            return '<div class="no-favorites"><p>⭐ Henüz favori kelime yok</p><p>Kelime listesinden favori ekleyebilirsiniz.</p></div>';
+        }
+
+        if (mode === 'trash') {
+            return '<div class="no-favorites"><p>🗑️ Çöp kutusu boş</p><p>Kaldırdığın kelimeler burada görünür.</p></div>';
+        }
+
+        return '<div class="no-favorites"><p>📚 Kelime bulunamadı</p><p>Yeni kelime eklemek için üstteki artı butonunu kullan.</p></div>';
+    }
+
+    renderWordContent(word) {
+        if (word.english) {
+            return `
+                <div class="word-text multi-line">
+                    <span class="english" style="color:var(--accent);font-weight:bold;">${this.sanitizeHTML(word.english)}</span>
+                    <span class="russian">${this.sanitizeHTML(word.russian)}</span>
+                    <span class="turkish" style="color:var(--text-muted);font-size:0.9em;">${this.sanitizeHTML(word.turkish)}</span>
+                </div>
+            `;
+        }
+
+        return `
+            <div class="word-text">
+                <span class="russian">${this.sanitizeHTML(word.russian)}</span>
+                <span class="turkish">${this.sanitizeHTML(word.turkish)}</span>
+            </div>
+        `;
+    }
+
+    renderWordList(words, options = {}) {
+        const title = options.title || this.getWordListTitle(options.mode);
+        const mode = options.mode || 'all';
+        const query = options.query || '';
         const container = document.getElementById('wordsList');
         const countSpan = document.getElementById('allwordsCount');
         const modeScreen = document.getElementById('allwordsMode');
@@ -962,63 +890,121 @@ class App {
         countSpan.textContent = words.length;
 
         if (words.length === 0) {
-            container.innerHTML = '<div class="no-favorites"><p>⭐ Henüz favori kelime yok</p><p>Kelime listesinden favori ekleyebilirsiniz.</p></div>';
+            container.innerHTML = this.getEmptyWordListMarkup(mode, query);
             return;
         }
 
         const fragment = document.createDocumentFragment();
         words.forEach(word => {
-            const item = document.createElement('div');
-            item.className = 'word-item';
-
-            const isFav = window.favoritesManager?.isFavorite(word.id);
-            const starClass = isFav ? 'active' : '';
-            const starText = isFav ? '★' : '☆';
-
-            let wordContent = '';
-            if (word.english) {
-                // IELTS Words: EN - RU - TR
-                wordContent = `
-                    <div class="word-text multi-line">
-                        <span class="english" style="color:var(--accent);font-weight:bold;">${this.sanitizeHTML(word.english)}</span>
-                        <span class="russian">${this.sanitizeHTML(word.russian)}</span>
-                        <span class="turkish" style="color:var(--text-muted);font-size:0.9em;">${this.sanitizeHTML(word.turkish)}</span>
-                    </div>
-                `;
-            } else {
-                // Standard Words: RU - TR
-                wordContent = `
-                    <div class="word-text">
-                        <span class="russian">${this.sanitizeHTML(word.russian)}</span>
-                        <span class="turkish">${this.sanitizeHTML(word.turkish)}</span>
-                    </div>
-                `;
-            }
-
-            item.innerHTML = `
-                ${wordContent}
-                <button class="favorite-btn ${starClass}" data-id="${word.id}">${starText}</button>
-            `;
-
-            const favBtn = item.querySelector('.favorite-btn');
-            favBtn.onclick = (e) => {
-                e.stopPropagation();
-                const newStatus = window.favoritesManager?.toggleFavorite(word.id);
-                favBtn.classList.toggle('active', newStatus);
-                favBtn.textContent = newStatus ? '★' : '☆';
-                // Remove from list when unfavoriting in favorites view
-                if (removeOnUnfav && !newStatus) {
-                    item.remove();
-                    countSpan.textContent = parseInt(countSpan.textContent) - 1;
-                    if (parseInt(countSpan.textContent) === 0) {
-                        container.innerHTML = '<div class="no-favorites"><p>⭐ Henüz favori kelime yok</p><p>Kelime listesinden favori ekleyebilirsiniz.</p></div>';
-                    }
-                }
-            };
-
-            fragment.appendChild(item);
+            fragment.appendChild(this.createWordListItem(word, mode));
         });
         container.appendChild(fragment);
+    }
+
+    createWordListItem(word, mode = 'all') {
+        const item = document.createElement('div');
+        item.className = 'word-item';
+        item.innerHTML = `
+            ${this.renderWordContent(word)}
+            <div class="word-actions"></div>
+        `;
+
+        const actions = item.querySelector('.word-actions');
+        if (mode === 'trash') {
+            actions.appendChild(this.createRestoreButton(word));
+            return item;
+        }
+
+        actions.appendChild(this.createFavoriteButton(word, mode));
+        actions.appendChild(this.createDeleteButton(word));
+        return item;
+    }
+
+    createFavoriteButton(word, mode = 'all') {
+        const button = document.createElement('button');
+        const isFavorite = window.favoritesManager?.isFavorite(word.id);
+        button.className = `favorite-btn ${isFavorite ? 'active' : ''}`;
+        button.type = 'button';
+        button.dataset.id = word.id;
+        button.setAttribute('aria-label', 'Favoriye ekle');
+        button.textContent = isFavorite ? '★' : '☆';
+        button.onclick = event => {
+            event.stopPropagation();
+            const newStatus = window.favoritesManager?.toggleFavorite(word.id);
+            button.classList.toggle('active', newStatus);
+            button.textContent = newStatus ? '★' : '☆';
+            if (mode === 'favorites' && !newStatus) {
+                this.refreshCurrentWordList();
+            }
+        };
+
+        return button;
+    }
+
+    createDeleteButton(word) {
+        const button = document.createElement('button');
+        button.className = 'word-action-btn delete-word-btn';
+        button.type = 'button';
+        button.setAttribute('aria-label', 'Kelimeyi kaldır');
+        button.textContent = '🗑️';
+        button.onclick = event => {
+            event.stopPropagation();
+            this.handleDeleteWord(word);
+        };
+
+        return button;
+    }
+
+    createRestoreButton(word) {
+        const button = document.createElement('button');
+        button.className = 'word-action-btn restore-word-btn';
+        button.type = 'button';
+        button.setAttribute('aria-label', 'Kelimeyi geri al');
+        button.textContent = '↩️';
+        button.onclick = event => {
+            event.stopPropagation();
+            this.handleRestoreWord(word);
+        };
+
+        return button;
+    }
+
+    async handleDeleteWord(word) {
+        try {
+            if (!window.trashManager) throw new Error('Çöp kutusu yöneticisi hazır değil.');
+
+            window.trashManager.deleteWord(word);
+            await this.reloadWordsAfterUserChange();
+            this.refreshCurrentWordList();
+        } catch (error) {
+            console.error('Kelime kaldırılamadı', error);
+        }
+    }
+
+    async handleRestoreWord(word) {
+        try {
+            if (!window.trashManager) throw new Error('Çöp kutusu yöneticisi hazır değil.');
+
+            window.trashManager.restoreWord(word.wordKey || word.key);
+            await this.reloadWordsAfterUserChange();
+            this.showTrash();
+        } catch (error) {
+            console.error('Kelime geri alınamadı', error);
+        }
+    }
+
+    refreshCurrentWordList() {
+        if (this._currentWordListMode === 'favorites') {
+            this.showFavorites();
+            return;
+        }
+
+        if (this._currentWordListMode === 'trash') {
+            this.showTrash();
+            return;
+        }
+
+        this.showAllWords();
     }
 
     shuffleArray(array) {

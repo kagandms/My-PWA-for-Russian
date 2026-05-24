@@ -1406,12 +1406,6 @@ body {
     box-shadow: 0 0 0 3px rgba(28, 176, 246, 0.15);
 }
 
-.word-pair-fields {
-    display: flex;
-    flex-direction: column;
-    gap: 0.95rem;
-}
-
 .word-form-actions {
     justify-content: stretch;
 }
@@ -1736,6 +1730,13 @@ body {
     font-size: 0.9rem;
 }
 
+.word-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
 /* ===== Favorite Button ===== */
 .favorite-btn {
     background: none;
@@ -1758,6 +1759,28 @@ body {
 
 .favorite-btn.active {
     color: #ffc107;
+}
+
+.word-action-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.word-action-btn:hover {
+    background: rgba(28, 176, 246, 0.08);
+    transform: scale(1.08);
+}
+
+.word-action-btn:active {
+    transform: scale(0.94);
 }
 
 .flashcard-container .favorite-btn {

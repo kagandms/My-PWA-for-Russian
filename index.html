@@ -109,17 +109,6 @@
                     <span class="mode-desc">Doğru bildiklerin çıkar</span>
                 </button>
 
-                <button class="mode-card" data-mode="synonyms">
-                    <span class="mode-icon">↔️</span>
-                    <span class="mode-title">Eş/Zıt Anlam</span>
-                    <span class="mode-desc">Zıt ve eş anlamlılar</span>
-                </button>
-
-                <button class="mode-card" data-mode="reversequiz">
-                    <span class="mode-icon">🔄</span>
-                    <span class="mode-title">Tersine Quiz</span>
-                    <span class="mode-desc">Türkçe → Rusça</span>
-                </button>
                 <button class="mode-card" data-mode="typing">
                     <span class="mode-icon">⌨️</span>
                     <span class="mode-title">Yazma Modu</span>
@@ -130,6 +119,11 @@
                     <span class="mode-icon">📚</span>
                     <span class="mode-title">Tüm Kelimeler</span>
                     <span class="mode-desc">Kelime listesini görüntüle</span>
+                </button>
+                <button class="mode-card" data-mode="trash">
+                    <span class="mode-icon">🗑️</span>
+                    <span class="mode-title">Çöp Kutusu</span>
+                    <span class="mode-desc">Kaldırılan kelimeler</span>
                 </button>
                 <button class="mode-card" data-mode="categories">
                     <span class="mode-icon">🗂️</span>
@@ -305,29 +299,6 @@
             </div>
         </section>
 
-        <!-- Synonyms Mode -->
-        <section id="synonymsMode" class="mode-screen hidden">
-            <div class="mode-header">
-                <button class="back-btn" data-back>← Geri</button>
-                <h2>↔️ Eş & Zıt Anlam</h2>
-                <div class="progress-indicator progress-stack">
-                    <span><span id="synonymsCurrent">1</span>/<span id="synonymsTotal">0</span></span>
-                    <span class="session-meta hidden" id="synonymsPersistentStatus"></span>
-                </div>
-            </div>
-            <div class="quiz-container">
-                <div class="quiz-question">
-                    <p class="question-word" id="synonymsWord">Kelime</p>
-                    <p class="question-example" id="synonymsType">Eş Anlam</p>
-                </div>
-                <div class="quiz-options" id="synonymsOptions"></div>
-                <div class="quiz-feedback hidden" id="synonymsFeedback">
-                    <p id="synonymsFeedbackText"></p>
-                    <button class="next-btn" id="synonymsNext">Sonraki →</button>
-                </div>
-            </div>
-        </section>
-
         <!-- TORFL Mode -->
         <section id="torflMode" class="mode-screen hidden">
             <div class="mode-header">
@@ -377,22 +348,6 @@
                         </button>
                     </div>
                     <p class="modal-help" id="questionCountHelp">Öncelik öğrenilmemiş kelimelerde kalır.</p>
-                </div>
-                <div class="modal-section hidden" id="questionCountSynonymModeSection">
-                    <p class="modal-section-label">Çalışma tipi</p>
-                    <div class="modal-buttons scope-buttons">
-                        <button class="modal-btn scope-btn synonym-mode-btn primary active" data-synonym-mode="normal"
-                            aria-pressed="true">
-                            <span>Normal</span>
-                            <span class="scope-meta">Sadece bu oturum</span>
-                        </button>
-                        <button class="modal-btn scope-btn synonym-mode-btn" data-synonym-mode="persistent"
-                            aria-pressed="false">
-                            <span>Kalıcı</span>
-                            <span class="scope-meta">Doğrular havuzdan çıkar</span>
-                        </button>
-                    </div>
-                    <p class="modal-help" id="questionCountSynonymModeHelp">Normal mod Eş/Zıt ilerlemesini kaydetmez.</p>
                 </div>
                 <p class="modal-section-label">Soru sayısı</p>
                 <div class="modal-buttons">
@@ -451,24 +406,6 @@
                         <span>Türkçe karşılık / not</span>
                         <input id="addWordTurkish" class="word-form-input" type="text" autocomplete="off" required>
                     </label>
-                    <label class="word-form-field" for="addWordRelationType">
-                        <span>Çalışma tipi</span>
-                        <select id="addWordRelationType" class="word-form-input">
-                            <option value="none">Normal kelime</option>
-                            <option value="synonym">Eş anlamlı çift</option>
-                            <option value="antonym">Zıt anlamlı çift</option>
-                        </select>
-                    </label>
-                    <div id="addWordPairFields" class="word-pair-fields hidden">
-                        <label class="word-form-field" for="addWordPairedRussian">
-                            <span>İkinci Rusça kelime / ifade</span>
-                            <input id="addWordPairedRussian" class="word-form-input" type="text" autocomplete="off">
-                        </label>
-                        <label class="word-form-field" for="addWordPairedTurkish">
-                            <span>İkinci Türkçe karşılık</span>
-                            <input id="addWordPairedTurkish" class="word-form-input" type="text" autocomplete="off">
-                        </label>
-                    </div>
                     <p id="addWordStatus" class="settings-status hidden" role="status" aria-live="polite"></p>
                     <div class="modal-buttons word-form-actions">
                         <button type="button" class="modal-btn secondary" id="addWordCancel">Vazgeç</button>
@@ -532,35 +469,6 @@
                 <p>Şu an zor kelimen yok. Alıştırmalara devam et!</p>
             </div>
         </section>
-
-
-        <section id="reversequizMode" class="mode-screen hidden">
-            <div class="mode-header">
-                <button class="back-btn" data-back>← Geri</button>
-                <h2>Tersine Quiz</h2>
-                <div class="progress-indicator progress-stack">
-                    <span><span id="reversequizScore">0</span> puan</span>
-                    <span class="session-meta hidden" id="reversequizCoverage"></span>
-                </div>
-            </div>
-            <div class="quiz-container">
-                <div class="quiz-question">
-                    <button class="favorite-btn" id="reversequizFavorite" aria-label="Favoriye ekle">☆</button>
-                    <p class="question-word" id="reversequizWord">Türkçe kelime</p>
-                    <p class="question-example" id="reversequizHint">Rusça karşılığını seç</p>
-                    <p class="hard-word-progress">
-                        <span id="reversequizCurrent">1</span>/<span id="reversequizTotal">0</span>
-                    </p>
-                </div>
-                <div class="quiz-options" id="reversequizOptions"></div>
-                <div class="quiz-feedback hidden" id="reversequizFeedback">
-                    <p id="reversequizFeedbackText"></p>
-                    <button class="next-btn" id="reversequizNext">Sonraki →</button>
-                </div>
-            </div>
-        </section>
-
-
 
         <section id="typingMode" class="mode-screen hidden">
             <div class="mode-header">
@@ -633,6 +541,7 @@
     <script src="js/chart.min.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/user-words.js"></script>
+    <script src="js/trash.js"></script>
     <script src="js/word-categories.js"></script>
     <script src="js/data.js"></script>
     <script src="js/srs.js"></script>
@@ -652,8 +561,6 @@
 
     <script src="js/torfl.js"></script>
     <script src="js/daily.js"></script>
-    <script src="js/synonyms.js"></script>
-    <script src="js/reversequiz.js"></script>
     <script>
         // Register Service Worker
         if ('serviceWorker' in navigator) {

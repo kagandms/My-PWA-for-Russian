@@ -3,19 +3,10 @@
  */
 
 let WORDS = [];
-let SYNONYMS = [];
-
 Object.defineProperty(window, 'WORDS', {
     configurable: true,
     get() {
         return WORDS;
-    }
-});
-
-Object.defineProperty(window, 'SYNONYMS', {
-    configurable: true,
-    get() {
-        return SYNONYMS;
     }
 });
 
@@ -33,7 +24,15 @@ function appendUserWords() {
     if (!window.userWordsManager) return;
 
     WORDS.push(...window.userWordsManager.buildWords());
-    SYNONYMS.push(...window.userWordsManager.buildSynonymPairs());
+}
+
+/**
+ * Removes words that the user sent to the trash from every study mode.
+ */
+function filterDeletedWords() {
+    if (!window.trashManager) return;
+
+    WORDS = WORDS.filter(word => !window.trashManager.isDeleted(word));
 }
 
 async function loadWords() {
@@ -57,7 +56,6 @@ async function loadWords() {
         }
 
         WORDS = []; // Reset words
-        SYNONYMS = []; // Reset synonym pairs before reparsing
         let idCounter = 1;
 
         lines.forEach((line, lineIndex) => {
@@ -73,28 +71,6 @@ async function loadWords() {
                 const turkish = trimmedLine.substring(separatorIndex + 1).trim();
 
                 if (russian && turkish) {
-                    // Eş/Zıt Anlam kontrolü
-                    if (russian.includes(' - ') && turkish.includes(' - ')) {
-                        let ruParts = russian.split(' - ').map(s => s.trim());
-                        let trParts = turkish.split(' - ').map(s => s.trim());
-
-                        if (ruParts.length < 2 && russian.includes('-')) {
-                            ruParts = russian.split('-').map(s => s.trim());
-                        }
-                        if (trParts.length < 2 && turkish.includes('-')) {
-                            trParts = turkish.split('-').map(s => s.trim());
-                        }
-
-                        if (ruParts.length === 2 && trParts.length === 2) {
-                            SYNONYMS.push({
-                                id: idCounter,
-                                w1: { ru: ruParts[0], tr: trParts[0] },
-                                w2: { ru: ruParts[1], tr: trParts[1] },
-                                type: 'antonym'
-                            });
-                        }
-                    }
-
                     // Dinamik Cümleleri Ata
                     const currentId = idCounter++;
                     let wordSentences = [];
@@ -148,6 +124,7 @@ async function loadWords() {
         });
 
         appendUserWords();
+        filterDeletedWords();
         return true;
 
     } catch (error) {
