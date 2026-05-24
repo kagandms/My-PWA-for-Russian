@@ -12,11 +12,28 @@ Object.defineProperty(window, 'WORDS', {
     }
 });
 
+Object.defineProperty(window, 'SYNONYMS', {
+    configurable: true,
+    get() {
+        return SYNONYMS;
+    }
+});
+
 /**
  * Returns the curated source-line category.
  */
 function getWordCategory(word, sourceLineNumber) {
     return window.wordCategoryManager?.getCategory(word, sourceLineNumber) || 'Kategorize Edilmemiş';
+}
+
+/**
+ * Adds locally stored user words after the curated source is parsed.
+ */
+function appendUserWords() {
+    if (!window.userWordsManager) return;
+
+    WORDS.push(...window.userWordsManager.buildWords());
+    SYNONYMS.push(...window.userWordsManager.buildSynonymPairs());
 }
 
 async function loadWords() {
@@ -40,6 +57,7 @@ async function loadWords() {
         }
 
         WORDS = []; // Reset words
+        SYNONYMS = []; // Reset synonym pairs before reparsing
         let idCounter = 1;
 
         lines.forEach((line, lineIndex) => {
@@ -129,6 +147,7 @@ async function loadWords() {
             }
         });
 
+        appendUserWords();
         return true;
 
     } catch (error) {

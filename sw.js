@@ -2,7 +2,7 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v28';
+const CACHE_NAME = 'rutr-v29';
 const ASSETS = [
     './',
     './index.html',
@@ -12,6 +12,7 @@ const ASSETS = [
     './js/app.js',
     './js/data.js',
     './js/storage.js',
+    './js/user-words.js',
     './js/word-categories.js',
     './js/study-selector.js',
     './js/favorites.js',
@@ -20,6 +21,7 @@ const ASSETS = [
     './js/ai.js',
     './js/flashcard.js',
     './js/quiz.js',
+    './js/typing.js',
     './js/full-choice-quiz.js',
     './js/reversequiz.js',
     './js/synonyms.js',

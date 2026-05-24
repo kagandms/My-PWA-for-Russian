@@ -31,6 +31,7 @@
                 <!-- PWA Install Button (Hidden by default) -->
                 <button id="install-btn" class="icon-btn" style="display: none;"
                     aria-label="Uygulamayı Yükle">⬇️</button>
+                <button id="add-word-btn" class="icon-btn" aria-label="Kelime ekle">＋</button>
                 <button id="settings-btn" class="icon-btn" aria-label="Ayarlar">⚙️</button>
                 <button id="favorites-list-btn" class="icon-btn" aria-label="Favoriler">⭐</button>
                 <button id="theme-toggle" class="icon-btn" aria-label="Tema Değiştir">🌓</button>
@@ -118,6 +119,11 @@
                     <span class="mode-icon">🔄</span>
                     <span class="mode-title">Tersine Quiz</span>
                     <span class="mode-desc">Türkçe → Rusça</span>
+                </button>
+                <button class="mode-card" data-mode="typing">
+                    <span class="mode-icon">⌨️</span>
+                    <span class="mode-title">Yazma Modu</span>
+                    <span class="mode-desc">Kelimenin karşılığını yaz</span>
                 </button>
 
                 <button class="mode-card" data-mode="allwords">
@@ -432,6 +438,46 @@
             </div>
         </div>
 
+        <!-- Add Word Modal -->
+        <div id="addWordModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="addWordTitle">
+            <div class="modal-content word-modal-content">
+                <h3 id="addWordTitle">＋ Kelime Ekle</h3>
+                <form id="addWordForm" class="word-form" novalidate>
+                    <label class="word-form-field" for="addWordRussian">
+                        <span>Rusça kelime / ifade</span>
+                        <input id="addWordRussian" class="word-form-input" type="text" autocomplete="off" required>
+                    </label>
+                    <label class="word-form-field" for="addWordTurkish">
+                        <span>Türkçe karşılık / not</span>
+                        <input id="addWordTurkish" class="word-form-input" type="text" autocomplete="off" required>
+                    </label>
+                    <label class="word-form-field" for="addWordRelationType">
+                        <span>Çalışma tipi</span>
+                        <select id="addWordRelationType" class="word-form-input">
+                            <option value="none">Normal kelime</option>
+                            <option value="synonym">Eş anlamlı çift</option>
+                            <option value="antonym">Zıt anlamlı çift</option>
+                        </select>
+                    </label>
+                    <div id="addWordPairFields" class="word-pair-fields hidden">
+                        <label class="word-form-field" for="addWordPairedRussian">
+                            <span>İkinci Rusça kelime / ifade</span>
+                            <input id="addWordPairedRussian" class="word-form-input" type="text" autocomplete="off">
+                        </label>
+                        <label class="word-form-field" for="addWordPairedTurkish">
+                            <span>İkinci Türkçe karşılık</span>
+                            <input id="addWordPairedTurkish" class="word-form-input" type="text" autocomplete="off">
+                        </label>
+                    </div>
+                    <p id="addWordStatus" class="settings-status hidden" role="status" aria-live="polite"></p>
+                    <div class="modal-buttons word-form-actions">
+                        <button type="button" class="modal-btn secondary" id="addWordCancel">Vazgeç</button>
+                        <button type="submit" class="modal-btn primary" id="addWordSubmit">Ekle</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <!-- All Words Screen -->
         <section id="allwordsMode" class="mode-screen hidden">
             <div class="mode-header">
@@ -516,6 +562,34 @@
 
 
 
+        <section id="typingMode" class="mode-screen hidden">
+            <div class="mode-header">
+                <button class="back-btn" data-back>← Geri</button>
+                <h2>Yazma Modu</h2>
+                <div class="progress-indicator progress-stack">
+                    <span><span id="typingScore">0</span> puan</span>
+                    <span class="session-meta"><span id="typingCurrent">1</span>/<span id="typingTotal">0</span></span>
+                    <span class="session-meta hidden" id="typingCoverage"></span>
+                </div>
+            </div>
+            <div class="typing-container">
+                <div class="typing-question">
+                    <button class="favorite-btn" id="typingFavorite" aria-label="Favoriye ekle">☆</button>
+                    <p class="question-word" id="typingWord">Kelime</p>
+                    <p class="question-example" id="typingPrompt">Türkçe karşılığını yaz</p>
+                </div>
+                <form id="typingForm" class="typing-form" autocomplete="off">
+                    <div class="typing-input-wrapper">
+                        <input type="text" id="typingInput" class="typing-input" placeholder="Cevabını yaz..."
+                            aria-label="Cevap" autocomplete="off">
+                        <button type="button" id="typingHintBtn" class="hint-letter-btn" aria-label="Harf al">💡</button>
+                    </div>
+                    <p id="typingHintText" class="typing-hint hidden" aria-live="polite"></p>
+                    <button type="submit" id="typingCheck" class="check-btn">Kontrol Et</button>
+                </form>
+            </div>
+        </section>
+
         <!-- Completion Modal -->
         <div id="completionModal" class="modal hidden">
             <div class="modal-content">
@@ -558,6 +632,7 @@
     <!-- Kütüphaneler ve Scriptler -->
     <script src="js/chart.min.js"></script>
     <script src="js/storage.js"></script>
+    <script src="js/user-words.js"></script>
     <script src="js/word-categories.js"></script>
     <script src="js/data.js"></script>
     <script src="js/srs.js"></script>
@@ -571,6 +646,7 @@
     <script src="js/app.js"></script>
     <script src="js/flashcard.js"></script>
     <script src="js/quiz.js"></script>
+    <script src="js/typing.js"></script>
     <script src="js/full-choice-quiz.js"></script>
     <script src="js/categories.js"></script>
 

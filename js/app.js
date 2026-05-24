@@ -215,12 +215,13 @@ class App {
         if (this.pendingMode === 'flashcard') return 'Flashcard için kaç kart çalışmak istiyorsun?';
         if (this.pendingMode === 'quiz') return 'Quiz için kaç soru çözmek istiyorsun?';
         if (this.pendingMode === 'reversequiz') return 'Tersine Quiz için kaç soru çözmek istiyorsun?';
+        if (this.pendingMode === 'typing') return 'Yazma modu için kaç kelime çalışmak istiyorsun?';
         if (this.pendingMode === 'synonyms') return 'Eş/Zıt Anlam için kaç soru çözmek istiyorsun?';
         return 'Kaç soru çalışmak istiyorsun?';
     }
 
     modeUsesStudyScope(mode) {
-        return ['flashcard', 'quiz', 'reversequiz'].includes(mode);
+        return ['flashcard', 'quiz', 'reversequiz', 'typing'].includes(mode);
     }
 
     modeUsesSynonymMode(mode) {
@@ -375,6 +376,11 @@ class App {
             });
         }
 
+        const addWordBtn = document.getElementById('add-word-btn');
+        if (addWordBtn) {
+            addWordBtn.addEventListener('click', () => this.openAddWordModal());
+        }
+
         const favListBtn = document.getElementById('favorites-list-btn');
         if (favListBtn) {
             favListBtn.addEventListener('click', () => {
@@ -405,6 +411,7 @@ class App {
         });
 
         this.setupDataControls();
+        this.setupAddWordModal();
     }
 
     setupDataControls() {
@@ -423,6 +430,103 @@ class App {
             this.importUserData(file);
             event.target.value = '';
         });
+    }
+
+    setupAddWordModal() {
+        document.getElementById('addWordForm')?.addEventListener('submit', event => {
+            this.handleAddWordSubmit(event);
+        });
+
+        document.getElementById('addWordCancel')?.addEventListener('click', () => {
+            this.closeAddWordModal();
+        });
+
+        document.getElementById('addWordRelationType')?.addEventListener('change', () => {
+            this.syncAddWordRelationFields();
+        });
+    }
+
+    openAddWordModal() {
+        const modal = document.getElementById('addWordModal');
+        if (!modal) return;
+
+        this.resetAddWordForm();
+        modal.classList.remove('hidden');
+        document.getElementById('addWordRussian')?.focus();
+    }
+
+    closeAddWordModal() {
+        document.getElementById('addWordModal')?.classList.add('hidden');
+        this.resetAddWordForm();
+    }
+
+    resetAddWordForm() {
+        document.getElementById('addWordForm')?.reset();
+        this.setAddWordStatus('');
+        this.syncAddWordRelationFields();
+    }
+
+    syncAddWordRelationFields() {
+        const relationType = document.getElementById('addWordRelationType')?.value || 'none';
+        const pairFields = document.getElementById('addWordPairFields');
+        const pairedRussian = document.getElementById('addWordPairedRussian');
+        const pairedTurkish = document.getElementById('addWordPairedTurkish');
+        const usesPair = relationType !== 'none';
+
+        pairFields?.classList.toggle('hidden', !usesPair);
+        if (pairedRussian) pairedRussian.required = usesPair;
+        if (pairedTurkish) pairedTurkish.required = usesPair;
+    }
+
+    getAddWordFormValues() {
+        return {
+            russian: document.getElementById('addWordRussian')?.value || '',
+            turkish: document.getElementById('addWordTurkish')?.value || '',
+            relationType: document.getElementById('addWordRelationType')?.value || 'none',
+            pairedRussian: document.getElementById('addWordPairedRussian')?.value || '',
+            pairedTurkish: document.getElementById('addWordPairedTurkish')?.value || ''
+        };
+    }
+
+    setAddWordStatus(message, type = 'info') {
+        const status = document.getElementById('addWordStatus');
+        if (!status) return;
+
+        status.textContent = message;
+        status.dataset.type = type;
+        status.classList.toggle('hidden', !message);
+    }
+
+    async reloadWordsAfterUserChange() {
+        const loaded = typeof loadWords === 'function' ? await loadWords() : false;
+        if (!loaded) throw new Error('Kelime havuzu yenilenemedi.');
+
+        window.storageManager?.migrateUserData();
+        this.reloadUserDataManagers();
+        this.updateStatsDisplay();
+        this.checkWords();
+        window.goalsManager?.updateDisplay();
+    }
+
+    async handleAddWordSubmit(event) {
+        event.preventDefault();
+        const submitButton = document.getElementById('addWordSubmit');
+        if (submitButton) submitButton.disabled = true;
+        this.setAddWordStatus('Kelime ekleniyor...');
+
+        try {
+            if (!window.userWordsManager) throw new Error('Kelime depolama yöneticisi hazır değil.');
+
+            window.userWordsManager.addRecord(this.getAddWordFormValues());
+            await this.reloadWordsAfterUserChange();
+            this.setAddWordStatus('Kelime eklendi ve çalışma havuzuna alındı.', 'success');
+            window.setTimeout(() => this.closeAddWordModal(), 650);
+        } catch (error) {
+            console.error('Kelime eklenemedi', error);
+            this.setAddWordStatus(error.message || 'Kelime eklenemedi.', 'error');
+        } finally {
+            if (submitButton) submitButton.disabled = false;
+        }
     }
 
     setSettingsStatus(message, type = 'info') {
@@ -516,8 +620,7 @@ class App {
             return;
         }
 
-        // Soru sayısı sorulacak modlar (Typing kaldırıldı)
-        const modesWithCount = ['flashcard', 'quiz', 'reversequiz', 'synonyms'];
+        const modesWithCount = ['flashcard', 'quiz', 'reversequiz', 'typing', 'synonyms'];
 
         if (modesWithCount.includes(mode)) {
             this.pendingMode = mode;
@@ -557,6 +660,9 @@ class App {
                     break;
                 case 'reversequiz':
                     window.reverseQuizMode?.init(questionCount, normalizedOptions);
+                    break;
+                case 'typing':
+                    window.typingMode?.init(questionCount, normalizedOptions);
                     break;
                 case 'daily':
                     window.dailyMode?.init();
@@ -603,9 +709,15 @@ class App {
 
 
     checkWords() {
+        const noWordsMessage = document.getElementById('noWordsMessage');
+        if (!noWordsMessage) return;
+
         if (WORDS.length === 0) {
-            document.getElementById('noWordsMessage').classList.remove('hidden');
+            noWordsMessage.classList.remove('hidden');
+            return;
         }
+
+        noWordsMessage.classList.add('hidden');
     }
 
     showNoWords() {
