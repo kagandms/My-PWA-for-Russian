@@ -26,17 +26,17 @@
     <div id="app">
         <!-- Header -->
         <header class="header">
-            <h1>🇷🇺 Мой словарь / Sözlüğüm 🇹🇷</h1>
+            <h1>🇷🇺 Мой словарь</h1>
             <div class="header-actions">
                 <!-- PWA Install Button (Hidden by default) -->
                 <button id="install-btn" class="icon-btn" style="display: none;"
-                    aria-label="Uygulamayı Yükle">⬇️</button>
-                <button id="add-word-btn" class="icon-btn" aria-label="Kelime ekle">＋</button>
-                <button id="all-words-btn" class="icon-btn" aria-label="Tüm Kelimeler" title="Tüm Kelimeler">📚</button>
-                <button id="trash-btn" class="icon-btn" aria-label="Çöp Kutusu" title="Çöp Kutusu">🗑️</button>
-                <button id="settings-btn" class="icon-btn" aria-label="Ayarlar">⚙️</button>
-                <button id="favorites-list-btn" class="icon-btn" aria-label="Favoriler">⭐</button>
-                <button id="theme-toggle" class="icon-btn" aria-label="Tema Değiştir">🌓</button>
+                    aria-label="Установить приложение">⬇️</button>
+                <button id="add-word-btn" class="icon-btn" aria-label="Добавить слово">＋</button>
+                <button id="all-words-btn" class="icon-btn" aria-label="Все слова" title="Все слова">📚</button>
+                <button id="trash-btn" class="icon-btn" aria-label="Корзина" title="Корзина">🗑️</button>
+                <button id="settings-btn" class="icon-btn" aria-label="Настройки">⚙️</button>
+                <button id="favorites-list-btn" class="icon-btn" aria-label="Избранное">⭐</button>
+                <button id="theme-toggle" class="icon-btn" aria-label="Сменить тему">🌓</button>
             </div>
         </header>
 
@@ -45,7 +45,7 @@
             <div class="streak-info">
                 <span class="streak-fire">🔥</span>
                 <span class="streak-count" id="streakCount">0</span>
-                <span class="streak-label">gün</span>
+                <span class="streak-label">дней</span>
             </div>
             <div class="progress-container">
                 <div class="progress-track">
@@ -59,61 +59,61 @@
         <main id="mainMenu" class="main-menu">
 
 
-            <div class="tracker-section" aria-label="Günlük seri özeti">
+            <div class="tracker-section" aria-label="Сводка ежедневной серии">
                 <div class="tracker-summary">
                     <div>
-                        <span class="tracker-eyebrow">Günlük Seri</span>
-                        <h3><span id="trackerCurrentStreak">0</span> gün</h3>
+                        <span class="tracker-eyebrow">Ежедневная серия</span>
+                        <h3><span id="trackerCurrentStreak">0</span> дней</h3>
                     </div>
                     <div class="tracker-flame" aria-hidden="true">🔥</div>
                 </div>
                 <div class="tracker-metrics">
                     <div class="tracker-metric">
                         <span class="tracker-metric-value" id="trackerLatestStreak">0</span>
-                        <span class="tracker-metric-label">Son seri</span>
+                        <span class="tracker-metric-label">Последняя серия</span>
                     </div>
                     <div class="tracker-metric">
                         <span class="tracker-metric-value" id="trackerBestStreak">0</span>
-                        <span class="tracker-metric-label">En uzun</span>
+                        <span class="tracker-metric-label">Самая длинная</span>
                     </div>
                     <div class="tracker-metric">
                         <span class="tracker-metric-value" id="trackerWeekActive">0/7</span>
-                        <span class="tracker-metric-label">Bu hafta</span>
+                        <span class="tracker-metric-label">На этой неделе</span>
                     </div>
                 </div>
-                <div class="heatmap-container" id="heatmapContainer" aria-label="Son 7 günlük çalışma takvimi"></div>
+                <div class="heatmap-container" id="heatmapContainer" aria-label="График работы за последние 7 дней"></div>
             </div>
 
             <div class="stats-bar">
                 <div class="stat" style="flex: 1; align-items: center; justify-content: center;">
                     <span class="stat-value" id="totalWords">0</span>
-                    <span class="stat-label">Anlık Kelime Sayısı</span>
+                    <span class="stat-label">Количество слов</span>
                 </div>
             </div>
 
             <div class="mode-grid">
                 <button class="mode-card" data-mode="quiz">
                     <span class="mode-icon">❓</span>
-                    <span class="mode-title">Quiz</span>
-                    <span class="mode-desc">Çoktan seçmeli sorular</span>
+                    <span class="mode-title">Квиз</span>
+                    <span class="mode-desc">Вопросы с выбором ответа</span>
                 </button>
                 <button class="mode-card" data-mode="fullchoicequiz">
                     <span class="mode-icon">🎯</span>
-                    <span class="mode-title">Kalıcı Quiz</span>
-                    <span class="mode-desc">Doğru bildiklerin çıkar</span>
+                    <span class="mode-title">Постоянный Квиз</span>
+                    <span class="mode-desc">Убирает те, что знаешь</span>
                 </button>
 
                 <button class="mode-card" data-mode="typing">
                     <span class="mode-icon">⌨️</span>
-                    <span class="mode-title">Yazma Modu</span>
-                    <span class="mode-desc">Kelimenin karşılığını yaz</span>
+                    <span class="mode-title">Письмо</span>
+                    <span class="mode-desc">Напиши перевод слова</span>
                 </button>
 
 
                 <button class="mode-card" data-mode="categories">
                     <span class="mode-icon">🗂️</span>
-                    <span class="mode-title">Kategoriler</span>
-                    <span class="mode-desc">Kelimeleri ünite ünite çalış</span>
+                    <span class="mode-title">Категории</span>
+                    <span class="mode-desc">Изучай слова по юнитам</span>
                 </button>
             </div>
         </main>
@@ -121,7 +121,7 @@
         <!-- Flashcard Mode -->
         <section id="flashcardMode" class="mode-screen hidden">
             <div class="mode-header">
-                <button class="back-btn" data-back>← Geri</button>
+                <button class="back-btn" data-back>← Назад</button>
                 <h2>Flashcard</h2>
                 <div class="progress-indicator progress-stack">
                     <span><span id="flashcardCurrent">1</span>/<span id="flashcardTotal">0</span></span>
@@ -132,26 +132,26 @@
                 <div class="flashcard" id="flashcard">
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
-                            <p class="word" id="flashcardWord">Kelime</p>
+                            <p class="word" id="flashcardWord">Слово</p>
                         </div>
                         <div class="flashcard-back">
-                            <p class="word" id="flashcardTranslation">Çeviri</p>
+                            <p class="word" id="flashcardTranslation">Перевод</p>
                         </div>
                     </div>
                 </div>
-                <p class="hint">Kartı çevirmek için dokun</p>
-                <button class="favorite-btn" id="flashcardFavorite" aria-label="Favoriye ekle">☆</button>
+                <p class="hint">Коснись, чтобы перевернуть карточку</p>
+                <button class="favorite-btn" id="flashcardFavorite" aria-label="Добавить в избранное">☆</button>
             </div>
             <div class="ai-actions">
-                <button class="ai-btn" id="flashcardExplain">🤖 Açıkla</button>
-                <button class="ai-btn" id="flashcardGetExample">💡 Örnek Al</button>
+                <button class="ai-btn" id="flashcardExplain">🤖 Объяснить</button>
+                <button class="ai-btn" id="flashcardGetExample">💡 Пример</button>
             </div>
             <div class="ai-result hidden" id="flashcardAiResult">
                 <p id="flashcardAiText"></p>
             </div>
             <div class="flashcard-controls">
-                <button class="control-btn wrong" id="flashcardWrong">❌ Bilmiyorum</button>
-                <button class="control-btn correct" id="flashcardCorrect">✅ Biliyorum</button>
+                <button class="control-btn wrong" id="flashcardWrong">❌ Не знаю</button>
+                <button class="control-btn correct" id="flashcardCorrect">✅ Знаю</button>
             </div>
             <div class="direction-toggle">
                 <button class="dir-btn active" data-dir="ru-tr">🇷🇺 → 🇹🇷</button>
@@ -162,18 +162,18 @@
         <!-- Quiz Mode -->
         <section id="quizMode" class="mode-screen hidden">
             <div class="mode-header">
-                <button class="back-btn" data-back>← Geri</button>
+                <button class="back-btn" data-back>← Назад</button>
                 <h2>Quiz</h2>
                 <div class="progress-indicator progress-stack">
-                    <span><span id="quizScore">0</span> puan</span>
+                    <span><span id="quizScore">0</span> баллов</span>
                     <span class="session-meta hidden" id="quizCoverage"></span>
                 </div>
             </div>
             <div class="quiz-container">
                 <div class="quiz-question">
-                    <button class="favorite-btn" id="quizFavorite" aria-label="Favoriye ekle">☆</button>
-                    <p class="question-word" id="quizWord">Kelime</p>
-                    <p class="question-example" id="quizExample">Örnek cümle</p>
+                    <button class="favorite-btn" id="quizFavorite" aria-label="Добавить в избранное">☆</button>
+                    <p class="question-word" id="quizWord">Слово</p>
+                    <p class="question-example" id="quizExample">Пример предложения</p>
                 </div>
                 <div class="quiz-options" id="quizOptions">
                     <!-- Options will be generated dynamically -->
@@ -181,15 +181,15 @@
             </div>
             <div class="quiz-feedback hidden" id="quizFeedback">
                 <p id="quizFeedbackText"></p>
-                <button class="next-btn" id="quizNext">Sonraki →</button>
+                <button class="next-btn" id="quizNext">Далее →</button>
             </div>
         </section>
 
         <!-- Full Choice Quiz Mode -->
         <section id="fullchoicequizMode" class="mode-screen hidden">
             <div class="mode-header">
-                <button class="back-btn" data-back>← Geri</button>
-                <h2>Kalıcı Quiz</h2>
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>Постоянный Квиз</h2>
                 <span class="progress-indicator">
                     <span id="fullChoiceQuizCompletedHeader">0</span>/<span id="fullChoiceQuizTotalHeader">0</span>
                 </span>
@@ -198,11 +198,11 @@
             <div class="full-choice-summary">
                 <div class="full-choice-stat">
                     <span class="full-choice-value" id="fullChoiceQuizCompleted">0</span>
-                    <span class="full-choice-label">Doğru Bilinen</span>
+                    <span class="full-choice-label">Известные</span>
                 </div>
                 <div class="full-choice-stat">
                     <span class="full-choice-value" id="fullChoiceQuizRemaining">0</span>
-                    <span class="full-choice-label">Kalan</span>
+                    <span class="full-choice-label">Осталось</span>
                 </div>
             </div>
             <div class="full-choice-progress-track" aria-hidden="true">
@@ -211,29 +211,29 @@
 
             <div class="quiz-container" id="fullChoiceQuizActive">
                 <div class="quiz-question">
-                    <button class="favorite-btn" id="fullChoiceQuizFavorite" aria-label="Favoriye ekle">☆</button>
-                    <p class="question-word" id="fullChoiceQuizWord">Kelime</p>
-                    <p class="question-example" id="fullChoiceQuizHint">Doğru bilirsen bu turdan çıkar.</p>
+                    <button class="favorite-btn" id="fullChoiceQuizFavorite" aria-label="Добавить в избранное">☆</button>
+                    <p class="question-word" id="fullChoiceQuizWord">Слово</p>
+                    <p class="question-example" id="fullChoiceQuizHint">Если ответишь правильно, слово уйдет из этого раунда.</p>
                 </div>
                 <div class="quiz-options" id="fullChoiceQuizOptions"></div>
             </div>
 
             <div class="full-choice-complete hidden" id="fullChoiceQuizComplete">
-                <h3>Tur tamamlandı</h3>
-                <p>Tüm kelimeleri bu modda en az bir kez doğru cevapladın.</p>
-                <button class="modal-btn primary" id="fullChoiceQuizResetComplete">Yeni Tur Başlat</button>
+                <h3>Раунд завершен</h3>
+                <p>В этом режиме ты правильно ответил на все слова хотя бы раз.</p>
+                <button class="modal-btn primary" id="fullChoiceQuizResetComplete">Начать новый раунд</button>
             </div>
 
             <div class="full-choice-actions">
-                <button class="modal-btn secondary" id="fullChoiceQuizReset">Turu Sıfırla</button>
+                <button class="modal-btn secondary" id="fullChoiceQuizReset">Сбросить раунд</button>
             </div>
         </section>
 
         <!-- Categories Mode -->
         <section id="categoriesMode" class="mode-screen hidden">
             <div class="mode-header">
-                <button class="back-btn" data-back>← Geri</button>
-                <h2>🗂️ Kategoriler (Üniteler)</h2>
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>🗂️ Категории (Юниты)</h2>
             </div>
 
             <!-- Category Selection View -->
@@ -247,12 +247,12 @@
             <div id="categoryDetailView" class="hidden">
                 <div class="category-subview-header"
                     style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                    <button class="back-btn" id="categoryBackBtn">← Kategorilere Dön</button>
+                    <button class="back-btn" id="categoryBackBtn">← Вернуться к категориям</button>
                     <h3 id="categoryTitle" style="margin: 0; color: var(--text);">Kategori Adı</h3>
                 </div>
 
                 <div class="category-actions" style="margin-bottom: 20px; text-align: center;">
-                    <button class="modal-btn primary" id="categoryStudyBtn">Bu Üniteyi Çalış (Flashcard)</button>
+                    <button class="modal-btn primary" id="categoryStudyBtn">Изучить этот юнит (Flashcard)</button>
                 </div>
 
                 <div class="words-list" id="categoryWordsList">
@@ -263,8 +263,8 @@
 
         <!-- No Words Message -->
         <div id="noWordsMessage" class="no-words hidden">
-            <p>📚 Henüz kelime eklenmemiş!</p>
-            <p>Kelimeler data.js dosyasına eklenecek.</p>
+            <p>📚 Слова еще не добавлены!</p>
+            <p>Слова будут загружены из базы.</p>
         </div>
 
         <!-- Start NEW Modes -->
@@ -272,30 +272,30 @@
         <!-- Daily Words Mode -->
         <section id="dailyMode" class="mode-screen hidden">
             <div class="mode-header">
-                <button class="back-btn" data-back>← Geri</button>
-                <h2>📅 Günün Kelimeleri</h2>
-                <span class="progress-indicator" id="dailyDate">Bugün</span>
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>📅 Слова дня</h2>
+                <span class="progress-indicator" id="dailyDate">Сегодня</span>
             </div>
             <div class="words-list" id="dailyWordsList">
                 <!-- Daily words will be listed here -->
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <button class="modal-btn primary" id="dailyTestBtn">Test Çöz</button>
+                <button class="modal-btn primary" id="dailyTestBtn">Начать тест</button>
             </div>
         </section>
 
         <!-- TORFL Mode -->
         <section id="torflMode" class="mode-screen hidden">
             <div class="mode-header">
-                <button class="back-btn" data-back>← Geri</button>
-                <h2>🇷🇺 TORFL Hazırlık</h2>
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>🇷🇺 Подготовка к TORFL</h2>
                 <label for="torflUpload" class="icon-btn" style="font-size: 1.2rem; cursor: pointer;">📤</label>
                 <input type="file" id="torflUpload" accept=".json,.txt" style="display: none;">
             </div>
             <div id="torflMenu">
                 <div class="torfl-empty" id="torflEmpty">
-                    <p>Henüz soru yüklenmedi.</p>
-                    <p>Soru paketi yüklemek için yukarıdaki butonu kullanın.</p>
+                    <p>Вопросы еще не загружены.</p>
+                    <p>Используйте кнопку выше, чтобы загрузить пакет вопросов.</p>
                 </div>
                 <div class="torfl-list" id="torflList"></div>
             </div>
@@ -307,7 +307,7 @@
                     <div class="quiz-options" id="torflOptions"></div>
                     <div class="quiz-feedback hidden" id="torflFeedback">
                         <p id="torflFeedbackText"></p>
-                        <button class="next-btn" id="torflNext">Sonraki →</button>
+                        <button class="next-btn" id="torflNext">Далее →</button>
                     </div>
                 </div>
             </div>
@@ -319,37 +319,37 @@
         <!-- Question Count Modal -->
         <div id="questionCountModal" class="modal hidden">
             <div class="modal-content">
-                <h3 id="questionCountTitle">Kaç soru çalışmak istiyorsun?</h3>
+                <h3 id="questionCountTitle">Сколько вопросов хочешь изучить?</h3>
                 <div class="modal-section" id="questionCountScopeSection">
-                    <p class="modal-section-label">Kelime havuzu</p>
+                    <p class="modal-section-label">Пул слов</p>
                     <div class="modal-buttons scope-buttons">
                         <button class="modal-btn scope-btn primary active" data-scope="learning" aria-pressed="true">
-                            <span>Öğrenilecekler</span>
-                            <span class="scope-meta" id="questionCountLearningCount">0 kelime</span>
+                            <span>Для изучения</span>
+                            <span class="scope-meta" id="questionCountLearningCount">0 слов</span>
                         </button>
                         <button class="modal-btn scope-btn" data-scope="all" aria-pressed="false">
-                            <span>Tüm Kelimeler</span>
-                            <span class="scope-meta" id="questionCountAllCount">0 kelime</span>
+                            <span>Все слова</span>
+                            <span class="scope-meta" id="questionCountAllCount">0 слов</span>
                         </button>
                     </div>
-                    <p class="modal-help" id="questionCountHelp">Öncelik öğrenilmemiş kelimelerde kalır.</p>
+                    <p class="modal-help" id="questionCountHelp">Приоритет отдается невыученным словам.</p>
                 </div>
-                <p class="modal-section-label">Soru sayısı</p>
+                <p class="modal-section-label">Количество вопросов</p>
                 <div class="modal-buttons">
                     <button class="modal-btn" data-count="5">5</button>
                     <button class="modal-btn" data-count="10">10</button>
                     <button class="modal-btn" data-count="20">20</button>
                 </div>
-                <button id="questionCountCancel" class="modal-btn secondary">← Geri</button>
+                <button id="questionCountCancel" class="modal-btn secondary">← Назад</button>
             </div>
         </div>
 
         <!-- Settings Modal -->
         <div id="settingsModal" class="modal hidden">
             <div class="modal-content">
-                <h3>⚙️ Ayarlar</h3>
+                <h3>⚙️ Настройки</h3>
                 <div class="settings-group">
-                    <label>Günlük Hedef</label>
+                    <label>Дневная цель</label>
                     <div class="modal-buttons">
                         <button class="modal-btn goal-btn" data-goal="10">10</button>
                         <button class="modal-btn goal-btn" data-goal="20">20</button>
@@ -358,43 +358,43 @@
                     </div>
                 </div>
                 <div class="settings-group">
-                    <label>Uygulama Verisi</label>
+                    <label>Данные приложения</label>
                     <div class="modal-buttons settings-actions">
-                        <button class="modal-btn" id="refreshAppBtn">Güncelle</button>
-                        <button class="modal-btn" id="exportDataBtn">Yedekle</button>
-                        <label class="modal-btn import-data-btn" for="importDataInput">Geri Yükle</label>
+                        <button class="modal-btn" id="refreshAppBtn">Обновить</button>
+                        <button class="modal-btn" id="exportDataBtn">Резервная копия</button>
+                        <label class="modal-btn import-data-btn" for="importDataInput">Восстановить</label>
                         <input type="file" id="importDataInput" accept="application/json" class="hidden">
                     </div>
                     <p class="settings-status hidden" id="settingsStatus" role="status" aria-live="polite"></p>
                 </div>
                 <div class="settings-group">
-                    <label>Bildirimler</label>
+                    <label>Уведомления</label>
                     <div class="modal-buttons settings-actions">
-                        <button class="modal-btn" id="notificationsToggleBtn">Bildirimleri Aç</button>
+                        <button class="modal-btn" id="notificationsToggleBtn">Включить уведомления</button>
                     </div>
                     <p class="settings-status hidden" id="notificationsStatus" role="status" aria-live="polite"></p>
                 </div>
-                <button class="modal-btn primary" id="settingsClose">Tamam</button>
+                <button class="modal-btn primary" id="settingsClose">Готово</button>
             </div>
         </div>
 
         <!-- Add Word Modal -->
         <div id="addWordModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="addWordTitle">
             <div class="modal-content word-modal-content">
-                <h3 id="addWordTitle">＋ Kelime Ekle</h3>
+                <h3 id="addWordTitle">＋ Добавить слово</h3>
                 <form id="addWordForm" class="word-form" novalidate>
                     <label class="word-form-field" for="addWordRussian">
-                        <span>Rusça kelime / ifade</span>
+                        <span>Русское слово / выражение</span>
                         <input id="addWordRussian" class="word-form-input" type="text" autocomplete="off" required>
                     </label>
                     <label class="word-form-field" for="addWordTurkish">
-                        <span>Türkçe karşılık / not</span>
+                        <span>Турецкий перевод / заметка</span>
                         <input id="addWordTurkish" class="word-form-input" type="text" autocomplete="off" required>
                     </label>
                     <p id="addWordStatus" class="settings-status hidden" role="status" aria-live="polite"></p>
                     <div class="modal-buttons word-form-actions">
-                        <button type="button" class="modal-btn secondary" id="addWordCancel">Vazgeç</button>
-                        <button type="submit" class="modal-btn primary" id="addWordSubmit">Ekle</button>
+                        <button type="button" class="modal-btn secondary" id="addWordCancel">Отмена</button>
+                        <button type="submit" class="modal-btn primary" id="addWordSubmit">Добавить</button>
                     </div>
                 </form>
             </div>

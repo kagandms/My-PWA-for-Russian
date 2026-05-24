@@ -116,7 +116,7 @@ class App {
     async showWrongFeedback(feedbackEl, correctText, word) {
         // Eski satıriçi (inline) bildirim sistemini (fallback olarak) tutabiliriz veya tamamen kapatabiliriz.
         // Ancak yeni sistemde await app.showSnackbar üzerinden gideceğimiz için burası artık pek kullanılmayacak.
-        feedbackEl.innerHTML = `❌ Yanlış! Doğru: <strong>${this.sanitizeHTML(correctText)}</strong>`;
+        feedbackEl.innerHTML = `❌ Неправильно! Правильно: <strong>${this.sanitizeHTML(correctText)}</strong>`;
         if (window.aiManager) {
             try {
                 const aiResult = await window.aiManager.explainWord(word);
@@ -454,18 +454,18 @@ class App {
         event.preventDefault();
         const submitButton = document.getElementById('addWordSubmit');
         if (submitButton) submitButton.disabled = true;
-        this.setAddWordStatus('Kelime ekleniyor...');
+        this.setAddWordStatus('Добавление слова...');
 
         try {
-            if (!window.userWordsManager) throw new Error('Kelime depolama yöneticisi hazır değil.');
+            if (!window.userWordsManager) throw new Error('Менеджер хранения слов не готов.');
 
             window.userWordsManager.addRecord(this.getAddWordFormValues());
             await this.reloadWordsAfterUserChange();
-            this.setAddWordStatus('Kelime eklendi ve çalışma havuzuna alındı.', 'success');
+            this.setAddWordStatus('Слово добавлено и перенесено в пул.', 'success');
             window.setTimeout(() => this.closeAddWordModal(), 650);
         } catch (error) {
             console.error('Kelime eklenemedi', error);
-            this.setAddWordStatus(error.message || 'Kelime eklenemedi.', 'error');
+            this.setAddWordStatus(error.message || 'Не удалось добавить слово.', 'error');
         } finally {
             if (submitButton) submitButton.disabled = false;
         }
@@ -483,16 +483,16 @@ class App {
     async refreshAppContent() {
         const button = document.getElementById('refreshAppBtn');
         if (button) button.disabled = true;
-        this.setSettingsStatus('Güncelleme kontrol ediliyor...');
+        this.setSettingsStatus('Проверка обновлений...');
 
         try {
             await this.updateServiceWorkerRegistration();
             await this.refreshServiceWorkerCache();
-            this.setSettingsStatus('Güncelleme alındı. Uygulama yenileniyor.', 'success');
+            this.setSettingsStatus('Обновление получено. Приложение перезапускается.', 'success');
             window.setTimeout(() => window.location.reload(), 500);
         } catch (error) {
             console.error('Uygulama güncellemesi başarısız oldu', error);
-            this.setSettingsStatus('Güncelleme alınamadı. Bağlantıyı kontrol et.', 'error');
+            this.setSettingsStatus('Не удалось получить обновление. Проверьте соединение.', 'error');
         } finally {
             if (button) button.disabled = false;
         }
@@ -518,7 +518,7 @@ class App {
                 return;
             }
 
-            const timeout = window.setTimeout(() => reject(new Error('Service worker yanıt vermedi.')), 10000);
+            const timeout = window.setTimeout(() => reject(new Error('Service worker не ответил.')), 10000);
             const channel = new MessageChannel();
 
             channel.port1.onmessage = event => {
@@ -528,7 +528,7 @@ class App {
                     return;
                 }
 
-                reject(new Error(event.data?.message || 'Cache güncellenemedi.'));
+                reject(new Error(event.data?.message || 'Не удалось обновить кэш.'));
             };
 
             controller.postMessage({ type: 'REFRESH_CACHE' }, [channel.port2]);
@@ -538,21 +538,21 @@ class App {
     exportUserData() {
         try {
             window.storageManager?.downloadUserDataBackup();
-            this.setSettingsStatus('Yedek dosyası hazırlandı.', 'success');
+            this.setSettingsStatus('Резервная копия подготовлена.', 'success');
         } catch (error) {
             console.error('Yedek oluşturulamadı', error);
-            this.setSettingsStatus('Yedek oluşturulamadı.', 'error');
+            this.setSettingsStatus('Не удалось создать резервную копию.', 'error');
         }
     }
 
     async importUserData(file) {
         try {
             await window.storageManager?.importUserDataBackup(file);
-            this.setSettingsStatus('Yedek geri yüklendi. Uygulama yenileniyor.', 'success');
+            this.setSettingsStatus('Резервная копия восстановлена. Приложение перезапускается.', 'success');
             window.setTimeout(() => window.location.reload(), 500);
         } catch (error) {
             console.error('Yedek geri yüklenemedi', error);
-            this.setSettingsStatus('Yedek dosyası okunamadı.', 'error');
+            this.setSettingsStatus('Не удалось прочитать файл резервной копии.', 'error');
         }
     }
 
@@ -1052,19 +1052,19 @@ class App {
 
         if (percentage === 100) {
             emoji = '🏆';
-            message = 'Mükemmel! Hepsini doğru bildin!';
+            message = 'Отлично! Ты ответил правильно на все вопросы!';
         } else if (percentage >= 80) {
             emoji = '🎉';
-            message = 'Harika iş! Çok iyisin.';
+            message = 'Отличная работа! Ты молодец.';
         } else if (percentage >= 60) {
             emoji = '👍';
-            message = 'Güzel, ama daha iyisini yapabilirsin.';
+            message = 'Хорошо, но ты можешь лучше.';
         } else {
             emoji = '📚';
-            message = 'Biraz daha pratik yapmalısın.';
+            message = 'Тебе нужно больше практиковаться.';
         }
 
-        title.textContent = `${emoji} Sonuç: ${score}/${total}`;
+        title.textContent = `${emoji} Результат: ${score}/${total}`;
         text.textContent = message;
 
         modal.classList.remove('hidden');

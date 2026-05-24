@@ -128,7 +128,7 @@ class FullChoiceQuizMode {
 
         this.answered = false;
         document.getElementById('fullChoiceQuizWord').textContent = this.currentWord.russian;
-        document.getElementById('fullChoiceQuizHint').textContent = 'Doğru bilirsen bu turdan çıkar.';
+        document.getElementById('fullChoiceQuizHint').textContent = 'Если ответишь правильно, слово уйдет из этого раунда.';
         this.renderOptions();
         this.updateFavoriteButton();
     }
@@ -195,9 +195,9 @@ class FullChoiceQuizMode {
         if (isCorrect) {
             this.markWordCompleted(correctWord);
             this.updateCounters();
-            await app.showSnackbar(true, 'Doğru!', 'Bu kelime artık bu turda tekrar gelmeyecek.');
+            await app.showSnackbar(true, 'Правильно!', 'Это слово больше не появится в этом раунде.');
         } else {
-            await app.showSnackbar(false, `Yanlış! Doğru cevap: ${correctWord.turkish}`, 'Bu kelime havuzda kalacak.');
+            await app.showSnackbar(false, `Неправильно! Правильный ответ: ${correctWord.turkish}`, 'Это слово останется в пуле.');
         }
 
         this.lastWordKey = this.getWordKey(correctWord);

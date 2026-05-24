@@ -260,7 +260,7 @@ class TrackerManager {
         wrapper.className = 'heatmap-item';
         box.className = ['heatmap-box', this.getActivityLevel(count)].filter(Boolean).join(' ');
         box.textContent = count > 0 ? '✓' : '';
-        box.title = `${dateString}: ${count} doğru cevap`;
+        box.title = `${dateString}: ${count} правильных ответов`;
         box.setAttribute('aria-label', `${this.getWeekdayLabel(date)} ${count > 0 ? 'tamamlandı' : 'boş'}`);
         label.className = 'heatmap-label';
         label.textContent = this.getWeekdayLabel(date);

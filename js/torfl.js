@@ -131,12 +131,12 @@ class TORFLMode {
         if (selectedIdx === correctIdx) {
             btn.classList.add('correct');
             this.score++;
-            document.getElementById('torflFeedbackText').textContent = "Doğru!";
+            document.getElementById('torflFeedbackText').textContent = "Правильно!";
             document.getElementById('torflFeedbackText').className = "correct-text";
         } else {
             btn.classList.add('wrong');
             buttons[correctIdx].classList.add('correct');
-            document.getElementById('torflFeedbackText').textContent = "Yanlış!";
+            document.getElementById('torflFeedbackText').textContent = "Неправильно!";
             document.getElementById('torflFeedbackText').className = "wrong-text";
         }
 

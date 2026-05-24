@@ -145,9 +145,9 @@ class TypingMode {
             this.score += 10;
             this.correctCount++;
             this.updateScore();
-            await app.showSnackbar(true, 'Doğru!', word.turkish);
+            await app.showSnackbar(true, 'Правильно!', word.turkish);
         } else {
-            await app.showSnackbar(false, `Yanlış! Doğru cevap: ${word.turkish}`, word.russian);
+            await app.showSnackbar(false, `Неправильно! Правильный ответ: ${word.turkish}`, word.russian);
         }
 
         this.nextQuestion();

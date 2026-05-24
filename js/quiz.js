@@ -195,7 +195,7 @@ class QuizMode {
             app.recordAnswer(correctWord.id, isCorrect);
             this.updateScore();
 
-            await app.showSnackbar(true, 'Harika!', 'Doğru bildin.');
+            await app.showSnackbar(true, 'Отлично!', 'Правильный ответ.');
         } else {
             btn.classList.add('wrong');
 
@@ -209,7 +209,7 @@ class QuizMode {
                 } catch (e) { }
             }
 
-            await app.showSnackbar(false, `Yanlış! Doğru cevap: ${correctWord.turkish}`, explanation ? `🤖 ${explanation}` : '');
+            await app.showSnackbar(false, `Неправильно! Правильный ответ: ${correctWord.turkish}`, explanation ? `🤖 ${explanation}` : '');
         }
 
         // Snackbar'daki "Devam Et" butonuna basılınca Promise çözülür ve direk buraya düşeriz.
