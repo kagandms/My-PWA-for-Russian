@@ -32,6 +32,8 @@
                 <button id="install-btn" class="icon-btn" style="display: none;"
                     aria-label="Uygulamayı Yükle">⬇️</button>
                 <button id="add-word-btn" class="icon-btn" aria-label="Kelime ekle">＋</button>
+                <button id="all-words-btn" class="icon-btn" aria-label="Tüm Kelimeler" title="Tüm Kelimeler">📚</button>
+                <button id="trash-btn" class="icon-btn" aria-label="Çöp Kutusu" title="Çöp Kutusu">🗑️</button>
                 <button id="settings-btn" class="icon-btn" aria-label="Ayarlar">⚙️</button>
                 <button id="favorites-list-btn" class="icon-btn" aria-label="Favoriler">⭐</button>
                 <button id="theme-toggle" class="icon-btn" aria-label="Tema Değiştir">🌓</button>
@@ -83,17 +85,9 @@
             </div>
 
             <div class="stats-bar">
-                <div class="stat">
+                <div class="stat" style="flex: 1; align-items: center; justify-content: center;">
                     <span class="stat-value" id="totalWords">0</span>
-                    <span class="stat-label">Kelime</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value" id="masteredWords">0</span>
-                    <span class="stat-label">Öğrenildi</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value" id="accuracy">0%</span>
-                    <span class="stat-label">Doğruluk</span>
+                    <span class="stat-label">Anlık Kelime Sayısı</span>
                 </div>
             </div>
 
@@ -115,16 +109,7 @@
                     <span class="mode-desc">Kelimenin karşılığını yaz</span>
                 </button>
 
-                <button class="mode-card" data-mode="allwords">
-                    <span class="mode-icon">📚</span>
-                    <span class="mode-title">Tüm Kelimeler</span>
-                    <span class="mode-desc">Kelime listesini görüntüle</span>
-                </button>
-                <button class="mode-card" data-mode="trash">
-                    <span class="mode-icon">🗑️</span>
-                    <span class="mode-title">Çöp Kutusu</span>
-                    <span class="mode-desc">Kaldırılan kelimeler</span>
-                </button>
+
                 <button class="mode-card" data-mode="categories">
                     <span class="mode-icon">🗂️</span>
                     <span class="mode-title">Kategoriler</span>

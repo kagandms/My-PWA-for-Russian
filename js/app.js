@@ -333,6 +333,16 @@ class App {
             addWordBtn.addEventListener('click', () => this.openAddWordModal());
         }
 
+        const allWordsBtn = document.getElementById('all-words-btn');
+        if (allWordsBtn) {
+            allWordsBtn.addEventListener('click', () => this.openMode('allwords'));
+        }
+
+        const trashBtn = document.getElementById('trash-btn');
+        if (trashBtn) {
+            trashBtn.addEventListener('click', () => this.openMode('trash'));
+        }
+
         const favListBtn = document.getElementById('favorites-list-btn');
         if (favListBtn) {
             favListBtn.addEventListener('click', () => {
@@ -682,12 +692,17 @@ class App {
     updateStatsDisplay() {
         if (!this.stats) return; // Koruma
 
-        document.getElementById('totalWords').textContent = WORDS.length;
-        document.getElementById('masteredWords').textContent = this.stats.masteredWords ? this.stats.masteredWords.length : 0;
+        const totalWordsEl = document.getElementById('totalWords');
+        if (totalWordsEl) totalWordsEl.textContent = WORDS.length;
+
+        const masteredWordsEl = document.getElementById('masteredWords');
+        if (masteredWordsEl) masteredWordsEl.textContent = this.stats.masteredWords ? this.stats.masteredWords.length : 0;
 
         const total = this.stats.totalCorrect + this.stats.totalWrong;
         const accuracy = total > 0 ? Math.round((this.stats.totalCorrect / total) * 100) : 0;
-        document.getElementById('accuracy').textContent = `%${accuracy}`;
+        
+        const accuracyEl = document.getElementById('accuracy');
+        if (accuracyEl) accuracyEl.textContent = `%${accuracy}`;
     }
 
     getWordStorageKey(wordId) {
