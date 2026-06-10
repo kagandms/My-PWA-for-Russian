@@ -1232,7 +1232,7 @@
 Стиральная машина : Çamaşır makinesi
 Влюбчивый парень : Aşık adam
 Улычивая : Gülümseyen
-Доверчивый : Güvenен (Güvenen)
+Доверчивый : Aşırı güvenen, saf
 Отзывчивый : Sempatik (отзываться: geri çağırmak)
 Устойчивый климат : Sürdürülebilir iklim (istikrarlı)
 Забывчивый сосед : Unutkan komşu
@@ -1427,3 +1427,167 @@
 Соревнование : Yarışma
 Краеведческий : Краеведение (yerel tarih...)
 Героическая борьба : Kahramanca mücadele
+Впечатливый : Aşırı hassas, duygusal
+Обидчивый : Alıngan, gücenen
+Молчаливый : Sessiz, az konuşan
+Болтливый : Çok konuşan, geveze
+Задуматься : Düşünmek, düşünceye dalmak
+Задумчивый : Düşünceli, dalgın
+Разобраться : Anlamak, çözümlemek
+Разборчивый : Seçici, ayırt edici
+Ревновать : Kıskanmak
+Ревнивый : Kıskanç
+Лгать : Yalan söylemek
+Лживый : Yalancı
+Выносить : Tahammül etmek
+Выносливый : Dayanıklı, tahammüllü
+Усталый : Yorgun
+Умелый : Yetenekli, maharetli
+Отсталый : Geri kalmış
+Варёный : Haşlanmış
+Жареный : Kızarmış
+Мороженый : Dondurulmuş
+Крытый : Örtülü, üstü kapalı
+Крыть : Kapatmak, örtmek
+Рваный : Yırtık
+Рвать : Yırtmak, koparmak
+Краденый кошелёк : Çalınmış cüzdan
+Ворованный : Çalınmış
+Крашеный : Boyalı
+Красить : Boyamak
+Чищеный : Temizlenmiş, ayıklanmış
+Печёный : Pişmiş, fırınlanmış
+Солёный : Tuzlu, tuzlanmış
+Солить : Tuzlamak
+Съедобный гриб : Yenilebilir mantar
+Лечебная грязь : Şifalı çamur
+Лечить : Tedavi etmek
+Швейная машина : Dikiş makinesi
+Шить : Dikmek
+Очаровательная девушка : Büyüleyici kız
+Очаровать : Büyülemek, etkilemek
+Дыхательный аппарат : Solunum cihazı
+Повелительное наклонение : Emir kipi
+Повелеть : Emretmek, emir vermek
+Предусмотрительный человек : İleri görüşlü, tedbirli kişi
+Предусмотреть : Öngörmek, önceden düşünmek
+Страховая компания : Sigorta şirketi
+Страховать : Sigortalamak
+Торговый флот : Ticaret filosu; торговать: ticaret yapmak
+Жалкий вид : Acınası görünüm
+Терпимая боль : Katlanılabilir ağrı
+Изменяемая форма : Değiştirilebilir şekil
+Взрывчатые вещества : Patlayıcı madde
+Летучие вещества : Uçucu madde
+Ходячий больной : Yürüyen hasta
+Слабоватый : Hafif zayıf, zayıfımsı
+Великоватый : Biraz büyük
+Темноватый : Hafif koyu, karanlık
+Грубый : Kaba
+Розоватый : Pembemsi
+Крепковатый : Hafif sert
+Красноватый : Kırmızımsı
+Гостить : Misafir olmak
+Перчить : Biberlemek
+Смешить : Güldürmek
+Стыдить : Utandırmak
+Мусорить : Çöp atmak
+Рыбачить : Balık tutmak
+Бомбить : Bombalamak
+Белить : Beyazlatmak
+Глупить : Aptalca davranmak
+Хитрить : Kurnazlık yapmak
+Разнообразить : Çeşitlendirmek
+Холодить : Soğutmak
+Молодить : Gençleştirmek
+Старить : İhtiyarlatmak, kocatmak
+Бодрить : Canlandırmak, dinçleştirmek
+Фальшивить : Sahte davranmak, ikiyüzlülük etmek
+Ночевать : Gecelemek
+Линять : Renk değiştirmek, solmak
+Зимовать : Kışı geçirmek
+Конспектировать : Özet çıkarmak, not tutmak
+Экранизировать : Sinemaya uyarlamak
+Группировать : Gruplamak
+Критиковать : Eleştirmek
+Пустовать : Boş olmak
+Адресовать : Adrese göndermek
+Маршировать : Rap rap yürümek, yürüyüş yapmak
+Пломбировать : Mühürlemek, damgalamak
+Бездельничать : Aylaklık etmek, boş boş dolaşmak
+Секретничать : Gizlemek, gizli tutmak
+Осторожничать : Çok dikkatli olmak
+Вредничать : Birinin çıkarlarına karşı davranmak
+Жадничать : Cimrilik yapmak
+Нервничать : Sinirlenmek
+Кокетничать : Cilve yapmak
+Домовничать : Ev işlerini yönetmek
+Лодырь : Aylak, tembel
+Нахал : Küstah
+Жулик : Dolandırıcı, hırsız
+Мошенник : Dolandırıcı
+Попрошайка : Dilenci
+Подхалим : Yalaka, dalkavuk
+Ябеда : İspiyoncu
+Безумствовать : Akılsızca, düşüncesizce davranmak
+Властвовать : Egemen olmak
+Геройствовать : Kahraman gibi davranmak
+Свидетельствовать : Tanıklık etmek
+Мужествовать : Cesur davranmak, yiğitlik göstermek
+Учительствовать : Öğretmenlik yapmak
+Ахать / Ахнуть : Ah diye haykırmak
+Мяукать / Мяукнуть : Miyavlamak
+Кричать / Крикнуть : Bağırmak
+Глядеть / Глянуть : Bakmak, seyretmek
+Шептать / Шепнуть : Fısıldamak
+Чихать / Чихнуть : Hapşırmak, aksırmak
+Дуть / Дунуть : Esmek, üflemek
+Совать / Сунуть : Sokmak
+Махать / Махнуть : Sallamak
+Толкать / Толкнуть : İtmek
+Рисковать / Рискнуть : Risk almak
+Кидать / Кинуть : Atmak, fırlatmak
+Трогать / Тронуть : Dokunmak
+Зевать / Зевнуть : Esnemek
+Плевать / Плюнуть : Tükürmek
+Трясти / Тряхнуть : Silkelemek
+Выигрывать / Выиграть : Oyunu bitirmek, sonuna kadar oynamak
+Посылать / Послать : Göndermek, yollamak
+Забирать / Забрать : Almak, bir yerden gidip almak
+Отбирать / Отобрать : Elinden almak, zorla almak
+Загорать / Загореть : Güneşlenmek
+Отрывать / Оторвать : Kopartmak
+Отрабатывать / Отработать : Çalışarak ödemek
+Высмеивать / Высмеять : Alay etmek
+Узкий : Dar
+Крупный : Büyük, iri
+Глубокий : Derin
+Тайный : Gizli
+Явный : Açık, belli
+Любопытный : Meraklı
+Краткий : Kısa
+Внезапный : Ani
+Вдохновительный : İlham verici
+Чёрным-чёрно : Kapkaranlık
+Давным-давно : Çok uzun zaman önce
+Полным-полно : Dopdolu, tıklım tıklım
+Зелёным-зелено : Yemyeşil
+Светлым-светло : Aydınlık
+Пятью : Beş kişiyle/beşli araçla
+Шестью : Altı kişiyle/altılı araçla
+Семью : Yedi kişiyle/yedili araçla
+Восемью : Sekiz kişiyle/sekizli araçla
+Дважды : İki kez
+Трижды : Üç kez
+Четырежды : Dört kez
+Однажды : Bir kez, bir gün
+Единожды : Yalnızca bir kez
+Двое : İkisi
+Трое : Üçü
+Четверо : Dördü
+Пятеро : Beşi
+Шестеро : Altısı
+Семеро : Yedisi
+Восьмеро : Sekizi
+Девятеро : Dokuzu
+Десятеро : Onu
