@@ -11,12 +11,10 @@ class PrefixesMode {
         const studyBtn = document.getElementById('prefixesStudyBtn');
         if (studyBtn) {
             studyBtn.onclick = () => {
-                // HATA AYIKLAMA İÇİN EKLENDİ
-                alert("Buton tetiklendi! Modala yönlendiriliyor...");
                 try {
-                    window.app.openMode('quiz', { customWordList: this.prefixWords });
+                    app.openMode('quiz', { customWordList: this.prefixWords });
                 } catch (error) {
-                    alert("Hata oluştu: " + error.message);
+                    console.error("Hata oluştu: " + error.message);
                 }
             };
         }
