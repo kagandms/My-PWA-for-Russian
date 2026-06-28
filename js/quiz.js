@@ -30,7 +30,7 @@ class QuizMode {
 
     getSessionWords(questionCount = null) {
         const poolWords = app.getStudyPool({
-            scope: this.sessionOptions.scope,
+            ...this.sessionOptions,
             minCount: questionCount || 0
         });
         const targetCount = questionCount && questionCount < poolWords.length

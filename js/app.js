@@ -173,6 +173,10 @@ class App {
     getStudyPool(options = {}) {
         const sessionOptions = this.normalizeSessionOptions(options);
 
+        if (sessionOptions.customWordList && Array.isArray(sessionOptions.customWordList)) {
+            return [...sessionOptions.customWordList];
+        }
+
         if (sessionOptions.scope === 'all') {
             return [...WORDS];
         }

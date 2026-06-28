@@ -1,22 +1,19 @@
 class PrefixesMode {
     constructor() {
         this.prefixWords = [];
-        this.setupListeners();
-    }
-
-    setupListeners() {
-        const studyBtn = document.getElementById('prefixesStudyBtn');
-        if (studyBtn) {
-            studyBtn.addEventListener('click', () => {
-                window.app.openMode('quiz', { customWordList: this.prefixWords });
-            });
-        }
     }
 
     init() {
         if (!WORDS || WORDS.length === 0) return;
 
         this.prefixWords = WORDS.filter(w => w.category === 'Prefiksler');
+
+        const studyBtn = document.getElementById('prefixesStudyBtn');
+        if (studyBtn) {
+            studyBtn.onclick = () => {
+                window.app.openMode('quiz', { customWordList: this.prefixWords });
+            };
+        }
 
         this.renderPrefixes();
         document.getElementById('prefixesMode').classList.remove('hidden');
