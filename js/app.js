@@ -569,7 +569,7 @@ class App {
         }
     }
 
-    openMode(mode) {
+    openMode(mode, sessionOptions = {}) {
         if (mode === 'trash') {
             this.showTrash();
             return;
@@ -584,7 +584,7 @@ class App {
 
         if (modesWithCount.includes(mode)) {
             this.pendingMode = mode;
-            this.pendingSessionOptions = this.normalizeSessionOptions();
+            this.pendingSessionOptions = this.normalizeSessionOptions(sessionOptions);
             this.updateQuestionCountModal();
             document.getElementById('questionCountModal').classList.remove('hidden');
         } else if (mode === 'allwords') {
@@ -606,6 +606,12 @@ class App {
 
         {
             document.getElementById('mainMenu').classList.add('hidden');
+            
+            if (this.currentMode && this.currentMode !== mode) {
+                const prevScreen = document.getElementById(`${this.currentMode}Mode`);
+                if (prevScreen) prevScreen.classList.add('hidden');
+            }
+            
             modeScreen.classList.remove('hidden');
             this.currentMode = mode;
 

@@ -2,7 +2,7 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v34';
+const CACHE_NAME = 'rutr-v36';
 const ASSETS = [
     './',
     './index.html',
@@ -49,7 +49,15 @@ const NETWORK_FIRST_PATHS = new Set([
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
-            .then(cache => cache.addAll(ASSETS))
+            .then(cache => {
+                return Promise.all(
+                    ASSETS.map(asset => {
+                        return cache.add(new Request(asset, { cache: 'reload' })).catch(err => {
+                            console.error('Failed to cache:', asset, err);
+                        });
+                    })
+                );
+            })
             .then(() => self.skipWaiting())
     );
 });

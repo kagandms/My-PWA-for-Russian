@@ -5,17 +5,10 @@ class PrefixesMode {
     }
 
     setupListeners() {
-        const backBtn = document.getElementById('prefixesBackBtn');
-        if (backBtn) {
-            backBtn.addEventListener('click', () => {
-                window.app.closeMode();
-            });
-        }
-
         const studyBtn = document.getElementById('prefixesStudyBtn');
         if (studyBtn) {
             studyBtn.addEventListener('click', () => {
-                window.app.startMode('quiz', null, { customWordList: this.prefixWords });
+                window.app.openMode('quiz', { customWordList: this.prefixWords });
             });
         }
     }
