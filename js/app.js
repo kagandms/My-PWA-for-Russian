@@ -589,6 +589,8 @@ class App {
             document.getElementById('questionCountModal').classList.remove('hidden');
         } else if (mode === 'allwords') {
             this.showAllWords();
+        } else if (mode === 'masteredArchive') {
+            this.showMasteredArchive();
         } else if (mode === 'daily') {
             this.startMode('daily'); // Günün kelimeleri
         } else {
@@ -635,6 +637,9 @@ class App {
                     break;
                 case 'categories':
                     window.categoriesMode?.init();
+                    break;
+                case 'prefixes':
+                    window.prefixesMode?.init();
                     break;
             }
         }
@@ -879,13 +884,30 @@ class App {
         return '<div class="no-favorites"><p>📚 Kelime bulunamadı</p><p>Yeni kelime eklemek için üstteki artı butonunu kullan.</p></div>';
     }
 
-    renderWordContent(word) {
+    renderWordContent(word, options = {}) {
+        const showConfidence = options.showConfidence !== false && !word.isDeletedWord;
+        let confidenceMarkup = '';
+
+        if (showConfidence && window.masteredManager) {
+            const score = window.masteredManager.getWordConfidence(word);
+            const display = window.masteredManager.getConfidenceDisplay(score);
+            confidenceMarkup = `
+                <div class="word-confidence-bar">
+                    <div class="confidence-track">
+                        <div class="confidence-fill ${display.colorClass}" style="width: ${score}%"></div>
+                    </div>
+                    <span class="confidence-label">${display.emoji} ${score}%</span>
+                </div>
+            `;
+        }
+
         if (word.english) {
             return `
                 <div class="word-text multi-line">
                     <span class="english" style="color:var(--accent);font-weight:bold;">${this.sanitizeHTML(word.english)}</span>
                     <span class="russian">${this.sanitizeHTML(word.russian)}</span>
                     <span class="turkish" style="color:var(--text-muted);font-size:0.9em;">${this.sanitizeHTML(word.turkish)}</span>
+                    ${confidenceMarkup}
                 </div>
             `;
         }
@@ -894,6 +916,7 @@ class App {
             <div class="word-text">
                 <span class="russian">${this.sanitizeHTML(word.russian)}</span>
                 <span class="turkish">${this.sanitizeHTML(word.turkish)}</span>
+                ${confidenceMarkup}
             </div>
         `;
     }
@@ -1048,6 +1071,199 @@ class App {
         }
 
         this.showAllWords();
+    }
+
+    // ===== Mastered Archive Mode =====
+
+    showMasteredArchive() {
+        if (!window.masteredManager) return;
+
+        document.getElementById('mainMenu').classList.add('hidden');
+        document.getElementById('masteredArchiveMode').classList.remove('hidden');
+        this.currentMode = 'masteredArchive';
+
+        this._masteredSelectedKeys = new Set();
+        this.setupMasteredArchiveListeners();
+        this.renderMasteredArchive();
+    }
+
+    setupMasteredArchiveListeners() {
+        const slider = document.getElementById('confidenceThreshold');
+        const selectAll = document.getElementById('masteredSelectAll');
+        const archiveBtn = document.getElementById('masteredArchiveBtn');
+
+        if (slider) {
+            // Clone to remove old listeners
+            const newSlider = slider.cloneNode(true);
+            slider.parentNode.replaceChild(newSlider, slider);
+
+            newSlider.addEventListener('input', () => {
+                document.getElementById('thresholdValue').textContent = newSlider.value;
+                this._masteredSelectedKeys = new Set();
+                this.renderMasteredArchive();
+            });
+        }
+
+        if (selectAll) {
+            const newSelectAll = selectAll.cloneNode(true);
+            selectAll.parentNode.replaceChild(newSelectAll, selectAll);
+
+            newSelectAll.addEventListener('change', () => {
+                this.handleMasteredSelectAll(newSelectAll.checked);
+            });
+        }
+
+        if (archiveBtn) {
+            const newBtn = archiveBtn.cloneNode(true);
+            archiveBtn.parentNode.replaceChild(newBtn, archiveBtn);
+
+            newBtn.addEventListener('click', () => {
+                this.handleBulkArchive();
+            });
+        }
+    }
+
+    renderMasteredArchive() {
+        const threshold = Number(document.getElementById('confidenceThreshold')?.value) || 50;
+        const results = window.masteredManager.detectMasteredWords(threshold);
+        const container = document.getElementById('masteredWordList');
+        const countSpan = document.getElementById('masteredArchiveCount');
+
+        // Update stats
+        const stats = window.masteredManager.getConfidenceStats();
+        this.setText('masteredStatHigh', stats.high);
+        this.setText('masteredStatMedium', stats.medium);
+        this.setText('masteredStatLow', stats.low);
+        this.setText('masteredStatNone', stats.none);
+
+        if (countSpan) countSpan.textContent = results.length;
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        if (results.length === 0) {
+            container.innerHTML = `
+                <div class="mastered-empty">
+                    <p>🎓 Пока не найдено слов с уверенностью ≥ ${threshold}%</p>
+                    <p>Продолжай учить — система анализирует твой прогресс автоматически!</p>
+                </div>
+            `;
+            this.updateMasteredSelection();
+            return;
+        }
+
+        const fragment = document.createDocumentFragment();
+
+        results.forEach(({ word, score }) => {
+            const wordKey = window.storageManager?.getWordStorageKey(word.id) || String(word.id);
+            const display = window.masteredManager.getConfidenceDisplay(score);
+            const isChecked = this._masteredSelectedKeys.has(wordKey);
+
+            const item = document.createElement('label');
+            item.className = 'mastered-word-item';
+            item.innerHTML = `
+                <input type="checkbox" class="mastered-checkbox" data-word-key="${this.sanitizeHTML(wordKey)}"
+                    ${isChecked ? 'checked' : ''} />
+                <div class="mastered-word-content">
+                    <div class="mastered-word-text">
+                        <span class="russian">${this.sanitizeHTML(word.russian)}</span>
+                        <span class="turkish">${this.sanitizeHTML(word.turkish)}</span>
+                    </div>
+                    <div class="mastered-confidence">
+                        <div class="confidence-track">
+                            <div class="confidence-fill ${display.colorClass}" style="width: ${score}%"></div>
+                        </div>
+                        <span class="confidence-score">${display.emoji} ${score}%</span>
+                    </div>
+                </div>
+            `;
+
+            const checkbox = item.querySelector('.mastered-checkbox');
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    this._masteredSelectedKeys.add(wordKey);
+                } else {
+                    this._masteredSelectedKeys.delete(wordKey);
+                }
+                this.updateMasteredSelection();
+            });
+
+            fragment.appendChild(item);
+        });
+
+        container.appendChild(fragment);
+        this.updateMasteredSelection();
+    }
+
+    handleMasteredSelectAll(checked) {
+        const checkboxes = document.querySelectorAll('#masteredWordList .mastered-checkbox');
+
+        checkboxes.forEach(cb => {
+            cb.checked = checked;
+            const key = cb.dataset.wordKey;
+            if (checked) {
+                this._masteredSelectedKeys.add(key);
+            } else {
+                this._masteredSelectedKeys.delete(key);
+            }
+        });
+
+        this.updateMasteredSelection();
+    }
+
+    updateMasteredSelection() {
+        const count = this._masteredSelectedKeys?.size || 0;
+        const countSpan = document.getElementById('masteredSelectedCount');
+        const archiveBtn = document.getElementById('masteredArchiveBtn');
+        const selectAll = document.getElementById('masteredSelectAll');
+
+        if (countSpan) countSpan.textContent = count;
+        if (archiveBtn) archiveBtn.disabled = count === 0;
+
+        // Sync select-all checkbox state
+        const totalCheckboxes = document.querySelectorAll('#masteredWordList .mastered-checkbox').length;
+        if (selectAll) {
+            selectAll.checked = totalCheckboxes > 0 && count === totalCheckboxes;
+            selectAll.indeterminate = count > 0 && count < totalCheckboxes;
+        }
+    }
+
+    async handleBulkArchive() {
+        const selectedKeys = this._masteredSelectedKeys;
+        if (!selectedKeys || selectedKeys.size === 0) return;
+
+        const count = selectedKeys.size;
+        if (!confirm(`${count} слово будет убрано из списка. Их можно будет восстановить из корзины. Продолжить?`)) {
+            return;
+        }
+
+        // Find word objects for selected keys
+        const wordsToArchive = WORDS.filter(word => {
+            const wordKey = window.storageManager?.getWordStorageKey(word.id) || String(word.id);
+            return selectedKeys.has(wordKey);
+        });
+
+        const archived = window.masteredManager.archiveWords(wordsToArchive);
+
+        // Reload words and refresh
+        try {
+            await this.reloadWordsAfterUserChange();
+        } catch (error) {
+            console.error('Kelime havuzu yenilenemedi', error);
+        }
+
+        this._masteredSelectedKeys = new Set();
+        this.renderMasteredArchive();
+
+        await this.showSnackbar(true,
+            `✅ ${archived} слов убрано`,
+            'Восстановить их можно из корзины (🗑️).'
+        );
+    }
+
+    setText(elementId, value) {
+        const el = document.getElementById(elementId);
+        if (el) el.textContent = String(value);
     }
 
     shuffleArray(array) {

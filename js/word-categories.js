@@ -35,6 +35,7 @@ class WordCategoryManager {
             { name: 'Matematik & Şekiller', icon: '🔢' },
             { name: 'Din, Mitoloji & İnanç', icon: '✨' },
             { name: 'Soyut Kavramlar & Genel İsimler', icon: '📚' },
+            { name: 'Prefiksler', icon: '🧩' },
             { name: this.fallbackCategory, icon: '❔' }
         ];
         this.categoryLineSpecs = this.createCategoryLineSpecs();
@@ -71,7 +72,8 @@ class WordCategoryManager {
             'Hayvanlar, Tarım & Doğa': '228,251,256-258,752,870',
             'Matematik & Şekiller': '590-593,960',
             'Din, Mitoloji & İnanç': '128,252,488,802,818,873,886,994',
-            'Soyut Kavramlar & Genel İsimler': '93,173,222,233,265-266,301,317,431,450-453,466-470,487,565,569,571,574,769,794-795,804,831,849,869,874-876,883,889,901,908,928,932,946,954,966-967,971,974,978,984,986,988,990,992,995-996'
+            'Soyut Kavramlar & Genel İsimler': '93,173,222,233,265-266,301,317,431,450-453,466-470,487,565,569,571,574,769,794-795,804,831,849,869,874-876,883,889,901,908,928,932,946,954,966-967,971,974,978,984,986,988,990,995-996',
+            'Prefiksler': '1594-1708'
         };
     }
 

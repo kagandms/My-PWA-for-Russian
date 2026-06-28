@@ -1591,3 +1591,118 @@
 Восьмеро : Sekizi
 Девятеро : Dokuzu
 Десятеро : Onu
+Влететь : İçeriye uçularak girmek, hızla dalmak
+Взлететь : Yükselmek (fiyatlar vb. dahil)
+Вылечить : İyileştirmek
+Вытащить : Çekip çıkarmak
+Выгнать : Dışarı kovmak, kapı dışarı etmek
+Забросить : Bir engelin arkasına uzağa veya gözden kaybolacak bir noktaya fırlatmak / bırakmak (mecaz)
+Дойти : Bir yere varmak
+Довезти : Araçla bir yere kadar bırakmak
+Доплатить : Üstünü ödemek, tamamlamak
+Записать : Not almak
+Зарегистрировать : Birini veya bir şeyi kaydetmek
+Законспектировать : Uzun yazıyı veya metni özetleyip yazıya dökmek
+Запить : Bir şeyi yuttuktan sonra hemen arkasından bir şey içmek
+Испечь : Hamurun fırına girip ekmek, kek vb. çıkması
+Истратить : Son kuruşuna / son damlasına / dibine kadar harcamak
+Набросить : Bir nesneyi başka bir şeyin üzerine atmak / serivermek
+Накинуть : Fiyatın veya verginin üstüne koymak
+Нажарить : Bol bol, yığınla kızartma yapıp ortaya koymak
+Наготовить : Çeşit çeşit, tabak tabak, fazlasıyla yemek yapmak
+Напугать : Korkutmak
+Наклеить : Bir şeyi bir yüzeyin üzerine yapıştırmak (afiş asmak vb.)
+Насмешить : Kahkahaya boğmak
+Напеть : Kendi kendine mırıldanmak
+Надстроить : Var olan yapının üzerine inşa etmek / kat çıkmak
+Недоспать : Uykusunu almamak
+Недооценить : Bir durumu, nesneyi veya kişiyi olduğundan değersiz/küçük görmek
+Обеднеть : Fakirleşmek (kesin)
+Ослабеть : Güçsüzleşmek (kesin)
+Оштрафовать : Para cezası kesmek (kesin)
+Опубликовать : Yayınlamak
+Отломать : Bir nesneyi ana bütünden ayırmak, bir parça koparmak (çikolatadan vb.)
+Отработать : Mesai/vardiyayı çalışarak doldurmak / borcu çalışarak ödemek
+Отойти : Bir noktadan uzaklaşmak
+Отнести : Bir nesneyi olduğu yerden alıp başka bir yere teslim etmek
+Переспорить : Bir tartışmada karşı tarafa üstün gelmek
+Перекричать : Daha yüksek sesle bağırarak birinin sesini bastırmak
+Переделать : Sıfırdan baştan yapmak ya da nesneyi/durumu başka bir şeye dönüştürmek
+Подрасти : Büyüyüp kıyafetlere sığmamak, eski alışkanlıkları/tavırları geride bırakacak kadar büyümek
+Подумать : Kısa süreli düşünmek
+Побежать : Koşmaya başlamak, fırlamak
+Подмести : Yeri süpürüp temizlemek
+Подсчитать : Sonlandırıcı işlemi yapmak, sonucu bulmak
+Подсказать : Kopya vermek, ipucu fısıldamak
+Преувеличить : Abartmak
+Помолчать : Kısa bir süre sessiz kalmak
+Предчувствовать : İçine doğmak, önceden sezmek
+Предвидеть : Öngörmek, tahmin etmek
+Привезти : Birini veya bir şeyi araçla bir yere getirmek
+Привести : Bir insanı veya canlıyı elinden tutarak, eşlik ederek bir yere getirmek
+Проехать : Tünelin içinde geçip gitmek, durak kaçırmak, mesafe katetmek
+Продумать : Etraflıca, detaylıca düşünmek
+Прогреть : Bir şeyi derinlemesine, her yerini eşit ısıtmak
+Прожарить : Etin veya yemeğin içinin çiğ kalmayacak şekilde pişmesi
+Разрезать : Keserek parçalara ayırmak, bölmek
+Разглядеть : Bir engelin içinden bir detayı farketmek, görebilmek
+Растолстеть : Şişmanlamak
+Разбить : Kırmak, tuzla buz etmek
+Разбудить : Uyandırmak
+Разорвать : Yırtmak, koparmak
+Сочувствовать : Empati kurmak, halden anlamak, başsağlığında bulunmak
+Съесть : Son kırıntısına kadar yemek, tabağı sıfırlamak
+Сыграть : Bir maçı, oyunu, müzik parçasını başlayıp bitirmek
+Сходить : Merdiven inmek, kısa süre bir yere gidip işini halledip dönmek
+Рассмотреть : Her açıdan, detaylıca incelemek
+Развеселить : Birini neşelendirmek
+Алогичный : Mantıklı olmayan
+Аморальный : Ahlak dışı
+Антифашистский : Faşist karşıtı
+Бесчеловечный : İnsanlık dışı, gaddarca, vahşice
+Безбилетный : Biletsiz
+Безлюдный : Issız, az insanlı / insansız
+Безрадостный : Neşesiz, hüzünlü, kasvetli
+Внутригосударственный : Devlet içi, yurtiçi
+Довоенный : Savaştan önce, savaşa kadarki
+Дореволюционный : Devrimden önce, devrime kadarki
+Заокеанский : Okyanus ötesi
+Международный : Uluslararası
+Межзвёздный : Yıldızlararası
+Надводный : Su üstü
+Наилучший : En iyi, mükemmel
+Невесёлый : Keyifsiz, neşesiz
+Небезопасный : Risk barındıran, güvenli olmayan
+Околоземный : Dünyaya yakın
+Позапрошлый : Dün veya geçen değil ondan önceki
+Супермодный : Aşırı trend, son derece moda, çok havalı
+Ультрасовременный : Ultra modern, çağın ötesinde
+Подводный : Su altı
+Предпраздничный : Arife
+Ничто : Hiçbir şey
+Никто : Hiç kimse
+Никакой : Hiçbir
+Ничей : Hiçkimsenin
+Нисколько : Zerre kadar, hiç de
+Нигде : Hiçbir yerde
+Никуда : Hiçbir yere
+Ниоткуда : Hiçbir yerden
+Никак : Hiçbir şekilde
+Нечего : Hiçbir şey yok (yapacak, söyleyecek vb.)
+Некого : Hiç kimse yok (konuşacak, suçlayacak vb.)
+Негде : Hiçbir yer yok (oturacak, duracak vb.)
+Некуда : (Gidilecek, kaçılacak) hiçbir yer yok
+Неоткуда : (Alınacak, gelecek) hiçbir yer yok
+Некогда : Hiç zaman yok
+Незачем : Hiçbir sebep yok
+Некто : Kim olduğu bilinmeyen biri
+Нечто : Nesne olduğu belli ama ne olduğu bilinmiyor
+Некоторый : Bazı, birtakım
+Несколько : Birkaç, az sayıda
+Некогда : Bir zamanlar, eskiden
+Кое-кто : Bilinen ama karşı tarafa söylemek istenmeyen kişi
+Кое-что : Bildiğim ama sana bahsetmek istemediğim bir şey
+Кое-где : Sabit bir konumu gizler
+Кое-куда : Bildiğim ama söylemek istemediğim bir yere
+Кое-когда : Benim bildiğim zamanlarda
+Кое-какой : Bildiğim türden bazı / baştan savma, sıradan
