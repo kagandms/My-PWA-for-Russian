@@ -2,7 +2,7 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v37';
+const CACHE_NAME = 'rutr-v38';
 const ASSETS = [
     './',
     './index.html',
@@ -75,7 +75,11 @@ self.addEventListener('activate', event => {
 });
 
 function getAssetRequest(asset) {
-    return new Request(new URL(asset, self.registration.scope), { cache: 'reload' });
+    if (asset === './') return new Request(asset, { cache: 'reload' });
+    
+    const url = new URL(asset, self.location.href);
+    url.searchParams.set('v', CACHE_NAME);
+    return new Request(url, { cache: 'reload' });
 }
 
 function isCacheableResponse(response) {
