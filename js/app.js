@@ -161,7 +161,8 @@ class App {
 
     normalizeSessionOptions(options = {}) {
         return {
-            scope: options.scope === 'all' ? 'all' : 'learning'
+            scope: options.scope === 'all' ? 'all' : 'learning',
+            customWordList: options.customWordList || null
         };
     }
 
