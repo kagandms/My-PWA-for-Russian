@@ -2,7 +2,7 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v33';
+const CACHE_NAME = 'rutr-v34';
 const ASSETS = [
     './',
     './index.html',
@@ -78,7 +78,11 @@ function shouldUseNetworkFirst(request) {
     if (request.mode === 'navigate') return true;
 
     const requestUrl = new URL(request.url);
-    return requestUrl.origin === self.location.origin && NETWORK_FIRST_PATHS.has(requestUrl.pathname);
+    if (requestUrl.origin !== self.location.origin) return false;
+
+    // Support subdirectories like GitHub pages by checking if pathname ends with the asset path
+    const paths = Array.from(NETWORK_FIRST_PATHS);
+    return paths.some(path => requestUrl.pathname === path || requestUrl.pathname.endsWith(path));
 }
 
 async function putInCache(request, response) {

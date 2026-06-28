@@ -23,10 +23,7 @@ class PrefixesMode {
     init() {
         if (!WORDS || WORDS.length === 0) return;
 
-        this.prefixWords = WORDS.filter(w => {
-            const category = window.wordCategoryManager?.getCategory(w, w.originalIndex + 1);
-            return category === 'Prefiksler';
-        });
+        this.prefixWords = WORDS.filter(w => w.category === 'Prefiksler');
 
         this.renderPrefixes();
         document.getElementById('prefixesMode').classList.remove('hidden');
