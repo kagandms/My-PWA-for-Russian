@@ -85,7 +85,7 @@ async function loadWords() {
                         turkish: turkish,
                         sourceLineNumber: sourceLineNumber,
                         category: getWordCategory({ russian, turkish }, sourceLineNumber),
-                        example: { russian: "", turkish: "" },
+                        example: wordSentences.length > 0 ? { russian: wordSentences[0].ru, turkish: wordSentences[0].tr } : { russian: "", turkish: "" },
                         sentences: wordSentences
                     };
 
@@ -112,7 +112,7 @@ async function loadWords() {
                             turkish: turkish,
                             sourceLineNumber: sourceLineNumber,
                             category: getWordCategory({ russian, turkish }, sourceLineNumber),
-                            example: { russian: "", turkish: "" },
+                            example: wordSentences.length > 0 ? { russian: wordSentences[0].ru, turkish: wordSentences[0].tr } : { russian: "", turkish: "" },
                             sentences: wordSentences
                         };
 

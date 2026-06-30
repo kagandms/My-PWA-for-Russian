@@ -155,12 +155,19 @@ class FlashcardMode {
 
         if (this.direction === 'ru-tr') {
             document.getElementById('flashcardWord').textContent = word.russian;
+            document.getElementById('flashcardExample').textContent = word.example?.russian || '';
             document.getElementById('flashcardTranslation').textContent = word.turkish;
-            return;
+        } else {
+            document.getElementById('flashcardWord').textContent = word.turkish;
+            document.getElementById('flashcardExample').textContent = word.example?.turkish || '';
+            document.getElementById('flashcardTranslation').textContent = word.russian;
         }
 
-        document.getElementById('flashcardWord').textContent = word.turkish;
-        document.getElementById('flashcardTranslation').textContent = word.russian;
+        // Güven seviyesini (confidence) güncelle
+        const confContainer = document.getElementById('flashcardConfidenceContainer');
+        if (confContainer) {
+            confContainer.innerHTML = app.getConfidenceMarkup(word);
+        }
     }
 
     updateProgress() {

@@ -84,6 +84,12 @@ class TypingMode {
         document.getElementById('typingInput').focus();
         this.updateFavoriteButton();
         this.updateProgress();
+
+        // Güven seviyesini (confidence) güncelle
+        const confContainer = document.getElementById('typingConfidenceContainer');
+        if (confContainer) {
+            confContainer.innerHTML = app.getConfidenceMarkup(word);
+        }
     }
 
     resetHint(answer) {

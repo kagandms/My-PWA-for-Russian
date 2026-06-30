@@ -144,6 +144,12 @@ class QuizMode {
 
         // Favori butonunu güncelle
         this.updateFavoriteButton();
+
+        // Güven seviyesini (confidence) güncelle
+        const confContainer = document.getElementById('quizConfidenceContainer');
+        if (confContainer) {
+            confContainer.innerHTML = app.getConfidenceMarkup(word);
+        }
     }
 
     generateOptions(correctWord) {

@@ -895,21 +895,26 @@ class App {
         return '<div class="no-favorites"><p>📚 Kelime bulunamadı</p><p>Yeni kelime eklemek için üstteki artı butonunu kullan.</p></div>';
     }
 
+    getConfidenceMarkup(word) {
+        if (!window.masteredManager) return '';
+        const score = window.masteredManager.getWordConfidence(word);
+        const display = window.masteredManager.getConfidenceDisplay(score);
+        return `
+            <div class="word-confidence-bar">
+                <div class="confidence-track">
+                    <div class="confidence-fill ${display.colorClass}" style="width: ${score}%"></div>
+                </div>
+                <span class="confidence-label">${display.emoji} ${score}%</span>
+            </div>
+        `;
+    }
+
     renderWordContent(word, options = {}) {
         const showConfidence = options.showConfidence !== false && !word.isDeletedWord;
         let confidenceMarkup = '';
 
-        if (showConfidence && window.masteredManager) {
-            const score = window.masteredManager.getWordConfidence(word);
-            const display = window.masteredManager.getConfidenceDisplay(score);
-            confidenceMarkup = `
-                <div class="word-confidence-bar">
-                    <div class="confidence-track">
-                        <div class="confidence-fill ${display.colorClass}" style="width: ${score}%"></div>
-                    </div>
-                    <span class="confidence-label">${display.emoji} ${score}%</span>
-                </div>
-            `;
+        if (showConfidence) {
+            confidenceMarkup = this.getConfidenceMarkup(word);
         }
 
         if (word.english) {
