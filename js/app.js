@@ -536,7 +536,7 @@ class App {
                 return;
             }
 
-            const timeout = window.setTimeout(() => reject(new Error('Service worker не ответил.')), 10000);
+            const timeout = window.setTimeout(() => reject(new Error('Service worker не ответил.')), 60000);
             const channel = new MessageChannel();
 
             channel.port1.onmessage = event => {

@@ -2,7 +2,7 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v43';
+const CACHE_NAME = 'rutr-v44';
 const ASSETS = [
     './',
     './index.html',
@@ -135,7 +135,11 @@ async function cacheFirst(request) {
 
 async function refreshAppCache() {
     const cache = await caches.open(CACHE_NAME);
-    await Promise.all(ASSETS.map(asset => cache.add(getAssetRequest(asset))));
+    const results = await Promise.allSettled(
+        ASSETS.map(asset => cache.add(getAssetRequest(asset)).catch(err => {
+            console.warn('Cache refresh failed for:', asset, err);
+        }))
+    );
     return { ok: true, cacheName: CACHE_NAME };
 }
 
