@@ -765,6 +765,37 @@ body {
     font-style: italic;
 }
 
+.examples-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: left;
+}
+
+.examples-list li {
+    background: rgba(28, 176, 246, 0.05);
+    border-left: 3px solid var(--accent);
+    padding: 0.75rem 1rem;
+    border-radius: 0 12px 12px 0;
+}
+
+.example-ru {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.example-tr {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: block;
+}
+
 .quiz-options {
     display: flex;
     flex-direction: column;
@@ -782,6 +813,7 @@ body {
     transition: all 0.1s ease;
     text-align: left;
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 .quiz-option:hover {

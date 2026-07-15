@@ -39,8 +39,8 @@ async function loadWords() {
     try {
         // İki dosyayı aynı anda (paralel) asenkron çek
         const [wordsResponse, sentencesResponse] = await Promise.all([
-            fetch('kelimeler_tam.txt', { cache: 'reload' }),
-            fetch('sentences.json', { cache: 'reload' }).catch(() => null) // sentences.json yoksa çökmeyi önle
+            fetch('kelimeler_tam.txt'),
+            fetch('sentences.json').catch(() => null) // sentences.json yoksa çökmeyi önle
         ]);
 
         if (!wordsResponse.ok) {
@@ -56,7 +56,6 @@ async function loadWords() {
         }
 
         WORDS = []; // Reset words
-        let idCounter = 1;
 
         lines.forEach((line, lineIndex) => {
             const sourceLineNumber = lineIndex + 1;
@@ -72,7 +71,7 @@ async function loadWords() {
 
                 if (russian && turkish) {
                     // Dinamik Cümleleri Ata
-                    const currentId = idCounter++;
+                    const currentId = sourceLineNumber;
                     let wordSentences = [];
                     if (sentencesDb[String(currentId)]) {
                         wordSentences = sentencesDb[String(currentId)];
@@ -100,7 +99,7 @@ async function loadWords() {
                     const turkish = trimmedLine.substring(equalIndex + 1).trim();
 
                     if (russian && turkish) {
-                        const currentId = idCounter++;
+                        const currentId = sourceLineNumber;
                         let wordSentences = [];
                         if (sentencesDb[String(currentId)]) {
                             wordSentences = sentencesDb[String(currentId)];

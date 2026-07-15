@@ -54,7 +54,7 @@ def load_existing_sentences():
 
 def save_sentences(sentences_db):
     with open('sentences.json', 'w', encoding='utf-8') as f:
-        json.dump(sentences_db, f, ensure_ascii=False, indent=2)
+        json.dump(sentences_db, f, ensure_ascii=False, separators=(',', ':'))
 
 def generate_batch_via_ai(batch_words):
     if not OPENROUTER_API_KEY:
@@ -68,22 +68,31 @@ def generate_batch_via_ai(batch_words):
         "Content-Type": "application/json"
     }
     
-    prompt = f"""You are a professional Russian language teacher. Generate exactly 1 Russian example sentence and its Turkish translation for each word provided in the JSON array below.
+    prompt = f"""You are a professional Russian language teacher. Generate EXACTLY 3 distinct Russian example sentences and their Turkish translations for EACH word provided in the JSON array below.
 Constraints:
 1. Level: B1 to B1+. Do NOT use overly simple sentences (A1-A2).
-2. Length: Medium (6 to 12 words).
-3. Context Clues: The sentence MUST provide strong semantic context so that a learner could guess the meaning of the target word from the context even if they don't know it. (e.g., for 'подумать', do NOT use 'Я подумаю', instead use 'Прежде чем принять это важное решение, мне нужно всё тщательно подумать.').
+2. Length: Medium (6 to 12 words per sentence).
+3. Context Clues: Each sentence MUST provide strong semantic context so that a learner could guess the meaning of the target word from the context even if they don't know it. (e.g., for 'подумать', do NOT use 'Я подумаю', instead use 'Прежде чем принять это важное решение, мне нужно всё тщательно подумать.').
 4. Naturalness: Phrasing must be highly authentic and natural, as spoken by native Russians.
+5. Variety: The 3 sentences for each word MUST be completely different in context, tense, and grammatical structure.
 
 Input JSON:
 {json.dumps(batch_words, ensure_ascii=False)}
 
 Output requirements:
-Return ONLY a valid, raw JSON object where keys are the word IDs and values are arrays containing exactly ONE object with "ru" (Russian sentence) and "tr" (Turkish translation) keys. 
+Return ONLY a valid, raw JSON object where keys are the word IDs and values are arrays containing EXACTLY 3 objects with "ru" (Russian sentence) and "tr" (Turkish translation) keys. 
 Example format:
 {{
-  "1": [{{ "ru": "Прежде чем...", "tr": "Önce..." }}],
-  "2": [{{ "ru": "...", "tr": "..." }}]
+  "1": [
+    {{ "ru": "Прежде чем...", "tr": "Önce..." }},
+    {{ "ru": "Вторая фраза...", "tr": "İkinci cümle..." }},
+    {{ "ru": "Третий пример...", "tr": "Üçüncü örnek..." }}
+  ],
+  "2": [
+    {{ "ru": "...", "tr": "..." }},
+    {{ "ru": "...", "tr": "..." }},
+    {{ "ru": "...", "tr": "..." }}
+  ]
 }}
 Do NOT output any markdown blocks (like ```json), just the raw JSON string starting with {{ and ending with }}.
 """
@@ -136,11 +145,22 @@ def main():
     # ve geçerli, uzun olanları sakla
     if sentences_db:
         for wid, sents in sentences_db.items():
-            if isinstance(sents, list) and len(sents) > 0 and isinstance(sents[0], dict):
-                ru_ex = sents[0].get('ru', '')
-                # Eğer daha önce AI tarafından uzun ve geçerli bir şey üretildiyse (sentetik kalıplar değilse)
-                if len(ru_ex.split()) >= 5 and not "Я хочу" in ru_ex and not "Это мой новый" in ru_ex:
-                    new_db[wid] = sents
+            if isinstance(sents, list) and len(sents) >= 3:
+                # 3 geçerli, kaliteli (şablon olmayan) cümle içerip içermediğini kontrol et
+                valid_sentences_count = 0
+                for sent in sents:
+                    if isinstance(sent, dict):
+                        ru_ex = sent.get('ru', '')
+                        # Şablon kalıpları ve çok kısa cümleleri filtrele
+                        if len(ru_ex.split()) >= 5 and not any(template in ru_ex for template in [
+                            "Я хочу", "Это мой новый", "Мы обсуждали слово", 
+                            "Как сказать", "Он неожиданно сказал", "Какой"
+                        ]):
+                            valid_sentences_count += 1
+                
+                # Eğer en az 3 kaliteli cümlesi varsa, yeniden üretmeye gerek yok
+                if valid_sentences_count >= 3:
+                    new_db[wid] = sents[:3] # Sadece ilk 3'ü al garanti olsun
     
     final_words_to_process = []
     for w in words_to_process:
@@ -170,7 +190,8 @@ def main():
             processed_count += len(batch)
             print(f"Başarılı. (Geçen süre: {time.time() - start_time:.1f}s)")
             
-            time.sleep(1)
+            # Rate limit'e takılmamak için biraz daha uzun bekle
+            time.sleep(3)
         else:
             print("Batch başarısız oldu. Betik durduruluyor...")
             break

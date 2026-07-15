@@ -77,6 +77,19 @@ class TypingMode {
         this.answered = false;
         this.resetHint(word.turkish);
         document.getElementById('typingWord').textContent = word.russian;
+        
+        const examplesList = document.getElementById('typingExamplesList');
+        examplesList.innerHTML = '';
+        if (word.sentences && word.sentences.length > 0) {
+            const sentencesToShow = word.sentences.slice(0, 3);
+            sentencesToShow.forEach(sent => {
+                const li = document.createElement('li');
+                // Sadece Rusçayı göster (Türkçesi cevabı ele vermesin)
+                li.innerHTML = `<span class="example-ru" style="margin-bottom: 0;">${sent.ru}</span>`;
+                examplesList.appendChild(li);
+            });
+        }
+        
         document.getElementById('typingPrompt').textContent = 'Türkçe karşılığını yaz';
         document.getElementById('typingInput').value = '';
         document.getElementById('typingInput').disabled = false;

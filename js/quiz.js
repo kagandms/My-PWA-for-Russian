@@ -123,7 +123,16 @@ class QuizMode {
 
         // Soru
         document.getElementById('quizWord').textContent = word.russian;
-        document.getElementById('quizExample').textContent = word.example.russian;
+        const examplesList = document.getElementById('quizExamplesList');
+        examplesList.innerHTML = '';
+        if (word.sentences && word.sentences.length > 0) {
+            const sentencesToShow = word.sentences.slice(0, 3);
+            sentencesToShow.forEach(sent => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span class="example-ru">${sent.ru}</span><span class="example-tr">${sent.tr}</span>`;
+                examplesList.appendChild(li);
+            });
+        }
 
         // Seçenekler oluştur
         const options = this.generateOptions(word);

@@ -181,7 +181,7 @@
                 <div class="quiz-question">
                     <button class="favorite-btn" id="quizFavorite" aria-label="Добавить в избранное">☆</button>
                     <p class="question-word" id="quizWord">Слово</p>
-                    <p class="question-example" id="quizExample">Пример предложения</p>
+                    <ul class="examples-list" id="quizExamplesList"></ul>
                     <div id="quizConfidenceContainer" style="margin-top: 15px;"></div>
                 </div>
                 <div class="quiz-options" id="quizOptions">
@@ -223,6 +223,7 @@
                     <button class="favorite-btn" id="fullChoiceQuizFavorite" aria-label="Добавить в избранное">☆</button>
                     <p class="question-word" id="fullChoiceQuizWord">Слово</p>
                     <p class="question-example" id="fullChoiceQuizHint">Если ответишь правильно, слово уйдет из этого раунда.</p>
+                    <ul class="examples-list" id="fullChoiceQuizExamplesList"></ul>
                 </div>
                 <div class="quiz-options" id="fullChoiceQuizOptions"></div>
             </div>
@@ -494,6 +495,7 @@
                     <button class="favorite-btn" id="typingFavorite" aria-label="Favoriye ekle">☆</button>
                     <p class="question-word" id="typingWord">Kelime</p>
                     <div id="typingConfidenceContainer" style="margin-top: 15px;"></div>
+                    <ul class="examples-list" id="typingExamplesList"></ul>
                     <p class="question-example" id="typingPrompt">Türkçe karşılığını yaz</p>
                 </div>
                 <form id="typingForm" class="typing-form" autocomplete="off">

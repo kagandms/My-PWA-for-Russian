@@ -129,6 +129,18 @@ class FullChoiceQuizMode {
         this.answered = false;
         document.getElementById('fullChoiceQuizWord').textContent = this.currentWord.russian;
         document.getElementById('fullChoiceQuizHint').textContent = 'Если ответишь правильно, слово уйдет из этого раунда.';
+        
+        const examplesList = document.getElementById('fullChoiceQuizExamplesList');
+        examplesList.innerHTML = '';
+        if (this.currentWord.sentences && this.currentWord.sentences.length > 0) {
+            const sentencesToShow = this.currentWord.sentences.slice(0, 3);
+            sentencesToShow.forEach(sent => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span class="example-ru">${sent.ru}</span><span class="example-tr">${sent.tr}</span>`;
+                examplesList.appendChild(li);
+            });
+        }
+        
         this.renderOptions();
         this.updateFavoriteButton();
     }
