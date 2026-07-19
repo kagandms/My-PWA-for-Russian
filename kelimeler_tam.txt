@@ -1706,3 +1706,235 @@
 Кое-куда : Bildiğim ama söylemek istemediğim bir yere
 Кое-когда : Benim bildiğim zamanlarda
 Кое-какой : Bildiğim türden bazı / baştan savma, sıradan
+
+Бесподобный : eşsiz, benzersiz, rakipsiz
+Наивысший : en yüksek, zirve
+Наименьший : en düşük, minimum
+Небезызвестный : herkesin yakından tanıdığı, bilinen
+Распрекрасный : fevkalade, aşırı mükemmel
+Безграмотный : cahil
+Противоестественный : doğa dışı, tabiata aykırı, anormal
+Антисанитарный : hijyenik olmayan, sağlık koşullarına aykırı
+Безобидный : zararsız, masumane, kimseyi kırmayan
+Дохристианский : Hristiyanlık öncesi
+Послегарантийный : garanti sonrası (teknolojik)
+Ассиметричный : asimetrik
+Досрочный : vaktinden önce, erken
+Небезынтересный : kayda değer derecede ilginç
+Неискренний : yapmacık, samimi olmayan
+Иррациональный : irrasyonel, akıl dışı
+Сверхзвуковой : ses üstü, süpersonik
+Экстраординарный : sıra dışı, olağanüstü
+Преотличный : mükemmel ötesi
+Послеоперационный : ameliyat sonrası
+Предвыборный : seçim öncesi
+Соразмерный : orantılı
+Противовоздушный : hava savunma
+Безыскусный : doğal, sade, gösterişsiz
+Разпоследний : en son / adi, en alt seviye
+Добрачный : evlilik öncesi
+Замогильный : kabir ötesi
+Пореформенный : reform sonrası
+Подопытный : denek
+Предумышленный : önceden tasarlanmış, kasıtlı
+Перетертый : püre/toz haline getirilmiş
+Обойти : (çukur, bina, kural, yasa) etrafından dolanarak geçmek
+Объехать : araçla etrafından dolanmak
+Обучить : bir mesleği, sanatı, işi birine detaylıca öğretmek
+Отвести : yürüyen bir canlıyı yürüyerek bir yere bırakmak, teslim etmek
+Отвезти : bir canlı veya cansız nesneyi araçla bir yere bırakmak
+Отремонтировать : tamir etmek (св)
+Перевезти : ev/ofis, lojistik sevkiyat yapmak
+Перенести : bir etkinliği ertelemek / atlatmak, geçirmek
+Переболеть : hastalığı atlatmak, iyileşmek / takıntılı hevesin bitmesi
+Обыграть : rakibi yenmek
+Перезаниматься : aşırı ders çalışmak, aşırı antrenman yapmak
+Отцвести : çiçek dökmek, solmak
+Отомстить : intikam almak, öç almak
+Перехвалить : aşırı övmek, göklere çıkarmak
+Перехитрить : oyuna getirmek, kurnazlıkla üstün gelmek
+Перепробовать : mevcut olan her seçeneği denemek
+Обделить : hakkını yemek, payından mahrum bırakmak
+Отстирать : zorlu lekeyi çıkarmak
+Отблагодарить : (genellikle somut bir hediye, para veya büyük bir iyilikle) teşekkür etmek
+Отговорить : vazgeçirmek, aklını çelmek
+Пришить пуговицу : düğme dikmek
+Приоткрыть окно : pencereyi az açmak
+Прогулять урок : dersi asmak
+Проконсультировать аспиранта : doktora öğrencisine danışmanlık vermek
+Уложить вещи : eşya toplamak (valize vb.)
+Сбрить усы : bıyığı tamamen sıfıra vurmak
+Прожить два года : iki yılı bir yerde doldurmak (süreyi doldurmak)
+Продемонстрировать свои знания : kendi bilgi ve birikimini göstermek
+Укачать ребенка : bebeği sakinleştirmek/dönüşlü hali: araç tutması
+Ушить брюки : bol gelen pantolonu daraltmak, küçültmek
+Развязать шнурки : ayakkabı bağcığını çözmek
+Расплести косу : saç örgüsünü açmak
+Разморозить овощи : dondurulmuş sebzeyi çözmek
+Разминировать поле : araziyi mayından temizlemek
+Распаковать вещи : bavul açmak, paket açmak
+Раскрошить хлеб : ekmeği ufalamak
+Скомкать бумагу : kağıdı buruşturmak
+Утаить что-то : bir haberi, gerçeği, parayı ya da delili başkalarından saklamak
+Антигриппин : grip karşıtı ilaç/aparatı
+Безветрие : durgun hava, yaprak kıpırdamaması
+Безденежье : nakit akışı sıkıntısı
+Безделье : boş durma / işle meşgul olmama
+Безработица : işsizlik oranı / krizi
+Бесценок : bir şeyi piyasasının çok altına almak veya satmak
+Безотцовщина : babasızlık
+Безделушка : incik boncuk, işlevsiz süs eşyaları
+
+Выяснить : açığa çıkarmak, netleştirmek
+Затруднить : zorlaştırmak, güçleştirmek
+Засекретить : gizli tutmak
+Занизить : olduğundan küçük, az, eksik (fiyat) göstermek
+Завысить : olduğundan büyük, çok, fazla (fiyat) göstermek
+Наполнить : boş bir hacmi doldurmak (bardak, oda)
+Насытить : doyurmak
+Наскучить : can sıkmak, gına getirmek
+Озаглавить : başlık koymak
+Оздоровить : iyileştirmek, sağlığına kavuşturmak (sadece vücut değil)
+Охладить : soğutmak (duygu), serinletmek (madde)
+Осложнить : karmaşıklaştırmak
+Облегчить : kolaylaştırmak, hafifletmek
+Обновить : güncellemek
+Обезглавить : başını kesmek
+Отграничить : sınırlarını belirlemek
+Пояснить : izah etmek
+Удлинить : uzatmak (boyunu, süresini)
+Укоротить : kısaltmak (boyunu, süresini)
+Удвоить : iki katına çıkarmak
+Обнародовать : halka açıklamak, kamuoyuna duyurmak
+Повысить : yükseltmek, arttırmak, terfi ettirmek
+Разъяснить : detaylıca açıklamak, aydınlatmak
+Понизить : düşürmek, azaltmak, rütbesini indirmek
+Снизить : aşağı çekmek, indirmek (fiyatı/hızı)
+Отсвечивать : yansıma yapmak
+Распевать : bağıra çağıra şarkı söylemek
+Заменить : yerine yenisini koymak
+Сменить : değiştirmek
+Выстрелить : mermi sıkmak
+Пересадить : bir fidenin yerini değiştirmek
+Развесить : çamaşır asmak
+Межсезонье : mevsim geçişi/ticarette ölü sezon
+Напарник : bir işi, nöbeti, devriyeyi beraber yürüttüğün arkadaş
+Набережная : sahil yolu
+Переулок : ara sokak
+Перемирие : ateşkes
+Перелесок : küçük ağaçlık alan
+Побережье : kıyı şeridi, bölgesi
+Подмосковье : Moskova çevre bölgesi
+Предчувствие : önsezi, içine doğma
+Приморье : sahil bölgesi, deniz kıyısı
+Собеседник : sohbet arkadaşı
+Сокурсник : dönem arkadaşı, sınıfdaş
+Послесловие : sonsöz
+Предисловие : önsöz
+Современник : çağdaş, akran
+Сочувствие : halden anlama
+Созвездие : takım yıldızı
+Небылица : uydurma, asılsız olay
+Незнайка : hiçbir şey bilmeyen, cahil
+Нехватка : eksik, kıtlık
+Окурок : izmarit
+Походка : yürüyüş tarzı, biçimi
+Поведение : bir canlının çevresine sergilediği davranış, hal ve hareket
+Заморозки : kırağı
+Перестрелка : silahlı çatışma
+Забег : koşu, depar, yarış
+Заезд : otele, kampa yapılan toplu giriş/motor/bisiklet yarışlarına verilen ad
+Поиск : arama, araştırma
+Настольный : masa ... (lambası, oyun)
+Бездомный : evsiz, sokaklara düşmüş
+Бессмысленный : anlamsız, manasız
+Бездетный : çocuksuz, çocuğu olmayan
+
+Безголосный : sesi çıkmayan/oy hakkı bulunmayan
+Загородный : şehir dışı, kır
+Междугородный : şehirler arası
+Надземный : yer üstü, toprağın üstünde
+Подмосковный : Moskova civarında
+Пригородный : suburban (banliyö)
+Безрезультатный : sonuçsuz, neticesiz
+Заграничный : yurtdışı, yabancı
+Посильный : yapılabilir, güç yeten
+Предновогодний : yılbaşı öncesi
+Приморский : deniz kenarındaki, sahil..., kıyı...
+Настенный : duvara asılı, monteli
+Безвинный : suçsuz, kabahatsiz (hukuki)
+Невинный : masum, saf
+Бездарный : yeteneksiz, kabiliyetsiz
+Неизменный : değişmez, kalıcı
+Незабываемый : unutulmaz
+Неузнаваемый : tanınmaz halde olan
+Чрезмерный : aşırı, haddinden fazla, ölçüsüz
+Несчастный : mutsuz, zavallı, talihsiz
+Заплаканный : ağlamaktan helak olmuş
+Загрязненный : kirli, kirlenmiş
+Совместный : ortak... (proje, iş)
+Несчетный : sayılamayan
+Неустанный : yorulmak bilmeyen
+Неделимый : bölünemez, ayrılmaz
+Бездоказательный : kanıtsız, asılsız
+Нежданный : beklenmeyen, beklenmedik
+Неожиданный : beklenmeyen, beklenmedik
+Заспанный : uyku sersemi, uykulu
+Непобедимый : yenilmez, mağlup edilmez
+
+Отменить : iptal etmek
+Сболтнуть : ağzından kaçırmak
+Напевать : mırıldanmak, sessizce şarkı söylemek
+Вызванивать : birini telefonla ısrarla aramak, ulaşmaya çalışmak
+Взвесить : fiziksel olarak bir şeyin ağırlığını ölçmek/bir şeyin artı eksilerini tartmak
+Покашливать : hafifçe öksürmek
+Названивать : pes etmeden aramak
+Уснуть : uykuya dalmak
+Закусить : meze yemek, atıştırmak
+Разгуливать : aylak aylak dolaşmak
+Раздумывать : derin derin düşünmek, kafa yormak
+Всплакнуть : gözü dolmak
+Недолюбливать : pek sevmemek, haz etmemek (nefret yok)
+Обанкротиться : iflas etmek, batmak
+Посчастливиться : şansı yaver gitmek, nasip olmak
+Распогодиться : havanın açması, güzelleşmesi
+Переговариваться : karşılıklı konuşmak, sohbet etmek
+Перезваниваться : karşılıklı telefonlaşmak
+Перешучиваться : karşılıklı şakalaşmak
+Перешептываться : fısıldaşmak
+Проснуться : uyanmak
+Заблудиться : kaybolmak, yolunu şaşırmak
+По-своему : kendine göre, kendine has
+По-прежнему : eskisi gibi, hala, aynı şekilde
+По-видимому : görünüşe göre, muhtemelen
+По-деловому : iş ciddiyetiyle, profesyonelce
+По-старому : eski usulle
+По-новому : yeni usulle
+По-разному : sürekli farklı, çeşit çeşit
+По-дружески : arkadaşça, dostça
+По-хозяйски : sahibiymiş gibi
+По-дурацки : aptalca, saçma bir şekilde
+По-женски : kadınlara özgü
+По-мужски : erkeklere özgü
+По-московски : Moskova usulü
+По-собачьи : köpek gibi
+Понапрасну : boşuna, boş yere
+Попусту : basitçe, açıkça
+Поровну : eşit olarak, yarı yarıya
+Подобру-поздорову : sağ salim, başı belaya girmeden
+Полегоньку : usulca, hafifçe
+Потихоньку : sessizce, gizlice, çaktırmadan
+Вручную : elle, manuel şekilde
+В открытую : açıkça, alenen, gizlenmeden
+Вскоре : kısa süre sonra, çok geçmeden
+Вдвойне : iki kat, çifte
+Втройне : üç kat, üç misli
+Вблизи : yakında, yakınlarda
+Вправо : sağa, sağ tarafa
+Вдалеке : uzakta, uzaklarda
+Вообще : genel olarak, aslında/hiç
+Вполне : tamamen, bütünüyle
+Влево : sola, sol tarafa
+Во-первых : ilk olarak
+Во-вторых : ikinci olarak
+В-третьих : üçüncü olarak
