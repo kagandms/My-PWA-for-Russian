@@ -77,16 +77,18 @@ class NotificationManager {
         this.setButtonState('Hazırlanıyor...', true);
 
         try {
-            const config = await this.fetchConfig();
-            if (!config.enabled || !config.publicKey) {
-                this.setStatus('Sunucuda bildirim anahtarı henüz tanımlı değil.', 'error');
+            // İzin isteme işlemini hiçbir await (bekleme) olmadan en başta yapmalıyız.
+            // Aksi takdirde mobil tarayıcılar (özellikle Safari/Yandex) bunu güvenlik gerekçesiyle engeller.
+            const permission = await Notification.requestPermission();
+            if (permission !== 'granted') {
+                this.setStatus('Bildirim izni verilmedi. Tarayıcı ayarlarını kontrol et.', 'error');
                 this.setButtonState('Bildirimleri Aç', false);
                 return;
             }
 
-            const permission = await Notification.requestPermission();
-            if (permission !== 'granted') {
-                this.setStatus('Bildirim izni verilmedi.', 'error');
+            const config = await this.fetchConfig();
+            if (!config.enabled || !config.publicKey) {
+                this.setStatus('Sunucuda bildirim anahtarı henüz tanımlı değil.', 'error');
                 this.setButtonState('Bildirimleri Aç', false);
                 return;
             }
