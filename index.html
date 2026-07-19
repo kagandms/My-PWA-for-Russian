@@ -403,7 +403,7 @@
                 <div class="settings-group">
                     <label>Уведомления</label>
                     <div class="modal-buttons settings-actions">
-                        <button class="modal-btn" id="notificationsToggleBtn" onclick="alert('Butona basıldı! Manager durumu: ' + !!window.notificationManager); if(window.notificationManager) window.notificationManager.enableNotifications();">Включить уведомления</button>
+                        <button class="modal-btn" id="notificationsToggleBtn" onclick="if(window.notificationManager) window.notificationManager.enableNotifications();">Включить уведомления</button>
                     </div>
                     <p class="settings-status hidden" id="notificationsStatus" role="status" aria-live="polite"></p>
                 </div>
