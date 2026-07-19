@@ -390,6 +390,14 @@
                         <label class="modal-btn import-data-btn" for="importDataInput">Восстановить</label>
                         <input type="file" id="importDataInput" accept="application/json" class="hidden">
                     </div>
+                </div>
+                <div class="settings-group">
+                    <label>Облачная синхронизация (Cloud Sync)</label>
+                    <div class="modal-buttons settings-actions">
+                        <button class="modal-btn" id="syncUploadBtn">☁️ Сохранить в облако</button>
+                        <button class="modal-btn" id="syncDownloadBtn">☁️ Загрузить из облака</button>
+                    </div>
+                    <p class="settings-status" id="syncStatusText" style="font-size: 0.8rem; opacity: 0.8; margin-top: 5px;">Авто-синхронизация включена.</p>
                     <p class="settings-status hidden" id="settingsStatus" role="status" aria-live="polite"></p>
                 </div>
                 <div class="settings-group">

@@ -379,6 +379,44 @@ class App {
 
         this.setupDataControls();
         this.setupAddWordModal();
+        this.restoreSettings();
+        
+        // Auto-download cloud data on start
+        this.performInitialCloudSync();
+        
+        // Handle online/offline events for auto-sync
+        this.setupNetworkListeners();
+    }
+
+    async performInitialCloudSync() {
+        if (!navigator.onLine) return;
+        if (window.storageManager) {
+            // Sadece arka planda sessizce check et, yeniyse indir
+            await window.storageManager.downloadFromCloud(false, false);
+        }
+    }
+
+    setupNetworkListeners() {
+        window.addEventListener('online', () => {
+            const statusText = document.getElementById('syncStatusText');
+            if (statusText) statusText.textContent = 'Интернет восстановлен. Синхронизация...';
+            
+            // İnternet geri geldiğinde hem çek hem gönder (eğer lazımsa debounce tetiklenecektir)
+            if (window.storageManager) {
+                window.storageManager.downloadFromCloud(false, false).then(downloaded => {
+                    if (!downloaded) {
+                        // Eğer indirilecek daha yeni bir şey yoksa, belki oflaynken yaptığımız local değişiklikleri buluta itmeliyiz
+                        window.storageManager.uploadToCloud(false);
+                    }
+                    if (statusText) statusText.textContent = 'Авто-синхронизация включена.';
+                });
+            }
+        });
+
+        window.addEventListener('offline', () => {
+            const statusText = document.getElementById('syncStatusText');
+            if (statusText) statusText.textContent = 'Офлайн (сохраняется локально).';
+        });
     }
 
     setupDataControls() {
@@ -396,6 +434,27 @@ class App {
 
             this.importUserData(file);
             event.target.value = '';
+        });
+
+        // Cloud Sync Events
+        document.getElementById('syncUploadBtn')?.addEventListener('click', async () => {
+            const btn = document.getElementById('syncUploadBtn');
+            const originalText = btn.textContent;
+            btn.textContent = '⏳ Загрузка...';
+            btn.disabled = true;
+            await window.storageManager?.uploadToCloud(true);
+            btn.textContent = originalText;
+            btn.disabled = false;
+        });
+
+        document.getElementById('syncDownloadBtn')?.addEventListener('click', async () => {
+            const btn = document.getElementById('syncDownloadBtn');
+            const originalText = btn.textContent;
+            btn.textContent = '⏳ Загрузка...';
+            btn.disabled = true;
+            await window.storageManager?.downloadFromCloud(true, true);
+            btn.textContent = originalText;
+            btn.disabled = false;
         });
     }
 
