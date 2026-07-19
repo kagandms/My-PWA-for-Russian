@@ -442,7 +442,16 @@ class App {
             const originalText = btn.textContent;
             btn.textContent = '⏳ Загрузка...';
             btn.disabled = true;
-            await window.storageManager?.uploadToCloud(true);
+            try {
+                const success = await window.storageManager?.uploadToCloud(false);
+                if (success) {
+                    this.setSettingsStatus('Сохранено в облако ☁️', 'success');
+                } else {
+                    this.setSettingsStatus('Не удалось сохранить в облако.', 'error');
+                }
+            } catch (error) {
+                this.setSettingsStatus('Ошибка: ' + error.message, 'error');
+            }
             btn.textContent = originalText;
             btn.disabled = false;
         });
@@ -452,7 +461,16 @@ class App {
             const originalText = btn.textContent;
             btn.textContent = '⏳ Загрузка...';
             btn.disabled = true;
-            await window.storageManager?.downloadFromCloud(true, true);
+            try {
+                const success = await window.storageManager?.downloadFromCloud(false, true);
+                if (success) {
+                    this.setSettingsStatus('Загружено из облака ☁️', 'success');
+                } else {
+                    this.setSettingsStatus('Нет новых данных или ошибка.', 'error');
+                }
+            } catch (error) {
+                this.setSettingsStatus('Ошибка: ' + error.message, 'error');
+            }
             btn.textContent = originalText;
             btn.disabled = false;
         });
