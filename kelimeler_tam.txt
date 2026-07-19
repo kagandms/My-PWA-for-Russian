@@ -1938,3 +1938,10 @@
 Во-первых : ilk olarak
 Во-вторых : ikinci olarak
 В-третьих : üçüncü olarak
+
+Я выжат как лимон : limon gibi suyum çıktı
+Мне вообще не заходит : hiç sarmadı
+Это офигенно! : müthiş!
+Семь раз отмерь, один раз отрежь : bin ölç, bir biç
+Оказывается, он был болен : meğerse hastaymış
+Лапочка / Милашка : tatlı/sevimli olan birini çağırma şekli
