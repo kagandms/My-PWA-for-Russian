@@ -70,6 +70,7 @@ class NotificationManager {
 
     async enableNotifications() {
         if (!this.isSupported()) {
+            alert("Hata: Tarayıcın bildirimleri desteklemiyor.");
             this.setStatus('Bu cihaz bildirimleri desteklemiyor.', 'error');
             return;
         }
@@ -78,9 +79,9 @@ class NotificationManager {
 
         try {
             // İzin isteme işlemini hiçbir await (bekleme) olmadan en başta yapmalıyız.
-            // Aksi takdirde mobil tarayıcılar (özellikle Safari/Yandex) bunu güvenlik gerekçesiyle engeller.
             const permission = await Notification.requestPermission();
             if (permission !== 'granted') {
+                alert("Hata: Tarayıcı bildirim izni vermedi! (Ayarlardan izin vermen gerekebilir)");
                 this.setStatus('Bildirim izni verilmedi. Tarayıcı ayarlarını kontrol et.', 'error');
                 this.setButtonState('Bildirimleri Aç', false);
                 return;
@@ -88,6 +89,7 @@ class NotificationManager {
 
             const config = await this.fetchConfig();
             if (!config.enabled || !config.publicKey) {
+                alert("Hata: Sunucudan VAPID anahtarları alınamadı. Vercel ayarlarını kontrol et.");
                 this.setStatus('Sunucuda bildirim anahtarı henüz tanımlı değil.', 'error');
                 this.setButtonState('Bildirimleri Aç', false);
                 return;
@@ -97,10 +99,13 @@ class NotificationManager {
             const subscription = await this.getOrCreateSubscription(registration, config.publicKey);
 
             await this.saveSubscription(subscription);
+            
+            alert("Başarılı! Bildirimler başarıyla açıldı.");
             this.setStatus('Bildirimler aktif. Hedef tamamlanana kadar seri hatırlatması öncelikli olacak.', 'success');
             this.setButtonState('Bildirimler Aktif', false);
         } catch (error) {
             console.error('Bildirim kurulumu başarısız oldu', error);
+            alert('Kritik Hata: ' + error.message);
             this.setStatus('Bildirim kurulamadı. Bağlantıyı ve Vercel ayarlarını kontrol et.', 'error');
             this.setButtonState('Bildirimleri Aç', false);
         }
