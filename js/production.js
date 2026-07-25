@@ -139,14 +139,62 @@ class ProductionMode {
             .trim();
     }
 
-    checkAnswer() {
+    async checkAnswer() {
         const inputEl = document.getElementById('productionInput');
         const userAnswer = inputEl.value;
         const normalizedUser = this.normalizeString(userAnswer);
         const normalizedExpected = this.normalizeString(this.currentExpectedAnswer);
         
-        const isCorrect = (normalizedUser === normalizedExpected) && normalizedUser.length > 0;
+        let isCorrect = (normalizedUser === normalizedExpected) && normalizedUser.length > 0;
         const word = this.words[this.currentIndex];
+        
+        const checkBtn = document.getElementById('productionCheckBtn');
+        const nextBtn = document.getElementById('productionNextBtn');
+        
+        let aiFeedback = '';
+
+        if (!isCorrect && userAnswer.trim().length > 0) {
+            // AI Check
+            checkBtn.disabled = true;
+            checkBtn.textContent = 'Yapay Zeka kontrol ediyor...';
+            inputEl.disabled = true;
+
+            try {
+                const turkishPrompt = document.getElementById('productionPrompt').textContent;
+                
+                const aiResult = await app.aiManager.callAI('checkRussianProduction', {
+                    turkish: turkishPrompt,
+                    expectedRussian: this.currentExpectedAnswer,
+                    userRussian: userAnswer
+                });
+
+                if (aiResult) {
+                    if (aiResult.toUpperCase().startsWith('DOĞRU')) {
+                        isCorrect = true;
+                        aiFeedback = aiResult.substring(5).trim();
+                    } else if (aiResult.toUpperCase().startsWith('YANLIŞ')) {
+                        isCorrect = false;
+                        aiFeedback = aiResult.substring(6).trim();
+                    } else {
+                        // Yanıt belirsizse (başlamıyorsa bile) AI genellikle düzgün açıklar
+                        isCorrect = false;
+                        aiFeedback = aiResult;
+                    }
+                }
+            } catch (err) {
+                console.error("AI Check Error:", err);
+                aiFeedback = "Yapay Zeka bağlantısı kurulamadı, birebir eşleşme kullanıldı.";
+            }
+
+            checkBtn.disabled = false;
+            checkBtn.textContent = 'Kontrol Et';
+            inputEl.disabled = false;
+        }
+
+        // Boş cevaplar için direkt yanlış ve feedback yok.
+        if (userAnswer.trim().length === 0) {
+            isCorrect = false;
+        }
 
         // SRS kaydı
         app.recordAnswer(word.id, isCorrect);
@@ -154,10 +202,10 @@ class ProductionMode {
             this.correctCount++;
         }
 
-        this.showFeedback(isCorrect);
+        this.showFeedback(isCorrect, aiFeedback);
     }
 
-    showFeedback(isCorrect) {
+    showFeedback(isCorrect, aiFeedback = '') {
         const feedbackEl = document.getElementById('productionFeedback');
         const iconEl = document.getElementById('productionResultIcon');
         const msgEl = document.getElementById('productionResultMessage');
@@ -170,7 +218,12 @@ class ProductionMode {
         
         iconEl.textContent = isCorrect ? '✅' : '❌';
         msgEl.textContent = isCorrect ? 'Doğru!' : 'Yanlış!';
-        ansEl.innerHTML = `Beklenen Cevap: <strong>${app.sanitizeHTML(this.currentExpectedAnswer)}</strong>`;
+        
+        let answerHTML = `Beklenen Cevap: <strong>${app.sanitizeHTML(this.currentExpectedAnswer)}</strong>`;
+        if (aiFeedback) {
+            answerHTML += `<div style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.9;"><strong>AI Notu:</strong> ${app.sanitizeHTML(aiFeedback).replace(/\n/g, '<br>')}</div>`;
+        }
+        ansEl.innerHTML = answerHTML;
         
         checkBtn.style.display = 'none';
         nextBtn.classList.remove('hidden');

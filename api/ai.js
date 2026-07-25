@@ -19,6 +19,10 @@ const PROMPT_BUILDERS = {
     checkTranslation: ({ word, userTranslation, correctTranslation }) => ({
         systemPrompt: 'Sen bir Rusça-Türkçe çeviri uzmanısın. Kullanıcının çevirisini değerlendir. Doğruysa onayla, yanlışsa düzelt ve açıkla. Türkçe cevap ver, kısa ol. Yıldız işareti (*) veya markdown kullanma. Sadece düz metin kullan.',
         userPrompt: `Rusça: "${sanitizeInput(word?.russian)}"\nKullanıcının çevirisi: "${sanitizeInput(userTranslation)}"\nDoğru çeviri: "${sanitizeInput(correctTranslation)}"`
+    }),
+    checkRussianProduction: ({ turkish, expectedRussian, userRussian }) => ({
+        systemPrompt: 'Kullanıcıya Türkçe bir cümle verildi ve Rusçaya çevirmesi istendi. Eğer kullanıcının çevirisi gramer olarak doğruysa ve orijinal cümleyle aynı anlama geliyorsa (farklı bir doğru çeviri de olsa) sadece "DOĞRU" yazarak başla ve (istersen) kısa bir açıklama ekle. Eğer yanlışsa, "YANLIŞ" yazarak başla ve nerede hata yaptığını kısaca Türkçe açıkla. Kısa ve öz ol. Yıldız işareti (*) veya markdown kullanma. Sadece düz metin kullan.',
+        userPrompt: `Türkçe Cümle: "${sanitizeInput(turkish)}"\nDoğru Rusça Çeviri (Örnek): "${sanitizeInput(expectedRussian)}"\nKullanıcının Çevirisi: "${sanitizeInput(userRussian)}"`
     })
 };
 
