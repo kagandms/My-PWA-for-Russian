@@ -2,7 +2,7 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v50';
+const CACHE_NAME = 'rutr-v51';
 const ASSETS = [
     './',
     './index.html',
@@ -25,6 +25,7 @@ const ASSETS = [
     './js/mastered-manager.js',
     './js/flashcard.js',
     './js/quiz.js',
+    './js/production.js',
     './js/typing.js',
     './js/full-choice-quiz.js',
     './js/daily.js',

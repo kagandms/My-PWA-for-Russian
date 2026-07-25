@@ -109,6 +109,11 @@
                     <span class="mode-title">Префиксы</span>
                     <span class="mode-desc">Тест префиксов</span>
                 </button>
+                <button class="mode-card" data-mode="production">
+                    <span class="mode-icon">✍️</span>
+                    <span class="mode-title">Üretim Modu</span>
+                    <span class="mode-desc">Türkçe cümleyi Rusça'ya çevir</span>
+                </button>
             </div>
         </main>
 
@@ -545,6 +550,44 @@
         </div>
     </section>
 
+    <!-- Production Mode -->
+    <section id="productionMode" class="mode-screen hidden">
+        <div class="mode-header">
+            <button class="back-btn" data-back>← Geri</button>
+            <h2>✍️ Üretim Modu</h2>
+            <div class="progress-indicator progress-stack">
+                <span><span id="productionCurrent">1</span>/<span id="productionTotal">0</span></span>
+                <span class="session-meta hidden" id="productionCoverage"></span>
+            </div>
+        </div>
+        
+        <div class="production-container">
+            <!-- Soru Alanı -->
+            <div class="production-prompt-box">
+                <div class="production-hint">Rusçaya Çevir:</div>
+                <div id="productionPrompt" class="production-prompt"></div>
+                <div id="productionPromptWord" class="production-prompt-word"></div>
+            </div>
+
+            <!-- Cevap Girişi -->
+            <div class="production-input-box">
+                <textarea id="productionInput" class="production-input" rows="3" placeholder="Rusça karşılığını buraya yazın..." autocomplete="off"></textarea>
+            </div>
+
+            <div class="production-actions">
+                <button id="productionCheckBtn" class="primary-btn production-check-btn">Kontrol Et</button>
+            </div>
+
+            <!-- Geri Bildirim Alanı -->
+            <div id="productionFeedback" class="production-feedback hidden">
+                <div id="productionResultIcon" class="production-result-icon"></div>
+                <div id="productionResultMessage" class="production-result-message"></div>
+                <div id="productionCorrectAnswer" class="production-correct-answer"></div>
+                <button id="productionNextBtn" class="primary-btn production-next-btn hidden">Sonraki Soru →</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Kütüphaneler ve Scriptler -->
     <script src="js/chart.min.js"></script>
     <script src="js/storage.js"></script>
@@ -560,6 +603,8 @@
     <script src="js/favorites.js"></script>
     <script src="js/goals.js"></script>
     <script src="js/notifications.js"></script>
+    <script src="js/prefixes-mode.js"></script>
+    <script src="js/production.js"></script>
     <script src="js/ai.js"></script>
     <script src="js/app.js"></script>
     <script src="js/flashcard.js"></script>

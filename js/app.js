@@ -657,12 +657,18 @@ class App {
             return;
         }
 
+        // Reader mode doesn't need WORDS or question count
+        if (mode === 'reader') {
+            this.startMode('reader');
+            return;
+        }
+
         if (WORDS.length === 0) {
             this.showNoWords();
             return;
         }
 
-        const modesWithCount = ['flashcard', 'quiz', 'typing'];
+        const modesWithCount = ['flashcard', 'quiz', 'typing', 'production'];
 
         if (modesWithCount.includes(mode)) {
             this.pendingMode = mode;
@@ -711,6 +717,9 @@ class App {
                 case 'typing':
                     window.typingMode?.init(questionCount, normalizedOptions);
                     break;
+                case 'production':
+                    window.productionMode?.init(questionCount, normalizedOptions);
+                    break;
                 case 'daily':
                     window.dailyMode?.init();
                     break;
@@ -728,6 +737,9 @@ class App {
                     break;
                 case 'prefixes':
                     window.prefixesMode?.init();
+                    break;
+                case 'reader':
+                    window.readerMode?.init();
                     break;
             }
         }
