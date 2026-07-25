@@ -2,7 +2,7 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v52';
+const CACHE_NAME = 'rutr-v53';
 const ASSETS = [
     './',
     './index.html',

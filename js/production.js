@@ -73,6 +73,7 @@ class ProductionMode {
     setupEventListeners() {
         const checkBtn = document.getElementById('productionCheckBtn');
         const nextBtn = document.getElementById('productionNextBtn');
+        const hintBtn = document.getElementById('productionHintBtn');
         const inputField = document.getElementById('productionInput');
 
         // Mevcut event listener'ları temizlemek için klonlayıp değiştiriyoruz
@@ -83,6 +84,12 @@ class ProductionMode {
         const newNextBtn = nextBtn.cloneNode(true);
         nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
         newNextBtn.addEventListener('click', () => this.handleNextClick());
+
+        if (hintBtn) {
+            const newHintBtn = hintBtn.cloneNode(true);
+            hintBtn.parentNode.replaceChild(newHintBtn, hintBtn);
+            newHintBtn.addEventListener('click', () => this.showHint());
+        }
 
         const newInputField = inputField.cloneNode(true);
         inputField.parentNode.replaceChild(newInputField, inputField);
@@ -111,6 +118,11 @@ class ProductionMode {
         
         // Reset UI
         inputEl.value = '';
+        this.hintLevel = 0;
+        document.getElementById('productionHintDisplay').classList.add('hidden');
+        document.getElementById('productionHintDisplay').textContent = '';
+        document.getElementById('productionHintBtn').style.display = 'block';
+        
         document.getElementById('productionFeedback').classList.add('hidden');
         document.getElementById('productionCheckBtn').style.display = 'block';
         document.getElementById('productionNextBtn').classList.add('hidden');
@@ -128,6 +140,44 @@ class ProductionMode {
 
         this.updateProgress();
         inputEl.focus();
+    }
+
+    showHint() {
+        const hintDisplay = document.getElementById('productionHintDisplay');
+        const answerWords = this.currentExpectedAnswer.trim().split(/\s+/);
+        
+        if (this.hintLevel < answerWords.length) {
+            this.hintLevel++;
+        }
+
+        // İpucu oluştur
+        const hintParts = answerWords.map((word, index) => {
+            // Eğer kelime önceden açılmışsa (hintLevel dahilindeyse)
+            if (index < this.hintLevel - 1) {
+                return word;
+            } 
+            // Eğer şu anki açılacak kelimeyse (sadece ilk basışta çizgili, 2. basışta kelime açılır mantığı için)
+            else {
+                // Sadece kelimenin harfleri üzerinde işlem yap (noktalama hariç)
+                const wordWithoutPunct = word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"'«»]/g, "");
+                const punctMatch = word.match(/[.,\/#!$%\^&\*;:{}=\-_`~()?"'«»]+$/);
+                const punct = punctMatch ? punctMatch[0] : '';
+                
+                if (wordWithoutPunct.length === 0) return word;
+                
+                let masked = wordWithoutPunct.charAt(0);
+                for (let i = 1; i < wordWithoutPunct.length; i++) {
+                    masked += '_';
+                }
+                return masked + punct;
+            }
+        });
+
+        hintDisplay.textContent = hintParts.join(' ');
+        hintDisplay.classList.remove('hidden');
+        
+        // Odaklanmayı geri input'a ver
+        document.getElementById('productionInput').focus();
     }
 
     normalizeString(str) {
@@ -226,6 +276,10 @@ class ProductionMode {
         ansEl.innerHTML = answerHTML;
         
         checkBtn.style.display = 'none';
+        
+        const hintBtn = document.getElementById('productionHintBtn');
+        if (hintBtn) hintBtn.style.display = 'none';
+        
         nextBtn.classList.remove('hidden');
         nextBtn.focus();
     }
