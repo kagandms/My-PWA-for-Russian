@@ -1,0 +1,184 @@
+import json
+
+data = {
+    "582": [
+        {"ru": "Государственный университет предлагает множество программ для иностранных студентов, желающих получить качественное образование.", "tr": "Devlet üniversitesi, kaliteli bir eğitim almak isteyen yabancı öğrenciler için birçok program sunmaktadır."},
+        {"ru": "Этот проект финансируется через специальный государственный фонд развития инфраструктуры региона.", "tr": "Bu proje, bölgenin altyapısını geliştirmeye yönelik özel bir devlet fonu aracılığıyla finanse edilmektedir."},
+        {"ru": "Государственный бюджет на следующий год предусматривает значительное увеличение расходов на здравоохранение.", "tr": "Gelecek yılın devlet bütçesi, sağlık harcamalarında önemli bir artış öngörüyor."}
+    ],
+    "583": [
+        {"ru": "Он решил открыть свой собственный частный бизнес после долгих лет работы в корпорации.", "tr": "Kurumsal bir şirkette uzun yıllar çalıştıktan sonra kendi özel işini kurmaya karar verdi."},
+        {"ru": "Частный сектор экономики играет ключевую роль в создании новых рабочих мест.", "tr": "Ekonominin özel sektörü, yeni istihdam yaratılmasında kilit bir rol oynamaktadır."},
+        {"ru": "Родители перевели ребенка в частный детский сад, чтобы ему уделяли больше внимания.", "tr": "Ebeveynler, daha fazla ilgi görmesi için çocuklarını özel bir anaokuluna geçirdiler."}
+    ],
+    "584": [
+        {"ru": "Многие студенты предпочитают учиться заочно, чтобы иметь возможность совмещать учебу с работой.", "tr": "Birçok öğrenci, eğitimi çalışmayla birleştirebilmek için uzaktan/açıköğretim yoluyla okumayı tercih ediyor."},
+        {"ru": "Мы были знакомы только заочно, переписываясь по электронной почте в течение нескольких месяцев.", "tr": "Aylarca e-posta yoluyla yazışarak sadece uzaktan/gıyaben tanışıyorduk."},
+        {"ru": "Заочно получить диплом инженера оказалось гораздо сложнее, чем я предполагал изначально.", "tr": "Uzaktan eğitimle mühendislik diploması almak başlangıçta düşündüğümden çok daha zor oldu."}
+    ],
+    "585": [
+        {"ru": "Для получения этого сертификата вам необходимо пройти курс очно в нашем главном офисе.", "tr": "Bu sertifikayı almak için kursu merkez ofisimizde yüz yüze tamamlamanız gerekmektedir."},
+        {"ru": "Обучаться очно гораздо эффективнее, так как можно сразу задавать вопросы преподавателю.", "tr": "Öğretmene hemen soru sorabildiğiniz için yüz yüze eğitim almak çok daha etkilidir."},
+        {"ru": "В этом семестре все экзамены будут проводиться исключительно очно, без исключений.", "tr": "Bu dönem tüm sınavlar istisnasız olarak sadece yüz yüze yapılacaktır."}
+    ],
+    "586": [
+        {"ru": "Мне кажется, что он нарочно проигнорировал мое сообщение, чтобы избежать неприятного разговора.", "tr": "Bana öyle geliyor ki, tatsız bir konuşmadan kaçınmak için mesajımı bilerek görmezden geldi."},
+        {"ru": "Ребенок нарочно разбил вазу, пытаясь привлечь к себе внимание занятых родителей.", "tr": "Çocuk, meşgul ebeveynlerinin dikkatini çekmek için vazoyu bilerek kırdı."},
+        {"ru": "Я не верю, что это произошло случайно, кто-то нарочно испортил наши документы.", "tr": "Bunun tesadüfen olduğuna inanmıyorum, birisi belgelerimizi bilerek bozmuş."}
+    ],
+    "587": [
+        {"ru": "Извините, я нечаянно наступил вам на ногу, когда мы выходили из автобуса.", "tr": "Affedersiniz, otobüsten inerken yanlışlıkla ayağınıza bastım."},
+        {"ru": "Убираясь в комнате, она нечаянно удалила важные файлы со своего рабочего стола.", "tr": "Odayı temizlerken yanlışlıkla masaüstündeki önemli dosyaları sildi."},
+        {"ru": "Он нечаянно проговорился о нашем сюрпризе, и теперь вечеринка потеряла смысл.", "tr": "Sürprizimiz hakkında yanlışlıkla ağzından kaçırdı ve artık partinin bir anlamı kalmadı."}
+    ],
+    "588": [
+        {"ru": "Ношение холодного оружия в общественных местах строго запрещено законом нашей страны.", "tr": "Ülkemizin yasalarına göre halka açık yerlerde kesici/delici silah taşımak kesinlikle yasaktır."},
+        {"ru": "Полиция обнаружила в автомобиле подозреваемого спрятанное холодное оружие и фальшивые документы.", "tr": "Polis, şüphelinin aracında gizlenmiş bir kesici silah ve sahte belgeler buldu."},
+        {"ru": "Эта коллекция исторического холодного оружия оценивается экспертами в несколько миллионов долларов.", "tr": "Bu tarihi soğuk silah koleksiyonu uzmanlar tarafından birkaç milyon dolar olarak değerlendiriliyor."}
+    ],
+    "589": [
+        {"ru": "Для приобретения любого огнестрельного оружия необходимо получить специальную лицензию в полиции.", "tr": "Herhangi bir ateşli silah satın almak için polisten özel bir ruhsat alınması gerekmektedir."},
+        {"ru": "Подозреваемый был задержан за незаконное хранение огнестрельного оружия в своем гараже.", "tr": "Şüpheli, garajında yasadışı ateşli silah bulundurmaktan gözaltına alındı."},
+        {"ru": "Ранение оказалось серьезным, так как оно было нанесено из мощного огнестрельного оружия.", "tr": "Güçlü bir ateşli silahtan kaynaklandığı için yara ciddiydi."}
+    ],
+    "590": [
+        {"ru": "У этого коня очень строптивый характер, и только опытный наездник может с ним справиться.", "tr": "Bu atın çok dikbaşlı bir karakteri var ve sadece deneyimli bir binici onunla başa çıkabilir."},
+        {"ru": "Строптивый подросток отказывался слушать советы родителей и постоянно спорил с учителями.", "tr": "İnatçı ergen, anne babasının tavsiyelerini dinlemeyi reddediyor ve sürekli öğretmenlerle tartışıyordu."},
+        {"ru": "Из-за своего строптивого нрава она часто конфликтовала с коллегами на новой работе.", "tr": "Dikbaşlı doğası nedeniyle yeni işindeki meslektaşlarıyla sık sık çatışıyordu."}
+    ],
+    "591": [
+        {"ru": "Наш новый сотрудник очень покладистый человек, он быстро влился в рабочий коллектив.", "tr": "Yeni çalışanımız çok uyumlu bir insan, çalışma ekibine çabucak uyum sağladı."},
+        {"ru": "Девочка росла очень спокойной и покладистой, никогда не доставляя хлопот своим родителям.", "tr": "Kız çocuğu çok sakin ve uyumlu büyüdü, ailesine asla sıkıntı çıkarmadı."},
+        {"ru": "Я предпочитаю работать с покладистыми клиентами, которые готовы прислушиваться к профессиональным советам.", "tr": "Profesyonel tavsiyeleri dinlemeye istekli, uyumlu müşterilerle çalışmayı tercih ediyorum."}
+    ],
+    "592": [
+        {"ru": "Вода в реке после сильных дождей стала настолько мутной, что купаться было невозможно.", "tr": "Şiddetli yağmurların ardından nehirdeki su o kadar bulanık hale geldi ki yüzmek imkansızdı."},
+        {"ru": "Вся эта история кажется мне очень мутной, и я не хочу в ней участвовать.", "tr": "Bütün bu hikaye bana çok bulanık geliyor ve ben buna dahil olmak istemiyorum."},
+        {"ru": "Через мутное стекло старого окна было трудно разглядеть, что происходит на улице.", "tr": "Eski pencerenin bulanık camından sokakta neler olup bittiğini görmek zordu."}
+    ],
+    "593": [
+        {"ru": "Горное озеро славится своей кристально чистой и прозрачной водой в любое время года.", "tr": "Dağ gölü, yılın her mevsiminde kristal temizliğindeki ve berrak suyuyla ünlüdür."},
+        {"ru": "Прозрачный намек руководителя дал всем понять, что в компании ожидаются серьезные перемены.", "tr": "Yöneticinin açık ipucu, herkese şirkette ciddi değişiklikler beklendiğini belli etti."},
+        {"ru": "Для этого проекта нам необходимо составить абсолютно прозрачный финансовый отчет.", "tr": "Bu proje için tamamen şeffaf bir mali rapor hazırlamamız gerekiyor."}
+    ],
+    "594": [
+        {"ru": "Мой старший племянник в этом году успешно поступил на юридический факультет в столице.", "tr": "Büyük erkek yeğenim bu yıl başkentte hukuk fakültesini başarıyla kazandı."},
+        {"ru": "На день рождения я подарил своему племяннику новую игровую приставку, о которой он мечтал.", "tr": "Doğum gününde erkek yeğenime hayalini kurduğu yeni oyun konsolunu hediye ettim."},
+        {"ru": "Племянник часто помогает мне по дому, когда мои собственные дети заняты на работе.", "tr": "Kendi çocuklarım işte meşgul olduğunda, erkek yeğenim sık sık ev işlerinde bana yardım eder."}
+    ],
+    "595": [
+        {"ru": "Завтра моя племянница участвует в международном музыкальном конкурсе, и мы все будем за нее болеть.", "tr": "Yarın kız yeğenim uluslararası bir müzik yarışmasına katılıyor ve hepimiz onu destekleyeceğiz."},
+        {"ru": "Племянница решила пойти по стопам тети и тоже стать профессиональным врачом.", "tr": "Kız yeğenim teyzesinin izinden gitmeye ve aynı şekilde profesyonel bir doktor olmaya karar verdi."},
+        {"ru": "На выходных мы с племянницей ходили в кино на премьеру нового мультипликационного фильма.", "tr": "Hafta sonu kız yeğenimle yeni bir animasyon filminin galası için sinemaya gittik."}
+    ],
+    "596": [
+        {"ru": "Главное достоинство этой квартиры — ее удобное расположение рядом со станцией метро.", "tr": "Bu dairenin en büyük avantajı, metro istasyonunun yanındaki uygun konumudur."},
+        {"ru": "Он принял критику с большим достоинством и пообещал исправить все свои ошибки.", "tr": "Eleştiriyi büyük bir erdemle kabul etti ve tüm hatalarını düzeltmeye söz verdi."},
+        {"ru": "Неоспоримое достоинство нового программного обеспечения заключается в его высокой скорости работы.", "tr": "Yeni yazılımın tartışılmaz avantajı, yüksek çalışma hızında yatmaktadır."}
+    ],
+    "597": [
+        {"ru": "Существенный недостаток этого плана состоит в том, что он требует слишком много времени.", "tr": "Bu planın önemli bir dezavantajı, çok fazla zaman gerektirmesidir."},
+        {"ru": "В организме пациента был обнаружен серьезный недостаток витаминов и важных минералов.", "tr": "Hastanın vücudunda ciddi bir vitamin ve önemli mineral eksikliği tespit edildi."},
+        {"ru": "Несмотря на некоторые мелкие недостатки, автомобиль оказался очень надежным и комфортным.", "tr": "Bazı küçük kusurlarına rağmen otomobil çok güvenilir ve konforlu çıktı."}
+    ],
+    "598": [
+        {"ru": "Этот тропический остров с белым песком и пальмами выглядит как настоящий рай на земле.", "tr": "Beyaz kumları ve palmiye ağaçlarıyla bu tropik ada, yeryüzündeki gerçek bir cennet gibi görünüyor."},
+        {"ru": "Для любителей классической литературы эта огромная старинная библиотека — просто рай.", "tr": "Klasik edebiyat sevenler için bu devasa eski kütüphane tam bir cennet."},
+        {"ru": "В детстве бабушкин сад казался мне чудесным раем, где всегда светило солнце.", "tr": "Çocukluğumda büyükannemin bahçesi bana güneşin hep parladığı harika bir cennet gibi gelirdi."}
+    ],
+    "599": [
+        {"ru": "Жизнь в этом шумном и загрязненном мегаполисе постепенно превратилась для него в настоящий ад.", "tr": "Bu gürültülü ve kirli metropoldeki yaşam, onun için yavaş yavaş gerçek bir cehenneme dönüştü."},
+        {"ru": "Последние несколько месяцев подготовки к сложному экзамену были сущим адом для студентов.", "tr": "Zor sınava hazırlığın son birkaç ayı öğrenciler için tam bir cehennemdi."},
+        {"ru": "Если мы не решим эту проблему сейчас, наша дальнейшая работа превратится в ад.", "tr": "Eğer bu sorunu şimdi çözmezsek, sonraki çalışmalarımız cehenneme dönecek."}
+    ],
+    "604": [
+        {"ru": "Новый мост будет соединять два отдаленных района города, значительно сокращая время в пути.", "tr": "Yeni köprü şehrin iki uzak bölgesini birbirine bağlayacak ve seyahat süresini önemli ölçüde azaltacak."},
+        {"ru": "Оператор должен быстро соединять клиентов со специалистами технической поддержки по телефону.", "tr": "Operatör, müşterileri telefonda teknik destek uzmanlarına hızlıca bağlamalıdır."},
+        {"ru": "Эти детали нужно осторожно соединять между собой с помощью специального промышленного клея.", "tr": "Bu parçalar özel endüstriyel yapıştırıcı kullanılarak dikkatlice birbirine bağlanmalıdır."}
+    ],
+    "605": [
+        {"ru": "Во время ремонта электропроводки необходимо разъединять провода с максимальной осторожностью.", "tr": "Elektrik tesisatı onarımı sırasında kabloları azami dikkatle ayırmak gerekir."},
+        {"ru": "Политический кризис начал разъединять общество на два непримиримых и враждебных лагеря.", "tr": "Siyasi kriz, toplumu uzlaşmaz ve düşman iki kampa ayırmaya başladı."},
+        {"ru": "Чтобы починить устройство, мастеру пришлось полностью разъединять все его внутренние компоненты.", "tr": "Cihazı tamir etmek için usta, tüm iç bileşenlerini tamamen ayırmak zorunda kaldı."}
+    ],
+    "606": [
+        {"ru": "Будьте осторожны и старайтесь не наступать на эти хрупкие весенние цветы в саду.", "tr": "Dikkatli olun ve bahçedeki bu kırılgan bahar çiçeklerine basmamaya çalışın."},
+        {"ru": "Когда начинает наступать зима, дни становятся заметно короче, а ночи — длиннее и холоднее.", "tr": "Kış gelmeye başladığında günler gözle görülür şekilde kısalır, geceler ise daha uzun ve soğuk olur."},
+        {"ru": "Армия получила приказ наступать на позиции противника сразу после рассвета.", "tr": "Ordu, şafaktan hemen sonra düşman mevzilerine saldırma emri aldı."}
+    ],
+    "607": [
+        {"ru": "Перед лицом превосходящих сил противника нашим войскам пришлось временно отступать к реке.", "tr": "Üstün düşman kuvvetleri karşısında birliklerimiz geçici olarak nehre doğru çekilmek zorunda kaldı."},
+        {"ru": "Он слишком упрям, чтобы отступать от своих первоначальных планов даже при возникновении трудностей.", "tr": "Zorluklar ortaya çıktığında bile ilk planlarından geri adım atmayacak kadar inatçıdır."},
+        {"ru": "Если вы хотите добиться успеха, никогда не стоит отступать перед первыми же препятствиями.", "tr": "Eğer başarılı olmak istiyorsanız, ilk engeller karşısında asla geri adım atmamalısınız."}
+    ],
+    "608": [
+        {"ru": "Внешний вид этого исторического здания был полностью восстановлен после длительной реставрации.", "tr": "Bu tarihi binanın dış görünümü, uzun bir restorasyonun ardından tamamen yenilendi."},
+        {"ru": "Все важные данные компании хранятся на защищенном внешнем жестком диске в сейфе.", "tr": "Şirketin tüm önemli verileri kasadaki güvenli bir harici sabit diskte saklanmaktadır."},
+        {"ru": "Внешний долг страны значительно вырос из-за глобального экономического кризиса в прошлом году.", "tr": "Geçen yıl yaşanan küresel ekonomik kriz nedeniyle ülkenin dış borcu önemli ölçüde arttı."}
+    ],
+    "609": [
+        {"ru": "Внутренний двор нашего жилого комплекса был прекрасно обустроен для отдыха жителей.", "tr": "Konut kompleksimizin iç avlusu, sakinlerin dinlenmesi için mükemmel bir şekilde düzenlenmişti."},
+        {"ru": "Компания проводит внутренний аудит, чтобы выявить возможные финансовые нарушения в отделах.", "tr": "Şirket, departmanlardaki olası mali usulsüzlükleri tespit etmek için bir iç denetim yürütüyor."},
+        {"ru": "У него богатый внутренний мир, который он редко открывает даже самым близким друзьям.", "tr": "Hatta en yakın arkadaşlarına bile nadiren açtığı zengin bir iç dünyası var."}
+    ],
+    "610": [
+        {"ru": "Сначала я всегда пишу черновик статьи, а уже потом приступаю к ее тщательному редактированию.", "tr": "Önce her zaman makalenin bir taslağını yazarım, ancak ondan sonra dikkatlice düzenlemeye başlarım."},
+        {"ru": "Писатель случайно удалил первый черновик своего нового романа и был в полном отчаянии.", "tr": "Yazar yeni romanının ilk taslağını yanlışlıkla sildi ve tamamen çaresizlik içindeydi."},
+        {"ru": "В этом блокноте он вел черновики своих научных расчетов и различных теорий.", "tr": "Bu not defterinde bilimsel hesaplamalarının ve çeşitli teorilerinin karalamalarını tutuyordu."}
+    ],
+    "611": [
+        {"ru": "Перепишите ваше сочинение на чистовик аккуратным почерком, чтобы учитель мог его легко прочитать.", "tr": "Öğretmenin kolayca okuyabilmesi için kompozisyonunuzu düzgün bir el yazısıyla temize çekin."},
+        {"ru": "Когда чистовик договора был готов, обе стороны внимательно его прочитали и подписали.", "tr": "Sözleşmenin temiz kopyası hazır olduğunda, her iki taraf da dikkatlice okuyup imzaladı."},
+        {"ru": "Перенос текста с черновика на чистовик занял у него гораздо больше времени, чем планировалось.", "tr": "Metni taslaktan temize geçirmek planladığından çok daha fazla zamanını aldı."}
+    ],
+    "612": [
+        {"ru": "Стоматологи рекомендуют чистить зубы как минимум два раза в день по несколько минут.", "tr": "Diş hekimleri dişleri günde en az iki kez birkaç dakika fırçalamayı (temizlemeyi) önermektedir."},
+        {"ru": "Прежде чем жарить картошку, ее нужно тщательно вымыть и почистить от кожуры.", "tr": "Patatesleri kızartmadan önce iyice yıkanmalı ve kabukları soyulmalıdır."},
+        {"ru": "Каждую весну мы собираемся всей семьей, чтобы чистить сад от прошлогодней листвы.", "tr": "Her bahar, bahçeyi geçen yılın yapraklarından temizlemek için bütün aile bir araya geliriz."}
+    ],
+    "613": [
+        {"ru": "Старайтесь не пачкать новую светлую мебель грязными руками после работы в гараже.", "tr": "Garajda çalıştıktan sonra kirli ellerinizle yeni açık renk mobilyaları kirletmemeye çalışın."},
+        {"ru": "Дети любят прыгать по лужам и пачкать свою одежду во время осенних прогулок.", "tr": "Çocuklar sonbahar yürüyüşleri sırasında su birikintilerinde zıplamayı ve kıyafetlerini kirletmeyi severler."},
+        {"ru": "Не стоит пачкать репутацию компании из-за одной незначительной ошибки неопытного сотрудника.", "tr": "Deneyimsiz bir çalışanın tek bir küçük hatası yüzünden şirketin itibarını kirletmeye değmez."}
+    ],
+    "616": [
+        {"ru": "Летом в жаркую погоду лучше всего отдыхать в тени большого раскидистого дерева.", "tr": "Yazın sıcak havalarda en iyisi büyük, yayılan bir ağacın gölgesinde dinlenmektir."},
+        {"ru": "Из-за своей застенчивости он всегда предпочитал оставаться в тени своих более успешных коллег.", "tr": "Utangaçlığı nedeniyle her zaman daha başarılı meslektaşlarının gölgesinde kalmayı tercih etti."},
+        {"ru": "Термометр, висящий в тени на веранде, показывал ровно тридцать градусов тепла.", "tr": "Verandada gölgede asılı duran termometre tam olarak otuz derece sıcağı gösteriyordu."}
+    ],
+    "617": [
+        {"ru": "Нельзя оставлять шоколадный торт на солнце, иначе он быстро растает и испортится.", "tr": "Çikolatalı pastayı güneşte bırakmamalısınız, aksi takdirde çabucak erir ve bozulur."},
+        {"ru": "Они провели весь день на солнце, поэтому к вечеру их кожа сильно покраснела.", "tr": "Bütün günü güneşte geçirdiler, bu yüzden akşama doğru ciltleri iyice kızardı."},
+        {"ru": "Кошка с удовольствием спала на солнце, свернувшись клубком на мягком подоконнике.", "tr": "Kedi, yumuşak denizliğin üzerinde kıvrılarak güneşte uyumaktan zevk alıyordu."}
+    ],
+    "618": [
+        {"ru": "Завтра синоптики обещают ясный и теплый солнечный день, идеальный для поездки за город.", "tr": "Meteorologlar yarın için şehir dışına çıkmak için ideal, açık ve ılık, güneşli bir gün vaat ediyorlar."},
+        {"ru": "В этой комнате много окон, поэтому солнечный свет наполняет ее с самого раннего утра.", "tr": "Bu odada çok pencere var, bu yüzden güneş ışığı onu sabahın erken saatlerinden itibaren dolduruyor."},
+        {"ru": "Она надела модные солнечные очки, чтобы защитить глаза от ярких лучей на пляже.", "tr": "Plajda gözlerini parlak ışınlardan korumak için şık güneş gözlüklerini taktı."}
+    ],
+    "619": [
+        {"ru": "В такой холодный и дождливый вечер хочется просто сидеть дома и пить горячий чай.", "tr": "Böyle soğuk ve yağmurlu bir akşamda insan sadece evde oturup sıcak çay içmek istiyor."},
+        {"ru": "Дождливый климат этого региона отлично подходит для выращивания определенных сортов чая.", "tr": "Bu bölgenin yağmurlu iklimi belirli çay çeşitlerini yetiştirmek için çok uygundur."},
+        {"ru": "Из-за дождливого сезона многие дороги в сельской местности стали практически непроходимыми.", "tr": "Yağmurlu mevsim nedeniyle kırsal kesimdeki birçok yol neredeyse geçilmez hale geldi."}
+    ],
+    "620": [
+        {"ru": "Ее новый парень — настоящий красавец с очаровательной улыбкой и прекрасными манерами.", "tr": "Yeni erkek arkadaşı, büyüleyici bir gülümsemesi ve mükemmel tavırları olan gerçek bir yakışıklı."},
+        {"ru": "Этот белоснежный корабль, стоящий в порту, — настоящий красавец, привлекающий взгляды всех туристов.", "tr": "Limanda duran bu bembeyaz gemi, tüm turistlerin bakışlarını çeken gerçek bir güzellik."},
+        {"ru": "Главный герой фильма предстал перед зрителями как благородный красавец, спасающий мир от зла.", "tr": "Filmin ana karakteri izleyicilerin karşısına dünyayı kötülükten kurtaran asil bir yakışıklı olarak çıktı."}
+    ],
+    "622": [
+        {"ru": "Решение этой математической задачи оказалось удивительно простым, хотя сначала казалось невыполнимым.", "tr": "Bu matematik probleminin çözümü, başlarda imkansız gibi görünse de şaşırtıcı derecede basitti."},
+        {"ru": "Для приготовления этого блюда вам понадобится очень простой и доступный набор продуктов.", "tr": "Bu yemeği hazırlamak için çok basit ve kolay bulunabilen bir ürün setine ihtiyacınız olacak."},
+        {"ru": "Он обычный, простой человек из деревни, который не привык к городской суете.", "tr": "O, şehrin koşuşturmacasına alışkın olmayan, köyden gelmiş sıradan, basit bir insan."}
+    ],
+    "623": [
+        {"ru": "В детстве моим любимым занятием было рисовать пейзажи, используя цветной карандаш и бумагу.", "tr": "Çocukluğumda en sevdiğim aktivite, renkli kalem ve kağıt kullanarak manzaralar çizmekti."},
+        {"ru": "Они купили огромный цветной телевизор, чтобы смотреть футбольные матчи в высоком качестве.", "tr": "Futbol maçlarını yüksek kalitede izlemek için devasa renkli bir televizyon satın aldılar."},
+        {"ru": "Яркий цветной узор на ее летнем платье привлекал внимание всех прохожих на улице.", "tr": "Yazlık elbisesindeki parlak renkli desen, sokaktaki tüm yoldan geçenlerin dikkatini çekti."}
+    ]
+}
+
+with open('/Users/kagansmtdms/Downloads/Проекты/Ru-Tr-main/scripts/result_4.json', 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+print("Done generating result_4.json")

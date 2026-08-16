@@ -1,0 +1,184 @@
+import json
+
+data = {
+    "160": [
+        {"ru": "Этот новый сотрудник в отделе — ни богу свечка, ни чёрту кочерга, от него никакой пользы.", "tr": "Bu yeni çalışan departmanda ne İsa'ya yarıyor ne Musa'ya, ondan hiçbir fayda yok."},
+        {"ru": "Фильм оказался очень скучным и неинтересным, прямо скажем, ни богу свечка, ни чёрту кочерга.", "tr": "Film çok sıkıcı ve ilginç değildi, açıkçası ne İsa'ya yaradı ne Musa'ya."},
+        {"ru": "Его последнее предложение по проекту было абсолютно бесполезным, ни богу свечка, ни чёрту кочерга.", "tr": "Onun proje ile ilgili son teklifi tamamen yararsızdı, ne İsa'ya ne Musa'ya."}
+    ],
+    "175": [
+        {"ru": "Я хотел бы сказать, что результаты этого исследования оказались весьма неожиданными для нас.", "tr": "Söylemek isterim ki, bu araştırmanın sonuçları bizim için oldukça beklenmedik oldu."},
+        {"ru": "Преподаватель забыл сказать студентам о том, что завтрашняя лекция будет отменена.", "tr": "Öğretmen, öğrencilere yarınki dersin iptal edileceğini söylemeyi unuttu."},
+        {"ru": "Трудно сказать наверняка, когда именно закончится ремонт в нашей новой квартире.", "tr": "Yeni dairemizdeki tadilatın tam olarak ne zaman biteceğini kesin olarak söylemek zor."}
+    ],
+    "176": [
+        {"ru": "Тебе нужно написать официальное заявление, если ты хочешь уйти в отпуск на следующей неделе.", "tr": "Gelecek hafta tatile çıkmak istiyorsan resmi bir dilekçe yazman gerekiyor."},
+        {"ru": "Вчера вечером я наконец-то смог написать подробный отчет о проделанной за месяц работе.", "tr": "Dün akşam nihayet ay boyunca yapılan işler hakkında detaylı bir rapor yazabildim."},
+        {"ru": "Мой друг обещал написать мне письмо сразу после того, как переедет в другой город.", "tr": "Arkadaşım başka bir şehre taşındıktan hemen sonra bana mektup yazacağına söz verdi."}
+    ],
+    "186": [
+        {"ru": "Наниматель обязан обеспечить своим сотрудникам безопасные и комфортные условия труда на рабочем месте.", "tr": "İşveren, çalışanlarına iş yerinde güvenli ve rahat çalışma koşulları sağlamakla yükümlüdür."},
+        {"ru": "Будущий наниматель внимательно изучил мое резюме и пригласил меня на второе собеседование.", "tr": "Gelecekteki işverenim özgeçmişimi dikkatlice inceledi ve beni ikinci görüşmeye davet etti."},
+        {"ru": "Новый наниматель этой просторной квартиры оказался очень приятным и ответственным молодым человеком.", "tr": "Bu geniş dairenin yeni kiracısı çok hoş ve sorumlu bir genç adam çıktı."}
+    ],
+    "192": [
+        {"ru": "Лучше бы мы выехали из дома на час раньше, чтобы не стоять в этих ужасных пробках.", "tr": "Bu korkunç trafik sıkışıklığında beklememek için evden bir saat önce çıksaydık daha iyi olurdu."},
+        {"ru": "Тебе лучше бы заранее предупредить начальство о том, что ты планируешь взять выходной.", "tr": "Patronu izin almayı planladığın konusunda önceden uyarsan iyi olurdu."},
+        {"ru": "Лучше бы он сосредоточился на подготовке к экзамену, вместо того чтобы играть в компьютерные игры.", "tr": "Bilgisayar oyunları oynamak yerine sınavlara hazırlanmaya odaklansaydı daha iyi olurdu."}
+    ],
+    "193": [
+        {"ru": "Мой старший брат — неисправимый оптимист, который всегда находит плюсы даже в самых сложных ситуациях.", "tr": "Abim, en zor durumlarda bile her zaman artıları bulan iflah olmaz bir optimistir."},
+        {"ru": "Настоящий оптимист верит, что завтрашний день принесет новые возможности и интересные встречи.", "tr": "Gerçek bir optimist, yarının yeni fırsatlar ve ilginç buluşmalar getireceğine inanır."},
+        {"ru": "В нашей команде нужен хотя бы один оптимист, чтобы поддерживать боевой дух во время кризиса.", "tr": "Kriz sırasında moralimizi yüksek tutmak için ekibimizde en az bir optimist olması gerekiyor."}
+    ],
+    "194": [
+        {"ru": "Как типичный пессимист, он заранее готовится к худшему развитию событий на финансовом рынке.", "tr": "Tipik bir pesimist olarak, finansal piyasadaki en kötü senaryoya önceden hazırlanıyor."},
+        {"ru": "Не будь таким пессимистом, у нас еще есть достаточно времени, чтобы исправить все ошибки в проекте.", "tr": "Bu kadar pesimist olma, projedeki tüm hataları düzeltmek için hala yeterince vaktimiz var."},
+        {"ru": "Пессимист всегда видит только препятствия, в то время как другие замечают новые перспективы.", "tr": "Pesimist her zaman sadece engelleri görür, diğerleri ise yeni perspektifleri fark eder."}
+    ],
+    "272": [
+        {"ru": "Все родственники говорят, что я похож на маму, тем что у меня такой же сильный характер.", "tr": "Bütün akrabalar, aynı güçlü karaktere sahip olmamla anneme benzediğimi söylüyorlar."},
+        {"ru": "Я похож на маму, тем что у меня такой же спокойный характер и терпение в трудных ситуациях.", "tr": "Aynı sakin karaktere ve zor durumlardaki sabra sahip olmamla anneme benziyorum."},
+        {"ru": "Часто друзья замечают, что я похож на маму, тем что у меня такой же веселый характер.", "tr": "Çoğu zaman arkadaşlarım, aynı neşeli karaktere sahip olmamla anneme benzediğimi fark ederler."}
+    ],
+    "311": [
+        {"ru": "Меня начинает тошнить, когда автобус едет слишком быстро по этой извилистой горной дороге.", "tr": "Otobüs bu virajlı dağ yolunda çok hızlı gittiğinde midem bulanmaya başlıyor."},
+        {"ru": "Если тебя будет тошнить во время морской прогулки, обязательно прими эти специальные таблетки.", "tr": "Tekne turu sırasında miden bulanırsa, mutlaka bu özel hapları al."},
+        {"ru": "От запаха испорченных продуктов в холодильнике его сразу же начало сильно тошнить.", "tr": "Buzdolabındaki bozulmuş yiyeceklerin kokusundan anında midesi şiddetli bir şekilde bulanmaya başladı."}
+    ],
+    "318": [
+        {"ru": "В русском языке можно легко образовать глагол от прилагательного с помощью суффикса.", "tr": "Rusçada bir sıfattan fiil, bir son ek yardımıyla kolayca oluşturulabilir."},
+        {"ru": "Переход от прилагательного к глаголу часто меняет основное лексическое значение слова.", "tr": "Sıfattan fiile geçiş genellikle kelimenin temel sözcüksel anlamını değiştirir."},
+        {"ru": "На уроке мы изучали правила образования новых слов от прилагательного к глаголу.", "tr": "Derste sıfattan fiile yeni kelimeler oluşturma kurallarını öğrendik."}
+    ],
+    "361": [
+        {"ru": "Он смотрел на меня так, как будто мы не виделись уже несколько долгих лет.", "tr": "Bana sanki birkaç uzun yıldır görüşmüyormuşuz gibi bakıyordu."},
+        {"ru": "В этой старой квартире было очень тихо, словно время здесь навсегда остановилось.", "tr": "Bu eski daire çok sessizdi, sanki zaman burada sonsuza dek durmuş gibi."},
+        {"ru": "Она продолжала улыбаться, как будто ничего страшного в тот вечер не произошло.", "tr": "Sanki o akşam korkunç hiçbir şey olmamış gibi gülümsemeye devam ediyordu."}
+    ],
+    "367": [
+        {"ru": "Что касается нашего нового проекта, мы должны обсудить все детали на завтрашнем собрании.", "tr": "Yeni projemiz konusuna gelince, tüm detayları yarınki toplantıda tartışmalıyız."},
+        {"ru": "Что касается моего личного мнения, я считаю этот подход совершенно неэффективным и устаревшим.", "tr": "Benim kişisel fikrim konusuna gelince, bu yaklaşımın tamamen verimsiz ve modası geçmiş olduğunu düşünüyorum."},
+        {"ru": "Все сотрудники согласны с новыми правилами, но что касается руководства, они пока сомневаются.", "tr": "Tüm çalışanlar yeni kuralları kabul ediyor, ancak yönetim konusuna gelince, onlar henüz şüpheli."}
+    ],
+    "447": [
+        {"ru": "Врачи настоятельно рекомендуют родителям как можно раньше отучить ребенка от вредной привычки грызть ногти.", "tr": "Doktorlar, ebeveynlere çocuklarını tırnak yeme gibi kötü bir alışkanlıktan bir an önce soğutmalarını şiddetle tavsiye ediyor."},
+        {"ru": "Мне понадобилось несколько долгих месяцев, чтобы отучить собаку лаять на каждого прохожего.", "tr": "Köpeğimi yoldan geçen herkese havlamasından vazgeçirmek birkaç uzun ayımı aldı."},
+        {"ru": "Очень сложно отучить человека от курения, если он сам не хочет ничего менять в своей жизни.", "tr": "Eğer kendisi hayatında hiçbir şeyi değiştirmek istemiyorsa, bir insanı sigaradan soğutmak çok zordur."}
+    ],
+    "448": [
+        {"ru": "Важно с самого раннего детства приучить ребенка к чтению полезной и развивающей литературы.", "tr": "Çocuğu çok erken yaşlardan itibaren faydalı ve eğitici edebiyat okumaya alıştırmak önemlidir."},
+        {"ru": "Я стараюсь приучить себя регулярно делать утреннюю гимнастику и пить больше чистой воды.", "tr": "Kendimi düzenli olarak sabah jimnastiği yapmaya ve daha fazla temiz su içmeye alıştırmaya çalışıyorum."},
+        {"ru": "Чтобы приучить щенка к новому месту, нужно проявить огромное терпение и постоянную заботу.", "tr": "Yavru köpeği yeni yerine alıştırmak için büyük bir sabır ve sürekli ilgi göstermek gerekir."}
+    ],
+    "449": [
+        {"ru": "Мы с друзьями долго гуляли вдоль живописной реки, наслаждаясь прекрасным летним вечером.", "tr": "Arkadaşlarımla, güzel yaz akşamının tadını çıkararak manzaralı nehir boyunca uzun süre yürüdük."},
+        {"ru": "Вдоль новой скоростной трассы посадили красивые деревья, чтобы защитить жителей от сильного шума.", "tr": "Sakinleri yüksek sesten korumak için yeni otoyol boyunca güzel ağaçlar dikildi."},
+        {"ru": "Местные рыбаки обычно выстраиваются вдоль берега озера еще до восхода яркого солнца.", "tr": "Yerel balıkçılar genellikle parlak güneş doğmadan önce göl kıyısı boyunca dizilirler."}
+    ],
+    "450": [
+        {"ru": "Старое упавшее дерево лежало прямо поперёк узкой лесной дороги, полностью блокируя проезд.", "tr": "Devrilmiş yaşlı ağaç dar orman yolunun tam karşısından karşısına yatıyor ve geçişi tamamen engelliyordu."},
+        {"ru": "Он всегда делает всё поперёк моих советов, поэтому постоянно попадает в неприятные ситуации.", "tr": "Her zaman tavsiyelerimin tersine hareket eder, bu yüzden sürekli tatsız durumlara düşer."},
+        {"ru": "Машина остановилась поперёк дороги, создав огромную пробку в самом центре города.", "tr": "Araba yolun karşısından karşısına durarak şehrin tam merkezinde büyük bir trafik sıkışıklığı yarattı."}
+    ],
+    "453": [
+        {"ru": "Этот вариант инвестирования считается наименее рискованным для начинающих предпринимателей в нашем регионе.", "tr": "Bu yatırım seçeneği, bölgemizdeki yeni girişimciler için en az riskli olarak kabul ediliyor."},
+        {"ru": "Из всех предложенных кандидатов он оказался наименее подготовленным к такой ответственной должности.", "tr": "Önerilen tüm adaylar arasında, böyle sorumlu bir pozisyon için en az hazırlıklı olanı oydu."},
+        {"ru": "Мы решили выбрать наименее загруженный маршрут, чтобы быстрее добраться до места назначения.", "tr": "Gideceğimiz yere daha hızlı ulaşmak için en az yoğun olan rotayı seçmeye karar verdik."}
+    ],
+    "454": [
+        {"ru": "В этой сложной ситуации необходимо принять наиболее правильное и взвешенное решение для компании.", "tr": "Bu zor durumda, şirket için en doğru ve dengeli kararı almak gereklidir."},
+        {"ru": "Наиболее интересной частью экскурсии оказалось посещение старинного замка на вершине высокой горы.", "tr": "Turdaki en ilginç kısım, yüksek dağın zirvesindeki antik kaleyi ziyaret etmekti."},
+        {"ru": "Этот метод лечения считается наиболее эффективным при хронических заболеваниях дыхательных путей.", "tr": "Bu tedavi yöntemi, kronik solunum yolu hastalıklarında en çok etkili olanı olarak kabul edilir."}
+    ],
+    "455": [
+        {"ru": "Опытный специалист в области информационных технологий быстро нашел причину системного сбоя.", "tr": "Bilişim teknolojileri alanında deneyimli bir uzman, sistem arızasının nedenini hızla buldu."},
+        {"ru": "Нам срочно нужен хороший специалист, который сможет грамотно настроить новое производственное оборудование.", "tr": "Yeni üretim ekipmanını düzgün bir şekilde kurabilecek iyi bir uzmana acilen ihtiyacımız var."},
+        {"ru": "Как ведущий специалист отдела, он отвечает за обучение и адаптацию новых сотрудников.", "tr": "Departmanın önde gelen uzmanı olarak, yeni çalışanların eğitiminden ve adaptasyonundan sorumludur."}
+    ],
+    "456": [
+        {"ru": "Он не профессиональный фотограф, а просто страстный любитель, который делает отличные снимки.", "tr": "O profesyonel bir fotoğrafçı değil, sadece harika fotoğraflar çeken tutkulu bir amatör."},
+        {"ru": "Как большой любитель классической музыки, я стараюсь не пропускать концерты в филармонии.", "tr": "Klasik müziğin büyük bir meraklısı olarak, filarmonideki konserleri kaçırmamaya çalışıyorum."},
+        {"ru": "В этом престижном турнире может принять участие любой любитель настольного тенниса.", "tr": "Bu prestijli turnuvaya herhangi bir masa tenisi amatörü katılabilir."}
+    ],
+    "474": [
+        {"ru": "После долгих споров мне пришлось согласиться с его аргументами, так как они были убедительны.", "tr": "Uzun tartışmalardan sonra, onun argümanlarıyla hemfikir olmak zorunda kaldım, çünkü ikna ediciydiler."},
+        {"ru": "Руководство компании готово согласиться на ваши условия, если вы подпишете контракт сегодня.", "tr": "Şirket yönetimi, sözleşmeyi bugün imzalarsanız şartlarınızı kabul etmeye hazır."},
+        {"ru": "Трудно не согласиться с тем фактом, что регулярные тренировки значительно улучшают общее самочувствие.", "tr": "Düzenli antrenmanların genel sağlığı önemli ölçüde iyileştirdiği gerçeğiyle hemfikir olmamak zordur."}
+    ],
+    "475": [
+        {"ru": "Я хотел бы возразить против этого предложения, так как оно требует слишком больших финансовых затрат.", "tr": "Bu teklife itiraz etmek isterim, çünkü çok fazla finansal maliyet gerektiriyor."},
+        {"ru": "Ему было нечего возразить, потому что все представленные доказательства указывали на его явную ошибку.", "tr": "İtiraz edecek hiçbir şeyi yoktu, çünkü sunulan tüm kanıtlar onun açık hatasını gösteriyordu."},
+        {"ru": "Адвокат попытался возразить судье, но его просьба была немедленно отклонена во время заседания.", "tr": "Avukat hakime itiraz etmeye çalıştı, ancak talebi duruşma sırasında derhal reddedildi."}
+    ],
+    "477": [
+        {"ru": "В этой сложной политической игре наш главный союзник неожиданно изменил свою первоначальную позицию.", "tr": "Bu karmaşık siyasi oyunda, baş müttefikimiz beklenmedik bir şekilde ilk tutumunu değiştirdi."},
+        {"ru": "Надежный союзник всегда поддержит вас в трудную минуту и поможет справиться с проблемами.", "tr": "Güvenilir bir müttefik zor zamanlarda sizi her zaman destekler ve sorunların üstesinden gelmenize yardımcı olur."},
+        {"ru": "Страна ищет новых экономических союзников для успешного развития международной торговли в регионе.", "tr": "Ülke, bölgedeki uluslararası ticaretin başarılı bir şekilde gelişmesi için yeni ekonomik müttefikler arıyor."}
+    ],
+    "478": [
+        {"ru": "Наш противник оказался намного сильнее и хитрее, чем мы предполагали перед началом решающего матча.", "tr": "Rakibimiz, belirleyici maçtan önce tahmin ettiğimizden çok daha güçlü ve kurnaz çıktı."},
+        {"ru": "Он яростный противник курения в общественных местах и всегда делает замечания нарушителям порядка.", "tr": "O, halka açık yerlerde sigara içilmesinin şiddetli bir karşıtıdır ve kuralları ihlal edenleri her zaman uyarır."},
+        {"ru": "Главный противник этого законопроекта выступил с длинной и эмоциональной речью в парламенте.", "tr": "Bu yasa tasarısının ana muhalifi, parlamentoda uzun ve duygusal bir konuşma yaptı."}
+    ],
+    "479": [
+        {"ru": "Его положительный настрой помог всей команде успешно завершить этот сложный и долгий проект.", "tr": "Onun olumlu tutumu, tüm ekibin bu zor ve uzun projeyi başarıyla tamamlamasına yardımcı oldu."},
+        {"ru": "Мы получили очень положительный ответ от наших зарубежных партнеров по поводу будущего сотрудничества.", "tr": "Gelecekteki işbirliği konusunda yabancı ortaklarımızdan çok olumlu bir yanıt aldık."},
+        {"ru": "Занятия спортом оказывают положительный эффект на сердечно-сосудистую систему человека.", "tr": "Spor yapmak, insanın kalp-damar sistemi üzerinde olumlu bir etki yaratır."}
+    ],
+    "480": [
+        {"ru": "К сожалению, мы получили отрицательный результат после проведения серии лабораторных испытаний нового препарата.", "tr": "Ne yazık ki, yeni ilacın bir dizi laboratuvar testini yaptıktan sonra olumsuz bir sonuç aldık."},
+        {"ru": "Его постоянные опоздания оказали крайне отрицательный эффект на репутацию всей нашей компании.", "tr": "Onun sürekli geç kalmaları, tüm şirketimizin itibarı üzerinde son derece olumsuz bir etki yarattı."},
+        {"ru": "Я постарался не обращать внимания на его отрицательный комментарий по поводу моей новой статьи.", "tr": "Benim yeni makalem hakkındaki olumsuz yorumuna aldırış etmemeye çalıştım."}
+    ],
+    "481": [
+        {"ru": "Водителям строго запрещено нарушать правила дорожного движения, особенно вблизи школ и детских садов.", "tr": "Sürücülerin, özellikle okulların ve anaokullarının yakınında trafik kurallarını ihlal etmeleri kesinlikle yasaktır."},
+        {"ru": "Я не хочу нарушать нашу давнюю традицию собираться вместе каждую пятницу вечером.", "tr": "Her cuma akşamı bir araya gelme konusundaki eski geleneğimizi bozmak istemiyorum."},
+        {"ru": "Сотрудники, которые постоянно нарушают трудовую дисциплину, могут быть уволены без предупреждения.", "tr": "Sürekli iş disiplinini ihlal eden çalışanlar haber verilmeksizin işten çıkarılabilir."}
+    ],
+    "483": [
+        {"ru": "На улице было очень холодно, поэтому мне пришлось застегнуть куртку на все пуговицы.", "tr": "Dışarısı çok soğuktu, bu yüzden ceketimin tüm düğmelerini iliklemek zorunda kaldım."},
+        {"ru": "Мама помогла маленькой дочке застегнуть молнию на ее новых зимних сапогах перед прогулкой.", "tr": "Anne, yürüyüşten önce küçük kızının yeni kışlık botlarındaki fermuarı iliklemesine yardımcı oldu."},
+        {"ru": "Не забудь аккуратно застегнуть воротник рубашки перед началом важного собеседования с директором.", "tr": "Müdürle yapacağın önemli iş görüşmesinden önce gömleğinin yakasını dikkatlice iliklemeyi unutma."}
+    ],
+    "484": [
+        {"ru": "В комнате стало слишком жарко, и он решил расстегнуть верхнюю пуговицу своей рубашки.", "tr": "Odada hava çok ısındı ve o gömleğinin üst düğmesini açmaya karar verdi."},
+        {"ru": "После плотного и вкусного ужина мне захотелось незаметно расстегнуть ремень на брюках.", "tr": "Doyurucu ve lezzetli bir akşam yemeğinden sonra pantolonumun kemerini gizlice açmak istedim."},
+        {"ru": "Врач попросил пациента расстегнуть рубашку, чтобы внимательно послушать его сердце и легкие.", "tr": "Doktor, kalbini ve akciğerlerini dikkatlice dinlemek için hastadan gömleğini açmasını istedi."}
+    ],
+    "485": [
+        {"ru": "Продавец предложил красиво завернуть наш подарок в яркую бумагу с золотыми лентами.", "tr": "Satıcı, hediyemizi altın kurdeleli parlak bir kağıda güzelce sarmayı teklif etti."},
+        {"ru": "Не забудь плотно завернуть остатки еды в пищевую пленку, прежде чем положить их в холодильник.", "tr": "Artan yemekleri buzdolabına koymadan önce streç filme sıkıca sarmayı unutma."},
+        {"ru": "Нам пришлось завернуть в теплый плед, потому что ночная прохлада давала о себе знать.", "tr": "Gecenin serinliği kendini hissettirdiği için sıcak bir battaniyeye sarınmak zorunda kaldık."}
+    ],
+    "486": [
+        {"ru": "Ребенок не мог дождаться утра, чтобы поскорее развернуть свои долгожданные новогодние подарки.", "tr": "Çocuk, uzun zamandır beklediği yeni yıl hediyelerini bir an önce açmak için sabaha kadar bekleyemedi."},
+        {"ru": "Нам нужно развернуть эту огромную карту на столе, чтобы детально изучить предстоящий маршрут.", "tr": "Yaklaşan rotayı detaylı olarak incelemek için bu kocaman haritayı masaya açmamız gerekiyor."},
+        {"ru": "Водитель решил развернуть машину прямо посреди пустой улицы, чтобы не ехать в объезд.", "tr": "Sürücü, dolaşmamak için arabayı tam boş sokağın ortasında döndürmeye karar verdi."}
+    ],
+    "490": [
+        {"ru": "Наш дедушка — очень щедрый человек, он всегда дарит внукам дорогие и полезные подарки.", "tr": "Dedemiz çok cömert bir insandır, torunlarına her zaman pahalı ve faydalı hediyeler verir."},
+        {"ru": "Этот благотворительный фонд получил щедрый взнос от неизвестного бизнесмена из другой страны.", "tr": "Bu yardım vakfı, başka bir ülkeden meçhul bir işadamından cömert bir bağış aldı."},
+        {"ru": "Природа была к нему невероятно щедрой, наделив его исключительным музыкальным талантом с рождения.", "tr": "Doğa ona doğuştan olağanüstü bir müzik yeteneği vererek inanılmaz derecede cömert davranmıştı."}
+    ],
+    "491": [
+        {"ru": "Эксперты прогнозируют, что к концу года многие популярные модели смартфонов могут значительно подешеветь.", "tr": "Uzmanlar, yıl sonuna kadar birçok popüler akıllı telefon modelinin önemli ölçüde ucuzlayabileceğini tahmin ediyor."},
+        {"ru": "Летом свежие овощи и фрукты на местном рынке обычно начинают заметно подешеветь.", "tr": "Yaz aylarında yerel pazardaki taze sebze ve meyveler genellikle gözle görülür şekilde ucuzlamaya başlar."},
+        {"ru": "Билеты на самолет могут подешеветь, если покупать их за несколько месяцев до запланированной поездки.", "tr": "Planlanan yolculuktan birkaç ay önce satın alırsanız uçak biletleri ucuzlayabilir."}
+    ],
+    "492": [
+        {"ru": "Из-за недавнего экономического кризиса импортные товары в наших магазинах могут сильно подорожать.", "tr": "Son ekonomik kriz nedeniyle mağazalarımızdaki ithal mallar çok pahalılaşabilir."},
+        {"ru": "К сожалению, бензин снова обещает подорожать со следующего месяца во всех регионах страны.", "tr": "Ne yazık ki, benzin önümüzdeki aydan itibaren ülkenin tüm bölgelerinde yeniden pahalılaşacak gibi görünüyor."},
+        {"ru": "Аренда жилья в центре города может заметно подорожать в период проведения крупного международного фестиваля.", "tr": "Şehir merkezindeki konut kiraları, büyük bir uluslararası festival döneminde gözle görülür şekilde pahalılaşabilir."}
+    ],
+    "498": [
+        {"ru": "На ней был очень тонкий шелковый шарф, который идеально подходил к ее вечернему платью.", "tr": "Üzerinde gece elbisesine mükemmel uyan çok ince ipek bir eşarp vardı."},
+        {"ru": "Автор книги обладает поразительно тонким чувством юмора, понятным далеко не каждому читателю.", "tr": "Kitabın yazarı, her okuyucunun anlamayacağı kadar şaşırtıcı derecede ince bir mizah anlayışına sahip."},
+        {"ru": "Этот сложный механизм требует тонкой и осторожной настройки опытным специалистом.", "tr": "Bu karmaşık mekanizma, deneyimli bir uzman tarafından ince ve dikkatli bir ayar gerektirir."}
+    ]
+}
+
+with open('/Users/kagansmtdms/Downloads/Проекты/Ru-Tr-main/scripts/result_1.json', 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+print("Generated result_1.json successfully.")

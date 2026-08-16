@@ -1,0 +1,183 @@
+import json
+
+data = {
+    "499": [
+        {"ru": "Когда он узнал результаты экзамена, его переполняла огромная радость.", "tr": "Sınav sonuçlarını öğrendiğinde içini büyük bir neşe kapladı."},
+        {"ru": "Дети бегали по двору и кричали от радости весь день.", "tr": "Çocuklar bütün gün avluda koşuşturup neşeden bağırdılar."},
+        {"ru": "Настоящая радость заключается в том, чтобы помогать другим людям бескорыстно.", "tr": "Gerçek neşe, diğer insanlara karşılıksız yardım etmektir."}
+    ],
+    "500": [
+        {"ru": "В её глазах читалась глубокая грусть из-за расставания с друзьями.", "tr": "Arkadaşlarıyla vedalaşmasından dolayı gözlerinden derin bir hüzün okunuyordu."},
+        {"ru": "Осенняя погода часто навевает на меня легкую и непонятную грусть.", "tr": "Sonbahar havası genellikle bende hafif ve anlaşılamaz bir hüzün uyandırır."},
+        {"ru": "Музыка играла так тихо, что все почувствовали внезапную грусть.", "tr": "Müzik o kadar kısık çalıyordu ki herkes aniden hüzün hissetti."}
+    ],
+    "502": [
+        {"ru": "Он часто думал о том, какой будет его старость в деревне.", "tr": "Köydeki yaşlılığının nasıl olacağını sık sık düşünürdü."},
+        {"ru": "В старости люди становятся мудрее и спокойнее относятся к проблемам.", "tr": "Yaşlılıkta insanlar bilgeleşir ve sorunlara daha sakin yaklaşırlar."},
+        {"ru": "Её дедушка сохранил отличную память, несмотря на глубокую старость.", "tr": "Dedesi, derin yaşlılığına rağmen mükemmel bir hafızaya sahipti."}
+    ],
+    "503": [
+        {"ru": "После сильного дождя на дорогах была сплошная грязь и лужи.", "tr": "Şiddetli yağmurdan sonra yollarda tamamen kir ve su birikintileri vardı."},
+        {"ru": "Мальчик пришёл домой, и вся его одежда была в густой грязи.", "tr": "Çocuk eve geldiğinde bütün kıyafetleri yoğun bir kir içindeydi."},
+        {"ru": "Они долго отмывали грязь с колес своего старого автомобиля.", "tr": "Eski arabalarının tekerleklerindeki kiri uzun süre temizlediler."}
+    ],
+    "504": [
+        {"ru": "В больнице всегда должна поддерживаться идеальная чистота и порядок.", "tr": "Hastanede her zaman mükemmel bir temizlik ve düzen sağlanmalıdır."},
+        {"ru": "Её квартира отличалась невероятной чистотой, словно там никто не жил.", "tr": "Dairesi, sanki orada kimse yaşamıyormuş gibi inanılmaz bir temizliğe sahipti."},
+        {"ru": "Чистота окружающей среды зависит от каждого жителя нашего города.", "tr": "Çevrenin temizliği şehrimizin her bir sakinine bağlıdır."}
+    ],
+    "505": [
+        {"ru": "Его трудолюбие и упорство помогли ему добиться успеха в карьере.", "tr": "Onun çalışkanlığı ve azmi, kariyerinde başarılı olmasına yardımcı oldu."},
+        {"ru": "Учитель всегда хвалил её за невероятное трудолюбие на уроках математики.", "tr": "Öğretmen onu matematik derslerindeki inanılmaz çalışkanlığından dolayı hep övüyordu."},
+        {"ru": "Без настоящего трудолюбия невозможно стать профессионалом в своём деле.", "tr": "Gerçek bir çalışkanlık olmadan kendi alanında profesyonel olmak imkansızdır."}
+    ],
+    "506": [
+        {"ru": "Обычная лень мешает многим людям достигать поставленных перед собой целей.", "tr": "Sıradan tembellik, birçok insanın kendine koyduğu hedeflere ulaşmasını engeller."},
+        {"ru": "Из-за своей лени он так и не закончил этот важный проект.", "tr": "Tembelliği yüzünden bu önemli projeyi bir türlü bitiremedi."},
+        {"ru": "Чтобы выучить иностранный язык, нужно обязательно побороть собственную лень.", "tr": "Yabancı dil öğrenmek için kesinlikle kendi tembelliğinizi yenmeniz gerekir."}
+    ],
+    "507": [
+        {"ru": "Спуск с высокой горы оказался намного сложнее, чем мы ожидали.", "tr": "Yüksek dağdan iniş, beklediğimizden çok daha zordu."},
+        {"ru": "Они начали осторожный спуск в темную и глубокую пещеру.", "tr": "Karanlık ve derin mağaraya dikkatli bir inişe başladılar."},
+        {"ru": "Крутой спуск к реке был покрыт скользкой грязью и камнями.", "tr": "Nehre giden dik iniş kaygan çamur ve taşlarla kaplıydı."}
+    ],
+    "508": [
+        {"ru": "Подъём на холм занял у туристов около трёх долгих часов.", "tr": "Tepeye yokuş çıkmak turistlerin yaklaşık üç uzun saatini aldı."},
+        {"ru": "Впереди нас ждал очень крутой подъём, к которому мы не готовились.", "tr": "Önümüzde hazırlıklı olmadığımız çok dik bir yokuş bizi bekliyordu."},
+        {"ru": "Преодолеть этот сложный подъём можно только на мощном автомобиле.", "tr": "Bu zorlu yokuşu sadece güçlü bir arabayla aşabilirsiniz."}
+    ],
+    "509": [
+        {"ru": "Его стремительный подъём по карьерной лестнице удивил всех коллег.", "tr": "Kariyer basamaklarındaki hızlı çıkışı tüm meslektaşlarını şaşırttı."},
+        {"ru": "В этом году наблюдается заметный подъём экономики в нашей стране.", "tr": "Bu yıl ülkemizde ekonomide belirgin bir çıkış gözlemleniyor."},
+        {"ru": "Утренний подъём в армии всегда начинается ровно в шесть часов.", "tr": "Orduda sabah çıkışı her zaman tam saat altıda başlar."}
+    ],
+    "510": [
+        {"ru": "Соблюдение правил дорожного движения поможет избежать серьёзных аварий на дороге.", "tr": "Trafik kurallarına uyma, yolda ciddi kazaların önlenmesine yardımcı olacaktır."},
+        {"ru": "Для нас очень важно строгое соблюдение условий подписанного контракта.", "tr": "İmzalanan sözleşmenin şartlarına sıkı sıkıya uyulması bizim için çok önemlidir."},
+        {"ru": "Врач подчеркнул, что строгое соблюдение диеты необходимо для выздоровления.", "tr": "Doktor, iyileşme için diyete sıkı bir şekilde uymanın gerekli olduğunu vurguladı."}
+    ],
+    "511": [
+        {"ru": "За малейшее нарушение правил компании сотрудник может быть немедленно уволен.", "tr": "Şirket kurallarının en ufak bir ihlali durumunda çalışan derhal işten çıkarılabilir."},
+        {"ru": "Нарушение общественного порядка в этом месте карается высоким штрафом.", "tr": "Bu bölgede kamu düzeninin ihlali yüksek para cezası ile cezalandırılır."},
+        {"ru": "Любое нарушение закона повлечет за собой серьезные юридические последствия.", "tr": "Herhangi bir yasa ihlali ciddi hukuki sonuçlar doğuracaktır."}
+    ],
+    "512": [
+        {"ru": "Родители наконец-то дали своё согласие на поездку сына за границу.", "tr": "Anne babası nihayet oğullarının yurtdışı gezisine rıza gösterdiler."},
+        {"ru": "Без вашего письменного согласия мы не сможем начать этот проект.", "tr": "Sizin yazılı rızanız olmadan bu projeye başlayamayız."},
+        {"ru": "Он получил молчаливое согласие от руководства на проведение эксперимента.", "tr": "Deneyi yapmak için yönetimden sessiz bir rıza aldı."}
+    ],
+    "513": [
+        {"ru": "Директор подписал документы, выразив тем самым своё официальное согласие.", "tr": "Müdür, resmi onayını ifade ederek belgeleri imzaladı."},
+        {"ru": "Она кивнула головой в знак согласия с его убедительными аргументами.", "tr": "Onun ikna edici argümanlarına onay işareti olarak başını salladı."},
+        {"ru": "Мы ждем окончательное согласие от банка для перевода средств.", "tr": "Para transferi için bankadan nihai onayı bekliyoruz."}
+    ],
+    "514": [
+        {"ru": "Её неожиданный отказ очень расстроил всех участников нашей небольшой команды.", "tr": "Beklenmedik reddi, küçük ekibimizdeki herkesi çok üzdü."},
+        {"ru": "Отказ двигателя произошел на высоте около десяти тысяч метров.", "tr": "Motor arızası yaklaşık on bin metre yükseklikte meydana geldi."},
+        {"ru": "Он воспринял этот отказ как личное оскорбление с её стороны.", "tr": "Bu reddi ondan gelen kişisel bir hakaret olarak algıladı."}
+    ],
+    "515": [
+        {"ru": "Письменный отказ от участия в конкурсе нужно отправить до пятницы.", "tr": "Yarışmaya katılmaktan yazılı olarak vazgeçtiğinize dair belgeyi cumaya kadar göndermeniz gerekiyor."},
+        {"ru": "Мой отказ был мотивирован нехваткой свободного времени на выходных.", "tr": "Reddim, hafta sonları boş zamanımın olmamasıyla motive edildi."},
+        {"ru": "К сожалению, мы получили официальный отказ на наш вчерашний запрос.", "tr": "Maalesef dünkü talebimize resmi bir ret aldık."}
+    ],
+    "516": [
+        {"ru": "Полный отказ от сладкого помог ей быстро сбросить лишний вес.", "tr": "Tatlıyı tamamen reddetmek onun fazla kilolarından çabucak kurtulmasına yardımcı oldu."},
+        {"ru": "Его категоричный отказ обсуждать эту тему всех немного удивил.", "tr": "Bu konuyu tartışmayı kesin bir şekilde reddetmesi herkesi biraz şaşırttı."},
+        {"ru": "Судья вынес отказ в удовлетворении их иска из-за недостатка улик.", "tr": "Yargıç, delil yetersizliğinden dolayı davalarının tatminini reddetti."}
+    ],
+    "517": [
+        {"ru": "Невыносимый холод заставил нас быстро вернуться в теплый и уютный дом.", "tr": "Dayanılmaz soğuk bizi hızlıca sıcak ve rahat eve dönmeye zorladı."},
+        {"ru": "Зимний холод проникал даже сквозь толстую куртку и теплый свитер.", "tr": "Kış soğuğu kalın ceketin ve sıcak tutan kazağın içinden bile geçiyordu."},
+        {"ru": "Она не любила северные страны из-за их постоянного пронизывающего холода.", "tr": "Sürekli dondurucu soğuklarından dolayı kuzey ülkelerini sevmezdi."}
+    ],
+    "518": [
+        {"ru": "Летняя жара в этом регионе часто достигает сорока градусов по Цельсию.", "tr": "Bu bölgedeki yaz sıcağı genellikle kırk santigrat dereceye ulaşır."},
+        {"ru": "От такой сильной жары спасает только кондиционер или прохладный душ.", "tr": "Böylesine şiddetli bir sıcaktan sadece klima veya serin bir duş kurtarır."},
+        {"ru": "Растения в саду начали увядать из-за продолжительной изнуряющей жары.", "tr": "Bahçedeki bitkiler uzun süren yorucu sıcaklar yüzünden solmaya başladı."}
+    ],
+    "519": [
+        {"ru": "Материнская любовь — это самое сильное и светлое чувство на свете.", "tr": "Anne sevgisi dünyadaki en güçlü ve en parlak duygudur."},
+        {"ru": "Они сохранили свою крепкую любовь даже после долгих лет разлуки.", "tr": "Uzun yıllar ayrı kalmalarına rağmen güçlü sevgilerini korudular."},
+        {"ru": "Настоящая любовь требует взаимопонимания, терпения и постоянной поддержки друг друга.", "tr": "Gerçek sevgi karşılıklı anlayış, sabır ve birbirine sürekli destek olmayı gerektirir."}
+    ],
+    "521": [
+        {"ru": "Жизнь в большом городе всегда полна суеты и неожиданных событий.", "tr": "Büyük bir şehirde yaşam her zaman telaş ve beklenmedik olaylarla doludur."},
+        {"ru": "Его прошлая жизнь была тесно связана с музыкой и искусством.", "tr": "Geçmiş yaşamı müzik ve sanatla yakından bağlantılıydı."},
+        {"ru": "Здоровый образ жизни помогает дольше сохранять молодость и энергию.", "tr": "Sağlıklı bir yaşam tarzı gençliğin ve enerjinin daha uzun süre korunmasına yardımcı olur."}
+    ],
+    "522": [
+        {"ru": "Внезапная смерть известного писателя потрясла всю мировую литературную общественность.", "tr": "Ünlü yazarın ani ölümü tüm dünya edebiyat camiasını sarstı."},
+        {"ru": "Они верили, что после физической смерти душа человека продолжает существовать.", "tr": "Fiziksel ölümden sonra insan ruhunun var olmaya devam ettiğine inanıyorlardı."},
+        {"ru": "Смерть главного героя в конце фильма довела зрителей до слез.", "tr": "Filmin sonundaki baş karakterin ölümü seyircileri gözyaşlarına boğdu."}
+    ],
+    "523": [
+        {"ru": "Огромная физическая сила позволяла ему легко поднимать тяжелые спортивные снаряды.", "tr": "Muazzam fiziksel gücü onun ağır spor aletlerini kolayca kaldırmasını sağladı."},
+        {"ru": "В единстве и сплоченности народа скрыта великая непреодолимая сила.", "tr": "Halkın birlik ve beraberliğinde aşılmaz büyük bir güç gizlidir."},
+        {"ru": "Ветер дул с такой силой, что срывал крыши со старых домов.", "tr": "Rüzgar o kadar güçle esiyordu ki eski evlerin çatılarını uçuruyordu."}
+    ],
+    "524": [
+        {"ru": "После тяжелой болезни он долго чувствовал сильную слабость во всём теле.", "tr": "Ağır bir hastalıktan sonra uzun süre tüm vücudunda şiddetli bir zayıflık hissetti."},
+        {"ru": "Моя главная слабость — это дорогие швейцарские часы и автомобили.", "tr": "En büyük zayıflığım pahalı İsviçre saatleri ve arabalardır."},
+        {"ru": "Он не мог признаться в своей слабости даже самым близким друзьям.", "tr": "Zayıflığını en yakın arkadaşlarına bile itiraf edemiyordu."}
+    ],
+    "525": [
+        {"ru": "После трех дней похода туристы почувствовали сильный и невыносимый голод.", "tr": "Üç günlük yürüyüşten sonra turistler şiddetli ve dayanılmaz bir açlık hissettiler."},
+        {"ru": "Голод в этой бедной стране уносит тысячи жизней каждый год.", "tr": "Bu fakir ülkedeki açlık her yıl binlerce can alıyor."},
+        {"ru": "Студент старался утолить голод дешёвыми пирожками на вокзале.", "tr": "Öğrenci istasyondaki ucuz poğaçalarla açlığını gidermeye çalıştı."}
+    ],
+    "526": [
+        {"ru": "Приятное чувство сытости после вкусного ужина заставило его уснуть.", "tr": "Lezzetli bir akşam yemeğinden sonraki hoş tokluk hissi onun uykuya dalmasına neden oldu."},
+        {"ru": "Полная сытость мешает человеку думать о духовном развитии и творчестве.", "tr": "Tam bir tokluk, insanın ruhsal gelişim ve yaratıcılık hakkında düşünmesini engeller."},
+        {"ru": "Она съела всего один салат, но уже почувствовала легкую сытость.", "tr": "Sadece bir salata yedi ama şimdiden hafif bir tokluk hissetti."}
+    ],
+    "528": [
+        {"ru": "Продажа этой квартиры принесла ему достаточно денег для начала бизнеса.", "tr": "Bu dairenin satışı ona bir işe başlaması için yeterli para getirdi."},
+        {"ru": "Компания объявила о начале сезона больших скидок и распродаж.", "tr": "Şirket, büyük indirim ve satış sezonunun başladığını duyurdu."},
+        {"ru": "Продажа алкогольных напитков несовершеннолетним в нашей стране строго запрещена.", "tr": "Ülkemizde reşit olmayanlara alkollü içecek satışı kesinlikle yasaktır."}
+    ],
+    "529": [
+        {"ru": "Покупка нового современного телевизора стала отличным подарком на день рождения.", "tr": "Yeni ve modern bir televizyonun alışı harika bir doğum günü hediyesi oldu."},
+        {"ru": "Её первая крупная покупка в жизни — это надежный подержанный автомобиль.", "tr": "Hayatındaki ilk büyük alışı, güvenilir ikinci el bir arabaydı."},
+        {"ru": "Они долго обсуждали, стоит ли эта покупка потраченных на неё денег.", "tr": "Bu alışın harcanan paraya değip değmeyeceğini uzun süre tartıştılar."}
+    ],
+    "530": [
+        {"ru": "Вчерашняя ссора с лучшим другом испортила ему настроение на весь день.", "tr": "En iyi arkadaşıyla dünkü kavgası bütün gün moralini bozdu."},
+        {"ru": "Мелкая бытовая ссора переросла в серьезный и долгий конфликт соседей.", "tr": "Küçük bir ev kavgası komşular arasında ciddi ve uzun bir çatışmaya dönüştü."},
+        {"ru": "Никакая ссора не должна разрушать настоящую и искреннюю любовь между людьми.", "tr": "Hiçbir kavga, insanlar arasındaki gerçek ve samimi sevgiyi yok etmemelidir."}
+    ],
+    "531": [
+        {"ru": "Их долгожданное примирение состоялось на вечеринке у общих хороших знакомых.", "tr": "Uzun zamandır beklenen barışmaları ortak iyi tanıdıklarının partisinde gerçekleşti."},
+        {"ru": "Она решила первой сделать важный шаг навстречу их будущему примирению.", "tr": "Gelecekteki barışmalarına doğru önemli bir adımı ilk atan olmaya karar verdi."},
+        {"ru": "Быстрое примирение после конфликта показало зрелость их сложных отношений.", "tr": "Çatışmadan sonra hızlı bir barışma, karmaşık ilişkilerinin olgunluğunu gösterdi."}
+    ],
+    "532": [
+        {"ru": "Чтобы войти на эту закрытую территорию, требуется специальное официальное разрешение.", "tr": "Bu kapalı alana girmek için özel bir resmi izin gerekiyor."},
+        {"ru": "Родители не дали ему разрешение на участие в опасных соревнованиях.", "tr": "Ebeveynleri onun tehlikeli yarışmalara katılmasına izin vermedi."},
+        {"ru": "Разрешение этой трудной проблемы потребовало от нас максимальных усилий.", "tr": "Bu zor sorunun çözümü bizden maksimum çaba gerektirdi."}
+    ],
+    "533": [
+        {"ru": "Полное запрещение курения в общественных местах вызвало много бурных споров.", "tr": "Halka açık yerlerde sigara içmenin tamamen yasaklanması birçok hararetli tartışmaya neden oldu."},
+        {"ru": "Строгое запрещение въезда в город повлияло на местную развивающуюся торговлю.", "tr": "Şehre girişin kesin olarak yasaklanması gelişmekte olan yerel ticareti etkiledi."},
+        {"ru": "Он проигнорировал официальное запрещение и всё равно поехал в этот район.", "tr": "Resmi yasaklamayı görmezden geldi ve yine de o bölgeye gitti."}
+    ],
+    "534": [
+        {"ru": "Перед нашим домом протекал очень чистый и широкий горный ручей.", "tr": "Evimizin önünden çok temiz ve geniş bir dağ deresi akıyordu."},
+        {"ru": "Её широкий кругозор делал её невероятно интересным собеседником в любой компании.", "tr": "Geniş ufku onu her ortamda inanılmaz derecede ilginç bir sohbet arkadaşı yapıyordu."},
+        {"ru": "Этот широкий мост может выдержать вес сразу нескольких больших грузовиков.", "tr": "Bu geniş köprü, aynı anda birkaç büyük kamyonun ağırlığına dayanabilir."}
+    ],
+    "537": [
+        {"ru": "Она читала книгу про себя, чтобы не мешать спящему в комнате ребенку.", "tr": "Odada uyuyan çocuğu rahatsız etmemek için kitabı içinden okudu."},
+        {"ru": "Он тихо выругался про себя, когда понял, что опоздал на поезд.", "tr": "Trene geciktiğini anladığında içinden sessizce küfretti."},
+        {"ru": "Ученик повторил сложное правило про себя перед тем, как ответить учителю.", "tr": "Öğrenci öğretmene cevap vermeden önce zor kuralı içinden tekrarladı."}
+    ],
+    "540": [
+        {"ru": "Я не хочу с тобой ругаться, давай лучше попытаемся поскорее мириться.", "tr": "Seninle kavga etmek istemiyorum, iyisi mi bir an önce barışmaya çalışalım."},
+        {"ru": "Они привыкли ссориться каждый день, а потом бурно и радостно мириться.", "tr": "Her gün kavga etmeye, sonra da coşkuyla ve neşeyle barışmaya alışkınlardı."},
+        {"ru": "Нам нужно научиться прощать друг друга и быстрее мириться после конфликтов.", "tr": "Birbirimizi affetmeyi ve çatışmalardan sonra daha hızlı barışmayı öğrenmeliyiz."}
+    ]
+}
+
+with open("/Users/kagansmtdms/Downloads/Проекты/Ru-Tr-main/scripts/result_2.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, ensure_ascii=False, indent=4)
+print("Result 2 saved!")
