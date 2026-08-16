@@ -1381,65 +1381,35 @@
 Умный : Akıl
 Умнеть : Akıl olmak
 Танцовщик : Dansörü
-Dansçı : Dansörü
-Разносчик : Teslim edici
-Разносить : Teslim etmek
-Проситель : İstekçi
-Ricacı : İstekçi
-Смотритель : Kartal
-Bekçi : Kartal
+Танцовщик : Dansçı
+Разносчик : Разносить (satıcı, kurye gibi)
+Проситель : Ricacı
+Смотритель : Bekçi
 Мыслитель : Düşünür
-Düşünür : Düşünür
 Слушатель : Dinleyici
-Dinleyici : Dinleyici
 Спасатель : Kurtarıcı
-Kurtarıcı : Kurtarıcı
 Двигатель : Motor
-Motor : Motor
 Шутник : Şakacı
-Şakacı : Şakacı
 Сборник : Kitap
-Kitap : Kitap
-Путешественник : Seyahatçi
-Gezgin : Seyahatçi
-Обидчик : Özürdüz
-Обидеть : Özürdüz
-Обманщик : Sahtekar
-dolandırıcı : Sahtekar
-Мойщик : Temizlikçi
-Temizlikçi : Temizlikçi
-bulaşıkçı : Bulaşık temizçisi
-Лётчик : Uzman pilot
-ПИЛОТ : Uzman pilot
+Путешественник : Gezgin
+Обидчик : Обидеть
+Обманщик : Sahtekar, dolandırıcı
+Мойщик : Temizlikçi, bulaşıkçı
+Лётчик : ПИЛОТ
 Носильщик : Taşıyıcı
-Taşıyıcı : Taşıyıcı
 Плательщик : Mükellef
-Mükellef : Mükellef
 Морозильник : Buzluk
-Buzluk : Buzluk
 Умывальник : Lavabo
-Lavabo : Lavabo
 Кормилец : Tedarikçi
-Tedarikçi : Tedarikçi
 Лежак : Şezlong
-Şezlong : Şezlong
 Бегун : Koşucu
-Koşucu : Koşucu
 Говорун : Konuşmacı
-Konuşmacı : Konuşmacı
 Молчун : Sessiz adam
-Sessiz adam : Sessiz adam
 Знаток : Uzman
-Uzman : Uzman
 Стрелок : Atıcı
-Atıcı : Atıcı
 Заработок : Kazanç
-Kazanç : Kazanç
 Каток : Buz pisti
-Buz pisti : Buz pisti
-Пение : Şarkı
-Şarkı : Şarkı
-Сoyleme : Söyleme
+Пение : Şarkı Söyleme
 Заигрывание : Flört etmek
 Курение : Sigara
 Волнение : Heyecan

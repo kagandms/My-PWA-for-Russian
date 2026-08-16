@@ -51,6 +51,12 @@ def is_valid_sentence_group(target_ru, sents):
     if not isinstance(sents, list) or len(sents) < 3:
         return False, "Not enough sentences"
         
+    for s in sents:
+        if 'ru' not in s or 'tr' not in s:
+            return False, "Missing 'ru' or 'tr' field in sentence"
+        if not s['ru'].strip() or not s['tr'].strip():
+            return False, "Empty 'ru' or 'tr' field"
+            
     # Check for duplicate sentences
     ru_texts = [s.get('ru', '').strip() for s in sents]
     if len(set(ru_texts)) < 3:
@@ -69,7 +75,7 @@ def is_valid_sentence_group(target_ru, sents):
                 return False, f"Prefix '{prefix}' not found in: {ru_text}"
     else:
         # Generate a flexible stem
-        stem_len = min(5, len(target_lower)) if len(target_lower) > 3 else len(target_lower)
+        stem_len = 4 if len(target_lower) > 4 else len(target_lower)
         stem = target_lower[:stem_len]
         for ru_text in ru_texts:
             if stem not in ru_text.lower():
