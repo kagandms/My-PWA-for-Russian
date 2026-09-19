@@ -11,7 +11,6 @@ class StorageManager {
             'ru_tr_srs_data',
             'ru_tr_tracker_data',
             'ru_tr_study_selector',
-            'ru_tr_full_choice_quiz_progress',
             'ru_tr_user_words',
             'ru_tr_deleted_words',
             'dailyWordsDate',
@@ -19,7 +18,6 @@ class StorageManager {
             'theme'
         ];
         this.isImporting = false;
-        this.syncTimeout = null;
     }
 
     canResolveWordKeys() {
@@ -155,8 +153,6 @@ class StorageManager {
         }, {});
 
         const exportedAt = new Date().toISOString();
-        localStorage.setItem('last_local_export_time', exportedAt);
-
         return {
             schemaVersion: this.schemaVersion,
             exportedAt: exportedAt,
@@ -229,119 +225,6 @@ class StorageManager {
         this.applyImportedData(payload);
     }
 
-    // --- Cloud Sync Methods ---
-
-    getSyncSecret() {
-        return 'kagan_gizli_sifre_123';
-    }
-
-    getSyncUrl() {
-        return '/api/sync';
-    }
-
-    async uploadToCloud(showNotification = false) {
-        if (!navigator.onLine) {
-            if (showNotification && window.app && window.app.showNotification) {
-                window.app.showNotification('İnternet bağlantısı yok', 'warning');
-            }
-            return false;
-        }
-
-        try {
-            const snapshot = this.createUserDataSnapshot();
-            
-            const response = await fetch(this.getSyncUrl(), {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.getSyncSecret()}`
-                },
-                body: JSON.stringify(snapshot)
-            });
-
-            if (response.ok) {
-                if (showNotification && window.app && window.app.showNotification) {
-                    window.app.showNotification('Buluta kaydedildi ☁️', 'success');
-                }
-                return true;
-            } else {
-                throw new Error('Sunucu hatası');
-            }
-        } catch (error) {
-            console.error('Buluta yükleme başarısız:', error);
-            if (showNotification && window.app && window.app.showNotification) {
-                window.app.showNotification('Buluta kaydetme başarısız', 'error');
-            }
-            return false;
-        }
-    }
-
-    async downloadFromCloud(showNotification = false, force = false) {
-        if (!navigator.onLine) {
-            if (showNotification && window.app && window.app.showNotification) {
-                window.app.showNotification('İnternet bağlantısı yok', 'warning');
-            }
-            return false;
-        }
-
-        try {
-            const response = await fetch(this.getSyncUrl(), {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${this.getSyncSecret()}`
-                }
-            });
-
-            if (response.status === 404) return false;
-            if (!response.ok) throw new Error('Sunucu hatası');
-
-            const payload = await response.json();
-            
-            if (!force) {
-                const localExportTime = localStorage.getItem('last_local_export_time');
-                if (localExportTime && payload.exportedAt) {
-                    const localDate = new Date(localExportTime).getTime();
-                    const cloudDate = new Date(payload.exportedAt).getTime();
-                    if (cloudDate <= localDate) return false;
-                }
-            }
-
-            this.validateImportPayload(payload);
-            this.applyImportedData(payload);
-            
-            localStorage.setItem('last_local_export_time', payload.exportedAt);
-            
-            if (showNotification && window.app && window.app.showNotification) {
-                window.app.showNotification('Buluttan yüklendi ☁️', 'success');
-            }
-            
-            return true;
-        } catch (error) {
-            console.error('Buluttan indirme başarısız:', error);
-            if (showNotification && window.app && window.app.showNotification) {
-                window.app.showNotification('Buluttan yükleme başarısız', 'error');
-            }
-            return false;
-        }
-    }
-
-    triggerAutoSync() {
-        if (this.syncTimeout) clearTimeout(this.syncTimeout);
-        this.syncTimeout = setTimeout(() => {
-            this.uploadToCloud(false);
-        }, 3000); // 3 saniye debounce
-    }
 }
-
-// LocalStorage interceptor for auto-sync
-const originalSetItem = localStorage.setItem;
-localStorage.setItem = function(key, value) {
-    originalSetItem.apply(this, arguments);
-    if (window.storageManager && window.storageManager.userDataKeys && window.storageManager.userDataKeys.includes(key)) {
-        if (!window.storageManager.isImporting) {
-            window.storageManager.triggerAutoSync();
-        }
-    }
-};
 
 window.storageManager = new StorageManager();

@@ -9,7 +9,7 @@
 
 ## 1. Proje Özeti
 
-Bu proje, Rusça-Türkçe kelime öğrenmek isteyen kullanıcılar için geliştirilmiş, zengin özellikli bir PWA'dır. Kullanıcılar flashcard, quiz, yazma (typing), kategoriler, önek (prefix) testleri ve TORFL sınav hazırlığı gibi modlar aracılığıyla kelime çalışabilir. Uygulama; offline çalışabilir, yapay zeka entegrasyonu (DeepSeek/OpenRouter) ile kelime açıklamaları ve örnek cümleler sunar, günlük hedef ve "streak" (günlük seri) takibi ile kullanıcıyı motive eder, SRS (Spaced Repetition System) algoritması ile tekrarları optimize eder ve push bildirimleri ile kullanıcıyı hatırlatır.
+Bu proje, Rusça-Türkçe kelime öğrenmek isteyen kullanıcılar için geliştirilmiş, zengin özellikli bir PWA'dır. Kullanıcılar flashcard, quiz, kategoriler, önek (prefix) testleri ve TORFL sınav hazırlığı gibi modlar aracılığıyla kelime çalışabilir. Uygulama; offline çalışabilir, yapay zeka entegrasyonu (DeepSeek/OpenRouter) ile kelime açıklamaları ve örnek cümleler sunar, günlük hedef ve "streak" (günlük seri) takibi ile kullanıcıyı motive eder, SRS (Spaced Repetition System) algoritması ile tekrarları optimize eder ve push bildirimleri ile kullanıcıyı hatırlatır.
 
 ---
 
@@ -48,12 +48,12 @@ Ru-Tr-main/
 ├── index.html                  # Ana SPA giriş noktası (588 satır, tüm modlar ve modallar)
 ├── sw.js                         # Service Worker (cache v42, offline desteği, push notification)
 ├── manifest.json                 # PWA manifest
-├── vercel.json                   # Vercel cron job tanımları (5 günlük push zamanı)
+├── vercel.json                   # Vercel cron job tanımları (10:00 ve 19:00 Türkiye)
 ├── package.json                  # Node.js bağımlılıkları (web-push, @upstash/redis)
 ├── css/style.css                 # 2777 satır; Duolingo-temalı, koyu/açık mod destekli
 ├── js/
 │   ├── app.js                    # ~1342 satır; ana App sınıfı, navigasyon, modal, CRUD
-│   ├── data.js                   # ~134 satır; kelime yükleme (kelimeler_tam.txt), sentences.json
+│   ├── data.js                   # Kelime yükleme (kelimeler_tam_strict.txt), sentences_strict.json
 │   ├── storage.js                # Yerel depolama ve migrasyon yönetimi
 │   ├── user-words.js             # Kullanıcı tarafından eklenen kelimeleri yönetir
 │   ├── trash.js                  # Çöp kutusu (soft delete) yönetimi
@@ -69,8 +69,6 @@ Ru-Tr-main/
 │   ├── ai.js                     # ~300 satır; Turnstile + AI Manager (cache, rate limit)
 │   ├── flashcard.js              # Flashcard modu (iki yönlü: ru→tr, tr→ru)
 │   ├── quiz.js                   # Quiz modu (4 seçenekli)
-│   ├── full-choice-quiz.js       # "Progressive" quiz; bilinen kelimeleri turdan çıkarır
-│   ├── typing.js                 # Yazma modu; kullanıcı yazarak cevap verir
 │   ├── categories.js             # Kategori (unit) bazlı çalışma ve liste
 │   ├── prefixes-mode.js          # Rusça önek (prefix) test modu
 │   ├── daily.js                  # Günün kelimeleri (5 kelime)
@@ -79,17 +77,17 @@ Ru-Tr-main/
 ├── api/
 │   ├── ai.js                     # ~192 satır; OpenRouter AI proxy, rate limit, CORS, Turnstile
 │   ├── ai-config.js              # ~30 satır; Turnstile site key config endpoint
-│   └── push/                     # Cron handler'lar (5 adet: saat 10,13,16,19,22)
+│   └── push/                     # Cron handler'lar (2 adet: saat 10 ve 19)
 ├── lib/push/                     # Push bildirim kütüphanesi (send, store, messages, cron-handler)
 ├── scripts/
 │   └── generate-vapid-keys.mjs   # VAPID anahtar üretim script'i
-├── kelimeler_tam.txt             # ~1708 satır; ana kelime veritabanı (format: Rusça : Türkçe)
-├── sentences.json                # ~230KB; kelime ID'lerine göre örnek cümleler (RU + TR)
+├── kelimeler_tam_strict.txt      # Çalışma zamanındaki ana kelime veritabanı
+├── sentences_strict.json         # Çalışma zamanındaki örnek cümle veritabanı
 ├── new_words.txt                 # Yeni eklenecek kelimeler
 ├── yeni_kelimeler.txt            # ~55 satır; kullanıcı notlarıyla yeni kelimeler
 ├── kontrol_edilecek_kelimeler.txt # ~30 satır; kontrol listesi
 ├── .env.example / .env.local     # API anahtarları ve çevre değişkenleri
-├── dummy.js, test.js, test.cjs, test-quiz.js, url_test.js  # Çeşitli test ve deneme dosyaları
+├── tests/stabilization.test.js   # Node test runner ile regresyon/invariant testleri
 └── docs/push-notifications.md    # Push notification kurulum dokümanı
 ```
 
@@ -112,25 +110,15 @@ Ru-Tr-main/
 - **Pul (Scope) sistemi:** "Sadece öğrenilmemişler" veya "Tüm kelimeler".
 - Kapsama (Coverage) takibi: Tüm kelimeler havuzunda seanslar arasında kaldığın yer korunur.
 
-### 4.3. Full Choice Quiz (`js/full-choice-quiz.js`)
-- "Progressive" sistem: Doğru bilinen kelime turdan çıkarılır.
-- Tur tamamlanana kadar devam eder; sonra yeni tur başlatılabilir.
-- Öğrenme psikolojisine uygun "bilinenleri eleyerek ilerleme" mekaniği.
-
-### 4.4. Typing (Yazma) Modu (`js/typing.js`)
-- Kullanıcı kelimenin çevirisini klavye ile yazar.
-- İpucu (hint) butonu: Harf harf yardım.
-- AI çeviri kontrolü desteği (arayüzde buton mevcut).
-
-### 4.5. Kategoriler (Categories) — `js/categories.js`
+### 4.3. Kategoriler (Categories) — `js/categories.js`
 - Kelimeler kategorilere (unit'lere) ayrılmış.
 - Kategori seçimi ve içindeki kelimeleri listeleme.
 - Seçilen kategoride flashcard çalışma imkanı.
 
-### 4.6. Prefixes (Önek) Modu — `js/prefixes-mode.js`
+### 4.4. Prefixes (Önek) Modu — `js/prefixes-mode.js`
 - Rusça önekler (про-, под-, от-, об-, за-, пере-) öğrenme ve test modu.
 
-### 4.7. Günlük Kelimeler (Daily) — `js/daily.js`
+### 4.5. Günlük Kelimeler (Daily) — `js/daily.js`
 - Her gün 5 kelime önerir (3 öğrenilmemiş + 2 review).
 - Tarih bazlı; aynı gün tekrar açılırsa aynı kelimeler gösterilir.
 - Bu kelimelerle mini quiz yapılabilir.
@@ -163,17 +151,17 @@ Ru-Tr-main/
 
 ## 5. Veri Yönetimi ve Depolama
 
-### 5.1. Kelime Veritabanı (`kelimeler_tam.txt`)
+### 5.1. Kelime Veritabanı (`kelimeler_tam_strict.txt`)
 - **Format:** `Rusça ifade : Türkçe karşılık` veya `Rusça = Türkçe` (bazı özel durumlar için).
-- **Boyut:** ~1708 satır, ~77KB.
+- **Boyut:** Strict katalog; çalışma zamanı bu dosyayı kullanır.
 - **İçerik:** Kelimeler, deyimler, kalıplar, fiil önekleri ve gramer notları.
 - **Örnek:** `Мир тесен : Dünya dar (deyim)`
 - **Kategorizasyon:** `word-categories.js` dosyasında satır numarası aralıklarına göre kategoriler (örn: "Unit 2: İş Dünyası") tanımlanmış.
 
-### 5.2. Örnek Cümleler (`sentences.json`)
+### 5.2. Örnek Cümleler (`sentences_strict.json`)
 - **Yapı:** `{ "word_id": [ { "ru": "...", "tr": "..." } ] }`
 - **Üretim:** Önce `generate_sentences.py` ile basit kalıp cümleler; ardından `generate_real_sentences.py` ile AI tarafından B1-B1+ seviyesinde gerçekçi cümleler üretilir.
-- **Boyut:** ~230KB.
+- **Boyut:** ~1.4MB.
 
 ### 5.3. Yerel Depolama (`localStorage`)
 Uygulama aşağıdaki anahtarları kullanır:
@@ -190,8 +178,8 @@ Uygulama aşağıdaki anahtarları kullanır:
 - `theme` → Açık / koyu tema tercihi
 
 ### 5.4. Service Worker Cache (`sw.js`)
-- `CACHE_NAME = 'rutr-v42'` — versioned cache.
-- `Network-First` stratejisi: `index.html`, `kelimeler_tam.txt`, `sentences.json`, `manifest.json` için önce ağ, sonra cache.
+- `CACHE_NAME = 'rutr-v54'` — versioned cache.
+- `Network-First` stratejisi: `index.html`, strict veri dosyaları ve `manifest.json` için önce ağ, sonra cache.
 - `Cache-First` stratejisi: Statik JS/CSS/font/asset dosyaları için önce cache, sonra ağ.
 - `/api/` yolları cache'e alınmaz.
 - Kullanıcı "Güncelle" butonu ile cache'i yenileyebilir.
@@ -230,11 +218,11 @@ Kullanıcıya kelime açıklamaları, örnek cümleler, gramer kontrolü ve çev
 ### 7.1. Teknolojiler
 - **Web Push Protocol:** `web-push` npm paketi.
 - **Abonelik Depolama:** Upstash Redis (`@upstash/redis`).
-- **Zamanlama:** Vercel Cron Jobs (`vercel.json` içinde 5 ayrı cron tanımı).
+- **Zamanlama:** Vercel Cron Jobs (`vercel.json` içinde 2 cron tanımı).
 
 ### 7.2. Bildirim Zamanlaması (Türkiye Saati)
-- 10:00, 13:00, 16:00, 19:00, 22:00
-- UTC cron: `0 7,10,13,16,19 * * *`
+- 10:00, 19:00
+- UTC cron: `0 7 * * *` ve `0 16 * * *`
 
 ### 7.3. Mesaj Mantığı
 - Günlük hedef tamamlanmamışsa: `streak_reminder` (seri hatırlatması).
@@ -255,6 +243,7 @@ Kullanıcıya kelime açıklamaları, örnek cümleler, gramer kontrolü ve çev
 - **CSRF/CORS:** API endpoint'lerinde CORS başlıkları ve origin whitelist uygulanmış.
 - **Rate Limiting:** AI endpoint'inde IP bazlı 30 req/min sınırı.
 - **Turnstile:** AI endpoint'ine erişim için bot doğrulaması zorunlu.
+- **Cloud Sync:** İstemciye gömülü ortak parola nedeniyle güvenli olmayan bulut senkronizasyonu kaldırıldı; yerel JSON yedekleme korunuyor.
 - **Service Worker:** `/api/` yolları cache'e dahil edilmemiş; API istekleri dışarı sızmıyor.
 
 ### 8.2. Kod Kalitesi (Güçlü Yönler)
@@ -275,10 +264,10 @@ Kullanıcıya kelime açıklamaları, örnek cümleler, gramer kontrolü ve çev
 2. **State Management:** `localStorage` üzerinde dağınık state yönetimi yerine tek bir `StorageManager` veya `IndexedDB` kullanımı daha sağlıklı olur (özellikle 1700+ kelime ve cümle verisi büyüdükçe).
 3. **Service Worker:** `ASSETS` listesi manuel güncelleniyor; build time'da otomatik generate edilebilir (Workbox gibi).
 4. **CSS:** 2777 satırlık tek CSS dosyası; CSS Modules veya Tailwind benzeri bir utility-first yaklaşımı bakımı kolaylaştırır.
-5. **Testing:** `test.js`, `test.cjs` gibi dosyalar var ama formelleşmemiş. Jest/Vitest ile unit testler ve Playwright ile E2E testler yazılmalı.
+5. **Testing:** `npm test` ile Node test runner altında regresyon/invariant testleri çalıştırılıyor; gerçek tarayıcı UAT'i ayrıca yapılmalı.
 
 ### 9.2. Veri & İçerik
-1. **Kelime Veritabanı:** `kelimeler_tam.txt` düz metin dosyası; JSON veya SQLite formatına geçiş arama ve filtreleme performansını artırır.
+1. **Kelime Veritabanı:** `kelimeler_tam_strict.txt` düz metin dosyası; JSON veya SQLite formatına geçiş arama ve filtreleme performansını artırır.
 2. **Cümle Kalitesi:** `generate_real_sentences.py` harika bir adım; fakat cümlelerin kalite kontrolü (insan review) eklenebilir.
 3. **IELTS Entegrasyonu:** `translate_ielts.py` ve `extract_pdf.py` mevcut ama `js/ielts_data.js` ve `js/ielts_progress.json` projeye dahil değil gibi görünüyor (dosya var mı kontrol edilmeli). Eğer aktif kullanılmıyorsa, IELTS modu arayüze entegre edilebilir.
 4. **Multilingual Support:** Uygulama arayüzü Türkçe/Rusça karışık; kullanıcı tercihine göre tam Türkçe veya tam Rusça seçeneği sunulabilir.

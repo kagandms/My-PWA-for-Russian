@@ -218,12 +218,11 @@ class App {
     getQuestionCountTitle() {
         if (this.pendingMode === 'flashcard') return 'Flashcard için kaç kart çalışmak istiyorsun?';
         if (this.pendingMode === 'quiz') return 'Quiz için kaç soru çözmek istiyorsun?';
-        if (this.pendingMode === 'typing') return 'Yazma modu için kaç kelime çalışmak istiyorsun?';
         return 'Kaç soru çalışmak istiyorsun?';
     }
 
     modeUsesStudyScope(mode) {
-        return ['flashcard', 'quiz', 'typing'].includes(mode);
+        return ['flashcard', 'quiz'].includes(mode);
     }
 
     setQuestionCountScope(scope = 'learning') {
@@ -380,43 +379,6 @@ class App {
         this.setupDataControls();
         this.setupAddWordModal();
         this.restoreSettings();
-        
-        // Auto-download cloud data on start
-        this.performInitialCloudSync();
-        
-        // Handle online/offline events for auto-sync
-        this.setupNetworkListeners();
-    }
-
-    async performInitialCloudSync() {
-        if (!navigator.onLine) return;
-        if (window.storageManager) {
-            // Sadece arka planda sessizce check et, yeniyse indir
-            await window.storageManager.downloadFromCloud(false, false);
-        }
-    }
-
-    setupNetworkListeners() {
-        window.addEventListener('online', () => {
-            const statusText = document.getElementById('syncStatusText');
-            if (statusText) statusText.textContent = 'Интернет восстановлен. Синхронизация...';
-            
-            // İnternet geri geldiğinde hem çek hem gönder (eğer lazımsa debounce tetiklenecektir)
-            if (window.storageManager) {
-                window.storageManager.downloadFromCloud(false, false).then(downloaded => {
-                    if (!downloaded) {
-                        // Eğer indirilecek daha yeni bir şey yoksa, belki oflaynken yaptığımız local değişiklikleri buluta itmeliyiz
-                        window.storageManager.uploadToCloud(false);
-                    }
-                    if (statusText) statusText.textContent = 'Авто-синхронизация включена.';
-                });
-            }
-        });
-
-        window.addEventListener('offline', () => {
-            const statusText = document.getElementById('syncStatusText');
-            if (statusText) statusText.textContent = 'Офлайн (сохраняется локально).';
-        });
     }
 
     setupDataControls() {
@@ -436,44 +398,6 @@ class App {
             event.target.value = '';
         });
 
-        // Cloud Sync Events
-        document.getElementById('syncUploadBtn')?.addEventListener('click', async () => {
-            const btn = document.getElementById('syncUploadBtn');
-            const originalText = btn.textContent;
-            btn.textContent = '⏳ Загрузка...';
-            btn.disabled = true;
-            try {
-                const success = await window.storageManager?.uploadToCloud(false);
-                if (success) {
-                    this.setSettingsStatus('Сохранено в облако ☁️', 'success');
-                } else {
-                    this.setSettingsStatus('Не удалось сохранить в облако.', 'error');
-                }
-            } catch (error) {
-                this.setSettingsStatus('Ошибка: ' + error.message, 'error');
-            }
-            btn.textContent = originalText;
-            btn.disabled = false;
-        });
-
-        document.getElementById('syncDownloadBtn')?.addEventListener('click', async () => {
-            const btn = document.getElementById('syncDownloadBtn');
-            const originalText = btn.textContent;
-            btn.textContent = '⏳ Загрузка...';
-            btn.disabled = true;
-            try {
-                const success = await window.storageManager?.downloadFromCloud(false, true);
-                if (success) {
-                    this.setSettingsStatus('Загружено из облака ☁️', 'success');
-                } else {
-                    this.setSettingsStatus('Нет новых данных или ошибка.', 'error');
-                }
-            } catch (error) {
-                this.setSettingsStatus('Ошибка: ' + error.message, 'error');
-            }
-            btn.textContent = originalText;
-            btn.disabled = false;
-        });
     }
 
     setupAddWordModal() {
@@ -668,7 +592,7 @@ class App {
             return;
         }
 
-        const modesWithCount = ['flashcard', 'quiz', 'typing', 'production'];
+        const modesWithCount = ['flashcard', 'quiz'];
 
         if (modesWithCount.includes(mode)) {
             this.pendingMode = mode;
@@ -710,15 +634,6 @@ class App {
                     break;
                 case 'quiz':
                     window.quizMode?.init(questionCount, normalizedOptions);
-                    break;
-                case 'fullchoicequiz':
-                    window.fullChoiceQuizMode?.init();
-                    break;
-                case 'typing':
-                    window.typingMode?.init(questionCount, normalizedOptions);
-                    break;
-                case 'production':
-                    window.productionMode?.init(questionCount, normalizedOptions);
                     break;
                 case 'daily':
                     window.dailyMode?.init();

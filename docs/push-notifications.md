@@ -27,13 +27,10 @@ Store the printed values in Vercel env. Do not commit private keys.
 
 ## Notification Schedule
 
-`vercel.json` defines five daily cron invocations. Cron uses UTC, so the schedules map to Turkey time as:
+`vercel.json` defines two daily cron invocations. Cron uses UTC, so the schedules map to Turkey time as:
 
 - `0 7 * * *` -> 10:00
-- `0 10 * * *` -> 13:00
-- `0 13 * * *` -> 16:00
 - `0 16 * * *` -> 19:00
-- `0 19 * * *` -> 22:00
 
 ## Message Selection
 

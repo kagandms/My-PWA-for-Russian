@@ -145,12 +145,7 @@ class CategoriesMode {
     studyCurrentCategory() {
         if (!this.categoryWords || this.categoryWords.length === 0) return;
 
-        // Flashcard Modunu bu yeni data kümesiyle başlat:
-        // Global WORDS değişkenini geçici ezip, quiz sonunda geri alabiliriz ya da 
-        // daha basit bir taktik: FlashcardMode'in WORDS'u okuma mantığını dıştırmak yerine
-        // Uygulamamızda flashcard window.flashcardMode.words olarak okur (bazen).
-
-        alert("Üniteleri Flashcard vb. diğer modlarla bağlama (Filtreleme) henüz tam entegre çalışmayabilir, liste ekranından takip edebilirsiniz.");
+        app.openMode('flashcard', { customWordList: this.categoryWords });
     }
 }
 

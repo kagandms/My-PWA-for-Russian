@@ -2,18 +2,17 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v53';
+const CACHE_NAME = 'rutr-v54';
 const ASSETS = [
     './',
     './index.html',
-    './kelimeler_tam.txt',
-    './sentences.json',
+    './kelimeler_tam_strict.txt',
+    './sentences_strict.json',
     './css/style.css',
     './js/app.js',
     './js/data.js',
     './js/storage.js',
     './js/user-words.js',
-    './js/mastered-manager.js',
     './js/trash.js',
     './js/word-categories.js',
     './js/prefixes-mode.js',
@@ -25,9 +24,6 @@ const ASSETS = [
     './js/mastered-manager.js',
     './js/flashcard.js',
     './js/quiz.js',
-    './js/production.js',
-    './js/typing.js',
-    './js/full-choice-quiz.js',
     './js/daily.js',
     './js/torfl.js',
     './js/chart.min.js',
@@ -42,8 +38,8 @@ const ASSETS = [
 const NETWORK_FIRST_PATHS = new Set([
     '/',
     '/index.html',
-    '/kelimeler_tam.txt',
-    '/sentences.json',
+    '/kelimeler_tam_strict.txt',
+    '/sentences_strict.json',
     '/manifest.json'
 ]);
 
@@ -75,14 +71,6 @@ self.addEventListener('activate', event => {
         }).then(() => self.clients.claim())
     );
 });
-
-function getAssetRequest(asset) {
-    if (asset === './') return new Request(asset, { cache: 'reload' });
-    
-    const url = new URL(asset, self.location.href);
-    url.searchParams.set('v', CACHE_NAME);
-    return new Request(url, { cache: 'reload' });
-}
 
 function isCacheableResponse(response) {
     return response && (response.status === 200 || response.type === 'opaque');
@@ -137,7 +125,7 @@ async function cacheFirst(request) {
 async function refreshAppCache() {
     const cache = await caches.open(CACHE_NAME);
     const results = await Promise.allSettled(
-        ASSETS.map(asset => cache.add(getAssetRequest(asset)).catch(err => {
+        ASSETS.map(asset => cache.add(new Request(asset, { cache: 'reload' })).catch(err => {
             console.warn('Cache refresh failed for:', asset, err);
         }))
     );

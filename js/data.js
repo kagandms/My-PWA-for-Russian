@@ -1,5 +1,5 @@
 /**
- * Kelime Verileri - kelimeler_tam.txt dosyasından yüklenir
+ * Kelime Verileri - kelimeler_tam_strict.txt dosyasından yüklenir
  */
 
 let WORDS = [];
@@ -39,8 +39,8 @@ async function loadWords() {
     try {
         // İki dosyayı aynı anda (paralel) asenkron çek
         const [wordsResponse, sentencesResponse] = await Promise.all([
-            fetch('kelimeler_tam.txt'),
-            fetch('sentences.json').catch(() => null) // sentences.json yoksa çökmeyi önle
+            fetch('kelimeler_tam_strict.txt'),
+            fetch('sentences_strict.json').catch(() => null) // Cümle verisi yoksa çökmeyi önle
         ]);
 
         if (!wordsResponse.ok) {
