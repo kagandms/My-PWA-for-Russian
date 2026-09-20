@@ -20,6 +20,12 @@ class App {
             await loadWords();
         }
 
+        try {
+            await window.grammarRepository?.load?.();
+        } catch (error) {
+            console.error('Grammar artifacts could not be loaded.', error);
+        }
+
         window.storageManager?.migrateUserData();
         this.reloadUserDataManagers();
         this.setupNavigation();
@@ -218,11 +224,13 @@ class App {
     getQuestionCountTitle() {
         if (this.pendingMode === 'flashcard') return 'Flashcard için kaç kart çalışmak istiyorsun?';
         if (this.pendingMode === 'quiz') return 'Quiz için kaç soru çözmek istiyorsun?';
+        if (this.pendingMode === 'typedRecall') return 'Typed Recall için kaç soru çözmek istiyorsun?';
+        if (this.pendingMode === 'production') return 'Production için kaç soru çalışmak istiyorsun?';
         return 'Kaç soru çalışmak istiyorsun?';
     }
 
     modeUsesStudyScope(mode) {
-        return ['flashcard', 'quiz'].includes(mode);
+        return ['flashcard', 'quiz', 'typedRecall'].includes(mode);
     }
 
     setQuestionCountScope(scope = 'learning') {
@@ -378,7 +386,6 @@ class App {
 
         this.setupDataControls();
         this.setupAddWordModal();
-        this.restoreSettings();
     }
 
     setupDataControls() {
@@ -587,12 +594,13 @@ class App {
             return;
         }
 
-        if (WORDS.length === 0) {
+        const sourceIndependentModes = ['errorNotebook', 'grammarLab', 'analytics', 'speaking'];
+        if (WORDS.length === 0 && !sourceIndependentModes.includes(mode)) {
             this.showNoWords();
             return;
         }
 
-        const modesWithCount = ['flashcard', 'quiz'];
+        const modesWithCount = ['flashcard', 'quiz', 'typedRecall', 'production'];
 
         if (modesWithCount.includes(mode)) {
             this.pendingMode = mode;
@@ -622,6 +630,7 @@ class App {
             if (this.currentMode && this.currentMode !== mode) {
                 const prevScreen = document.getElementById(`${this.currentMode}Mode`);
                 if (prevScreen) prevScreen.classList.add('hidden');
+                if (this.currentMode === 'speaking') window.speakingMode?.dispose?.();
             }
             
             modeScreen.classList.remove('hidden');
@@ -634,6 +643,27 @@ class App {
                     break;
                 case 'quiz':
                     window.quizMode?.init(questionCount, normalizedOptions);
+                    break;
+                case 'typedRecall':
+                    window.typedRecallMode?.init(questionCount, normalizedOptions);
+                    break;
+                case 'production':
+                    window.productionMode?.init(questionCount);
+                    break;
+                case 'adaptive':
+                    window.adaptiveMode?.init();
+                    break;
+                case 'speaking':
+                    window.speakingMode?.init();
+                    break;
+                case 'analytics':
+                    window.analyticsMode?.init();
+                    break;
+                case 'errorNotebook':
+                    window.errorNotebookMode?.init();
+                    break;
+                case 'grammarLab':
+                    window.grammarLabMode?.init();
                     break;
                 case 'daily':
                     window.dailyMode?.init();
@@ -664,6 +694,7 @@ class App {
 
     closeMode() {
         if (this.currentMode) {
+            if (this.currentMode === 'speaking') window.speakingMode?.dispose?.();
             const modeScreen = document.getElementById(`${this.currentMode}Mode`);
             if (modeScreen) {
                 modeScreen.classList.add('hidden');
@@ -742,7 +773,9 @@ class App {
         return window.storageManager?.getWordStorageKey(wordId) || String(wordId);
     }
 
-    recordAnswer(wordId, isCorrect) {
+    recordAnswer(wordId, isCorrect, options = {}) {
+        this.recordRecognitionAttempt(wordId, isCorrect, options);
+
         if (window.srsManager) {
             window.srsManager.updateWord(wordId, isCorrect);
         }
@@ -780,6 +813,28 @@ class App {
 
         this.saveStats();
         window.notificationManager?.syncProfileDebounced?.();
+    }
+
+    recordRecognitionAttempt(wordId, isCorrect, options = {}) {
+        const word = Array.isArray(window.WORDS)
+            ? window.WORDS.find(candidate => String(candidate.id) === String(wordId))
+            : null;
+        const lexicalUnitId = options.lexicalUnitId || word?.lexicalUnitId;
+        if (!lexicalUnitId || !window.learningProgressStore) return;
+
+        try {
+            window.learningProgressStore.recordAttempt({
+                lexical_unit_id: lexicalUnitId,
+                sense_id: options.senseId || word?.senseIds?.[0] || null,
+                skill: 'recognition',
+                exercise_type: options.exerciseType || 'recognition',
+                result: isCorrect ? 'correct' : 'incorrect',
+                user_answer: null,
+                expected_answers: options.expectedAnswers || []
+            });
+        } catch (error) {
+            console.error('Recognition skill progress could not be recorded.', error);
+        }
     }
 
     getLearningWords(minCount = 0) {

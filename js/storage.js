@@ -13,6 +13,7 @@ class StorageManager {
             'ru_tr_study_selector',
             'ru_tr_user_words',
             'ru_tr_deleted_words',
+            'ru_tr_speaking_events_v1',
             'dailyWordsDate',
             'dailyWordsIds',
             'theme'
