@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "artifact": "error-taxonomy",
+  "error_types": [
+    "verb.aspect",
+    "verb.motion",
+    "case.genitive",
+    "case.dative",
+    "case.accusative",
+    "case.instrumental",
+    "case.prepositional",
+    "preposition",
+    "government",
+    "lexical-choice",
+    "collocation",
+    "word-order",
+    "agreement",
+    "spelling",
+    "conjunction",
+    "relative-clause",
+    "recall.mismatch",
+    "speaking.transcript_mismatch",
+    "speaking.transcript_target_not_observed"
+  ],
+  "grammar_topics": {
+    "case.genitive": "cases.genitive",
+    "case.dative": "cases.dative",
+    "case.accusative": "cases.accusative",
+    "case.instrumental": "cases.instrumental",
+    "case.prepositional": "cases.prepositional",
+    "verb.aspect": "verb.aspect",
+    "verb.motion": "verb.motion",
+    "preposition": "government.preposition",
+    "government": "government",
+    "spelling": "spelling",
+    "recall.mismatch": null,
+    "speaking.transcript_mismatch": null,
+    "speaking.transcript_target_not_observed": null
+  }
+}
