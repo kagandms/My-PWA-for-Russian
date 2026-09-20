@@ -207,14 +207,22 @@ class QuizMode {
             this.score += 10;
             this.correctCount++;
 
-            app.recordAnswer(correctWord.id, isCorrect);
+            app.recordAnswer(correctWord.id, isCorrect, {
+                skill: 'recognition',
+                exerciseType: 'quiz',
+                senseId: correctWord.senseIds?.[0] || null
+            });
             this.updateScore();
 
             await app.showSnackbar(true, 'Отлично!', 'Правильный ответ.');
         } else {
             btn.classList.add('wrong');
 
-            app.recordAnswer(correctWord.id, isCorrect);
+            app.recordAnswer(correctWord.id, isCorrect, {
+                skill: 'recognition',
+                exerciseType: 'quiz',
+                senseId: correctWord.senseIds?.[0] || null
+            });
             this.updateScore();
 
             let explanation = '';

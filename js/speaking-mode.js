@@ -49,6 +49,8 @@
             this.stopPromise = null;
             this.cancelPromise = null;
             this.adaptiveCompletion = null;
+            this.lastStoredEvent = null;
+            this.attemptGeneration = 0;
             this.pagehideHandler = () => { void this.cancel(); };
             this.boundControls = false;
         }
@@ -141,9 +143,11 @@
 
         async startAdapters() {
             this.state = 'requesting_permission';
+            this.attemptGeneration += 1;
             this.attemptId = this.idFactory();
             this.startedAt = getNow(this);
             this.adapterAvailability = { speech: false, recorder: false };
+            this.lastStoredEvent = null;
             this.speechAdapter = this.createSpeechAdapter();
             this.recorderAdapter = this.createRecorderAdapter();
             this.render();
@@ -178,16 +182,25 @@
         }
 
         async stopAdapters() {
+            const attemptGeneration = this.attemptGeneration;
+            const attemptId = this.attemptId;
             this.state = 'processing';
             this.render();
+            const recordingStop = this.adapterAvailability.recorder
+                ? this.recorderAdapter.stop()
+                : Promise.resolve(null);
+            const speechStop = this.adapterAvailability.speech
+                ? Promise.resolve(this.speechAdapter.stop())
+                : Promise.resolve(null);
             const stopResults = await Promise.allSettled([
-                this.adapterAvailability.speech ? Promise.resolve(this.speechAdapter.stop()) : Promise.resolve(null),
-                this.adapterAvailability.recorder ? this.recorderAdapter.stop() : Promise.resolve(null)
+                recordingStop,
+                speechStop
             ]);
-            const speechSnapshot = this.adapterAvailability.speech
+            const speechSnapshot = this.adapterAvailability.speech && stopResults[1]?.status === 'fulfilled'
                 ? this.speechAdapter.getSnapshot()
                 : { transcript_state: 'unavailable', transcript: '' };
-            const recordingResult = stopResults[1]?.status === 'fulfilled' ? stopResults[1].value : null;
+            const recordingResult = stopResults[0]?.status === 'fulfilled' ? stopResults[0].value : null;
+            if (!this.isActiveAttempt(attemptGeneration, attemptId)) return null;
             const observation = this.buildObservation(speechSnapshot);
             const event = this.buildEvent(observation, recordingResult);
             if (!event) {
@@ -198,6 +211,7 @@
             }
             try {
                 const storedEvent = this.eventStore.recordEvent(event);
+                this.lastStoredEvent = storedEvent;
                 this.bridgeFinalObservation(observation);
                 const adaptiveCompletion = this.adaptiveCompletion;
                 this.adaptiveCompletion = null;
@@ -212,6 +226,10 @@
                 this.render();
                 throw error;
             }
+        }
+
+        isActiveAttempt(attemptGeneration, attemptId) {
+            return this.attemptGeneration === attemptGeneration && this.attemptId === attemptId;
         }
 
         buildObservation(speechSnapshot) {
@@ -370,6 +388,7 @@
         async cancel() {
             if (this.cancelPromise) return this.cancelPromise;
             this.cancelPromise = (async () => {
+                this.attemptGeneration += 1;
                 this.speechAdapter?.cancel?.();
                 const recorderCancel = this.recorderAdapter?.cancel?.();
                 this.recorderAdapter?.release?.();
@@ -378,6 +397,7 @@
                 this.attemptId = null;
                 this.startedAt = null;
                 this.adaptiveCompletion = null;
+                this.lastStoredEvent = null;
                 this.render();
             })().finally(() => {
                 this.cancelPromise = null;
@@ -413,6 +433,9 @@
             const cancelButton = this.document?.getElementById('speakingCancel');
             const privacyElement = this.document?.getElementById('speakingPrivacyNotice');
             if (!typeElement) return;
+            const transcriptState = this.state === 'result'
+                ? this.lastStoredEvent?.transcript_state
+                : this.speechAdapter?.getSnapshot?.().transcript_state;
             const exerciseType = this.currentExercise?.exercise_type
                 ?? (this.currentExercise?.topic_id ? 'free_speech' : 'none');
             typeElement.textContent = TYPE_LABELS[exerciseType] ?? 'Speaking';
@@ -424,10 +447,12 @@
                 .map((target) => target.target_surface)
                 .join(' · ') || 'No explicit lexical targets';
             recordingElement.textContent = 'Recording: ' + this.state;
-            transcriptElement.textContent = 'Transcript: ' + (this.speechAdapter?.getSnapshot?.().transcript_state || 'not_attempted');
-            resultElement.textContent = this.state === 'result'
-                ? 'Transcript observation saved; acoustic skills remain not evaluated.'
-                : '';
+            transcriptElement.textContent = 'Transcript: ' + (transcriptState || 'not_attempted');
+            resultElement.textContent = this.state !== 'result'
+                ? ''
+                : this.lastStoredEvent?.evaluation_availability === 'transcript_observation'
+                    ? 'Transcript observation saved; acoustic skills remain not evaluated.'
+                    : 'Speaking attempt saved; no final transcript was available. Acoustic skills remain not evaluated.';
             pronunciationElement.textContent = 'Pronunciation: not_evaluated';
             stressElement.textContent = 'Stress: not_evaluated';
             fluencyElement.textContent = 'Fluency: not_evaluated';

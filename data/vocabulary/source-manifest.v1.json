@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "sourceStatus": "reviewed",
+  "importedAt": "2026-09-20T08:42:53.475Z",
+  "requestedSource": {
+    "fileName": "kelimeler_tam_strict(3).txt",
+    "path": "/Users/kagansmtdms/Downloads/Проекты/Ru-Tr-main/kelimeler_tam_strict(3).txt",
+    "exists": false
+  },
+  "resolvedSource": {
+    "fileName": "kelimeler_tam_strict.txt",
+    "path": "/Users/kagansmtdms/Downloads/Проекты/Ru-Tr-main/kelimeler_tam_strict.txt",
+    "sha256": "67048a49dd11d4bd8627ca5f2d56d4df168f6c3f5e76167c9809b81ead847cbe"
+  },
+  "reviewedSource": {
+    "fileName": "vocab_reviewed_v1.txt",
+    "path": "/Users/kagansmtdms/Downloads/Проекты/Ru-Tr-main/vocab_reviewed_v1.txt",
+    "sha256": "128c08f1c9056d2f45ca7fe78db4de24186f20813e7b10e52807e7454bbafd46"
+  },
+  "sourceLineCount": 2339,
+  "reviewedLineCount": 2339,
+  "appliedCorrectionIds": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A06",
+    "A07",
+    "A08",
+    "A09",
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A14",
+    "A15"
+  ],
+  "originalSnapshot": {
+    "path": "/Users/kagansmtdms/Downloads/Проекты/Ru-Tr-main/data/vocabulary/source-snapshots/kelimeler_tam_strict.txt",
+    "sha256": "67048a49dd11d4bd8627ca5f2d56d4df168f6c3f5e76167c9809b81ead847cbe"
+  }
+}

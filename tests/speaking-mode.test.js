@@ -88,6 +88,49 @@ class FakeSpeechAdapter {
     }
 }
 
+class DeferredSpeechAdapter extends FakeSpeechAdapter {
+    constructor(options = {}) {
+        super(options);
+        this.resolveStop = null;
+    }
+
+    stop() {
+        this.stops += 1;
+        return new Promise((resolve) => {
+            this.resolveStop = resolve;
+        });
+    }
+
+    resolvePendingStop(snapshot = this.snapshot) {
+        this.snapshot = { ...snapshot };
+        this.resolveStop?.(this.snapshot);
+        this.resolveStop = null;
+    }
+
+    emitLateFinal(transcript) {
+        this.snapshot = {
+            runtime: 'final_result',
+            transcript,
+            final_transcript: transcript,
+            partial_transcript: '',
+            transcript_state: 'final_result'
+        };
+    }
+}
+
+class ResettingSpeechAdapter extends FakeSpeechAdapter {
+    dispose() {
+        super.dispose();
+        this.snapshot = {
+            runtime: 'not_attempted',
+            transcript: '',
+            final_transcript: '',
+            partial_transcript: '',
+            transcript_state: 'no_result'
+        };
+    }
+}
+
 class FakeRecorderAdapter {
     constructor(options = {}) {
         this.options = options;
@@ -212,8 +255,8 @@ function createMode(overrides = {}) {
         document,
         exerciseRepository: repository,
         capabilityDetector: { detect: () => ({ processing_mode: 'browser_managed_unspecified' }) },
-        speechAdapterFactory: () => new FakeSpeechAdapter(speechOptions),
-        recorderAdapterFactory: () => new FakeRecorderAdapter(recorderOptions),
+        speechAdapterFactory: overrides.speechAdapterFactory ?? (() => new FakeSpeechAdapter(speechOptions)),
+        recorderAdapterFactory: overrides.recorderAdapterFactory ?? (() => new FakeRecorderAdapter(recorderOptions)),
         eventStore: {
             recordEvent: (event) => {
                 recordedEvents.push(event);
@@ -278,6 +321,166 @@ test('commits a validated final transcript event and bridges only the final mism
     assert.equal(recordedEvents[0].evaluation.transcript_observation.adaptive_eligible, false);
 });
 
+test('commits the final transcript that arrives asynchronously after normal Stop', async () => {
+    let speech;
+    const { mode, recordedEvents } = createMode({
+        speechAdapterFactory: () => {
+            speech = new DeferredSpeechAdapter();
+            return speech;
+        }
+    });
+
+    await mode.init();
+    await mode.start();
+    const stopPromise = mode.stop();
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    assert.equal(recordedEvents.length, 0);
+
+    speech.resolvePendingStop({
+        runtime: 'final_result',
+        transcript: 'Я вижу дом.',
+        final_transcript: 'Я вижу дом.',
+        partial_transcript: '',
+        transcript_state: 'final_result'
+    });
+    await stopPromise;
+
+    assert.equal(recordedEvents.length, 1);
+    assert.equal(recordedEvents[0].transcript_state, 'final_result');
+    assert.equal(recordedEvents[0].transcript_text, 'Я вижу дом.');
+});
+
+test('renders the committed final transcript state after adapter cleanup', async () => {
+    const { mode, document } = createMode({
+        speechAdapterFactory: () => new ResettingSpeechAdapter()
+    });
+
+    await mode.init();
+    await mode.start();
+    await mode.stop();
+
+    assert.equal(mode.state, 'result');
+    assert.equal(
+        document.getElementById('speakingTranscriptState').textContent,
+        'Transcript: final_result'
+    );
+});
+
+test('commits partial-only insufficient evidence when Stop ends without a final transcript', async () => {
+    let speech;
+    const { mode, recordedEvents, bridgeCalls } = createMode({
+        speechAdapterFactory: () => {
+            speech = new DeferredSpeechAdapter();
+            return speech;
+        }
+    });
+
+    await mode.init();
+    await mode.start();
+    const stopPromise = mode.stop();
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    speech.resolvePendingStop({
+        runtime: 'partial_only',
+        transcript: 'Я вижу',
+        final_transcript: '',
+        partial_transcript: 'Я вижу',
+        transcript_state: 'partial_only'
+    });
+    await stopPromise;
+
+    assert.equal(recordedEvents.length, 1);
+    assert.equal(recordedEvents[0].transcript_state, 'partial_only');
+    assert.equal(recordedEvents[0].evaluation_availability, 'none');
+    assert.equal(recordedEvents[0].evaluation.overall, 'insufficient_evidence');
+    assert.equal(JSON.stringify(recordedEvents[0].evaluation.transcript_observation.observations), '[]');
+    assert.equal(bridgeCalls.length, 0);
+});
+
+test('cancellation invalidates pending normal completion and creates no learning event', async () => {
+    let speech;
+    const { mode, recordedEvents } = createMode({
+        speechAdapterFactory: () => {
+            speech = new DeferredSpeechAdapter();
+            return speech;
+        }
+    });
+
+    await mode.init();
+    await mode.start();
+    const stopPromise = mode.stop();
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    await mode.cancel();
+    speech.resolvePendingStop({
+        runtime: 'final_result',
+        transcript: 'Я вижу дом.',
+        final_transcript: 'Я вижу дом.',
+        partial_transcript: '',
+        transcript_state: 'final_result'
+    });
+    await stopPromise;
+
+    assert.equal(mode.state, 'idle');
+    assert.equal(recordedEvents.length, 0);
+});
+
+test('late speech callbacks after commit cannot create or mutate a second event', async () => {
+    let speech;
+    const { mode, recordedEvents } = createMode({
+        speechAdapterFactory: () => {
+            speech = new DeferredSpeechAdapter();
+            return speech;
+        }
+    });
+
+    await mode.init();
+    await mode.start();
+    const stopPromise = mode.stop();
+    speech.resolvePendingStop({
+        runtime: 'final_result',
+        transcript: 'Я вижу дом.',
+        final_transcript: 'Я вижу дом.',
+        partial_transcript: '',
+        transcript_state: 'final_result'
+    });
+    await stopPromise;
+    const committedEvent = JSON.stringify(recordedEvents[0]);
+
+    speech.emitLateFinal('поздний callback');
+    await new Promise((resolve) => setTimeout(resolve, 0));
+
+    assert.equal(recordedEvents.length, 1);
+    assert.equal(JSON.stringify(recordedEvents[0]), committedEvent);
+});
+
+test('late callbacks from a previous attempt generation cannot overwrite the current attempt', async () => {
+    const adapters = [];
+    const { mode, recordedEvents } = createMode({
+        speechAdapterFactory: () => {
+            const adapter = new DeferredSpeechAdapter();
+            adapters.push(adapter);
+            return adapter;
+        }
+    });
+
+    await mode.init();
+    await mode.start();
+    await mode.cancel();
+    await mode.start();
+    const stopPromise = mode.stop();
+    adapters[0].emitLateFinal('старый callback');
+    adapters[1].resolvePendingStop({
+        runtime: 'final_result',
+        transcript: 'текущий callback',
+        final_transcript: 'текущий callback',
+        partial_transcript: '',
+        transcript_state: 'final_result'
+    });
+    await stopPromise;
+
+    assert.equal(recordedEvents.length, 1);
+    assert.equal(recordedEvents[0].transcript_text, 'текущий callback');
+});
+
 test('does not bridge partial transcript and does not persist an incomplete learning event', async () => {
     const { mode, recordedEvents, bridgeCalls } = createMode({
         speechOptions: {
@@ -297,6 +500,30 @@ test('does not bridge partial transcript and does not persist an incomplete lear
 
     assert.equal(bridgeCalls.length, 0);
     assert.equal(recordedEvents.length, 0);
+});
+
+test('reports a saved attempt instead of a saved transcript observation when no final transcript exists', async () => {
+    const { mode, document } = createMode({
+        speechOptions: {
+            snapshot: {
+                runtime: 'partial_only',
+                transcript: 'Я вижу',
+                final_transcript: '',
+                partial_transcript: 'Я вижу',
+                transcript_state: 'partial_only'
+            }
+        }
+    });
+
+    await mode.init();
+    await mode.start();
+    await mode.stop();
+
+    assert.equal(mode.state, 'result');
+    assert.equal(
+        document.getElementById('speakingResult').textContent,
+        'Speaking attempt saved; no final transcript was available. Acoustic skills remain not evaluated.'
+    );
 });
 
 test('does not persist permission denial or cancellation', async () => {

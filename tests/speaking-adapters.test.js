@@ -62,8 +62,34 @@ class FakeRecognition {
         });
     }
 
+    emitInterim(transcript) {
+        this.onresult?.({
+            resultIndex: 0,
+            results: [{
+                0: { transcript },
+                isFinal: false,
+                length: 1
+            }]
+        });
+    }
+
+    emitEnd() {
+        this.onend?.();
+    }
+
     emitError(error) {
         this.onerror?.({ error });
+    }
+}
+
+class AsyncRecognition extends FakeRecognition {
+    stop() {
+        this.stopped = true;
+    }
+
+    abort() {
+        this.stopped = true;
+        this.aborted = true;
     }
 }
 
@@ -120,6 +146,126 @@ test('supports transcript-only operation without MediaRecorder', async () => {
     assert.equal(snapshot.transcript, 'Я читаю');
     assert.equal(snapshot.transcript_state, 'final_result');
     assert.equal(snapshot.runtime, 'final_result');
+});
+
+test('waits for a final result that arrives asynchronously after stop', async () => {
+    const { SpeechRecognitionAdapter } = loadAdapters();
+    const adapter = new SpeechRecognitionAdapter({
+        window: { SpeechRecognition: AsyncRecognition },
+        navigator: {},
+        stopTimeoutMs: 50
+    });
+
+    await adapter.start();
+    const recognition = FakeRecognition.instances.at(-1);
+    recognition.emitInterim('Я вижу');
+    const stopPromise = adapter.stop();
+    let settled = false;
+    stopPromise.then(() => { settled = true; });
+
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    assert.equal(recognition.stopped, true);
+    assert.equal(settled, false);
+
+    recognition.emitFinal('Я вижу дом.');
+    recognition.emitEnd();
+    const snapshot = await stopPromise;
+
+    assert.equal(snapshot.transcript_state, 'final_result');
+    assert.equal(snapshot.final_transcript, 'Я вижу дом.');
+});
+
+test('keeps a final result when end arrives after the final result', async () => {
+    const { SpeechRecognitionAdapter } = loadAdapters();
+    const adapter = new SpeechRecognitionAdapter({
+        window: { SpeechRecognition: AsyncRecognition },
+        navigator: {},
+        stopTimeoutMs: 50
+    });
+
+    await adapter.start();
+    const recognition = FakeRecognition.instances.at(-1);
+    const stopPromise = adapter.stop();
+    recognition.emitFinal('Я вижу дом.');
+    recognition.emitEnd();
+    const snapshot = await stopPromise;
+
+    assert.equal(snapshot.transcript_state, 'final_result');
+    assert.equal(snapshot.final_transcript, 'Я вижу дом.');
+});
+
+test('resolves partial-only recognition when end arrives without a final result', async () => {
+    const { SpeechRecognitionAdapter } = loadAdapters();
+    const adapter = new SpeechRecognitionAdapter({
+        window: { SpeechRecognition: AsyncRecognition },
+        navigator: {},
+        stopTimeoutMs: 50
+    });
+
+    await adapter.start();
+    const recognition = FakeRecognition.instances.at(-1);
+    recognition.emitInterim('Я вижу');
+    const stopPromise = adapter.stop();
+    recognition.emitEnd();
+    const snapshot = await stopPromise;
+
+    assert.equal(snapshot.transcript_state, 'partial_only');
+    assert.equal(snapshot.final_transcript, '');
+});
+
+test('resolves recognition errors as a terminal Stop condition', async () => {
+    const { SpeechRecognitionAdapter } = loadAdapters();
+    const adapter = new SpeechRecognitionAdapter({
+        window: { SpeechRecognition: AsyncRecognition },
+        navigator: {},
+        stopTimeoutMs: 50
+    });
+
+    await adapter.start();
+    const recognition = FakeRecognition.instances.at(-1);
+    const stopPromise = adapter.stop();
+    recognition.emitError('network');
+    const snapshot = await stopPromise;
+
+    assert.equal(snapshot.transcript_state, 'error');
+    assert.equal(snapshot.error_code, 'network');
+});
+
+test('resolves a non-terminating recognition attempt at the bounded timeout', async () => {
+    const { SpeechRecognitionAdapter } = loadAdapters();
+    const adapter = new SpeechRecognitionAdapter({
+        window: { SpeechRecognition: AsyncRecognition },
+        navigator: {},
+        stopTimeoutMs: 5
+    });
+
+    await adapter.start();
+    const recognition = FakeRecognition.instances.at(-1);
+    recognition.emitInterim('Я вижу');
+    const snapshot = await adapter.stop();
+
+    assert.equal(snapshot.transcript_state, 'partial_only');
+    assert.equal(recognition.stopped, true);
+});
+
+test('ignores recognition callbacks after disposal', async () => {
+    const { SpeechRecognitionAdapter } = loadAdapters();
+    const adapter = new SpeechRecognitionAdapter({
+        window: { SpeechRecognition: AsyncRecognition },
+        navigator: {},
+        stopTimeoutMs: 50
+    });
+
+    await adapter.start();
+    const recognition = FakeRecognition.instances.at(-1);
+    const stopPromise = adapter.stop();
+    recognition.emitFinal('Я вижу дом.');
+    const snapshot = await stopPromise;
+    adapter.dispose();
+    recognition.emitFinal('поздний callback');
+
+    assert.equal(snapshot.final_transcript, 'Я вижу дом.');
+    assert.equal(adapter.getSnapshot().transcript_state, 'no_result');
 });
 
 test('supports recording-only operation without SpeechRecognition', async () => {

@@ -1,0 +1,4646 @@
+{
+  "schema_version": 1,
+  "enrichment_version": "1B.2",
+  "report_type": "vocabulary-corpus-enrichment",
+  "generated_at": "2026-09-20T18:52:37.185Z",
+  "base_artifact": {
+    "schema_version": 1,
+    "import_batch_id": "import-128c08f1c905",
+    "source_file_name": "vocab_reviewed_v1.txt",
+    "source_sha256": "128c08f1c9056d2f45ca7fe78db4de24186f20813e7b10e52807e7454bbafd46",
+    "artifact_sha256": "6e5ea3130286e641eefc0464a20a197aab011255f752c82b1d228ddc92cf9a08"
+  },
+  "corpus_source": {
+    "file_name": "sentences_strict.json",
+    "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+    "sentence_count": 7017
+  },
+  "global_review_counts": {
+    "lexical_units": 280,
+    "senses": 282
+  },
+  "candidate_record_count": 116,
+  "combined_candidate_record_count": 157,
+  "enriched_lexical_unit_count": 70,
+  "enriched_sense_count": 70,
+  "duplicate_collocation_count": 0,
+  "coverage": {
+    "aspect_pair": {
+      "eligible_count": 570,
+      "enriched_count": 0,
+      "carried_forward_count": 8,
+      "combined_enriched_count": 8,
+      "coverage": 0,
+      "coverage_percent": "0.0%",
+      "blocked_reason": "source_required",
+      "needs_review_count": 0
+    },
+    "government": {
+      "eligible_count": 570,
+      "enriched_count": 0,
+      "carried_forward_count": 2,
+      "combined_enriched_count": 2,
+      "coverage": 0,
+      "coverage_percent": "0.0%",
+      "blocked_reason": "source_required",
+      "needs_review_count": 0
+    },
+    "preposition": {
+      "eligible_count": 570,
+      "enriched_count": 0,
+      "carried_forward_count": 1,
+      "combined_enriched_count": 1,
+      "coverage": 0,
+      "coverage_percent": "0.0%",
+      "blocked_reason": "source_required",
+      "needs_review_count": 0
+    },
+    "case": {
+      "eligible_count": 570,
+      "enriched_count": 0,
+      "carried_forward_count": 2,
+      "combined_enriched_count": 2,
+      "coverage": 0,
+      "coverage_percent": "0.0%",
+      "blocked_reason": "source_required",
+      "needs_review_count": 0
+    },
+    "collocation": {
+      "eligible_count": 1856,
+      "enriched_count": 70,
+      "carried_forward_count": 3,
+      "combined_enriched_count": 73,
+      "coverage": 3.8,
+      "coverage_percent": "3.8%",
+      "blocked_reason": "see reason_distribution",
+      "needs_review_count": 0
+    },
+    "word_family": {
+      "eligible_count": 1856,
+      "enriched_count": 0,
+      "carried_forward_count": 4,
+      "combined_enriched_count": 4,
+      "coverage": 0,
+      "coverage_percent": "0.0%",
+      "blocked_reason": "source_required",
+      "needs_review_count": 0
+    },
+    "stress": {
+      "eligible_count": 1856,
+      "enriched_count": 0,
+      "carried_forward_count": 8,
+      "combined_enriched_count": 8,
+      "coverage": 0,
+      "coverage_percent": "0.0%",
+      "blocked_reason": "source_required",
+      "needs_review_count": 0
+    },
+    "cefr": {
+      "eligible_count": 1856,
+      "enriched_count": 0,
+      "carried_forward_count": 4,
+      "combined_enriched_count": 4,
+      "coverage": 0,
+      "coverage_percent": "0.0%",
+      "blocked_reason": "source_required",
+      "needs_review_count": 0
+    },
+    "theme": {
+      "eligible_count": 1856,
+      "enriched_count": 0,
+      "carried_forward_count": 4,
+      "combined_enriched_count": 4,
+      "coverage": 0,
+      "coverage_percent": "0.0%",
+      "blocked_reason": "source_required",
+      "needs_review_count": 0
+    },
+    "tag": {
+      "eligible_count": 1856,
+      "enriched_count": 0,
+      "carried_forward_count": 5,
+      "combined_enriched_count": 5,
+      "coverage": 0,
+      "coverage_percent": "0.0%",
+      "blocked_reason": "source_required",
+      "needs_review_count": 0
+    }
+  },
+  "not_enriched_reason_distribution": {
+    "aspect_pair": {
+      "source_required": 570,
+      "needs_review": 0
+    },
+    "government": {
+      "source_required": 570,
+      "needs_review": 0
+    },
+    "preposition": {
+      "source_required": 570,
+      "needs_review": 0
+    },
+    "case": {
+      "source_required": 570,
+      "needs_review": 0
+    },
+    "word_family": {
+      "source_required": 1856,
+      "needs_review": 0
+    },
+    "stress": {
+      "source_required": 1856,
+      "needs_review": 0
+    },
+    "cefr": {
+      "source_required": 1856,
+      "needs_review": 0
+    },
+    "theme": {
+      "source_required": 1856,
+      "needs_review": 0
+    },
+    "tag": {
+      "source_required": 1856,
+      "needs_review": 0
+    },
+    "collocation": {
+      "source_required": 0,
+      "needs_review": 0,
+      "sense_ambiguity": 7,
+      "no_exact_corpus_evidence": 280,
+      "insufficient_corpus_support": 1499
+    }
+  },
+  "collocation": {
+    "candidate_collocation_count": 116,
+    "lexical_unit_count": 70,
+    "sense_count": 70,
+    "confidence_distribution": {
+      "medium": 103,
+      "high": 13
+    },
+    "skipped_sense_ambiguity_count": 7,
+    "skipped_needs_review_count": 0,
+    "skipped_insufficient_evidence_count": 1499,
+    "skipped_no_exact_corpus_evidence_count": 280,
+    "audit_example_count": 20,
+    "audit_requirement_met": true,
+    "minimum_support_count": 3,
+    "support_rule": "at least 3 distinct sentence texts and either 2 corpus groups or 5 distinct sentence texts"
+  },
+  "audit_examples": {
+    "aspect_pair": [
+      {
+        "lexical_unit_id": "lu:952fa4dd0f6496f1821a",
+        "surface_form": "Учить",
+        "sense_ids": [
+          "sense:d781f79956e4df2bd625",
+          "sense:978c55bbc81a6b6e24c1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:d2367f6eb7735d692b4a",
+        "surface_form": "Выучить",
+        "sense_ids": [
+          "sense:11cabaad3f2eb393e0bd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a9f3b513c00d87503457",
+        "surface_form": "Научить",
+        "sense_ids": [
+          "sense:d2112139de6b93290746"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+        "surface_form": "Зарабатывать",
+        "sense_ids": [
+          "sense:3588257e6a859cbb2d34"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a48da6910369d5aa5e83",
+        "surface_form": "Заработать",
+        "sense_ids": [
+          "sense:834ab6f4d06d4afb963a"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9d52803d74b3b569c6fc",
+        "surface_form": "Подрабатывать",
+        "sense_ids": [
+          "sense:7d91471a1a1fde78a33f"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:b9a4ca7b4470c36cb36f",
+        "surface_form": "Подработать",
+        "sense_ids": [
+          "sense:f496138149b04047fdbf"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:0ee3b1ea6ee06bdee261",
+        "surface_form": "Уважать",
+        "sense_ids": [
+          "sense:ce9ef148741f7d422834"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:ea0d3f259798337e7c7b",
+        "surface_form": "Ездить",
+        "sense_ids": [
+          "sense:0a9ebf35c1d446c549fc"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:6ac70477989ea43680c8",
+        "surface_form": "Реализировать",
+        "sense_ids": [
+          "sense:65b74939b68355460b68"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:028c83b043a5c9ae21b0",
+        "surface_form": "Реализовать",
+        "sense_ids": [
+          "sense:a7255d2c8866cc7cfac5"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:04280ac68bfec08cbbd8",
+        "surface_form": "Претендовать",
+        "sense_ids": [
+          "sense:42b5f837fb331882d019"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c72599070fa6a10744fd",
+        "surface_form": "Посетить",
+        "sense_ids": [
+          "sense:a1d86df4bc8899661012"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:44f6e55b4e3224b38f42",
+        "surface_form": "Дуть",
+        "sense_ids": [
+          "sense:c418a734983129d1d613",
+          "sense:c9521f685f3bf720c2ad"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:59ecb9063b7588437c47",
+        "surface_form": "Высушить",
+        "sense_ids": [
+          "sense:83b01a2390683f7af34c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:076b92fffab7568aff8c",
+        "surface_form": "Провести",
+        "sense_ids": [
+          "sense:662341d5190eb06fe205"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:fee4968535aefab87029",
+        "surface_form": "Скакать",
+        "sense_ids": [
+          "sense:38f8d90a559858be33bb"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9299c6f7941d7f085e62",
+        "surface_form": "Таять",
+        "sense_ids": [
+          "sense:1fbf61d77b9ce67421ee"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:7c2d1513978ef6fbd15c",
+        "surface_form": "Поразить",
+        "sense_ids": [
+          "sense:6dd899bfd91adf7e319b"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:8a74c7a03443ffc5f248",
+        "surface_form": "Повалить",
+        "sense_ids": [
+          "sense:076d71e0496a0e1a4dee"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      }
+    ],
+    "government": [
+      {
+        "lexical_unit_id": "lu:952fa4dd0f6496f1821a",
+        "surface_form": "Учить",
+        "sense_ids": [
+          "sense:d781f79956e4df2bd625",
+          "sense:978c55bbc81a6b6e24c1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:d2367f6eb7735d692b4a",
+        "surface_form": "Выучить",
+        "sense_ids": [
+          "sense:11cabaad3f2eb393e0bd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a9f3b513c00d87503457",
+        "surface_form": "Научить",
+        "sense_ids": [
+          "sense:d2112139de6b93290746"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+        "surface_form": "Зарабатывать",
+        "sense_ids": [
+          "sense:3588257e6a859cbb2d34"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a48da6910369d5aa5e83",
+        "surface_form": "Заработать",
+        "sense_ids": [
+          "sense:834ab6f4d06d4afb963a"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9d52803d74b3b569c6fc",
+        "surface_form": "Подрабатывать",
+        "sense_ids": [
+          "sense:7d91471a1a1fde78a33f"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:b9a4ca7b4470c36cb36f",
+        "surface_form": "Подработать",
+        "sense_ids": [
+          "sense:f496138149b04047fdbf"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:0ee3b1ea6ee06bdee261",
+        "surface_form": "Уважать",
+        "sense_ids": [
+          "sense:ce9ef148741f7d422834"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:ea0d3f259798337e7c7b",
+        "surface_form": "Ездить",
+        "sense_ids": [
+          "sense:0a9ebf35c1d446c549fc"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:6ac70477989ea43680c8",
+        "surface_form": "Реализировать",
+        "sense_ids": [
+          "sense:65b74939b68355460b68"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:028c83b043a5c9ae21b0",
+        "surface_form": "Реализовать",
+        "sense_ids": [
+          "sense:a7255d2c8866cc7cfac5"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:04280ac68bfec08cbbd8",
+        "surface_form": "Претендовать",
+        "sense_ids": [
+          "sense:42b5f837fb331882d019"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c72599070fa6a10744fd",
+        "surface_form": "Посетить",
+        "sense_ids": [
+          "sense:a1d86df4bc8899661012"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:44f6e55b4e3224b38f42",
+        "surface_form": "Дуть",
+        "sense_ids": [
+          "sense:c418a734983129d1d613",
+          "sense:c9521f685f3bf720c2ad"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:59ecb9063b7588437c47",
+        "surface_form": "Высушить",
+        "sense_ids": [
+          "sense:83b01a2390683f7af34c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:076b92fffab7568aff8c",
+        "surface_form": "Провести",
+        "sense_ids": [
+          "sense:662341d5190eb06fe205"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:fee4968535aefab87029",
+        "surface_form": "Скакать",
+        "sense_ids": [
+          "sense:38f8d90a559858be33bb"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9299c6f7941d7f085e62",
+        "surface_form": "Таять",
+        "sense_ids": [
+          "sense:1fbf61d77b9ce67421ee"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:7c2d1513978ef6fbd15c",
+        "surface_form": "Поразить",
+        "sense_ids": [
+          "sense:6dd899bfd91adf7e319b"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:8a74c7a03443ffc5f248",
+        "surface_form": "Повалить",
+        "sense_ids": [
+          "sense:076d71e0496a0e1a4dee"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      }
+    ],
+    "preposition": [
+      {
+        "lexical_unit_id": "lu:952fa4dd0f6496f1821a",
+        "surface_form": "Учить",
+        "sense_ids": [
+          "sense:d781f79956e4df2bd625",
+          "sense:978c55bbc81a6b6e24c1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:d2367f6eb7735d692b4a",
+        "surface_form": "Выучить",
+        "sense_ids": [
+          "sense:11cabaad3f2eb393e0bd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a9f3b513c00d87503457",
+        "surface_form": "Научить",
+        "sense_ids": [
+          "sense:d2112139de6b93290746"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+        "surface_form": "Зарабатывать",
+        "sense_ids": [
+          "sense:3588257e6a859cbb2d34"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a48da6910369d5aa5e83",
+        "surface_form": "Заработать",
+        "sense_ids": [
+          "sense:834ab6f4d06d4afb963a"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9d52803d74b3b569c6fc",
+        "surface_form": "Подрабатывать",
+        "sense_ids": [
+          "sense:7d91471a1a1fde78a33f"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:b9a4ca7b4470c36cb36f",
+        "surface_form": "Подработать",
+        "sense_ids": [
+          "sense:f496138149b04047fdbf"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:0ee3b1ea6ee06bdee261",
+        "surface_form": "Уважать",
+        "sense_ids": [
+          "sense:ce9ef148741f7d422834"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:ea0d3f259798337e7c7b",
+        "surface_form": "Ездить",
+        "sense_ids": [
+          "sense:0a9ebf35c1d446c549fc"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:6ac70477989ea43680c8",
+        "surface_form": "Реализировать",
+        "sense_ids": [
+          "sense:65b74939b68355460b68"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:028c83b043a5c9ae21b0",
+        "surface_form": "Реализовать",
+        "sense_ids": [
+          "sense:a7255d2c8866cc7cfac5"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:04280ac68bfec08cbbd8",
+        "surface_form": "Претендовать",
+        "sense_ids": [
+          "sense:42b5f837fb331882d019"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c72599070fa6a10744fd",
+        "surface_form": "Посетить",
+        "sense_ids": [
+          "sense:a1d86df4bc8899661012"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:44f6e55b4e3224b38f42",
+        "surface_form": "Дуть",
+        "sense_ids": [
+          "sense:c418a734983129d1d613",
+          "sense:c9521f685f3bf720c2ad"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:59ecb9063b7588437c47",
+        "surface_form": "Высушить",
+        "sense_ids": [
+          "sense:83b01a2390683f7af34c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:076b92fffab7568aff8c",
+        "surface_form": "Провести",
+        "sense_ids": [
+          "sense:662341d5190eb06fe205"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:fee4968535aefab87029",
+        "surface_form": "Скакать",
+        "sense_ids": [
+          "sense:38f8d90a559858be33bb"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9299c6f7941d7f085e62",
+        "surface_form": "Таять",
+        "sense_ids": [
+          "sense:1fbf61d77b9ce67421ee"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:7c2d1513978ef6fbd15c",
+        "surface_form": "Поразить",
+        "sense_ids": [
+          "sense:6dd899bfd91adf7e319b"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:8a74c7a03443ffc5f248",
+        "surface_form": "Повалить",
+        "sense_ids": [
+          "sense:076d71e0496a0e1a4dee"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      }
+    ],
+    "case": [
+      {
+        "lexical_unit_id": "lu:952fa4dd0f6496f1821a",
+        "surface_form": "Учить",
+        "sense_ids": [
+          "sense:d781f79956e4df2bd625",
+          "sense:978c55bbc81a6b6e24c1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:d2367f6eb7735d692b4a",
+        "surface_form": "Выучить",
+        "sense_ids": [
+          "sense:11cabaad3f2eb393e0bd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a9f3b513c00d87503457",
+        "surface_form": "Научить",
+        "sense_ids": [
+          "sense:d2112139de6b93290746"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+        "surface_form": "Зарабатывать",
+        "sense_ids": [
+          "sense:3588257e6a859cbb2d34"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a48da6910369d5aa5e83",
+        "surface_form": "Заработать",
+        "sense_ids": [
+          "sense:834ab6f4d06d4afb963a"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9d52803d74b3b569c6fc",
+        "surface_form": "Подрабатывать",
+        "sense_ids": [
+          "sense:7d91471a1a1fde78a33f"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:b9a4ca7b4470c36cb36f",
+        "surface_form": "Подработать",
+        "sense_ids": [
+          "sense:f496138149b04047fdbf"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:0ee3b1ea6ee06bdee261",
+        "surface_form": "Уважать",
+        "sense_ids": [
+          "sense:ce9ef148741f7d422834"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:ea0d3f259798337e7c7b",
+        "surface_form": "Ездить",
+        "sense_ids": [
+          "sense:0a9ebf35c1d446c549fc"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:6ac70477989ea43680c8",
+        "surface_form": "Реализировать",
+        "sense_ids": [
+          "sense:65b74939b68355460b68"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:028c83b043a5c9ae21b0",
+        "surface_form": "Реализовать",
+        "sense_ids": [
+          "sense:a7255d2c8866cc7cfac5"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:04280ac68bfec08cbbd8",
+        "surface_form": "Претендовать",
+        "sense_ids": [
+          "sense:42b5f837fb331882d019"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c72599070fa6a10744fd",
+        "surface_form": "Посетить",
+        "sense_ids": [
+          "sense:a1d86df4bc8899661012"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:44f6e55b4e3224b38f42",
+        "surface_form": "Дуть",
+        "sense_ids": [
+          "sense:c418a734983129d1d613",
+          "sense:c9521f685f3bf720c2ad"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:59ecb9063b7588437c47",
+        "surface_form": "Высушить",
+        "sense_ids": [
+          "sense:83b01a2390683f7af34c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:076b92fffab7568aff8c",
+        "surface_form": "Провести",
+        "sense_ids": [
+          "sense:662341d5190eb06fe205"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:fee4968535aefab87029",
+        "surface_form": "Скакать",
+        "sense_ids": [
+          "sense:38f8d90a559858be33bb"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9299c6f7941d7f085e62",
+        "surface_form": "Таять",
+        "sense_ids": [
+          "sense:1fbf61d77b9ce67421ee"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:7c2d1513978ef6fbd15c",
+        "surface_form": "Поразить",
+        "sense_ids": [
+          "sense:6dd899bfd91adf7e319b"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:8a74c7a03443ffc5f248",
+        "surface_form": "Повалить",
+        "sense_ids": [
+          "sense:076d71e0496a0e1a4dee"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      }
+    ],
+    "collocation": [
+      {
+        "enrichment_id": "corpus-enrich:6c27c56db8485723e420",
+        "lexical_unit_id": "lu:c5e62148536be2377474",
+        "sense_id": "sense:5fb938ecbdb896e9423a",
+        "field": "collocation",
+        "value": "каждый день",
+        "collocation": "каждый день",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1027:2",
+            "corpus_key": "1027",
+            "source_index": 2,
+            "ru": "Она каждый день следит за волосами, чтобы они были блестящими.",
+            "tr": "Her gün uhaçını yatırır, onları ışılgörürmek için.",
+            "corpus_references": [
+              "1027:2"
+            ]
+          },
+          {
+            "sentence_id": "1171:3",
+            "corpus_key": "1171",
+            "source_index": 3,
+            "ru": "Он усиленно тренировался каждый день, чтобы выиграть эти важные соревнования.",
+            "tr": "Bu önemli yarışmaları kazanmak için her gün yoğun bir şekilde antrenman yaptı.",
+            "corpus_references": [
+              "1171:3"
+            ]
+          },
+          {
+            "sentence_id": "1293:1",
+            "corpus_key": "1293",
+            "source_index": 1,
+            "ru": "Кошка, которая живёт во дворе, каждый день приходит к нам на кухню за едой.",
+            "tr": "Bahçede yaşayan kedi, her gün yemek için mutfağa geliyor.",
+            "corpus_references": [
+              "1293:1"
+            ]
+          },
+          {
+            "sentence_id": "1380:2",
+            "corpus_key": "1380",
+            "source_index": 2,
+            "ru": "Пианистка каждый день репетирует по несколько часов перед важным концертом.",
+            "tr": "Piyanist, önemli konserden önce her gün birkaç saat prova yapıyor.",
+            "corpus_references": [
+              "1380:2"
+            ]
+          },
+          {
+            "sentence_id": "1383:2",
+            "corpus_key": "1383",
+            "source_index": 2,
+            "ru": "Танцовщик тренируется каждый день, чтобы выиграть конкурс.",
+            "tr": "Dansçı, yarışmayı kazanmak için her gün antrenman yapıyor.",
+            "corpus_references": [
+              "1383:2"
+            ]
+          },
+          {
+            "sentence_id": "1390:2",
+            "corpus_key": "1390",
+            "source_index": 2,
+            "ru": "Мой брат работает механиком и ремонтирует двигатель каждый день.",
+            "tr": "Kardeşim bir mekanik çalışır ve motoru her gün onarır.",
+            "corpus_references": [
+              "1390:2"
+            ]
+          },
+          {
+            "sentence_id": "1447:2",
+            "corpus_key": "1447",
+            "source_index": 2,
+            "ru": "Истинная доброта проявляется в маленьких поступках каждый день.",
+            "tr": "Gerçek iyilik, her gün yapılan küçük davranışlarda kendini gösterir.",
+            "corpus_references": [
+              "1447:2"
+            ]
+          },
+          {
+            "sentence_id": "1487:3",
+            "corpus_key": "1487",
+            "source_index": 3,
+            "ru": "Опытный инженер курирует практиканта, обучая его сложным чертежам каждый день.",
+            "tr": "Deneyimli mühendis, stajyeri her gün karmaşık çizimler yaparak eğitiyor.",
+            "corpus_references": [
+              "1487:3"
+            ]
+          },
+          {
+            "sentence_id": "1528:1",
+            "corpus_key": "1528",
+            "source_index": 1,
+            "ru": "Наш жалостливый сосед каждый день кормит бездомных кошек.",
+            "tr": "Merhametli komşumuz her gün evsiz kedileri besliyor.",
+            "corpus_references": [
+              "1528:1"
+            ]
+          },
+          {
+            "sentence_id": "1541:1",
+            "corpus_key": "1541",
+            "source_index": 1,
+            "ru": "Забывчивый сосед каждый день оставлял ключи в почтовом ящике.",
+            "tr": "Unutkan komşu her gün anahtarları posta kutusuna bırakıyordu.",
+            "corpus_references": [
+              "1541:1"
+            ]
+          },
+          {
+            "sentence_id": "1570:2",
+            "corpus_key": "1570",
+            "source_index": 2,
+            "ru": "Этот резвый скакун каждый день бегает по лугу возле реки.",
+            "tr": "Bu canlı yarış atı, her gün nehrin yanındaki çayırlarda koşar.",
+            "corpus_references": [
+              "1570:2"
+            ]
+          },
+          {
+            "sentence_id": "1629:1",
+            "corpus_key": "1629",
+            "source_index": 1,
+            "ru": "Цветы в саду привлекали туристов каждый день.",
+            "tr": "Bahçedeki çiçekler, her gün turistleri çekti.",
+            "corpus_references": [
+              "1629:1"
+            ]
+          },
+          {
+            "sentence_id": "1696:2",
+            "corpus_key": "1696",
+            "source_index": 2,
+            "ru": "Студенты каждый день готовят пробы в университетской лаборатории.",
+            "tr": "Öğrenciler her gün üniversite laboratuvarında numuneler hazırlıyor.",
+            "corpus_references": [
+              "1696:2"
+            ]
+          },
+          {
+            "sentence_id": "2184:2",
+            "corpus_key": "2184",
+            "source_index": 2,
+            "ru": "Мне уже наскучило слушать одни и те же оправдания каждый день.",
+            "tr": "Her gün aynı bahaneleri dinlemekten bana artık gına geldi.",
+            "corpus_references": [
+              "2184:2"
+            ]
+          },
+          {
+            "sentence_id": "2278:1",
+            "corpus_key": "2278",
+            "source_index": 1,
+            "ru": "Коллекторы начали названивать ему каждый день с угрозами.",
+            "tr": "Tahsildarlar her gün tehditlerle onu pes etmeden aramaya başladılar.",
+            "corpus_references": [
+              "2278:1"
+            ]
+          },
+          {
+            "sentence_id": "283:3",
+            "corpus_key": "283",
+            "source_index": 3,
+            "ru": "Молодой гонщик тренируется каждый день, чтобы победить на следующем чемпионате.",
+            "tr": "Genç yarışçı, bir sonraki şampiyatta kazanmak için her gün eğitim görür.",
+            "corpus_references": [
+              "283:3"
+            ]
+          },
+          {
+            "sentence_id": "351:1",
+            "corpus_key": "351",
+            "source_index": 1,
+            "ru": "Мой брат настоящий жаворонок, встает на рассвете каждый день.",
+            "tr": "Kardeşim gerçek bir erken kalkan, her gün şafakta kalkar.",
+            "corpus_references": [
+              "351:1"
+            ]
+          },
+          {
+            "sentence_id": "39:3",
+            "corpus_key": "39",
+            "source_index": 3,
+            "ru": "Мы ездим на работу на велосипеде каждый день.",
+            "tr": "Biz, her gün işe bisikletle gideriz.",
+            "corpus_references": [
+              "39:3"
+            ]
+          },
+          {
+            "sentence_id": "540:2",
+            "corpus_key": "540",
+            "source_index": 2,
+            "ru": "Они привыкли ссориться каждый день, а потом бурно и радостно мириться.",
+            "tr": "Her gün kavga etmeye, sonra da coşkuyla ve neşeyle barışmaya alışkınlardı.",
+            "corpus_references": [
+              "540:2"
+            ]
+          },
+          {
+            "sentence_id": "564:1",
+            "corpus_key": "564",
+            "source_index": 1,
+            "ru": "Искренняя похвала учителя мотивировала мальчика учиться ещё лучше каждый день.",
+            "tr": "Öğretmenin içten övgüsü çocuğu her gün daha iyi öğrenmeye motive ediyordu.",
+            "corpus_references": [
+              "564:1"
+            ]
+          },
+          {
+            "sentence_id": "663:2",
+            "corpus_key": "663",
+            "source_index": 2,
+            "ru": "С этим упрямым ребёнком каждый день приходится воевать.",
+            "tr": "Bu inatçı çocukla her gün savaşmak gerekiyor.",
+            "corpus_references": [
+              "663:2"
+            ]
+          },
+          {
+            "sentence_id": "679:2",
+            "corpus_key": "679",
+            "source_index": 2,
+            "ru": "Она каждый день тренируется, и неудивительно, что так быстра.",
+            "tr": "Her gün antrenman yapıyor ve bu kadar hızlı olması şaşırtıcı değil.",
+            "corpus_references": [
+              "679:2"
+            ]
+          },
+          {
+            "sentence_id": "830:2",
+            "corpus_key": "830",
+            "source_index": 2,
+            "ru": "Его шутки надоедают одноклассникам, потому что они повторяются каждый день.",
+            "tr": "Onun şakaları, her gün aynı şekilde tekrar ettiği için sınıf arkadaşlarını yorar.",
+            "corpus_references": [
+              "830:2",
+              "831:2"
+            ]
+          },
+          {
+            "sentence_id": "921:1",
+            "corpus_key": "921",
+            "source_index": 1,
+            "ru": "Спортсмены тренируются каждый день, чтобы улучшить результаты.",
+            "tr": "Sporcular sonuçlarını iyileştirmek için her gün antrenman yapıyorlar.",
+            "corpus_references": [
+              "921:1"
+            ]
+          },
+          {
+            "sentence_id": "962:3",
+            "corpus_key": "962",
+            "source_index": 3,
+            "ru": "Старательный фермер проверял урожай каждый день.",
+            "tr": "Çalışkan çiftçi hasadı her gün kontrol etti.",
+            "corpus_references": [
+              "962:3"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1027:2",
+            "1171:3",
+            "1293:1",
+            "1380:2",
+            "1383:2",
+            "1390:2",
+            "1447:2",
+            "1487:3",
+            "1528:1",
+            "1541:1",
+            "1570:2",
+            "1629:1",
+            "1696:2",
+            "2184:2",
+            "2278:1",
+            "283:3",
+            "351:1",
+            "39:3",
+            "540:2",
+            "564:1",
+            "663:2",
+            "679:2",
+            "830:2",
+            "831:2",
+            "921:1",
+            "962:3"
+          ]
+        },
+        "support_count": 25,
+        "corpus_group_count": 26,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:5e8800328eeab49cb420",
+        "lexical_unit_id": "lu:194ec2ef97b73be04294",
+        "sense_id": "sense:bc1bc3ff7b243f29b12e",
+        "field": "collocation",
+        "value": "никто не",
+        "collocation": "никто не",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1024:2",
+            "corpus_key": "1024",
+            "source_index": 2,
+            "ru": "В парадной комнате проходили секретные переговоры, о которых никто не знал.",
+            "tr": "Geçit odasında herkesin bilmediği gizli tartışmalar yapıldı.",
+            "corpus_references": [
+              "1024:2"
+            ]
+          },
+          {
+            "sentence_id": "1466:1",
+            "corpus_key": "1466",
+            "source_index": 1,
+            "ru": "Низина упала упаковка, но никто не пострадал.",
+            "tr": "Paket çığlık attı, ancak kimse yaralanmadı.",
+            "corpus_references": [
+              "1466:1"
+            ]
+          },
+          {
+            "sentence_id": "1686:2",
+            "corpus_key": "1686",
+            "source_index": 2,
+            "ru": "На улице сейчас собачий холод, и никто не хочет выходить.",
+            "tr": "Dışarıda şu an çok soğuk var ve kimse dışarı çıkmak istemiyor.",
+            "corpus_references": [
+              "1686:2"
+            ]
+          },
+          {
+            "sentence_id": "1870:3",
+            "corpus_key": "1870",
+            "source_index": 3,
+            "ru": "Если ты будешь так критиковать, никто не захочет сотрудничать.",
+            "tr": "Böyle eleştirmeye devam edersen, kimse işbirliği yapmak istemez.",
+            "corpus_references": [
+              "1870:3"
+            ]
+          },
+          {
+            "sentence_id": "1901:3",
+            "corpus_key": "1901",
+            "source_index": 3,
+            "ru": "Никто не хотел свидетельствовать против соседа из-за страха мести.",
+            "tr": "Kimse intikam korkusu yüzünden komşu aleyhine tanıklık etmek istemedi.",
+            "corpus_references": [
+              "1901:3"
+            ]
+          },
+          {
+            "sentence_id": "1914:1",
+            "corpus_key": "1914",
+            "source_index": 1,
+            "ru": "Она шепнула другу секрет на ухо, чтобы никто не услышал.",
+            "tr": "O, kimse duymasın diye arkadaşının kulağına sır fısıldadı.",
+            "corpus_references": [
+              "1914:1"
+            ]
+          },
+          {
+            "sentence_id": "2009:3",
+            "corpus_key": "2009",
+            "source_index": 3,
+            "ru": "Никто не хочет недоспать перед ответственным выступлением.",
+            "tr": "Kimse önemli bir konuşmadan önce uykusunu almamak istemez.",
+            "corpus_references": [
+              "2009:3"
+            ]
+          },
+          {
+            "sentence_id": "2011:3",
+            "corpus_key": "2011",
+            "source_index": 3,
+            "ru": "Никто не желает обеднеть из-за нестабильной экономической ситуации.",
+            "tr": "Kimse istikrarsız ekonomik durum yüzünden fakirleşmek istemez.",
+            "corpus_references": [
+              "2011:3"
+            ]
+          },
+          {
+            "sentence_id": "2074:2",
+            "corpus_key": "2074",
+            "source_index": 2,
+            "ru": "Никто не хочет брать ответственность за сломанный велосипед во дворе.",
+            "tr": "Hiç kimse bahçedeki kırık bisiklet için sorumluluk almak istemiyor.",
+            "corpus_references": [
+              "2074:2"
+            ]
+          },
+          {
+            "sentence_id": "2074:3",
+            "corpus_key": "2074",
+            "source_index": 3,
+            "ru": "Если погода испортится, никто не придёт на наш пикник.",
+            "tr": "Hava bozulursa, hiç kimse pikniğimize gelmeyecek.",
+            "corpus_references": [
+              "2074:3"
+            ]
+          },
+          {
+            "sentence_id": "2239:1",
+            "corpus_key": "2239",
+            "source_index": 1,
+            "ru": "Этот спор был совершенно бессмысленным, потому что никто не хотел уступать.",
+            "tr": "Bu tartışma tamamen anlamsızdı (manasızdı), çünkü kimse taviz vermek istemiyordu.",
+            "corpus_references": [
+              "2239:1"
+            ]
+          },
+          {
+            "sentence_id": "227:2",
+            "corpus_key": "227",
+            "source_index": 2,
+            "ru": "Вчера она заметила, что на стене появилась новая картина, которую никто не видел раньше.",
+            "tr": "Dün duvara yeni bir tablo yapıştığını fark etti, bu tabloyu daha önce kimse görmemişti.",
+            "corpus_references": [
+              "227:2"
+            ]
+          },
+          {
+            "sentence_id": "2311:2",
+            "corpus_key": "2311",
+            "source_index": 2,
+            "ru": "Отдай мне эти деньги подобру-поздорову, и никто не пострадает.",
+            "tr": "Bu parayı bana güzellikle (sağ salim) ver, kimse zarar görmesin.",
+            "corpus_references": [
+              "2311:2"
+            ]
+          },
+          {
+            "sentence_id": "425:2",
+            "corpus_key": "425",
+            "source_index": 2,
+            "ru": "Его замечание было незначительным, поэтому никто не обратил на него внимания.",
+            "tr": "Onun notu önemsizdi, bu yüzden hiç kimse ona dikkat etmedi.",
+            "corpus_references": [
+              "425:2"
+            ]
+          },
+          {
+            "sentence_id": "504:2",
+            "corpus_key": "504",
+            "source_index": 2,
+            "ru": "Её квартира отличалась невероятной чистотой, словно там никто не жил.",
+            "tr": "Dairesi, sanki orada kimse yaşamıyormuş gibi inanılmaz bir temizliğe sahipti.",
+            "corpus_references": [
+              "504:2"
+            ]
+          },
+          {
+            "sentence_id": "567:3",
+            "corpus_key": "567",
+            "source_index": 3,
+            "ru": "Он старался скрыть свои слёзы, чтобы никто не увидел его слабости.",
+            "tr": "Kimse onun zayıflığını görmesin diye gözyaşlarını gizlemeye çalıştı.",
+            "corpus_references": [
+              "567:3"
+            ]
+          },
+          {
+            "sentence_id": "621:1",
+            "corpus_key": "621",
+            "source_index": 1,
+            "ru": "Его уродливая улыбка напоминала уродa, которого никто не хотел бы видеть в обществе.",
+            "tr": "Onun çılgın bir gülüşü, toplumda görülmesini istemediğiniz bir uçucu gibi görünüyordu.",
+            "corpus_references": [
+              "621:1",
+              "767:1"
+            ]
+          },
+          {
+            "sentence_id": "765:2",
+            "corpus_key": "765",
+            "source_index": 2,
+            "ru": "Его попытка объяснить проблему превратилась в бесконечную пизанье, которую никто не понял.",
+            "tr": "Sorunu açıklama girişimi, herkesin anlamadığı sonsuz bir saçma haline dönüştü.",
+            "corpus_references": [
+              "765:2"
+            ]
+          },
+          {
+            "sentence_id": "809:1",
+            "corpus_key": "809",
+            "source_index": 1,
+            "ru": "Никто не стал возражать против нового графика работы.",
+            "tr": "Kimse yeni çalışma programına itiraz etmedi.",
+            "corpus_references": [
+              "809:1"
+            ]
+          },
+          {
+            "sentence_id": "81:3",
+            "corpus_key": "81",
+            "source_index": 3,
+            "ru": "Его шутки были противно пошлыми, и никто не стал смеяться.",
+            "tr": "Onun şakaları kötüce dürtüydü ve kimse gülümsemedi.",
+            "corpus_references": [
+              "81:3"
+            ]
+          },
+          {
+            "sentence_id": "990:1",
+            "corpus_key": "990",
+            "source_index": 1,
+            "ru": "Прежде чем уйти, он всегда запирает дверь, чтобы никто не залез.",
+            "tr": "Çıkmadan önce her zaman kapıyı kilitleyecek, böylece kimse içeri giremeyecek.",
+            "corpus_references": [
+              "990:1"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1024:2",
+            "1466:1",
+            "1686:2",
+            "1870:3",
+            "1901:3",
+            "1914:1",
+            "2009:3",
+            "2011:3",
+            "2074:2",
+            "2074:3",
+            "2239:1",
+            "227:2",
+            "2311:2",
+            "425:2",
+            "504:2",
+            "567:3",
+            "621:1",
+            "765:2",
+            "767:1",
+            "809:1",
+            "81:3",
+            "990:1"
+          ]
+        },
+        "support_count": 21,
+        "corpus_group_count": 21,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:5a06201d225835b8a64f",
+        "lexical_unit_id": "lu:a4334f1f3c1fc3cbe6af",
+        "sense_id": "sense:052fd7cdee27b21a9343",
+        "field": "collocation",
+        "value": "а не",
+        "collocation": "а не",
+        "evidence_sentences": [
+          {
+            "sentence_id": "100:1",
+            "corpus_key": "100",
+            "source_index": 1,
+            "ru": "Я предпочитаю сушить волосы полотенцем, а не феном.",
+            "tr": "Saçlarımı kurutma makinesi yerine havluyla kurutmayı tercih ederim.",
+            "corpus_references": [
+              "100:1"
+            ]
+          },
+          {
+            "sentence_id": "1059:3",
+            "corpus_key": "1059",
+            "source_index": 3,
+            "ru": "Стаж стажёра часто измеряется в месяцах, а не в годах.",
+            "tr": "Staj, aylık olarak ölçülür, yıllara değil.",
+            "corpus_references": [
+              "1059:3"
+            ]
+          },
+          {
+            "sentence_id": "1190:1",
+            "corpus_key": "1190",
+            "source_index": 1,
+            "ru": "Он принял рациональное решение инвестировать в образование, а не в роскошь.",
+            "tr": "O, lükse değil eğitime yatırım yapma kararı alarak mantıklı bir seçim yaptı.",
+            "corpus_references": [
+              "1190:1"
+            ]
+          },
+          {
+            "sentence_id": "1254:1",
+            "corpus_key": "1254",
+            "source_index": 1,
+            "ru": "Он решил огранититься простым завтраком, а не готовить сложный обед.",
+            "tr": "Ona basit bir kahvaltıya sınırlaması, karmaşık bir öğle yemeğini yapmayı reddetti.",
+            "corpus_references": [
+              "1254:1"
+            ]
+          },
+          {
+            "sentence_id": "1258:3",
+            "corpus_key": "1258",
+            "source_index": 3,
+            "ru": "Он принял решение, согласно рекомендациям экспертов, а не своим предпочтениям.",
+            "tr": "O, uzmanların önerilerine göre karar verdi, kendi tercihleriyle değil.",
+            "corpus_references": [
+              "1258:3"
+            ]
+          },
+          {
+            "sentence_id": "1297:1",
+            "corpus_key": "1297",
+            "source_index": 1,
+            "ru": "Горячий суп вкуснее есть металлической ложкой, а не деревянной.",
+            "tr": "Sıcak çorba metal kaşıkla yendiğinde, ahşap kaşıktan daha lezzetlidir.",
+            "corpus_references": [
+              "1297:1"
+            ]
+          },
+          {
+            "sentence_id": "1310:3",
+            "corpus_key": "1310",
+            "source_index": 3,
+            "ru": "Мальчик мечтал когда-нибудь управлять настоящим лайнером, а не просто запускать пластиковый самолётик.",
+            "tr": "Çocuk sadece plastik bir uçak uçurmayı değil, bir gün gerçek bir uçağı kullanmayı hayal ediyordu.",
+            "corpus_references": [
+              "1310:3"
+            ]
+          },
+          {
+            "sentence_id": "461:1",
+            "corpus_key": "461",
+            "source_index": 1,
+            "ru": "В этом регионе преобладает сельское хозяйство, а не промышленность.",
+            "tr": "Bu bölgede tarım dominer, sanayi değil.",
+            "corpus_references": [
+              "461:1"
+            ]
+          },
+          {
+            "sentence_id": "704:2",
+            "corpus_key": "704",
+            "source_index": 2,
+            "ru": "Он сделал это ради общего блага, а не для славы.",
+            "tr": "Bunu şöhret için değil, ortak iyilik için yaptı.",
+            "corpus_references": [
+              "704:2"
+            ]
+          },
+          {
+            "sentence_id": "947:3",
+            "corpus_key": "947",
+            "source_index": 3,
+            "ru": "Когда ребёнок задаёт вопросы, важно дать ему правдивую истину, а не утешения.",
+            "tr": "Çocuk sorular sorduğunda, ona teselli değil doğru gerçeği vermek önemlidir.",
+            "corpus_references": [
+              "947:3"
+            ]
+          },
+          {
+            "sentence_id": "968:1",
+            "corpus_key": "968",
+            "source_index": 1,
+            "ru": "Он предпочитает путешествовать, а не оставаться дома.",
+            "tr": "O evde kalmaktan ziyade seyahat etmeyi tercih eder.",
+            "corpus_references": [
+              "968:1"
+            ]
+          },
+          {
+            "sentence_id": "968:3",
+            "corpus_key": "968",
+            "source_index": 3,
+            "ru": "Мы предпочитаем работать в команде, а не индивидуально.",
+            "tr": "Biz bireysel değil, ekip çalışmasını tercih ederiz.",
+            "corpus_references": [
+              "968:3"
+            ]
+          },
+          {
+            "sentence_id": "984:3",
+            "corpus_key": "984",
+            "source_index": 3,
+            "ru": "Молодой лакей мечтал когда-нибудь открыть собственную пекарню, а не только подавать блюда.",
+            "tr": "Genç laki, bir gün kendi fırınını açmak ve sadece yemek servisi yapmak istemiyordu.",
+            "corpus_references": [
+              "984:3"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "100:1",
+            "1059:3",
+            "1190:1",
+            "1254:1",
+            "1258:3",
+            "1297:1",
+            "1310:3",
+            "461:1",
+            "704:2",
+            "947:3",
+            "968:1",
+            "968:3",
+            "984:3"
+          ]
+        },
+        "support_count": 13,
+        "corpus_group_count": 12,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:1756fabced593fdf84df",
+        "lexical_unit_id": "lu:18aa713bc7fbd04d1c13",
+        "sense_id": "sense:f4e85487aa5cffe04911",
+        "field": "collocation",
+        "value": "вчера вечером",
+        "collocation": "вчера вечером",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1005:1",
+            "corpus_key": "1005",
+            "source_index": 1,
+            "ru": "Вчера вечером в небе появился странный инопланетянин с светящимися глазами.",
+            "tr": "Dün akşam gökyüzünde parlayan gözlü bir uzaylı göründü.",
+            "corpus_references": [
+              "1005:1"
+            ]
+          },
+          {
+            "sentence_id": "1334:3",
+            "corpus_key": "1334",
+            "source_index": 3,
+            "ru": "Вчера вечером мы поужинали в том милом французском ресторанчике.",
+            "tr": "Dün akşam o tatlı küçük Fransız restoranında akşam yemeği yedik.",
+            "corpus_references": [
+              "1334:3"
+            ]
+          },
+          {
+            "sentence_id": "1483:1",
+            "corpus_key": "1483",
+            "source_index": 1,
+            "ru": "Вчера вечером строгий библиотекарь помог мне найти редкую книгу по истории.",
+            "tr": "Dün akşam sert kütüphaneci, tarih üzerine nadir bir kitap bulmama yardım etti.",
+            "corpus_references": [
+              "1483:1"
+            ]
+          },
+          {
+            "sentence_id": "176:2",
+            "corpus_key": "176",
+            "source_index": 2,
+            "ru": "Вчера вечером я наконец-то смог написать подробный отчет о проделанной за месяц работе.",
+            "tr": "Dün akşam nihayet ay boyunca yapılan işler hakkında detaylı bir rapor yazabildim.",
+            "corpus_references": [
+              "176:2"
+            ]
+          },
+          {
+            "sentence_id": "2097:1",
+            "corpus_key": "2097",
+            "source_index": 1,
+            "ru": "Вчера вечером он кое-куда ушёл и вернулся очень поздно.",
+            "tr": "Dün akşam bildiğim ama söylemek istemediğim bir yere gitti ve çok geç döndü.",
+            "corpus_references": [
+              "2097:1"
+            ]
+          },
+          {
+            "sentence_id": "219:2",
+            "corpus_key": "219",
+            "source_index": 2,
+            "ru": "Вчера вечером она так волновалась за результаты экзамена, что не спала всю ночь.",
+            "tr": "Dün akşam on sınav sonuçları için o kadar endişe duydu ki tüm gece uyku tutmadı.",
+            "corpus_references": [
+              "219:2"
+            ]
+          },
+          {
+            "sentence_id": "34:2",
+            "corpus_key": "34",
+            "source_index": 2,
+            "ru": "Вчера вечером мы зашли к друзьям на чашечку кофе и немного поболтали.",
+            "tr": "Dün akşam bir fincan kahve içmek ve biraz sohbet etmek için arkadaşlarımıza uğradık.",
+            "corpus_references": [
+              "34:2"
+            ]
+          },
+          {
+            "sentence_id": "573:1",
+            "corpus_key": "573",
+            "source_index": 1,
+            "ru": "Трезвость ума помогла ему принять правильное решение в критической ситуации вчера вечером.",
+            "tr": "Aklın ayıklığı, dün akşam kritik bir durumda doğru kararı almasına yardımcı oldu.",
+            "corpus_references": [
+              "573:1"
+            ]
+          },
+          {
+            "sentence_id": "69:1",
+            "corpus_key": "69",
+            "source_index": 1,
+            "ru": "Вчера вечером дождь как ливанул, и улицы мгновенно превратились в реки.",
+            "tr": "Dün akşam yağmur bardaktan boşalır gibi yağdı ve sokaklar aniden nehirler haline geldi.",
+            "corpus_references": [
+              "69:1"
+            ]
+          },
+          {
+            "sentence_id": "84:1",
+            "corpus_key": "84",
+            "source_index": 1,
+            "ru": "Вчера вечером дождь лил как из ведра, и мы промокли до нитки.",
+            "tr": "Dün akşam kovadan boşalırcasına yağmur yağdı ve biz büzüş büzüş ısladık.",
+            "corpus_references": [
+              "84:1"
+            ]
+          },
+          {
+            "sentence_id": "929:3",
+            "corpus_key": "929",
+            "source_index": 3,
+            "ru": "Мы бросили вызов своей команде вчера вечером.",
+            "tr": "Biz dün akşamı takımımıza meydan okuduk.",
+            "corpus_references": [
+              "929:3"
+            ]
+          },
+          {
+            "sentence_id": "976:2",
+            "corpus_key": "976",
+            "source_index": 2,
+            "ru": "Вчера вечером произойти странный инцидент на перекрёстке, который привлек внимание прохожих.",
+            "tr": "Dün akşam, kavşakta garip bir olay oldu ve geçenlerin dikkatini çekti.",
+            "corpus_references": [
+              "976:2"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1005:1",
+            "1334:3",
+            "1483:1",
+            "176:2",
+            "2097:1",
+            "219:2",
+            "34:2",
+            "573:1",
+            "69:1",
+            "84:1",
+            "929:3",
+            "976:2"
+          ]
+        },
+        "support_count": 12,
+        "corpus_group_count": 12,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:15d978abfb62a0274ca8",
+        "lexical_unit_id": "lu:c5e62148536be2377474",
+        "sense_id": "sense:5fb938ecbdb896e9423a",
+        "field": "collocation",
+        "value": "весь день",
+        "collocation": "весь день",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1048:1",
+            "corpus_key": "1048",
+            "source_index": 1,
+            "ru": "Пресса освещала протесты в городе весь день.",
+            "tr": "Basın, şehrin protestolarını gün boyu haber yaptı.",
+            "corpus_references": [
+              "1048:1"
+            ]
+          },
+          {
+            "sentence_id": "118:1",
+            "corpus_key": "118",
+            "source_index": 1,
+            "ru": "Она весь день ходила на каблуках и к вечеру устала.",
+            "tr": "Bütün gün topuklu ayakkabıyla dolaştı ve akşam yoruldu.",
+            "corpus_references": [
+              "118:1"
+            ]
+          },
+          {
+            "sentence_id": "1311:1",
+            "corpus_key": "1311",
+            "source_index": 1,
+            "ru": "Вчера у меня попал в глаз песок, и я весь день чесал его.",
+            "tr": "Dün gözüme kum girdi ve onu tüm gün ovuşturdum.",
+            "corpus_references": [
+              "1311:1"
+            ]
+          },
+          {
+            "sentence_id": "1320:1",
+            "corpus_key": "1320",
+            "source_index": 1,
+            "ru": "Мой племянник весь день играл с новым красным автомобильчиком.",
+            "tr": "Yeğenim bütün gün yeni kırmızı küçük arabasıyla oynadı.",
+            "corpus_references": [
+              "1320:1"
+            ]
+          },
+          {
+            "sentence_id": "156:3",
+            "corpus_key": "156",
+            "source_index": 3,
+            "ru": "За весь день ни разу не увидел его улыбку.",
+            "tr": "Tüm gün boyunca onun gülümsediğini bir kez bile görmedim.",
+            "corpus_references": [
+              "156:3"
+            ]
+          },
+          {
+            "sentence_id": "233:1",
+            "corpus_key": "233",
+            "source_index": 1,
+            "ru": "После дождя улица оставалась мокрой весь день.",
+            "tr": "Yağmur sonrası sokakın tüm gün boyunca mokraya kaldığını söyledi.",
+            "corpus_references": [
+              "233:1"
+            ]
+          },
+          {
+            "sentence_id": "284:1",
+            "corpus_key": "284",
+            "source_index": 1,
+            "ru": "Пастух провёл весь день, следя за стадом овец на высокой горе.",
+            "tr": "Çoban, yüksek bir dağda koyun sürüsü için bütün günü geçirdi.",
+            "corpus_references": [
+              "284:1"
+            ]
+          },
+          {
+            "sentence_id": "499:2",
+            "corpus_key": "499",
+            "source_index": 2,
+            "ru": "Дети бегали по двору и кричали от радости весь день.",
+            "tr": "Çocuklar bütün gün avluda koşuşturup neşeden bağırdılar.",
+            "corpus_references": [
+              "499:2"
+            ]
+          },
+          {
+            "sentence_id": "530:1",
+            "corpus_key": "530",
+            "source_index": 1,
+            "ru": "Вчерашняя ссора с лучшим другом испортила ему настроение на весь день.",
+            "tr": "En iyi arkadaşıyla dünkü kavgası bütün gün moralini bozdu.",
+            "corpus_references": [
+              "530:1"
+            ]
+          },
+          {
+            "sentence_id": "542:1",
+            "corpus_key": "542",
+            "source_index": 1,
+            "ru": "На берегу моря мы собирали мелкие красивые ракушки весь день.",
+            "tr": "Deniz kıyısında bütün gün küçük güzel deniz kabukları topladık.",
+            "corpus_references": [
+              "542:1"
+            ]
+          },
+          {
+            "sentence_id": "617:2",
+            "corpus_key": "617",
+            "source_index": 2,
+            "ru": "Они провели весь день на солнце, поэтому к вечеру их кожа сильно покраснела.",
+            "tr": "Bütün günü güneşte geçirdiler, bu yüzden akşama doğru ciltleri iyice kızardı.",
+            "corpus_references": [
+              "617:2"
+            ]
+          },
+          {
+            "sentence_id": "84:3",
+            "corpus_key": "84",
+            "source_index": 3,
+            "ru": "Прогноз обещал солнце, но дождь лил как из ведра весь день.",
+            "tr": "Tahmin güneşliydi ama bütün gün kovadan boşalırcasına yağmur yağdı.",
+            "corpus_references": [
+              "84:3"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1048:1",
+            "118:1",
+            "1311:1",
+            "1320:1",
+            "156:3",
+            "233:1",
+            "284:1",
+            "499:2",
+            "530:1",
+            "542:1",
+            "617:2",
+            "84:3"
+          ]
+        },
+        "support_count": 12,
+        "corpus_group_count": 12,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:c062b0e38cd7fc2d263a",
+        "lexical_unit_id": "lu:c5e62148536be2377474",
+        "sense_id": "sense:5fb938ecbdb896e9423a",
+        "field": "collocation",
+        "value": "целый день",
+        "collocation": "целый день",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1089:3",
+            "corpus_key": "1089",
+            "source_index": 3,
+            "ru": "Дети смеялись целый день, играя в игры на свежем воздухе.",
+            "tr": "Çocuklar dışarıda oyun oynarken bütün gün güldüler.",
+            "corpus_references": [
+              "1089:3"
+            ]
+          },
+          {
+            "sentence_id": "1097:1",
+            "corpus_key": "1097",
+            "source_index": 1,
+            "ru": "Дождь лил целый день, и улицы превратились в реки.",
+            "tr": "Bütün gün yağmur yağdı ve sokaklar nehre döndü.",
+            "corpus_references": [
+              "1097:1"
+            ]
+          },
+          {
+            "sentence_id": "117:2",
+            "corpus_key": "117",
+            "source_index": 2,
+            "ru": "Дети целый день развлекались на детской площадке во дворе.",
+            "tr": "Çocuklar bahçedeki oyun parkında bütün gün eğlendiler.",
+            "corpus_references": [
+              "117:2"
+            ]
+          },
+          {
+            "sentence_id": "1887:1",
+            "corpus_key": "1887",
+            "source_index": 1,
+            "ru": "После обеда он превратился в лодыря, целый день спал.",
+            "tr": "Öğle yemeğinden sonra o, bütün gün uyuyarak tembel oldu.",
+            "corpus_references": [
+              "1887:1",
+              "1888:1"
+            ]
+          },
+          {
+            "sentence_id": "2165:2",
+            "corpus_key": "2165",
+            "source_index": 2,
+            "ru": "Мы переехали в новую квартиру и целый день распаковывали вещи.",
+            "tr": "Yeni daireye taşındık ve bütün gün paket açtık.",
+            "corpus_references": [
+              "2165:2"
+            ]
+          },
+          {
+            "sentence_id": "2289:2",
+            "corpus_key": "2289",
+            "source_index": 2,
+            "ru": "Вместо того чтобы решить проблему, они только перезванивались целый день.",
+            "tr": "Sorunu çözmek yerine, bütün gün sadece karşılıklı telefonlaştılar.",
+            "corpus_references": [
+              "2289:2"
+            ]
+          },
+          {
+            "sentence_id": "2308:1",
+            "corpus_key": "2308",
+            "source_index": 1,
+            "ru": "Мы потратили целый день понапрасну, так и не найдя нужный адрес.",
+            "tr": "Doğru adresi bulamayarak bütün günümüzü boş yere harcadık.",
+            "corpus_references": [
+              "2308:1"
+            ]
+          },
+          {
+            "sentence_id": "280:3",
+            "corpus_key": "280",
+            "source_index": 3,
+            "ru": "Монахи в монастыре продолжают молиться целый день, не отрываясь от медитаций.",
+            "tr": "Manastırda manastır, meditasyonlardan vazgeçmeden bütün gün dua etmeye devam eder.",
+            "corpus_references": [
+              "280:3"
+            ]
+          },
+          {
+            "sentence_id": "37:2",
+            "corpus_key": "37",
+            "source_index": 2,
+            "ru": "Утомительный отчет занял целый день моих коллег.",
+            "tr": "Yorucu rapor, tüm meslektaşlarımın gününü aldı.",
+            "corpus_references": [
+              "37:2"
+            ]
+          },
+          {
+            "sentence_id": "753:3",
+            "corpus_key": "753",
+            "source_index": 3,
+            "ru": "После ночной смены ему нужно целый день, чтобы выспаться.",
+            "tr": "Gece vardiyasından sonra uykusunu alması için tam bir gün gerekiyor.",
+            "corpus_references": [
+              "753:3"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1089:3",
+            "1097:1",
+            "117:2",
+            "1887:1",
+            "1888:1",
+            "2165:2",
+            "2289:2",
+            "2308:1",
+            "280:3",
+            "37:2",
+            "753:3"
+          ]
+        },
+        "support_count": 10,
+        "corpus_group_count": 11,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:61e0f1262dfbaf374f0b",
+        "lexical_unit_id": "lu:c5e62148536be2377474",
+        "sense_id": "sense:5fb938ecbdb896e9423a",
+        "field": "collocation",
+        "value": "день рождения",
+        "collocation": "день рождения",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1076:1",
+            "corpus_key": "1076",
+            "source_index": 1,
+            "ru": "Приятель принес подарок на день рождения, что сделало праздник ещё более радостным.",
+            "tr": "Dostu bir hediye getirdi, kutluğu daha mutlu kıldı.",
+            "corpus_references": [
+              "1076:1"
+            ]
+          },
+          {
+            "sentence_id": "1274:3",
+            "corpus_key": "1274",
+            "source_index": 3,
+            "ru": "На день рождения я получил коробку с разноцветными конфетами от друзей.",
+            "tr": "Doğum günümde arkadaşlardan renkli şekerler kutusu aldım.",
+            "corpus_references": [
+              "1274:3"
+            ]
+          },
+          {
+            "sentence_id": "1278:3",
+            "corpus_key": "1278",
+            "source_index": 3,
+            "ru": "Эта дорогая дизайнерская сумочка стала прекрасным подарком на её день рождения.",
+            "tr": "Bu pahalı tasarım çanta, doğum günü için harika bir hediye oldu.",
+            "corpus_references": [
+              "1278:3"
+            ]
+          },
+          {
+            "sentence_id": "1320:2",
+            "corpus_key": "1320",
+            "source_index": 2,
+            "ru": "Мы подарили ему на день рождения радиоуправляемый спортивный автомобильчик.",
+            "tr": "Ona doğum gününde uzaktan kumandalı küçük bir spor araba hediye ettik.",
+            "corpus_references": [
+              "1320:2"
+            ]
+          },
+          {
+            "sentence_id": "1532:3",
+            "corpus_key": "1532",
+            "source_index": 3,
+            "ru": "Отец подарит сыну складной нож на следующий день рождения.",
+            "tr": "Baba oğluna gelecek doğum gününde bir çakı hediye edecek.",
+            "corpus_references": [
+              "1532:3"
+            ]
+          },
+          {
+            "sentence_id": "1998:2",
+            "corpus_key": "1998",
+            "source_index": 2,
+            "ru": "Мы решили испечь кексы на день рождения, используя клубничный крем.",
+            "tr": "Doğum günü için çilek kremasıyla kekler pişirmeye karar verdik.",
+            "corpus_references": [
+              "1998:2"
+            ]
+          },
+          {
+            "sentence_id": "2313:2",
+            "corpus_key": "2313",
+            "source_index": 2,
+            "ru": "Мы потихоньку готовили сюрприз на её день рождения.",
+            "tr": "Onun doğum günü için gizlice (çaktırmadan) sürpriz hazırlıyorduk.",
+            "corpus_references": [
+              "2313:2"
+            ]
+          },
+          {
+            "sentence_id": "337:3",
+            "corpus_key": "337",
+            "source_index": 3,
+            "ru": "Дети радовались, получая подарки в день рождения.",
+            "tr": "Çocuklar, doğum gününde hediye alındığında sevindiler.",
+            "corpus_references": [
+              "337:3"
+            ]
+          },
+          {
+            "sentence_id": "529:1",
+            "corpus_key": "529",
+            "source_index": 1,
+            "ru": "Покупка нового современного телевизора стала отличным подарком на день рождения.",
+            "tr": "Yeni ve modern bir televizyonun alışı harika bir doğum günü hediyesi oldu.",
+            "corpus_references": [
+              "529:1"
+            ]
+          },
+          {
+            "sentence_id": "594:2",
+            "corpus_key": "594",
+            "source_index": 2,
+            "ru": "На день рождения я подарил своему племяннику новую игровую приставку, о которой он мечтал.",
+            "tr": "Doğum gününde erkek yeğenime hayalini kurduğu yeni oyun konsolunu hediye ettim.",
+            "corpus_references": [
+              "594:2"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1076:1",
+            "1274:3",
+            "1278:3",
+            "1320:2",
+            "1532:3",
+            "1998:2",
+            "2313:2",
+            "337:3",
+            "529:1",
+            "594:2"
+          ]
+        },
+        "support_count": 10,
+        "corpus_group_count": 10,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:1642ac1e1a343578e67c",
+        "lexical_unit_id": "lu:89514a78de819467e401",
+        "sense_id": "sense:cdbedf3ffa322c44cc99",
+        "field": "collocation",
+        "value": "в выходные",
+        "collocation": "в выходные",
+        "evidence_sentences": [
+          {
+            "sentence_id": "117:1",
+            "corpus_key": "117",
+            "source_index": 1,
+            "ru": "В выходные мы любим развлекаться в аквапарке или кинотеатре.",
+            "tr": "Hafta sonları su parkında veya sinemada eğlenmeyi severiz.",
+            "corpus_references": [
+              "117:1"
+            ]
+          },
+          {
+            "sentence_id": "1492:1",
+            "corpus_key": "1492",
+            "source_index": 1,
+            "ru": "В выходные мы часто встречаемся в уютной кофейне около старого парка.",
+            "tr": "Hafta sonları, yaşlı parkın yakınındaki rahat kafede sık sık buluşuruz.",
+            "corpus_references": [
+              "1492:1"
+            ]
+          },
+          {
+            "sentence_id": "1887:3",
+            "corpus_key": "1887",
+            "source_index": 3,
+            "ru": "В выходные мой брат превратился в лодыря, ничего не делая.",
+            "tr": "Hafta sonları kardeşim hiçbir şey yapmayarak tembel oldu.",
+            "corpus_references": [
+              "1887:3",
+              "1888:3"
+            ]
+          },
+          {
+            "sentence_id": "1973:3",
+            "corpus_key": "1973",
+            "source_index": 3,
+            "ru": "Четырежды в течение недели приходилось работать в выходные.",
+            "tr": "Hafta içinde dört kez hafta sonu çalışmak zorunda kaldık.",
+            "corpus_references": [
+              "1973:3"
+            ]
+          },
+          {
+            "sentence_id": "206:1",
+            "corpus_key": "206",
+            "source_index": 1,
+            "ru": "Молодой карьерист ради повышения готов работать даже в выходные.",
+            "tr": "Genç kariyerci, terfi için hafta sonları bile çalışmaya hazır.",
+            "corpus_references": [
+              "206:1"
+            ]
+          },
+          {
+            "sentence_id": "2087:3",
+            "corpus_key": "2087",
+            "source_index": 3,
+            "ru": "Если проект ускорится, нам уже некогда будет отдохнуть в выходные.",
+            "tr": "Proje hızlanırsa, hafta sonu dinlenecek hiç zamanımız olmayacak.",
+            "corpus_references": [
+              "2087:3",
+              "2093:3"
+            ]
+          },
+          {
+            "sentence_id": "209:2",
+            "corpus_key": "209",
+            "source_index": 2,
+            "ru": "В выходные этот домосед предпочитает читать книги у камина.",
+            "tr": "Hafta sonları bu ev insanı şömine başında kitap okumayı tercih eder.",
+            "corpus_references": [
+              "209:2"
+            ]
+          },
+          {
+            "sentence_id": "753:1",
+            "corpus_key": "753",
+            "source_index": 1,
+            "ru": "В выходные она наконец смогла выспаться до обеда.",
+            "tr": "Hafta sonu sonunda öğlene kadar uyuyarak uykusunu alabildi.",
+            "corpus_references": [
+              "753:1"
+            ]
+          },
+          {
+            "sentence_id": "969:2",
+            "corpus_key": "969",
+            "source_index": 2,
+            "ru": "Лениться в выходные может привести к накоплению дел.",
+            "tr": "Hafta sonu tembel olmak işleri biriktirebilir.",
+            "corpus_references": [
+              "969:2"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "117:1",
+            "1492:1",
+            "1887:3",
+            "1888:3",
+            "1973:3",
+            "206:1",
+            "2087:3",
+            "2093:3",
+            "209:2",
+            "753:1",
+            "969:2"
+          ]
+        },
+        "support_count": 9,
+        "corpus_group_count": 11,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:42163ad9561ee39aa108",
+        "lexical_unit_id": "lu:8bd649a5ac2532e8e446",
+        "sense_id": "sense:23a5f36c4b2bd02e61f9",
+        "field": "collocation",
+        "value": "друг друга",
+        "collocation": "друг друга",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1419:2",
+            "corpus_key": "1419",
+            "source_index": 2,
+            "ru": "Мы укрепляем дружбу, регулярно встречаясь и поддерживая друг друга.",
+            "tr": "Düzenli buluşup birbirimizi destekleyerek arkadaşlığımızı güçlendiriyoruz.",
+            "corpus_references": [
+              "1419:2"
+            ]
+          },
+          {
+            "sentence_id": "165:2",
+            "corpus_key": "165",
+            "source_index": 2,
+            "ru": "Аргументы в споре начали расходиться, и все перестали понимать друг друга.",
+            "tr": "Soru中的 argümanlar, herkes birbirlerini anlayamadan durdu.",
+            "corpus_references": [
+              "165:2"
+            ]
+          },
+          {
+            "sentence_id": "1845:1",
+            "corpus_key": "1845",
+            "source_index": 1,
+            "ru": "Комедия настолько удачна, что зрители постоянно смешили друг друга.",
+            "tr": "Komedi o kadar başarılı ki izleyiciler sürekli birbirlerini güldürüyor.",
+            "corpus_references": [
+              "1845:1"
+            ]
+          },
+          {
+            "sentence_id": "2120:3",
+            "corpus_key": "2120",
+            "source_index": 3,
+            "ru": "Во время предвыборных дебатов оппоненты часто перебивали друг друга.",
+            "tr": "Seçim öncesi tartışmalarında rakipler birbirini sıkça kesti.",
+            "corpus_references": [
+              "2120:3"
+            ]
+          },
+          {
+            "sentence_id": "266:1",
+            "corpus_key": "266",
+            "source_index": 1,
+            "ru": "Они часто ссорятся из-за денег, хотя любят друг друга.",
+            "tr": "Para yüzünden sık sık tartışıyorlar, ama birbirlerini seviyorlar.",
+            "corpus_references": [
+              "266:1",
+              "539:1"
+            ]
+          },
+          {
+            "sentence_id": "377:3",
+            "corpus_key": "377",
+            "source_index": 3,
+            "ru": "Мы ни разу не видели друг друга после школы.",
+            "tr": "Okuldan beri bir kez bile birbirimizi görmedik.",
+            "corpus_references": [
+              "377:3"
+            ]
+          },
+          {
+            "sentence_id": "540:3",
+            "corpus_key": "540",
+            "source_index": 3,
+            "ru": "Нам нужно научиться прощать друг друга и быстрее мириться после конфликтов.",
+            "tr": "Birbirimizi affetmeyi ve çatışmalardan sonra daha hızlı barışmayı öğrenmeliyiz.",
+            "corpus_references": [
+              "540:3"
+            ]
+          },
+          {
+            "sentence_id": "60:1",
+            "corpus_key": "60",
+            "source_index": 1,
+            "ru": "Чаще всего ссоры возникают из-за недопонимания и нежелания слушать друг друга.",
+            "tr": "Kavgalar en sık anlayışsızlık ve birbirini dinlememekten kaynaklanır.",
+            "corpus_references": [
+              "60:1"
+            ]
+          },
+          {
+            "sentence_id": "967:1",
+            "corpus_key": "967",
+            "source_index": 1,
+            "ru": "Они поссорились из-за мелочи, но быстро простили друг друга.",
+            "tr": "Onlar küçük bir sebeple kavga etti, ama hızla birbirini affetti.",
+            "corpus_references": [
+              "967:1"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1419:2",
+            "165:2",
+            "1845:1",
+            "2120:3",
+            "266:1",
+            "377:3",
+            "539:1",
+            "540:3",
+            "60:1",
+            "967:1"
+          ]
+        },
+        "support_count": 9,
+        "corpus_group_count": 10,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:72243d3f39277a22fbf3",
+        "lexical_unit_id": "lu:c13649ebc357d7e8764b",
+        "sense_id": "sense:4cf1251482d007386a63",
+        "field": "collocation",
+        "value": "каждое утро",
+        "collocation": "каждое утро",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1576:1",
+            "corpus_key": "1576",
+            "source_index": 1,
+            "ru": "Местный пекарь каждое утро выпекает свежий хлеб с хрустящей корочкой.",
+            "tr": "Yerel fırıncı, her sabah çıtır kabuklu taze ekmek pişirir.",
+            "corpus_references": [
+              "1576:1"
+            ]
+          },
+          {
+            "sentence_id": "2229:3",
+            "corpus_key": "2229",
+            "source_index": 3,
+            "ru": "Курить в парке запрещено, но дворник каждое утро убирает окурки.",
+            "tr": "Parkta sigara içmek yasaktır ama temizlik görevlisi her sabah izmaritleri toplar.",
+            "corpus_references": [
+              "2229:3"
+            ]
+          },
+          {
+            "sentence_id": "280:1",
+            "corpus_key": "280",
+            "source_index": 1,
+            "ru": "Каждое утро я провожу полчаса в храме, молящись за благополучие семьи.",
+            "tr": "Her sabah aile refahı için ayinde yarım saat dua etmek için geçiririm.",
+            "corpus_references": [
+              "280:1"
+            ]
+          },
+          {
+            "sentence_id": "506:3",
+            "corpus_key": "506",
+            "source_index": 3,
+            "ru": "Она смогла побороть свою лень и начала заниматься спортом каждое утро.",
+            "tr": "Tembelliğini yenmeyi başardı ve her sabah spor yapmaya başladı.",
+            "corpus_references": [
+              "506:3"
+            ]
+          },
+          {
+            "sentence_id": "645:1",
+            "corpus_key": "645",
+            "source_index": 1,
+            "ru": "Каждое утро она покупает свежую булочку с маком.",
+            "tr": "Her sabah haşhaşlı taze bir çörek satın alıyor.",
+            "corpus_references": [
+              "645:1"
+            ]
+          },
+          {
+            "sentence_id": "742:2",
+            "corpus_key": "742",
+            "source_index": 2,
+            "ru": "Моя сестра пьёт смузи из шпината каждое утро.",
+            "tr": "Kız kardeşim her sabah ıspanaklı smoothie içiyor.",
+            "corpus_references": [
+              "742:2"
+            ]
+          },
+          {
+            "sentence_id": "806:1",
+            "corpus_key": "806",
+            "source_index": 1,
+            "ru": "Каждое утро он бреется перед зеркалом, готовясь к работе.",
+            "tr": "Her sabah o, işe hazırlanırken aynanın önünde sakal tıraşı olur.",
+            "corpus_references": [
+              "806:1"
+            ]
+          },
+          {
+            "sentence_id": "95:1",
+            "corpus_key": "95",
+            "source_index": 1,
+            "ru": "Каждое утро она начинает день с того, что наводит порядок в квартире.",
+            "tr": "Her sabah günü daireyi düzenleyerek başlatıyor.",
+            "corpus_references": [
+              "95:1"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1576:1",
+            "2229:3",
+            "280:1",
+            "506:3",
+            "645:1",
+            "742:2",
+            "806:1",
+            "95:1"
+          ]
+        },
+        "support_count": 8,
+        "corpus_group_count": 8,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:5838674d2fdd35d725fc",
+        "lexical_unit_id": "lu:3144dd76a7da1828802b",
+        "sense_id": "sense:188b2ec19389a23754ef",
+        "field": "collocation",
+        "value": "как правильно",
+        "collocation": "как правильно",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1047:3",
+            "corpus_key": "1047",
+            "source_index": 3,
+            "ru": "Стоматолог объяснил, как правильно ухаживать за зубами.",
+            "tr": "Diş hekimi, dişlerin nasıl düzgün bakılacağını açıkladı.",
+            "corpus_references": [
+              "1047:3"
+            ]
+          },
+          {
+            "sentence_id": "1179:2",
+            "corpus_key": "1179",
+            "source_index": 2,
+            "ru": "Учитель объяснил, как правильно писать окончание в этих глаголах.",
+            "tr": "Öğretmen, bu fiillerde ekin nasıl doğru yazılacağını açıkladı.",
+            "corpus_references": [
+              "1179:2"
+            ]
+          },
+          {
+            "sentence_id": "1469:1",
+            "corpus_key": "1469",
+            "source_index": 1,
+            "ru": "Колхозник объяснил, как правильно сеять пшеницу после дождя.",
+            "tr": "Köylü yağmur sonrası buğdayı nasıl ekileceğini açıkladı.",
+            "corpus_references": [
+              "1469:1"
+            ]
+          },
+          {
+            "sentence_id": "1484:1",
+            "corpus_key": "1484",
+            "source_index": 1,
+            "ru": "Опытный аптекарь объяснил, как правильно принимать эти капли от кашля.",
+            "tr": "Deneyimli eczacı, bu öksürük damlasını nasıl doğru kullanacağını açıkladı.",
+            "corpus_references": [
+              "1484:1"
+            ]
+          },
+          {
+            "sentence_id": "1668:2",
+            "corpus_key": "1668",
+            "source_index": 2,
+            "ru": "На тренировке драчунья показала, как правильно защищаться от нападения.",
+            "tr": "Antrenmanda kavgaç, saldırıya karşı nasıl savunulacağını gösterdi.",
+            "corpus_references": [
+              "1668:2"
+            ]
+          },
+          {
+            "sentence_id": "1774:3",
+            "corpus_key": "1774",
+            "source_index": 3,
+            "ru": "Мы вместе разобрались, как правильно заполнять форму заявки.",
+            "tr": "Başvuru formunu doğru doldurmayı birlikte anladık.",
+            "corpus_references": [
+              "1774:3"
+            ]
+          },
+          {
+            "sentence_id": "1816:3",
+            "corpus_key": "1816",
+            "source_index": 3,
+            "ru": "Тренер объяснил, как правильно пользоваться дыхательным аппаратом в спортзале.",
+            "tr": "Antrenör, spor salonunda solunum cihazının doğru kullanımını anlattı.",
+            "corpus_references": [
+              "1816:3"
+            ]
+          },
+          {
+            "sentence_id": "318:1",
+            "corpus_key": "318",
+            "source_index": 1,
+            "ru": "На уроке русского языка мы изучали, как правильно использовать этот суффикс.",
+            "tr": "Rusça dersinde bu son ekin nasıl doğru kullanılacağını öğrendik.",
+            "corpus_references": [
+              "318:1"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1047:3",
+            "1179:2",
+            "1469:1",
+            "1484:1",
+            "1668:2",
+            "1774:3",
+            "1816:3",
+            "318:1"
+          ]
+        },
+        "support_count": 8,
+        "corpus_group_count": 8,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:d22c2f4f760a22873fe6",
+        "lexical_unit_id": "lu:0777e0960a8117a3250c",
+        "sense_id": "sense:505c593596ff491cfdeb",
+        "field": "collocation",
+        "value": "другой город",
+        "collocation": "другой город",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1363:2",
+            "corpus_key": "1363",
+            "source_index": 2,
+            "ru": "Он уехал в командировку в другой город на целый месяцочек.",
+            "tr": "Tam bir aycıklığına başka bir şehre iş gezisine gitti.",
+            "corpus_references": [
+              "1363:2"
+            ]
+          },
+          {
+            "sentence_id": "176:3",
+            "corpus_key": "176",
+            "source_index": 3,
+            "ru": "Мой друг обещал написать мне письмо сразу после того, как переедет в другой город.",
+            "tr": "Arkadaşım başka bir şehre taşındıktan hemen sonra bana mektup yazacağına söz verdi.",
+            "corpus_references": [
+              "176:3"
+            ]
+          },
+          {
+            "sentence_id": "189:1",
+            "corpus_key": "189",
+            "source_index": 1,
+            "ru": "Пойдём лучше в другой город, там погода хорошая.",
+            "tr": "İyi hava olan başka bir şehrine gitsen daha iyi olur.",
+            "corpus_references": [
+              "189:1"
+            ]
+          },
+          {
+            "sentence_id": "1971:1",
+            "corpus_key": "1971",
+            "source_index": 1,
+            "ru": "Он дважды переезжал в другой город, но всё равно скучал.",
+            "tr": "İki kez başka bir şehre taşındı, ama hâlâ özledi.",
+            "corpus_references": [
+              "1971:1"
+            ]
+          },
+          {
+            "sentence_id": "2137:1",
+            "corpus_key": "2137",
+            "source_index": 1,
+            "ru": "Он перевёз груз в другой город на грузовике.",
+            "tr": "Kamyon kullanarak yükü başka bir şehre taşıdı.",
+            "corpus_references": [
+              "2137:1"
+            ]
+          },
+          {
+            "sentence_id": "2138:1",
+            "corpus_key": "2138",
+            "source_index": 1,
+            "ru": "Они перенесли фестиваль в другой город, чтобы привлечь больше зрителей.",
+            "tr": "Daha fazla seyirci çekmek için festivali başka şehrine taşınmıştır.",
+            "corpus_references": [
+              "2138:1"
+            ]
+          },
+          {
+            "sentence_id": "2205:1",
+            "corpus_key": "2205",
+            "source_index": 1,
+            "ru": "После скандала она решила сменить работу и переехать в другой город.",
+            "tr": "Skandaldan sonra işini değiştirmeye ve başka bir şehre taşınmaya karar verdi.",
+            "corpus_references": [
+              "2205:1"
+            ]
+          },
+          {
+            "sentence_id": "354:3",
+            "corpus_key": "354",
+            "source_index": 3,
+            "ru": "Нам не по душе идея переезда в другой город.",
+            "tr": "Başka bir şehre taşınma fikri hoşumuza gitmedi.",
+            "corpus_references": [
+              "354:3"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1363:2",
+            "176:3",
+            "189:1",
+            "1971:1",
+            "2137:1",
+            "2138:1",
+            "2205:1",
+            "354:3"
+          ]
+        },
+        "support_count": 8,
+        "corpus_group_count": 8,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:56bbb3c86ce314d7b7a6",
+        "lexical_unit_id": "lu:c5e62148536be2377474",
+        "sense_id": "sense:5fb938ecbdb896e9423a",
+        "field": "collocation",
+        "value": "в день",
+        "collocation": "в день",
+        "evidence_sentences": [
+          {
+            "sentence_id": "116:1",
+            "corpus_key": "116",
+            "source_index": 1,
+            "ru": "В День всех святых дети наряжаются в костюмы и просят сладости.",
+            "tr": "Cadılar Bayramı'nda çocuklar kostüm giyer ve şeker ister.",
+            "corpus_references": [
+              "116:1"
+            ]
+          },
+          {
+            "sentence_id": "116:2",
+            "corpus_key": "116",
+            "source_index": 2,
+            "ru": "Традиционно в День всех святых вырезают страшные гримыцы из тыкв.",
+            "tr": "Geleneksel olarak Cadılar Bayramı'nda kabaklardan korkutucu yüzler oyulur.",
+            "corpus_references": [
+              "116:2"
+            ]
+          },
+          {
+            "sentence_id": "1317:2",
+            "corpus_key": "1317",
+            "source_index": 2,
+            "ru": "Чисти зубы дважды в день, чтобы избежать кариеса и проблем с деснами.",
+            "tr": "Dişlerini günde iki kez fırçala, çürük ve diş eti sorunlarından kaçın.",
+            "corpus_references": [
+              "1317:2"
+            ]
+          },
+          {
+            "sentence_id": "1701:3",
+            "corpus_key": "1701",
+            "source_index": 3,
+            "ru": "Праздничный колокольный звон разносился по всей округе в день Пасхи.",
+            "tr": "Paskalya gününde bayramlık çan sesi tüm çevreye yayılıyordu.",
+            "corpus_references": [
+              "1701:3"
+            ]
+          },
+          {
+            "sentence_id": "28:1",
+            "corpus_key": "28",
+            "source_index": 1,
+            "ru": "Работник завода работал 12 часов в день, чтобы заработать.",
+            "tr": "Çatalerde 12 saat çalışarak para kazanmak istiyordu.",
+            "corpus_references": [
+              "28:1"
+            ]
+          },
+          {
+            "sentence_id": "337:3",
+            "corpus_key": "337",
+            "source_index": 3,
+            "ru": "Дети радовались, получая подарки в день рождения.",
+            "tr": "Çocuklar, doğum gününde hediye alındığında sevindiler.",
+            "corpus_references": [
+              "337:3"
+            ]
+          },
+          {
+            "sentence_id": "560:2",
+            "corpus_key": "560",
+            "source_index": 2,
+            "ru": "Мы были искренне удивлены щедростью наших новых соседей в день праздника.",
+            "tr": "Bayram gününde yeni komşularımızın cömertliğine içtenlikle şaşırmıştık.",
+            "corpus_references": [
+              "560:2"
+            ]
+          },
+          {
+            "sentence_id": "612:1",
+            "corpus_key": "612",
+            "source_index": 1,
+            "ru": "Стоматологи рекомендуют чистить зубы как минимум два раза в день по несколько минут.",
+            "tr": "Diş hekimleri dişleri günde en az iki kez birkaç dakika fırçalamayı (temizlemeyi) önermektedir.",
+            "corpus_references": [
+              "612:1"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "116:1",
+            "116:2",
+            "1317:2",
+            "1701:3",
+            "28:1",
+            "337:3",
+            "560:2",
+            "612:1"
+          ]
+        },
+        "support_count": 8,
+        "corpus_group_count": 7,
+        "confidence": 0.9,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:c448d96bb0e7f199e07b",
+        "lexical_unit_id": "lu:40831c4daddff9d1b22c",
+        "sense_id": "sense:f2301d670510952e9775",
+        "field": "collocation",
+        "value": "хотя бы",
+        "collocation": "хотя бы",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1347:1",
+            "corpus_key": "1347",
+            "source_index": 1,
+            "ru": "Давай сходим в этот новый кинотеатр ещё хотя бы разок.",
+            "tr": "Hadi bu yeni sinemaya en azından bir kez daha gidelim.",
+            "corpus_references": [
+              "1347:1"
+            ]
+          },
+          {
+            "sentence_id": "1348:2",
+            "corpus_key": "1348",
+            "source_index": 2,
+            "ru": "Дай мне, пожалуйста, откусить твой вкусный бутерброд хотя бы разочек.",
+            "tr": "Lütfen senin lezzetli sandviçinden en azından bir kerecik ısırmama izin ver.",
+            "corpus_references": [
+              "1348:2"
+            ]
+          },
+          {
+            "sentence_id": "1359:1",
+            "corpus_key": "1359",
+            "source_index": 1,
+            "ru": "Мне нужно отдохнуть хотя бы часок перед долгой поездкой.",
+            "tr": "Uzun bir yolculuktan önce en azından bir saatcik dinlenmem lazım.",
+            "corpus_references": [
+              "1359:1"
+            ]
+          },
+          {
+            "sentence_id": "1360:2",
+            "corpus_key": "1360",
+            "source_index": 2,
+            "ru": "Мама попросила посидеть с младшим братом хотя бы часочек.",
+            "tr": "Annem küçük kardeşimle en azından bir saatcik oturmamı rica etti.",
+            "corpus_references": [
+              "1360:2"
+            ]
+          },
+          {
+            "sentence_id": "193:3",
+            "corpus_key": "193",
+            "source_index": 3,
+            "ru": "В нашей команде нужен хотя бы один оптимист, чтобы поддерживать боевой дух во время кризиса.",
+            "tr": "Kriz sırasında moralimizi yüksek tutmak için ekibimizde en az bir optimist olması gerekiyor.",
+            "corpus_references": [
+              "193:3"
+            ]
+          },
+          {
+            "sentence_id": "2227:2",
+            "corpus_key": "2227",
+            "source_index": 2,
+            "ru": "Не будь таким незнайкой, прочитай хотя бы инструкцию перед использованием.",
+            "tr": "Böyle hiçbir şey bilmez gibi davranma, kullanmadan önce bari kullanım kılavuzunu oku.",
+            "corpus_references": [
+              "2227:2"
+            ]
+          },
+          {
+            "sentence_id": "597:2",
+            "corpus_key": "597",
+            "source_index": 2,
+            "ru": "У каждого человека есть хотя бы один серьезный недостаток характера.",
+            "tr": "Her insanın karakterinde en az bir ciddi eksiklik vardır.",
+            "corpus_references": [
+              "1138:2",
+              "597:2"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1138:2",
+            "1347:1",
+            "1348:2",
+            "1359:1",
+            "1360:2",
+            "193:3",
+            "2227:2",
+            "597:2"
+          ]
+        },
+        "support_count": 7,
+        "corpus_group_count": 8,
+        "confidence": 0.82,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:a4f15c3cc98ec676061c",
+        "lexical_unit_id": "lu:c5e62148536be2377474",
+        "sense_id": "sense:5fb938ecbdb896e9423a",
+        "field": "collocation",
+        "value": "день чтобы",
+        "collocation": "день чтобы",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1171:3",
+            "corpus_key": "1171",
+            "source_index": 3,
+            "ru": "Он усиленно тренировался каждый день, чтобы выиграть эти важные соревнования.",
+            "tr": "Bu önemli yarışmaları kazanmak için her gün yoğun bir şekilde antrenman yaptı.",
+            "corpus_references": [
+              "1171:3"
+            ]
+          },
+          {
+            "sentence_id": "1317:2",
+            "corpus_key": "1317",
+            "source_index": 2,
+            "ru": "Чисти зубы дважды в день, чтобы избежать кариеса и проблем с деснами.",
+            "tr": "Dişlerini günde iki kez fırçala, çürük ve diş eti sorunlarından kaçın.",
+            "corpus_references": [
+              "1317:2"
+            ]
+          },
+          {
+            "sentence_id": "1383:2",
+            "corpus_key": "1383",
+            "source_index": 2,
+            "ru": "Танцовщик тренируется каждый день, чтобы выиграть конкурс.",
+            "tr": "Dansçı, yarışmayı kazanmak için her gün antrenman yapıyor.",
+            "corpus_references": [
+              "1383:2"
+            ]
+          },
+          {
+            "sentence_id": "28:1",
+            "corpus_key": "28",
+            "source_index": 1,
+            "ru": "Работник завода работал 12 часов в день, чтобы заработать.",
+            "tr": "Çatalerde 12 saat çalışarak para kazanmak istiyordu.",
+            "corpus_references": [
+              "28:1"
+            ]
+          },
+          {
+            "sentence_id": "283:3",
+            "corpus_key": "283",
+            "source_index": 3,
+            "ru": "Молодой гонщик тренируется каждый день, чтобы победить на следующем чемпионате.",
+            "tr": "Genç yarışçı, bir sonraki şampiyatta kazanmak için her gün eğitim görür.",
+            "corpus_references": [
+              "283:3"
+            ]
+          },
+          {
+            "sentence_id": "753:3",
+            "corpus_key": "753",
+            "source_index": 3,
+            "ru": "После ночной смены ему нужно целый день, чтобы выспаться.",
+            "tr": "Gece vardiyasından sonra uykusunu alması için tam bir gün gerekiyor.",
+            "corpus_references": [
+              "753:3"
+            ]
+          },
+          {
+            "sentence_id": "921:1",
+            "corpus_key": "921",
+            "source_index": 1,
+            "ru": "Спортсмены тренируются каждый день, чтобы улучшить результаты.",
+            "tr": "Sporcular sonuçlarını iyileştirmek için her gün antrenman yapıyorlar.",
+            "corpus_references": [
+              "921:1"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1171:3",
+            "1317:2",
+            "1383:2",
+            "283:3",
+            "28:1",
+            "753:3",
+            "921:1"
+          ]
+        },
+        "support_count": 7,
+        "corpus_group_count": 7,
+        "confidence": 0.82,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:8a7be09e12624a4f185a",
+        "lexical_unit_id": "lu:c5e62148536be2377474",
+        "sense_id": "sense:5fb938ecbdb896e9423a",
+        "field": "collocation",
+        "value": "на день",
+        "collocation": "на день",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1076:1",
+            "corpus_key": "1076",
+            "source_index": 1,
+            "ru": "Приятель принес подарок на день рождения, что сделало праздник ещё более радостным.",
+            "tr": "Dostu bir hediye getirdi, kutluğu daha mutlu kıldı.",
+            "corpus_references": [
+              "1076:1"
+            ]
+          },
+          {
+            "sentence_id": "1087:3",
+            "corpus_key": "1087",
+            "source_index": 3,
+            "ru": "Неприятность от отмены билета испортила его планы на день.",
+            "tr": "Bilet iptal, gün planlarını boşkettirdi.",
+            "corpus_references": [
+              "1087:3"
+            ]
+          },
+          {
+            "sentence_id": "1274:3",
+            "corpus_key": "1274",
+            "source_index": 3,
+            "ru": "На день рождения я получил коробку с разноцветными конфетами от друзей.",
+            "tr": "Doğum günümde arkadaşlardan renkli şekerler kutusu aldım.",
+            "corpus_references": [
+              "1274:3"
+            ]
+          },
+          {
+            "sentence_id": "1320:2",
+            "corpus_key": "1320",
+            "source_index": 2,
+            "ru": "Мы подарили ему на день рождения радиоуправляемый спортивный автомобильчик.",
+            "tr": "Ona doğum gününde uzaktan kumandalı küçük bir spor araba hediye ettik.",
+            "corpus_references": [
+              "1320:2"
+            ]
+          },
+          {
+            "sentence_id": "1998:2",
+            "corpus_key": "1998",
+            "source_index": 2,
+            "ru": "Мы решили испечь кексы на день рождения, используя клубничный крем.",
+            "tr": "Doğum günü için çilek kremasıyla kekler pişirmeye karar verdik.",
+            "corpus_references": [
+              "1998:2"
+            ]
+          },
+          {
+            "sentence_id": "529:1",
+            "corpus_key": "529",
+            "source_index": 1,
+            "ru": "Покупка нового современного телевизора стала отличным подарком на день рождения.",
+            "tr": "Yeni ve modern bir televizyonun alışı harika bir doğum günü hediyesi oldu.",
+            "corpus_references": [
+              "529:1"
+            ]
+          },
+          {
+            "sentence_id": "594:2",
+            "corpus_key": "594",
+            "source_index": 2,
+            "ru": "На день рождения я подарил своему племяннику новую игровую приставку, о которой он мечтал.",
+            "tr": "Doğum gününde erkek yeğenime hayalini kurduğu yeni oyun konsolunu hediye ettim.",
+            "corpus_references": [
+              "594:2"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1076:1",
+            "1087:3",
+            "1274:3",
+            "1320:2",
+            "1998:2",
+            "529:1",
+            "594:2"
+          ]
+        },
+        "support_count": 7,
+        "corpus_group_count": 7,
+        "confidence": 0.82,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:bf262dc699242905c856",
+        "lexical_unit_id": "lu:937ea5652d3d35002fe3",
+        "sense_id": "sense:b64e6b54a2f1b1d31167",
+        "field": "collocation",
+        "value": "за час",
+        "collocation": "за час",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1384:1",
+            "corpus_key": "1384",
+            "source_index": 1,
+            "ru": "Разносчик доставил письма во всех отделах компании за час.",
+            "tr": "Dağıtıcı, tüm şirket departmanlarına mektupları bir saatte teslim etti.",
+            "corpus_references": [
+              "1384:1"
+            ]
+          },
+          {
+            "sentence_id": "178:2",
+            "corpus_key": "178",
+            "source_index": 2,
+            "ru": "Она успела закончить работу за час, что было невероятно.",
+            "tr": "Saat içinde işini bitirdi, çok şaşırtıcı.",
+            "corpus_references": [
+              "178:2"
+            ]
+          },
+          {
+            "sentence_id": "283:1",
+            "corpus_key": "283",
+            "source_index": 1,
+            "ru": "Гонщик выиграл первое место на гонке, пройдя все трассы за 1 час 45 минут.",
+            "tr": "Yarışçı, tüm pistleri 1 saat 45 dakikada geçerek yarışı birinci sıraya yükseltti.",
+            "corpus_references": [
+              "283:1"
+            ]
+          },
+          {
+            "sentence_id": "404:1",
+            "corpus_key": "404",
+            "source_index": 1,
+            "ru": "Каким образом он смог решить эту сложную задачу за час?",
+            "tr": "O bu zorlu soruyu bir saat içinde nasıl çözdü?",
+            "corpus_references": [
+              "404:1"
+            ]
+          },
+          {
+            "sentence_id": "868:2",
+            "corpus_key": "868",
+            "source_index": 2,
+            "ru": "Мы прибываем в аэропорт за час до вылета, чтобы успеть регистрацию.",
+            "tr": "Uçuş öncesi bir saat önce havalimanına varıyoruz, kayıt için.",
+            "corpus_references": [
+              "868:2",
+              "869:2"
+            ]
+          },
+          {
+            "sentence_id": "885:1",
+            "corpus_key": "885",
+            "source_index": 1,
+            "ru": "Пожар смог уничтожить весь дом за час.",
+            "tr": "Yangın bütün evi bir saatte yok etti.",
+            "corpus_references": [
+              "885:1"
+            ]
+          },
+          {
+            "sentence_id": "913:2",
+            "corpus_key": "913",
+            "source_index": 2,
+            "ru": "Она суметь решить сложную задачу за час.",
+            "tr": "O, bir saatte karmaşık bir soruyu çözdü.",
+            "corpus_references": [
+              "913:2",
+              "914:2"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1384:1",
+            "178:2",
+            "283:1",
+            "404:1",
+            "868:2",
+            "869:2",
+            "885:1",
+            "913:2",
+            "914:2"
+          ]
+        },
+        "support_count": 7,
+        "corpus_group_count": 9,
+        "confidence": 0.82,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:0cf7c1627a5fd3722241",
+        "lexical_unit_id": "lu:dae03e491a2fa8fd25c8",
+        "sense_id": "sense:5c93bd389edb486f2727",
+        "field": "collocation",
+        "value": "может привести",
+        "collocation": "может привести",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1067:3",
+            "corpus_key": "1067",
+            "source_index": 3,
+            "ru": "Переборщить в работе может привести к выгоранию.",
+            "tr": "Çalışma aşırıya kaçmak, yorulmayı tetikleyebilir.",
+            "corpus_references": [
+              "1067:3"
+            ]
+          },
+          {
+            "sentence_id": "1428:2",
+            "corpus_key": "1428",
+            "source_index": 2,
+            "ru": "Проявление дурости на работе может привести к потере доверия коллег и увольнению.",
+            "tr": "İşte aptallık göstermek, iş arkadaşlarının güveni kaybetmesine ve hatta işten çıkmasına yol açabilir.",
+            "corpus_references": [
+              "1428:2"
+            ]
+          },
+          {
+            "sentence_id": "1778:2",
+            "corpus_key": "1778",
+            "source_index": 2,
+            "ru": "Лгать на экзамене может привести к отчислению из университета.",
+            "tr": "Sınavda yalan söylemek, üniversiteden atılmaya yol açabilir.",
+            "corpus_references": [
+              "1778:2"
+            ]
+          },
+          {
+            "sentence_id": "1852:2",
+            "corpus_key": "1852",
+            "source_index": 2,
+            "ru": "Не стоит хитрить с налоговой, это может привести к штрафам.",
+            "tr": "Vergiyle kurnazlık yapma, bu para cezalarına yol açabilir.",
+            "corpus_references": [
+              "1852:2"
+            ]
+          },
+          {
+            "sentence_id": "190:1",
+            "corpus_key": "190",
+            "source_index": 1,
+            "ru": "Зависимость от сладкого может привести к серьезным проблемам.",
+            "tr": "Kahve veya çikolatalardan bağımlılık, ciddi sorunlara yol açabilir.",
+            "corpus_references": [
+              "190:1"
+            ]
+          },
+          {
+            "sentence_id": "425:3",
+            "corpus_key": "425",
+            "source_index": 3,
+            "ru": "Даже незначительная задержка в движении может привести к большим пробкам на дороге.",
+            "tr": "Trafikteki küçük bir gecikme bile yolda büyük trafikler oluşturabilir.",
+            "corpus_references": [
+              "425:3"
+            ]
+          },
+          {
+            "sentence_id": "969:2",
+            "corpus_key": "969",
+            "source_index": 2,
+            "ru": "Лениться в выходные может привести к накоплению дел.",
+            "tr": "Hafta sonu tembel olmak işleri biriktirebilir.",
+            "corpus_references": [
+              "969:2"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1067:3",
+            "1428:2",
+            "1778:2",
+            "1852:2",
+            "190:1",
+            "425:3",
+            "969:2"
+          ]
+        },
+        "support_count": 7,
+        "corpus_group_count": 7,
+        "confidence": 0.82,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:3db88851e4cc5c62f2f2",
+        "lexical_unit_id": "lu:dae03e491a2fa8fd25c8",
+        "sense_id": "sense:5c93bd389edb486f2727",
+        "field": "collocation",
+        "value": "привести к",
+        "collocation": "привести к",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1067:3",
+            "corpus_key": "1067",
+            "source_index": 3,
+            "ru": "Переборщить в работе может привести к выгоранию.",
+            "tr": "Çalışma aşırıya kaçmak, yorulmayı tetikleyebilir.",
+            "corpus_references": [
+              "1067:3"
+            ]
+          },
+          {
+            "sentence_id": "1428:2",
+            "corpus_key": "1428",
+            "source_index": 2,
+            "ru": "Проявление дурости на работе может привести к потере доверия коллег и увольнению.",
+            "tr": "İşte aptallık göstermek, iş arkadaşlarının güveni kaybetmesine ve hatta işten çıkmasına yol açabilir.",
+            "corpus_references": [
+              "1428:2"
+            ]
+          },
+          {
+            "sentence_id": "1778:2",
+            "corpus_key": "1778",
+            "source_index": 2,
+            "ru": "Лгать на экзамене может привести к отчислению из университета.",
+            "tr": "Sınavda yalan söylemek, üniversiteden atılmaya yol açabilir.",
+            "corpus_references": [
+              "1778:2"
+            ]
+          },
+          {
+            "sentence_id": "1852:2",
+            "corpus_key": "1852",
+            "source_index": 2,
+            "ru": "Не стоит хитрить с налоговой, это может привести к штрафам.",
+            "tr": "Vergiyle kurnazlık yapma, bu para cezalarına yol açabilir.",
+            "corpus_references": [
+              "1852:2"
+            ]
+          },
+          {
+            "sentence_id": "190:1",
+            "corpus_key": "190",
+            "source_index": 1,
+            "ru": "Зависимость от сладкого может привести к серьезным проблемам.",
+            "tr": "Kahve veya çikolatalardan bağımlılık, ciddi sorunlara yol açabilir.",
+            "corpus_references": [
+              "190:1"
+            ]
+          },
+          {
+            "sentence_id": "425:3",
+            "corpus_key": "425",
+            "source_index": 3,
+            "ru": "Даже незначительная задержка в движении может привести к большим пробкам на дороге.",
+            "tr": "Trafikteki küçük bir gecikme bile yolda büyük trafikler oluşturabilir.",
+            "corpus_references": [
+              "425:3"
+            ]
+          },
+          {
+            "sentence_id": "969:2",
+            "corpus_key": "969",
+            "source_index": 2,
+            "ru": "Лениться в выходные может привести к накоплению дел.",
+            "tr": "Hafta sonu tembel olmak işleri biriktirebilir.",
+            "corpus_references": [
+              "969:2"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1067:3",
+            "1428:2",
+            "1778:2",
+            "1852:2",
+            "190:1",
+            "425:3",
+            "969:2"
+          ]
+        },
+        "support_count": 7,
+        "corpus_group_count": 7,
+        "confidence": 0.82,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      },
+      {
+        "enrichment_id": "corpus-enrich:166c2d5858fb4fa13cc0",
+        "lexical_unit_id": "lu:59a2d8d537618afe7bf9",
+        "sense_id": "sense:3b7cdd70e68026d24b48",
+        "field": "collocation",
+        "value": "за несколько",
+        "collocation": "за несколько",
+        "evidence_sentences": [
+          {
+            "sentence_id": "1102:1",
+            "corpus_key": "1102",
+            "source_index": 1,
+            "ru": "Он придумал умненький способ решить проблему за несколько минут.",
+            "tr": "Birkaç dakika içinde problemi çözmek için akıllıca bir yol buldu.",
+            "corpus_references": [
+              "1102:1"
+            ]
+          },
+          {
+            "sentence_id": "1863:2",
+            "corpus_key": "1863",
+            "source_index": 2,
+            "ru": "Старый ковёр сильно линял на солнце за несколько лет.",
+            "tr": "Eski halı birkaç yıl içinde güneşte çok soldu.",
+            "corpus_references": [
+              "1863:2",
+              "1864:2"
+            ]
+          },
+          {
+            "sentence_id": "491:3",
+            "corpus_key": "491",
+            "source_index": 3,
+            "ru": "Билеты на самолет могут подешеветь, если покупать их за несколько месяцев до запланированной поездки.",
+            "tr": "Planlanan yolculuktan birkaç ay önce satın alırsanız uçak biletleri ucuzlayabilir.",
+            "corpus_references": [
+              "491:3"
+            ]
+          },
+          {
+            "sentence_id": "6:1",
+            "corpus_key": "6",
+            "source_index": 1,
+            "ru": "Студент смог выучить весь сложный текст наизусть всего за несколько часов.",
+            "tr": "Öğrenci zor metnin tamamını sadece birkaç saat içinde ezberleyebildi.",
+            "corpus_references": [
+              "6:1"
+            ]
+          },
+          {
+            "sentence_id": "645:2",
+            "corpus_key": "645",
+            "source_index": 2,
+            "ru": "Голодный студент съел булочку за несколько минут.",
+            "tr": "Aç öğrenci birkaç dakikada çöreği yedi.",
+            "corpus_references": [
+              "645:2"
+            ]
+          },
+          {
+            "sentence_id": "743:1",
+            "corpus_key": "743",
+            "source_index": 1,
+            "ru": "Дети собрали спелые ягоды в лесу за несколько часов.",
+            "tr": "Çocuklar birkaç saatte ormanda olgun yemişleri topladı.",
+            "corpus_references": [
+              "743:1"
+            ]
+          },
+          {
+            "sentence_id": "76:2",
+            "corpus_key": "76",
+            "source_index": 2,
+            "ru": "Из-за фронтов температура скачет от плюса к минусу за несколько часов.",
+            "tr": "Frontlar nedeniyle sıcaklık, pozitif değerlerden negatif değerlere birkaç saat içinde değişir.",
+            "corpus_references": [
+              "76:2"
+            ]
+          }
+        ],
+        "source": "sentences_strict.json",
+        "source_reference": {
+          "file_name": "sentences_strict.json",
+          "sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+          "source_lines": [],
+          "corpus_references": [
+            "1102:1",
+            "1863:2",
+            "1864:2",
+            "491:3",
+            "645:2",
+            "6:1",
+            "743:1",
+            "76:2"
+          ]
+        },
+        "support_count": 7,
+        "corpus_group_count": 8,
+        "confidence": 0.82,
+        "confidence_method": "distinct_sentence_text_support_with_corpus_group_spread",
+        "verification_status": "candidate",
+        "updated_at": "2026-09-20T18:52:37.185Z",
+        "exercise_eligible": false,
+        "outcome": "enriched"
+      }
+    ],
+    "word_family": [
+      {
+        "lexical_unit_id": "lu:04e40af3c6d1a68f317b",
+        "surface_form": "Временный",
+        "sense_ids": [
+          "sense:1aceba2a35bd84e5165e"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:1c33c7a37e1bffd771f4",
+        "surface_form": "Учиться",
+        "sense_ids": [
+          "sense:f7afeaa5598fcd79fe79",
+          "sense:5f0c09c9aca0c9e9fda1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:952fa4dd0f6496f1821a",
+        "surface_form": "Учить",
+        "sense_ids": [
+          "sense:d781f79956e4df2bd625",
+          "sense:978c55bbc81a6b6e24c1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:d2367f6eb7735d692b4a",
+        "surface_form": "Выучить",
+        "sense_ids": [
+          "sense:11cabaad3f2eb393e0bd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a9f3b513c00d87503457",
+        "surface_form": "Научить",
+        "sense_ids": [
+          "sense:d2112139de6b93290746"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:5051c1e35edc166676c4",
+        "surface_form": "Научиться",
+        "sense_ids": [
+          "sense:7418b5b8cd05117193dd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:98b3cb267d5577c7b2c4",
+        "surface_form": "Права",
+        "sense_ids": [
+          "sense:51bba9d8dc3a6f6cd336"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c83ee13b317b3718fb85",
+        "surface_form": "Техпаспорт",
+        "sense_ids": [
+          "sense:83f6947164a23e2c051d"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:5fd1386c9bef31f890e6",
+        "surface_form": "Самостоятельно",
+        "sense_ids": [
+          "sense:442fe02cc2280713fd6c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:3f2d2d25f328c7f17aea",
+        "surface_form": "Полтора",
+        "sense_ids": [
+          "sense:756a3cf3f020676e5e7c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:0768ad9d1941daafdbcb",
+        "surface_form": "Престижный",
+        "sense_ids": [
+          "sense:d1b804e2f8ba7993f954"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:36f613ba3ba4636860e6",
+        "surface_form": "Вакансия",
+        "sense_ids": [
+          "sense:16efa3d61289ed427097"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+        "surface_form": "Зарабатывать",
+        "sense_ids": [
+          "sense:3588257e6a859cbb2d34"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a48da6910369d5aa5e83",
+        "surface_form": "Заработать",
+        "sense_ids": [
+          "sense:834ab6f4d06d4afb963a"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9d52803d74b3b569c6fc",
+        "surface_form": "Подрабатывать",
+        "sense_ids": [
+          "sense:7d91471a1a1fde78a33f"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:b9a4ca7b4470c36cb36f",
+        "surface_form": "Подработать",
+        "sense_ids": [
+          "sense:f496138149b04047fdbf"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:232bd0a9d19520d23451",
+        "surface_form": "Объявление",
+        "sense_ids": [
+          "sense:3b3030ddfc6f1ce777d3"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:8608d9b227b19f22e754",
+        "surface_form": "Коллектив",
+        "sense_ids": [
+          "sense:108be02417536b5b6d77"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c0c23b06e0a64cb25a15",
+        "surface_form": "Консультант",
+        "sense_ids": [
+          "sense:c1f714c1e70d6c7bde0c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:6d8d9695d15334303c69",
+        "surface_form": "Работник",
+        "sense_ids": [
+          "sense:cd601101bba2c9676813"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      }
+    ],
+    "stress": [
+      {
+        "lexical_unit_id": "lu:04e40af3c6d1a68f317b",
+        "surface_form": "Временный",
+        "sense_ids": [
+          "sense:1aceba2a35bd84e5165e"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:1c33c7a37e1bffd771f4",
+        "surface_form": "Учиться",
+        "sense_ids": [
+          "sense:f7afeaa5598fcd79fe79",
+          "sense:5f0c09c9aca0c9e9fda1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:952fa4dd0f6496f1821a",
+        "surface_form": "Учить",
+        "sense_ids": [
+          "sense:d781f79956e4df2bd625",
+          "sense:978c55bbc81a6b6e24c1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:d2367f6eb7735d692b4a",
+        "surface_form": "Выучить",
+        "sense_ids": [
+          "sense:11cabaad3f2eb393e0bd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a9f3b513c00d87503457",
+        "surface_form": "Научить",
+        "sense_ids": [
+          "sense:d2112139de6b93290746"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:5051c1e35edc166676c4",
+        "surface_form": "Научиться",
+        "sense_ids": [
+          "sense:7418b5b8cd05117193dd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:98b3cb267d5577c7b2c4",
+        "surface_form": "Права",
+        "sense_ids": [
+          "sense:51bba9d8dc3a6f6cd336"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c83ee13b317b3718fb85",
+        "surface_form": "Техпаспорт",
+        "sense_ids": [
+          "sense:83f6947164a23e2c051d"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:5fd1386c9bef31f890e6",
+        "surface_form": "Самостоятельно",
+        "sense_ids": [
+          "sense:442fe02cc2280713fd6c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:3f2d2d25f328c7f17aea",
+        "surface_form": "Полтора",
+        "sense_ids": [
+          "sense:756a3cf3f020676e5e7c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:0768ad9d1941daafdbcb",
+        "surface_form": "Престижный",
+        "sense_ids": [
+          "sense:d1b804e2f8ba7993f954"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:36f613ba3ba4636860e6",
+        "surface_form": "Вакансия",
+        "sense_ids": [
+          "sense:16efa3d61289ed427097"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+        "surface_form": "Зарабатывать",
+        "sense_ids": [
+          "sense:3588257e6a859cbb2d34"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a48da6910369d5aa5e83",
+        "surface_form": "Заработать",
+        "sense_ids": [
+          "sense:834ab6f4d06d4afb963a"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9d52803d74b3b569c6fc",
+        "surface_form": "Подрабатывать",
+        "sense_ids": [
+          "sense:7d91471a1a1fde78a33f"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:b9a4ca7b4470c36cb36f",
+        "surface_form": "Подработать",
+        "sense_ids": [
+          "sense:f496138149b04047fdbf"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:232bd0a9d19520d23451",
+        "surface_form": "Объявление",
+        "sense_ids": [
+          "sense:3b3030ddfc6f1ce777d3"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:8608d9b227b19f22e754",
+        "surface_form": "Коллектив",
+        "sense_ids": [
+          "sense:108be02417536b5b6d77"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c0c23b06e0a64cb25a15",
+        "surface_form": "Консультант",
+        "sense_ids": [
+          "sense:c1f714c1e70d6c7bde0c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:6d8d9695d15334303c69",
+        "surface_form": "Работник",
+        "sense_ids": [
+          "sense:cd601101bba2c9676813"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      }
+    ],
+    "cefr": [
+      {
+        "lexical_unit_id": "lu:04e40af3c6d1a68f317b",
+        "surface_form": "Временный",
+        "sense_ids": [
+          "sense:1aceba2a35bd84e5165e"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:1c33c7a37e1bffd771f4",
+        "surface_form": "Учиться",
+        "sense_ids": [
+          "sense:f7afeaa5598fcd79fe79",
+          "sense:5f0c09c9aca0c9e9fda1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:952fa4dd0f6496f1821a",
+        "surface_form": "Учить",
+        "sense_ids": [
+          "sense:d781f79956e4df2bd625",
+          "sense:978c55bbc81a6b6e24c1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:d2367f6eb7735d692b4a",
+        "surface_form": "Выучить",
+        "sense_ids": [
+          "sense:11cabaad3f2eb393e0bd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a9f3b513c00d87503457",
+        "surface_form": "Научить",
+        "sense_ids": [
+          "sense:d2112139de6b93290746"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:5051c1e35edc166676c4",
+        "surface_form": "Научиться",
+        "sense_ids": [
+          "sense:7418b5b8cd05117193dd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:98b3cb267d5577c7b2c4",
+        "surface_form": "Права",
+        "sense_ids": [
+          "sense:51bba9d8dc3a6f6cd336"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c83ee13b317b3718fb85",
+        "surface_form": "Техпаспорт",
+        "sense_ids": [
+          "sense:83f6947164a23e2c051d"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:5fd1386c9bef31f890e6",
+        "surface_form": "Самостоятельно",
+        "sense_ids": [
+          "sense:442fe02cc2280713fd6c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:3f2d2d25f328c7f17aea",
+        "surface_form": "Полтора",
+        "sense_ids": [
+          "sense:756a3cf3f020676e5e7c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:0768ad9d1941daafdbcb",
+        "surface_form": "Престижный",
+        "sense_ids": [
+          "sense:d1b804e2f8ba7993f954"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:36f613ba3ba4636860e6",
+        "surface_form": "Вакансия",
+        "sense_ids": [
+          "sense:16efa3d61289ed427097"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+        "surface_form": "Зарабатывать",
+        "sense_ids": [
+          "sense:3588257e6a859cbb2d34"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a48da6910369d5aa5e83",
+        "surface_form": "Заработать",
+        "sense_ids": [
+          "sense:834ab6f4d06d4afb963a"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9d52803d74b3b569c6fc",
+        "surface_form": "Подрабатывать",
+        "sense_ids": [
+          "sense:7d91471a1a1fde78a33f"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:b9a4ca7b4470c36cb36f",
+        "surface_form": "Подработать",
+        "sense_ids": [
+          "sense:f496138149b04047fdbf"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:232bd0a9d19520d23451",
+        "surface_form": "Объявление",
+        "sense_ids": [
+          "sense:3b3030ddfc6f1ce777d3"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:8608d9b227b19f22e754",
+        "surface_form": "Коллектив",
+        "sense_ids": [
+          "sense:108be02417536b5b6d77"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c0c23b06e0a64cb25a15",
+        "surface_form": "Консультант",
+        "sense_ids": [
+          "sense:c1f714c1e70d6c7bde0c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:6d8d9695d15334303c69",
+        "surface_form": "Работник",
+        "sense_ids": [
+          "sense:cd601101bba2c9676813"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      }
+    ],
+    "theme": [
+      {
+        "lexical_unit_id": "lu:04e40af3c6d1a68f317b",
+        "surface_form": "Временный",
+        "sense_ids": [
+          "sense:1aceba2a35bd84e5165e"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:1c33c7a37e1bffd771f4",
+        "surface_form": "Учиться",
+        "sense_ids": [
+          "sense:f7afeaa5598fcd79fe79",
+          "sense:5f0c09c9aca0c9e9fda1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:952fa4dd0f6496f1821a",
+        "surface_form": "Учить",
+        "sense_ids": [
+          "sense:d781f79956e4df2bd625",
+          "sense:978c55bbc81a6b6e24c1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:d2367f6eb7735d692b4a",
+        "surface_form": "Выучить",
+        "sense_ids": [
+          "sense:11cabaad3f2eb393e0bd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a9f3b513c00d87503457",
+        "surface_form": "Научить",
+        "sense_ids": [
+          "sense:d2112139de6b93290746"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:5051c1e35edc166676c4",
+        "surface_form": "Научиться",
+        "sense_ids": [
+          "sense:7418b5b8cd05117193dd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:98b3cb267d5577c7b2c4",
+        "surface_form": "Права",
+        "sense_ids": [
+          "sense:51bba9d8dc3a6f6cd336"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c83ee13b317b3718fb85",
+        "surface_form": "Техпаспорт",
+        "sense_ids": [
+          "sense:83f6947164a23e2c051d"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:5fd1386c9bef31f890e6",
+        "surface_form": "Самостоятельно",
+        "sense_ids": [
+          "sense:442fe02cc2280713fd6c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:3f2d2d25f328c7f17aea",
+        "surface_form": "Полтора",
+        "sense_ids": [
+          "sense:756a3cf3f020676e5e7c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:0768ad9d1941daafdbcb",
+        "surface_form": "Престижный",
+        "sense_ids": [
+          "sense:d1b804e2f8ba7993f954"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:36f613ba3ba4636860e6",
+        "surface_form": "Вакансия",
+        "sense_ids": [
+          "sense:16efa3d61289ed427097"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+        "surface_form": "Зарабатывать",
+        "sense_ids": [
+          "sense:3588257e6a859cbb2d34"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a48da6910369d5aa5e83",
+        "surface_form": "Заработать",
+        "sense_ids": [
+          "sense:834ab6f4d06d4afb963a"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9d52803d74b3b569c6fc",
+        "surface_form": "Подрабатывать",
+        "sense_ids": [
+          "sense:7d91471a1a1fde78a33f"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:b9a4ca7b4470c36cb36f",
+        "surface_form": "Подработать",
+        "sense_ids": [
+          "sense:f496138149b04047fdbf"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:232bd0a9d19520d23451",
+        "surface_form": "Объявление",
+        "sense_ids": [
+          "sense:3b3030ddfc6f1ce777d3"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:8608d9b227b19f22e754",
+        "surface_form": "Коллектив",
+        "sense_ids": [
+          "sense:108be02417536b5b6d77"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c0c23b06e0a64cb25a15",
+        "surface_form": "Консультант",
+        "sense_ids": [
+          "sense:c1f714c1e70d6c7bde0c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:6d8d9695d15334303c69",
+        "surface_form": "Работник",
+        "sense_ids": [
+          "sense:cd601101bba2c9676813"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      }
+    ],
+    "tag": [
+      {
+        "lexical_unit_id": "lu:04e40af3c6d1a68f317b",
+        "surface_form": "Временный",
+        "sense_ids": [
+          "sense:1aceba2a35bd84e5165e"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:1c33c7a37e1bffd771f4",
+        "surface_form": "Учиться",
+        "sense_ids": [
+          "sense:f7afeaa5598fcd79fe79",
+          "sense:5f0c09c9aca0c9e9fda1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:952fa4dd0f6496f1821a",
+        "surface_form": "Учить",
+        "sense_ids": [
+          "sense:d781f79956e4df2bd625",
+          "sense:978c55bbc81a6b6e24c1"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:d2367f6eb7735d692b4a",
+        "surface_form": "Выучить",
+        "sense_ids": [
+          "sense:11cabaad3f2eb393e0bd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a9f3b513c00d87503457",
+        "surface_form": "Научить",
+        "sense_ids": [
+          "sense:d2112139de6b93290746"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:5051c1e35edc166676c4",
+        "surface_form": "Научиться",
+        "sense_ids": [
+          "sense:7418b5b8cd05117193dd"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:98b3cb267d5577c7b2c4",
+        "surface_form": "Права",
+        "sense_ids": [
+          "sense:51bba9d8dc3a6f6cd336"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c83ee13b317b3718fb85",
+        "surface_form": "Техпаспорт",
+        "sense_ids": [
+          "sense:83f6947164a23e2c051d"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:5fd1386c9bef31f890e6",
+        "surface_form": "Самостоятельно",
+        "sense_ids": [
+          "sense:442fe02cc2280713fd6c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:3f2d2d25f328c7f17aea",
+        "surface_form": "Полтора",
+        "sense_ids": [
+          "sense:756a3cf3f020676e5e7c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:0768ad9d1941daafdbcb",
+        "surface_form": "Престижный",
+        "sense_ids": [
+          "sense:d1b804e2f8ba7993f954"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:36f613ba3ba4636860e6",
+        "surface_form": "Вакансия",
+        "sense_ids": [
+          "sense:16efa3d61289ed427097"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+        "surface_form": "Зарабатывать",
+        "sense_ids": [
+          "sense:3588257e6a859cbb2d34"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:a48da6910369d5aa5e83",
+        "surface_form": "Заработать",
+        "sense_ids": [
+          "sense:834ab6f4d06d4afb963a"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:9d52803d74b3b569c6fc",
+        "surface_form": "Подрабатывать",
+        "sense_ids": [
+          "sense:7d91471a1a1fde78a33f"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:b9a4ca7b4470c36cb36f",
+        "surface_form": "Подработать",
+        "sense_ids": [
+          "sense:f496138149b04047fdbf"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:232bd0a9d19520d23451",
+        "surface_form": "Объявление",
+        "sense_ids": [
+          "sense:3b3030ddfc6f1ce777d3"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:8608d9b227b19f22e754",
+        "surface_form": "Коллектив",
+        "sense_ids": [
+          "sense:108be02417536b5b6d77"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:c0c23b06e0a64cb25a15",
+        "surface_form": "Консультант",
+        "sense_ids": [
+          "sense:c1f714c1e70d6c7bde0c"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      },
+      {
+        "lexical_unit_id": "lu:6d8d9695d15334303c69",
+        "surface_form": "Работник",
+        "sense_ids": [
+          "sense:cd601101bba2c9676813"
+        ],
+        "outcome": "not_enriched",
+        "reason": "source_required"
+      }
+    ]
+  },
+  "qa": {
+    "status": "passed",
+    "all_records_have_evidence": true,
+    "no_needs_review_emitted": true,
+    "no_scored_answer_records": true,
+    "base_artifact_unchanged": true,
+    "corpus_unchanged": true,
+    "protected_files_unchanged": true
+  },
+  "mode": "full",
+  "dry_run": false,
+  "output_path": "data/vocabulary/enrichment-corpus.v1b.json",
+  "report_path": "data/vocabulary/enrichment-corpus-report.v1b.json",
+  "backup_paths": [
+    "data/vocabulary/backups/enrichment-corpus.v1b.json.6e5ea3130286.2.bak",
+    "data/vocabulary/backups/enrichment-corpus-report.v1b.json.6e5ea3130286.2.bak"
+  ],
+  "full_corpus_sentence_count": 7017,
+  "selected_corpus_sentence_count": 7017,
+  "base_artifact_sha256_before": "6e5ea3130286e641eefc0464a20a197aab011255f752c82b1d228ddc92cf9a08",
+  "corpus_sha256_before": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+  "protected_file_hashes_before": {
+    "kelimeler_tam_strict.txt": "67048a49dd11d4bd8627ca5f2d56d4df168f6c3f5e76167c9809b81ead847cbe",
+    "vocab_reviewed_v1.txt": "128c08f1c9056d2f45ca7fe78db4de24186f20813e7b10e52807e7454bbafd46",
+    "sentences_strict.json": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a"
+  },
+  "base_artifact_sha256_after": "6e5ea3130286e641eefc0464a20a197aab011255f752c82b1d228ddc92cf9a08",
+  "corpus_sha256_after": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a",
+  "protected_file_hashes_after": {
+    "kelimeler_tam_strict.txt": "67048a49dd11d4bd8627ca5f2d56d4df168f6c3f5e76167c9809b81ead847cbe",
+    "vocab_reviewed_v1.txt": "128c08f1c9056d2f45ca7fe78db4de24186f20813e7b10e52807e7454bbafd46",
+    "sentences_strict.json": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a"
+  }
+}

@@ -6,7 +6,7 @@ import test from 'node:test';
 
 const ROOT = process.cwd();
 
-test('service worker ships a v64 schema-compatible runtime artifact set', () => {
+test('service worker ships a v66 schema-compatible runtime artifact set', () => {
     const serviceWorker = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
     const expectedAssets = [
         './js/vocabulary-repository.js',
@@ -40,7 +40,7 @@ test('service worker ships a v64 schema-compatible runtime artifact set', () => 
         './data/grammar/contrast-training.v1.json'
     ];
 
-    assert.match(serviceWorker, /rutr-v64/u);
+    assert.match(serviceWorker, /rutr-v66/u);
     for (const asset of expectedAssets) assert.match(serviceWorker, new RegExp(asset.replaceAll('.', '\\.'), 'u'));
     assert.match(serviceWorker, /NETWORK_FIRST_PATHS/u);
     assert.match(serviceWorker, /legacy-identity-map\.v1\.json/u);
@@ -93,7 +93,7 @@ test('repository bridge loads before data.js and does not touch localStorage', (
     assert.equal(repositorySource.includes('localStorage'), false);
 });
 
-test('service worker serves the v64 artifact from cache while offline and removes v54', async () => {
+test('service worker serves the v66 artifact from cache while offline and removes v54', async () => {
     const source = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8');
     const handlers = {};
     const cacheStores = new Map([['rutr-v54', new Map()]]);
@@ -109,7 +109,7 @@ test('service worker serves the v64 artifact from cache while offline and remove
             if (!cacheStores.has(name)) cacheStores.set(name, new Map());
             return createCache(name);
         },
-        match: async request => cacheStores.get('rutr-v64')?.get(requestKey(request)) || null,
+        match: async request => cacheStores.get('rutr-v66')?.get(requestKey(request)) || null,
         keys: async () => [...cacheStores.keys()],
         delete: async name => cacheStores.delete(name)
     };
@@ -141,7 +141,7 @@ test('service worker serves the v64 artifact from cache while offline and remove
     const installWaits = [];
     handlers.install({ waitUntil: promise => installWaits.push(promise) });
     await Promise.all(installWaits);
-    cacheStores.get('rutr-v64').set(
+    cacheStores.get('rutr-v66').set(
         'https://app.test/data/vocabulary/lexical-units.v1.json',
         responseFor('https://app.test/data/vocabulary/lexical-units.v1.json')
     );

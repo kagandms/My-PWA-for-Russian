@@ -1,4 +1,6 @@
 (function exposeSpeechRecognitionAdapter(root) {
+    const DEFAULT_STOP_TIMEOUT_MS = 1500;
+
     function createAdapterError(code, message, cause) {
         const error = new Error(message);
         error.code = code;
@@ -21,6 +23,13 @@
             this.recognition = null;
             this.finalParts = [];
             this.partialTranscript = '';
+            this.stopTimeoutMs = Number.isFinite(options.stopTimeoutMs)
+                ? Math.max(0, options.stopTimeoutMs)
+                : DEFAULT_STOP_TIMEOUT_MS;
+            this.stopPromise = null;
+            this.stopResolver = null;
+            this.stopTimer = null;
+            this.isDisposed = false;
             this.snapshot = {
                 runtime: 'not_attempted',
                 transcript: '',
@@ -41,6 +50,8 @@
             }
 
             try {
+                this.isDisposed = false;
+                this.stopPromise = null;
                 this.recognition = new this.Constructor();
                 this.configureRecognition();
                 this.recognition.start();
@@ -63,9 +74,15 @@
             this.recognition.lang = 'ru-RU';
             this.recognition.interimResults = true;
             this.recognition.continuous = true;
-            this.recognition.onresult = (event) => this.handleResult(event);
-            this.recognition.onerror = (event) => this.handleError(event);
-            this.recognition.onend = () => this.handleEnd();
+            this.recognition.onresult = (event) => {
+                if (!this.isDisposed) this.handleResult(event);
+            };
+            this.recognition.onerror = (event) => {
+                if (!this.isDisposed) this.handleError(event);
+            };
+            this.recognition.onend = () => {
+                if (!this.isDisposed) this.handleEnd();
+            };
         }
 
         handleResult(event) {
@@ -89,6 +106,7 @@
                 partial_transcript: this.partialTranscript,
                 transcript_state: finalTranscript ? 'final_result' : 'partial_only'
             });
+            if (finalTranscript) this.resolveStop();
         }
 
         handleError(event) {
@@ -96,12 +114,14 @@
             const error = createAdapterError(code, 'SpeechRecognition runtime error');
             this.updateSnapshot({ runtime: 'error', transcript_state: 'error', error_code: code });
             this.onError(error);
+            this.resolveStop();
         }
 
         handleEnd() {
             if (this.snapshot.runtime === 'started' && !this.snapshot.transcript) {
                 this.updateSnapshot({ runtime: 'no_result', transcript_state: 'no_result' });
             }
+            this.resolveStop();
         }
 
         updateSnapshot(changes) {
@@ -114,31 +134,62 @@
         }
 
         stop() {
-            if (!this.recognition) return cloneSnapshot(this.snapshot);
-            try {
-                this.recognition.stop();
-            } catch (error) {
-                const adapterError = createAdapterError('stop_failed', 'SpeechRecognition could not stop', error);
-                this.onError(adapterError);
-            }
-            return cloneSnapshot(this.snapshot);
+            if (!this.recognition) return Promise.resolve(cloneSnapshot(this.snapshot));
+            if (this.stopPromise) return this.stopPromise;
+            this.stopPromise = new Promise((resolve) => {
+                this.stopResolver = resolve;
+                this.stopTimer = setTimeout(() => {
+                    if (this.snapshot.runtime === 'started') {
+                        this.updateSnapshot({
+                            runtime: this.snapshot.transcript ? 'partial_only' : 'no_result',
+                            transcript_state: this.snapshot.transcript ? 'partial_only' : 'no_result'
+                        });
+                    }
+                    this.resolveStop();
+                }, this.stopTimeoutMs);
+                try {
+                    this.recognition.stop();
+                } catch (error) {
+                    const adapterError = createAdapterError('stop_failed', 'SpeechRecognition could not stop', error);
+                    this.updateSnapshot({ runtime: 'error', transcript_state: 'error', error_code: adapterError.code });
+                    this.onError(adapterError);
+                    this.resolveStop();
+                }
+            });
+            return this.stopPromise;
         }
 
         cancel() {
             if (!this.recognition) return;
+            this.isDisposed = true;
+            const recognition = this.recognition;
+            recognition.onresult = null;
+            recognition.onerror = null;
+            recognition.onend = null;
             try {
-                this.recognition.abort();
+                recognition.abort();
             } catch (error) {
                 this.onError(createAdapterError('cancel_failed', 'SpeechRecognition could not cancel', error));
             }
             this.recognition = null;
+            this.resolveStop();
             this.updateSnapshot({ runtime: 'not_attempted', transcript_state: 'no_result' });
         }
 
         dispose() {
-            this.cancel();
+            this.isDisposed = true;
             this.onUpdate = () => {};
             this.onError = () => {};
+            this.cancel();
+        }
+
+        resolveStop() {
+            if (!this.stopResolver) return;
+            const resolve = this.stopResolver;
+            this.stopResolver = null;
+            clearTimeout(this.stopTimer);
+            this.stopTimer = null;
+            resolve(cloneSnapshot(this.snapshot));
         }
 
         getSnapshot() {
@@ -148,4 +199,3 @@
 
     root.SpeechRecognitionAdapter = SpeechRecognitionAdapter;
 })(typeof window !== 'undefined' ? window : globalThis);
-

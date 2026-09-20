@@ -1,0 +1,2339 @@
+Мир тесен : Dünya küçük
+Временный : Geçici
+В пути : Yolda
+Учиться : Öğrenmek; okumak/eğitim görmek
+Учить : Ezberlemek
+Выучить : Ezberlemek
+Учить : Birinin öğretmesi
+Научить : Birinin öğretmesi
+Учиться : Bir şeyi yapmayı öğrenmek
+Научиться : Bir şeyi yapmayı öğrenmek
+Права : Ehliyet
+Техпаспорт : Ruhsat
+Самостоятельно : Bağımsız olarak
+Полтора : Bir buçuk
+Бегло говорить : Akıcı konuşmak
+Это не моё : Bu bana göre değil
+Престижный : Prestijli
+Можно себе позволить : Gücü yetmek; maddi olarak karşılayabilmek
+Вакансия : Boş yer
+Зарабатывать : Para kazanmak
+Заработать : Para kazanmak
+Подрабатывать : Ek iş yapmak; ek işte çalışmak
+Подработать : Ek iş yapmak; kısa süreli ek işte çalışmak
+Объявление : İş ilanı
+Биржа труда : İş bulma yeri
+Коллектив : Topluluk
+Консультант : Danışman
+Работник : İşçi
+Консалтинговая компания : Danışmanlık şirketi
+Про- : İçinden geçip gitmek
+Под- : Yaklaşmak
+От- : Uzaklaşmak
+Об- : Çevresinden dolaşmak
+За- : Kısa süreli uğramak
+Пере- : Köprüyü geçmek, karşıdan karşıya geçmek, sınıf geçmek
+Уважать : Saygı duymak
+Утомительный : Yorucu
+Бухгалтер : Muhasebeci
+Ездить : Araçla gidip gelmek; seyahat etmek
+Вы- : Dışarı çıkmak/çıkıp gitmek; bağlama göre uzaklaşmak
+У- : Uzaklaşmak/ayrılmak; gitmek
+Переход : alt/üst geçit
+Во Владивосток : Vladivostok'a
+Реализировать : Gerçekleştirmek
+Реализовать : Gerçekleştirmek
+Пословица : atasözü
+Претендовать : İddia etmek; talip olmak; hak iddia etmek
+Смотря : nerede, nereye, kiminle olduğuna bağlı
+Расстояние : Mesafe
+Собеседование : mülakat
+Кладовщик : Depo çalışanı
+Уборщица : Temizlikçi
+С одной стороны : Bir yandan
+С другой стороны : Öte yandan
+Новичок : acemi, çaylak
+За кусок хлеба : Karın tokluğuna
+Придержи язык : dilini tut
+На полставки : Part time
+Терпеть не могу : Dayanamıyorum, tahammül edemiyorum
+Чаще всего : En sık; çoğu zaman
+Посетить : Ziyaret etmek; gidip görmek
+Заморозка : don
+Резкий : keskin
+Перемены : değişimler
+Заболевать / Заболеть : Hastalanmak
+Туча : Kara bulut
+Дуть : esmek
+Град : dolu
+Дождь как ливанул : Yağmur bardaktan boşalırcasına yağdı
+Я промок до нитки : İliklerime kadar/sırılsıklam ıslandım
+Появиться : görünmek, gözükmek
+Высушить : Kurutmak
+Иначе : Başka türlü
+Провести : Geçirmek
+Хуже всего : Hepsinden daha kötüsü
+Скакать : Fırlamak, sıçramak
+Таять : erimek
+Лужа : Su birikintisi
+Мороз : don
+Гололёд : buzlanma
+Противно : İğrenç; tiksindirici; itici
+В любое время : Herhangi bir anda
+Шуба : Kürk
+Дождь лил как из ведра : Kovadan boşalırcasına yağmur yağdı
+Подвал : Bodrum
+Затопило : Su bastı
+Поразить : Şaşırtmak
+Шторм : Fırtına
+Буря : Fırtına
+Ураган : Kasırga
+Метели : Kar fırtınası
+Дача : Yazlık
+Повалить : Yıkmak
+Сорвать : Koparmak
+Наводить порядок : Düzene sokmak
+Мало где : Çok az yerde; birkaç yerde
+Много с кем дружить : Birçok kişiyle arkadaş olmak
+Он много где был : O birçok yerde bulundu
+Употребление : Kullanım
+Сушить : Kurutmak
+Высушить : Kurutmak
+Посушить : Kısa süre kurutmak
+Сохнуть : Kurumak
+Высохнуть : Kurumak; tamamen kuruyup bitmek
+Мочить : Islatmak
+Намочить : Islatmak
+Мокнуть : Islanmak
+Промокнуть : Islanmak
+Утро : Sabah
+днём : Gündüz
+вечером : Akşam
+ночью : Gece
+в полдень/полночь : Öğlen/gece yarısı
+Метла : Süpürge
+Арбитр : Hakem
+День всех святых : Tüm Azizler Günü
+Развлекаться : Eğlenmek
+На каблуках : Topuklu ayakkabı (giyerken)
+Под каблуком : Kontrol altında (mecaz)
+Подкаблучник : Kılıbık
+Двенадцать часов : Saat on iki
+Пять минут первого : Saat on ikiyi beş geçiyor
+Десять минут второго : Saat biri on geçiyor
+Пятнадцать минут (или просто четверть) третьего : Saat ikiyi çeyrek geçiyor
+Двадцать минут четвёртого : Saat üçü yirmi geçiyor
+Двадцать пять минут пятого : Saat dördü yirmi beş geçiyor
+Полшестого, половина шестого, тридцать минут шестого : Saat beş buçuk; beşi otuz geçiyor
+Без двадцати пяти семь : Saat yediye yirmi beş var
+Без двадцати восемь : Saat sekize yirmi var
+Без четверти / пятнадцати девять : Saat dokuza çeyrek var
+Без десяти десять : Saat ona on var
+Без пяти одиннадцать : Saat on bire beş var
+Часы отстают : Saat geride
+Часы спешат : Saat ileride
+Часы стоят : Saat durdu
+Часы точные : Saat doğru
+Оставаться : Kalmak
+Остаться : Kalmak
+Пусть : Olsun, kalsın, yapsın...
+Правильно : Doğru
+Перемена : Ara, teneffüs
+Перерыв : Ara, teneffüs
+Перерывать : Altını üstüne getirmek; didik didik aramak
+Пророчество : Kehanet
+Наводнение : Sel
+Несмотря на ... : Rağmen
+Хотя : -e rağmen
+Чуть не : Az kalsın
+Авария : Kaza
+Бессонница : Uykusuzluk
+Растрогать : Duygulandırmak; duygusal olarak etkilemek
+Потерять сознание : Bilincini kaybetmek
+Время бежит : Zaman hızla geçiyor
+летит : Uçup gidiyor; hızla geçiyor
+Сверять время : Saati karşılaştırmak/kontrol etmek
+Ни разу : Bir kez bile (olumsuz cümlede); hiç
+Ни слова : Tek kelime etme
+Ни гроша : Parasız, 5 parasız
+Ни бе ни ме ни кукареку : Hiçbir şey bilmeyen/anlamayan; cevap veremeyen
+Ни богу свечка, ни чёрту кочерга : Bir şeyin veya kişinin önemsiz olması
+Ни пуха ни пера : Başarılar!
+Ни рыба ни мясо : Ne öyle ne böyle
+Ни души : Kimse yok
+Упасть в обморок : Bilincini kaybetmek, bayılmak
+Расходиться : Dağılmak
+Обрываться : Kopmak, kesilmek, yarıda kalmak
+Повышать : Yükseltmek
+Заваливать : Yığmak; çuvallamak
+Восхищаться : Hayranlık duymak
+Располагаться : Bulunmak, konumlanmak
+Ловить : Tutmak, yakalamak
+Опадать : Dökülmek, düşmek
+Желтеть : Sararmak
+Сообщать : Bildirmek
+Сказать : söylemek
+Написать : yazmak
+Гореть : Yanmak
+Успевать : Yetişmek
+Выполнять : Tamamlamak
+Поступить : Davranmak; hareket etmek; tutum sergilemek
+Холодать : Soğumak
+Дождаться : Olana kadar beklemek
+Занимать : İşgal etmek
+Занять : borç almak
+Нанимать : Kiralamak
+Наниматель : kiracı
+Мне не о чем говорить : Söyleyecek bir şeyim yok
+Чем дальше тем лучше : Ne kadar uzak o kadar iyi
+Пойдём лучше : Gitsek daha iyi olur
+Зависимость : Bağımlılık
+Ничего себе : Vay be
+Лучше бы : ... iyi olur
+Оптимист : optimist
+Пессимист : pessimist
+Кашлять : Öksürmek
+Почти выздоровел : Neredeyse iyileştim
+Душа компании : Her zaman iyi modda olan, herkesle iyi anlaşan
+Тихоня : İçine kapalı, başkalarıyla iletişimi zor olan
+Обжора : Yemeyi çok seven kimse
+Сплетник : Diğerlerinin özel yaşamı hakkında konuşmayı seven
+Сплетница : Diğerlerinin özel yaşamı hakkında konuşmayı seven
+Сплетня : Dedikodu
+Свой парень : Kolay muhabbet edilen kimse
+Зануда : Uzun ve sıkıcı şeyler hakkında konuşan kimse
+Душнила : Negatif, sıkıcı insan
+Карьерист : Kariyerini ve iş yaşamını en önde tutan kimse
+Пофигист : Umursamaz; hiçbir şeyi dert etmeyen kişi
+Авантюрист : Risk almayı ve yeni teklifleri seven kimse
+Домосед : Evcimen; evden çıkmayı sevmeyen kişi
+Тусовщик : Partileri, gece kulüplerini ve fazla insanı seven kişi
+Тусовщица : Partileri, gece kulüplerini ve fazla insanı seven kişi
+Подлиза : Patronuna veya başkasına kendini sevdirmeye çalışan kimse
+Болтун : Geveze; çok konuşan kişi
+Болтушка : Geveze; çok konuşan kişi
+Паникёр : Aşırı panikçi
+Мечтатель : Hayal dünyasında yaşayan kimse
+Труд : İş
+Умница : zeki kişi
+Волноваться : endişelenmek
+Юноша : genç adam
+Столетие : yüzyıl
+Фотографировать : Fotoğraf çekmek
+Извините : Affedersiniz
+Беседа : Sohbet
+Дурацкий : Aptalca
+Оценка : Değerlendirme
+Заметить : Fark etmek
+Спешить : Acele etmek
+Всякий : Her
+Выиграть : Kazanmak
+Разыскать : Bulmak
+Благодарю : Teşekkürler
+Мокрый : Islak
+Прекратить : Durdurmak
+Смелый : Cesur
+Смелый : Yürekli
+Абсолютно : Kesinlikle
+Знаменитый : Ünlü
+Вернуть : Geri vermek
+Необходимо : Gerekli
+Необходимо : Şart
+Отличный : Mükemmel
+Отличный : Harika
+Ужасный : Korkunç
+Ужасный : Berbat
+Немножко : Birazcık
+Секрет : Sır
+Скучно : Sıkıcı
+Весёлый : Neşeli
+Грустный : Üzgün
+Обратно : Geri
+Опять : Yeniden
+Конь : At
+Опубликовать : Yayınlamak
+Тратить : Harcamak
+Умереть : Ölmek
+Применять : Uygulamak
+Беда : Bela
+Праздновать : Kutlamak
+Прогуливать : Asmak
+Внезапно : Aniden
+Ремонтировать : Tamir etmek
+Ремонтировать : Onarmak
+Твёрдый : Sert
+Думать : Düşünmek
+Ссориться : Tartışmak
+Сердиться : Kızmak
+Вероятно : Muhtemel/olası; büyük olasılıkla
+Вероятно : Sanırım
+Разумеется : Elbette
+Сожалеть : Pişman olmak
+Я похож на маму, тем что у меня такой же характер : Aynı karaktere sahip olduğum için anneme benziyorum
+Сочувствовать : acısını paylaşmak; duygudaşlık göstermek; haline üzülmek
+Сочувствовать : acısını paylaşmak; duygudaşlık göstermek; haline üzülmek
+Отмывать деньги : Kara para aklamak
+Храпеть : Horlamak
+Драться : Kavga etmek; dövüşmek
+Отбывать наказание : Ceza çekmek
+Охотиться : Avlanmak
+Молиться : Dua etmek
+Гостеприимные : Misafirperver
+Супруг : Eş
+Гонщик : Yarışçı
+Пастух : Çoban
+Стадо : Sürü
+Пастбище : Otlak alanı
+Пастбище : mera
+Аптечка : İlk yardım kiti
+Интриговать : Merak uyandırmak
+Интриговать : ilgi çekmek
+Замешательство : Şaşkınlık
+Замешательство : ne yapacağını bilememe
+Уточнить : Açıklığa kavuşturmak
+Уточнить : kesinleştirmek
+Уточнить : netleştirmek
+Суета : Telaş
+Суета : acele
+Соболезновать : Baş sağlığı dilemek
+Содеянное : İşlenen
+Содеянное : yapılan
+Вредное : Zararlı
+Коммуналка : Ortak daire
+Кто не работает : Çalışmayana yemek yok
+тот не ест : Çalışmayana yemek yok
+Кружка : Kupa
+Кружка : Kupa
+Придаёт настроение : Keyif veriyor
+Как минимум : En az...
+Кисель : Nişastayla koyulaştırılmış meyveli tatlı/içecek; kisel
+Жидкий : Sıvı
+Тошнить : Midesi bulanmak; kusacak gibi olmak
+Грант : Hibe
+Грант : burs
+Изжога : mide ekşimesi; mide yanması
+Изжога : mide ekşimesi; mide yanması
+...-нибудь : Soru cümlesi ve ricalarda kullanılır
+...-то : Belirli fakat bilinmeyen bir şeyi belirtir
+С прилагательного на глагол : Sıfattan Fiile
+Худой : zayıf
+Толстый : Şişman
+Бледный : Solgun
+Бледный : Soluk
+Красный : Kırmızı
+Молодой : Genç
+Старый : Yaşlı
+Рано или поздно : Eninde sonunda
+Обязательно : İlle
+Обязательно : mutlaka
+Обязательно : zorunlu
+Не отвлекаю тебя : Seni tutmayayım, alıkoymayayım
+Хорошей поездки : İyi yolculuklar
+Жаловаться : Şikayet etmek
+Поправляйся : Geçmiş olsun
+Мне становится : Bana oluyor..., hissediyorum
+Всё равно : Fark etmez; yine de
+Наладить : Yoluna koymak; düzene sokmak; kurmak/iyileştirmek
+Радоваться : Sevinmek
+Занимать : Ödünç almak
+Завтраками меня не корми : Beni boş laflarla doyurma
+Выражение : İfade
+Выражение : ifade
+Время как песок сквозь пальцы : Zaman parmakların arasından kum gibi akıp gider
+В противном случае : Aksi takdirde
+Вероятность : Olasılık
+Возможность : İmkân; olanak
+Именно так : Aynen öyle
+Естественно : Doğal olarak
+Естественно : tabii
+Без сомнения : Şüphesiz
+Определённо : Kesinlikle
+Жаворонок : Erken kalkan
+Сова : Geç kalkan
+Не в моём вкусе : Bana uygun değil
+Мне не по душе : Hoşuma gitmiyor
+Очевидно : Açıkça; belli ki
+То есть : Yani
+Вряд ли... : Pek olası değil
+Случайно : Rastgele
+Постоянно : Sürekli
+Расчёска : Tarak
+Как будто, словно : -mış, -miş gibi
+Впечатление : İzlenim
+Скорее всего : Çok büyük olasılıkla
+Расход : Gider
+Доход : Gelir
+Тебе придётся : Mecbur kalacaksın; yapmak zorunda kalacaksın
+Что касается : konusuna gelince
+В связи с этим : Bununla bağlantılı olarak; bu nedenle
+Занятия : Dersler
+Заселиться : Yerleşmek
+Новоселье : Eve taşınma partisi
+Совершить преступление : Suç işlemek
+Терпеливый : Sabırlı
+Терпеть : Sabretmek, dayanmak
+Пузо : Göbek
+Пропадать : Kaybolmak
+Ни разу : Bir kez bile; hiç
+Ни шагу : Bir adım bile atma; yerinden kıpırdama
+Ни чёрта : Hiçbir şey, zerre kadar
+Ни капли : Zerre kadar
+Досрочно : Vaktinden önce
+Совершить : Yapmak
+Следует : Gerekiyor
+Существовать : Var olmak
+Выполнить : Gerçekleştirmek
+Находиться : Bulunmak
+Приобрести : Edinmek; elde etmek; satın almak
+Срок : Süre
+Прибыть : Varmak
+Проживать : İkamet etmek
+Оплачивать : Ödemek
+Предъявлять : Sunmak
+Предоставить : Sağlamak
+Присутствовать : Katılmak; hazır bulunmak; mevcut olmak
+Отсутствовать : Bulunmamak
+Иметь : Sahip olmak
+Следовательно : Dolayısıyla
+Каков : Nasıl
+Сопоставить : Karşılaştırmak
+Либо : Ya da
+В первую очередь : Öncelikle
+Затем : Sonra
+А также : Ve ayrıca
+Каким образом : Nasıl
+Таким образом : Böylece
+В заключение : Sonuç olarak
+Большое количество : Çok sayıda; büyük miktarda
+Улучшать : İyileştirmek
+Ухудшать : Kötüleştirmek
+Доходы : Gelirler
+Разрешается : İzin verilir
+Запрещается : Yasaklanır
+Расширяется : Genişler
+Сужается : Daralır
+Усилить : Güçlendirmek
+Ослабить : Zayıflatmak; gücünü azaltmak
+Способствовать : Katkıda bulunmak
+Препятствовать : Engellemek
+Означает : Anlamına gelir
+Расходовать : Harcamak
+Происходить : Meydana gelmek
+Завершающий : Son
+Преимущественно : Ağırlıklı olarak
+Обнаружить : Keşfetmek
+Незначительный : Önemsiz
+Многочисленные : Çok sayıda
+Обеспечивать : Sağlamak
+Осознавать : Farkına varmak
+Разрешить : İzin vermek
+Позволить : İzin vermek
+Производить : üretmek
+Изготовлять : imal etmek
+Вырабатывать : geliştirmek
+Принадлежать : ait olmak
+Владеть : Sahip olmak
+Осуществлять : gerçekleştirmek
+Несомненно : şüphesiz
+Безусловно : Kesinlikle; şüphesiz
+Я считаю : Bence
+По моему мнению : Görüşüme göre
+На мой взгляд : Görüşüme göre
+С моей точки зрения : Benim bakış açıma göre
+Видимо : görünüşe bakılırsa
+Разучиться : Beceriyi yitirmek
+Сомневаться : Şüphe duymak
+Отвыкнуть : Alışkanlığı bırakmak
+Отучить : Bir alışkanlıktan vazgeçirmek
+Приучить : Alıştırmak
+Вдоль : Boyunca
+Поперёк : Karşıdan karşıya
+Понизить : Azaltmak
+Повысить : Artırmak
+Наименее : En az
+Наиболее : En çok
+Специалист : Uzman
+Любитель : Amatör, meraklı
+Трезвый : Ayık
+Снаружи : Dışarıda
+Обвинять : Suçlamak
+Пересекать : Geçmek; karşıya geçmek; kesmek/çaprazlamak
+Преобладать : Ağır basmak; çoğunlukta olmak
+Превышать : Aşmak; üstünde olmak
+Заявлять : Beyan etmek; açıklamak
+Нарастать : Artmak; güçlenmek
+Отдельные : Bazı; ayrı ayrı
+Ведущий : Önde gelen; başlıca
+Имущество : Mülk; mal varlığı
+Материальный уровень : Maddi düzey; refah seviyesi
+Ежедневно : Her gün; günlük olarak
+Недостаточно : Yetersiz
+Кроме того : Buna ek olarak; ayrıca
+Предусматривать : Öngörmek; öngörülmek (sözleşmede)
+Основной : Temel; esas (kanun)
+Согласиться : Hemfikir olmak
+Возразить : İtiraz etmek
+Расстаться : Ayrılmak
+Союзник : Müttefik
+Противник : Düşman
+Положительный : Olumlu
+Отрицательный : Olumsuz
+Нарушать : İhlal etmek
+Соблюдать : Kurala uymak
+Застегнуть : Düğme iliklemek; fermuar çekmek
+Расстегнуть : Açmak
+Завернуть : Sarmak, paketlemek
+Развернуть : Açmak, çözmek
+Сходство : Benzerlik
+Нахальный : Küstah, arsız
+Жадный : Açgözlü
+Щедрый : Cömert
+Подешеветь : Ucuzlamak
+Подорожать : Pahalılaşmak
+Сытый : Tok
+Сзади : Arkada
+Трусливый : Korkak
+Кислый : Ekşi
+Толстый : Kalın
+Тонкий : İnce
+Радость : Neşe
+Грусть : Hüzün
+Молодость : Gençlik
+Старость : Yaşlılık
+Грязь : Kir
+Чистота : Temizlik
+Трудолюбие : Çalışkanlık
+Лень : Tembellik
+Спуск : İniş
+Подъём : Yokuş
+Подъём : Çıkış
+Соблюдение : Uyma
+Нарушение : İhlal
+Согласие : Rıza
+Согласие : Onay
+Отказ : Ret; reddetme
+Отказ : Ret; reddetme
+Отказ : Ret; reddetme; vazgeçme/bırakma
+Холод : Soğuk
+Жара : Sıcak
+Любовь : Sevgi
+Ненависть : Nefret
+Жизнь : Yaşam
+Смерть : Ölüm
+Сила : Güç
+Слабость : Zayıflık
+Голод : Açlık
+Сытость : Tokluk
+Появление - Исчезновение : Ortaya çıkma - Kaybolma
+Продажа : Satış
+Покупка : Alış
+Ссора : Kavga
+Примирение : Barışma
+Разрешение : İzin
+Запрещение : Yasaklama
+Широкий : Geniş
+Узкий : Dar
+Вслух : Sesli
+Про себя : İçinden
+Хвалить : Övmek
+Ссориться : Tartışmak
+Мириться : Barışmak
+Крупный : Büyük
+Мелкий : Küçük
+Мягкость : Yumuşaklık
+Твёрдость : Sertlik
+Встреча : Buluşma
+Расставание : Ayrılık
+Лёгкость : Hafiflik
+Тяжесть : Ağırlık
+Верх : Üst
+Низ : Alt
+Сладость : Tatlılık
+Горечь : Acılık
+Польза : Yarar
+Вред : Zarar
+Ум : Akıl
+Глупость : Aptallık
+Скромность : Alçakgönüllülük
+Нахальство : Yüzsüzlük
+Жадность : Açgözlülük
+Щедрость : Cömertlik
+Выигрыш : Kazanç
+Проигрыш : Kayıp
+Тёща - Свекровь : Kayınvalide
+Похвала : Övgü
+Осуждение : Kınama
+Смех : Gülme
+Слёзы : Gözyaşı
+Нападение : Saldırı
+Оборона : Savunma
+Свет : Işık
+Темнота : Karanlık
+Пьянство : Sarhoşluk
+Трезвость : Ayıklık
+Отсутствие : Yokluk
+Присутствие : Mevcudiyet
+Опровергать : Yalanlamak
+Опровергать : çürütmek
+Подтверждать : Doğrulamak
+Подтверждать : teyit etmek
+Прямо : Doğrudan; dosdoğru
+Косвенно : Dolaylı yoldan
+Государственный : Kamu
+Частный : Özel
+Заочно : Uzaktan
+Очно : Yüz yüze
+Нарочно : Bilerek
+Нечаянно : Yanlışlıkla
+Холодное оружие : Soğuk silah
+Огнестрельное : Ateşli silah
+Строптивый : İnatçı
+Покладистый : Uyumlu
+Мутный : Bulanık
+Прозрачный : Berrak
+Племянник : Yeğen
+Племянница : Kız yeğen
+Достоинство : Avantaj
+Недостаток : Dezavantaj
+Рай : Cennet
+Ад : Cehennem
+Усилить : Güçlendirmek
+Ослабить : Zayıflatmak
+Отсутствовать : Olmamak
+Присутствовать : Olmak
+Соединять : Bağlamak
+Разъединять : Bağlantıyı kesmek
+Наступать : Basmak
+Отступать : Geri çekilmek
+Внешний : Harici
+Внутренний : İç
+Черновик : Taslak
+Чистовик : Temize çekilmiş son nüsha
+Чистить : Temizlemek
+Пачкать : Kirletmek
+Густой : Yoğun; koyu
+Жидкий : Sıvı
+В тени : Gölgede
+На солнце : Güneşte
+Солнечный : Güneşli
+Дождливый : Yağmurlu
+Красавец : Yakışıklı; yakışıklı adam
+Урод : Ucube
+Простой : Basit
+Цветной : Renkli
+Автомат : Otomat
+Проанализировать : Analiz etmek
+Анализировать : Analiz etmek
+Ансамбль : Topluluk
+Ангина : Anjin; bademcik iltihabı
+Аспирант : Doktora öğrencisi
+аспирантка : Doktora öğrencisi
+Аспирантура : Doktora eğitimi
+Аудитория : Sınıf
+Афиша : Afiş
+Бандероль : Paket
+Банка : Kavanoz
+Батон : Somun ekmek
+Беречь : Korumak
+сберечь : Korumak
+Беспокоиться : Endişelenmek
+Бланк : Form
+Ближе : Daha yakın
+Борода : Sakal
+Бороться : Savaşmak
+Борьба : Mücadele
+Булочка : Çörek
+Булочная : Fırın
+Бывший : Ex...
+Вверху : Yukarıda
+Вежливый : Kibar
+Велик : Bisiklet
+Верхний : Üst
+Верхний : Üstteki
+Вести себя : Davranmak
+Вести себя : Davranmak
+Власть : İktidar; güç
+Власть : Otorite; yetki
+Вниз : Aşağı
+Вниз : Aşağıya
+Внизу : Altında
+Внизу : Aşağıda
+Внутри : İçinde
+Вовремя : Zamanında
+Воевать : Savaşmak
+Воздух : Hava
+Вокзал : Tren İstasyonu
+Воспитание : Eğitim
+Воспитывать : Yetiştirmek
+Воспитывать : Eğitmek, yetiştirmek
+Впервые : İlk kez
+Вслух : Yüksek sesle
+Вчерашний : Dünkü
+Вызывать : Çağırmak
+вызвать : Çağırmak
+Выражать : İfade etmek
+Выражать : İfade etmek
+Высший : En yüksek
+Параша : Bok kabı
+Потише : Daha sessiz!
+Неудивительно : Şaşırtıcı değil, doğal olarak
+Представить : Sunmak
+Представить : tanıtmak
+Замечательный : Harika; muhteşem
+Замечательный : dikkate değer
+Ненадежный : Güvenilmez
+Разочарованный : Hayal kırıklığına uğramış
+Ясный : Açık
+Ясный : belirgin
+Странный : Tuhaf
+Так оно и есть : Bu işler böyle
+Особенно : Özellikle
+Анекдот : Fıkra
+Развлекательный : Eğlenceli
+Удивленный : Şaşırmış; şaşkın
+Инфаркт : Kalp krizi
+Это ниже твоего достоинства : Bu sana yakışmadı
+Предполагать : Varsaymak; tahmin etmek
+Предполагать : fikir yürütmek
+Великие умы думают одинаково : Aklın yolu bir
+Один в поле не воин : Bir elin nesi var iki elin sesi var
+Мудрый : Bilge
+Предположить : Sanmak
+Цена : Bedel
+Ценник : fiyat etiketi
+Благо : Fayda, iyilik
+Избегать : Kaçınmak
+Ограбление : Soygun
+Копейка рубль бережёт : Damlaya damlaya göl olur
+Процедура : Prosedür, işlem
+Отлежаться : Dinlenmek (hastanın)
+Доказательство : Kanıt
+Любой ценой : Bedeli ne olursa olsun
+Алиби : Alibi
+Население : Nüfus
+Фонд : Fon
+Влиятельный : Etkili; nüfuzlu
+В это время : Bu zamanda, bu esnada
+В эти дни : Bugünlerde
+В последнее время : Son zamanlarda
+Чёткий : Net; açık
+ровный : Düz; eşit
+Угарный : Komik
+От души : İçtenlikle
+По-братски : Kardeşçe
+не в падлу : Üşenmeden
+Жрать охота : Karnım aç
+Чё как сам ваще : Naber nasılsın
+Развивать навыки : Becerileri geliştirmek
+Разбираться : Bir işten anlamak
+Отличаться : Farklı olmak (он мало чем отличается от тебя)
+Застенчивый : Utangaç
+Один умножить на ноль равно ноль : Bir çarpı sıfır sıfıra eşittir
+Чётные и нечётные : Çift ve tek sayılar
+Круг : Daire
+Квадрат : Kare
+Баранина : Koyun / kuzu eti
+Индейка : Hindi
+Зелень : Yeşillik
+Капуста : Lahana
+Свёкла : Pancar
+Баклажан : Patlıcan
+Чеснок : Sarımsak
+Шпинат : Ispanak
+Ягоды : Yemiş
+Дыня : Kavun
+Персик : Şeftali
+Абрикос : Kayısı
+Клубника : Çilek
+Какая картинка! : Ne güzel bir resim!
+Кнопка : Tuş
+Кнопка : buton
+Во время... : ... sırasında; ... esnasında
+Переплатить : Fazla ödemek
+Выспаться : Uykusunu almak
+Проспать : fazla uyumak; uyuyup bir şeyi kaçırmak
+Раздумать : Vazgeçmek
+Раздумать : fikir değiştirmek
+Жесть : Vay be; çok fena!
+Ржака : Çok komik; kopmalık
+Дерьмо : Bok; pislik
+Мудак : Göt herif; pislik
+Ублюдок : Piç; alçak
+Хуйня : Saçmalık; boktan şey
+Осёл : Eşek; aptal
+Пизда : Am; amcık
+Писька : Kuku; çocuk dilinde cinsel organ
+Говно : Bok; pislik
+Урод : Ucube
+Впереди : Önde
+Слева : Solda
+Справа : Sağda
+Вверх : Yukarıya
+Вперёд : İleriye
+Вперёд : öne
+Назад : Geriye
+Назад : arkaya
+Налево : Sola
+Направо : Sağa
+Нижний : Alt
+Нижний : alttaki
+Позже : Sonra
+Прикиньте : Düşünsenize
+Перед... : ...-in önünde; ...-den önce
+Перед... : ...-den önce
+Усы : Bıyık
+Подобные : Benzer
+Подобные : bu tarz
+Крутиться на языке : Dilimin ucunda
+Балдеж : Keyif
+Балдеж : Zevk
+Не только... но... : Sadece ... değil, ... da
+Положи руки в карман : Ellerini cebine koy
+А ты кем устраиваешься? : Sen ne olarak işe giriyorsun?
+А : Ama; oysa; ise
+Мероприятие : Etkinlik
+Нам нечего терять : Kaybedecek hiçbir şeyimiz yok
+говорить : Konuşmak; söylemek
+О том : Hakkında
+Легко запутаться : Kafan kolayca karışabilir
+В течение... : Süresince, boyunca
+Перед тем как : ...-meden önce
+В общем : Kısaca, özetle
+В наши дни : Günümüzde
+Беседовать : Sohbet etmek
+Бить : Vurmak
+Бить : dövmek
+Бриться : Sakal tıraşı olmak
+Бросать : Atmak
+Бывать : Olmak
+Возражать : İtiraz etmek
+Выбивать : Vurarak çıkarmak/sökmek; kırıp çıkarmak
+Вызывать : Çağırmak
+Вызывать : neden olmak
+Выполнять : Yerine getirmek
+Выполнять : gerçekleştirmek
+Грустить : Hüzünlenmek
+Добавить : Eklemek
+Доказать : Kanıtlamak
+Доказать : ispat etmek
+Допустим : Düşünelim ki, varsayalım
+Ебануть : S*kmek
+Забрать : Almak
+Заважничать : Hava atmak
+Зависеть : ...-e bağlı olmak
+Замедлять : Yavaşlatmak
+Занять : Yer kaplamak; meşgul etmek; (birinden) borç/ödünç almak; (konuşma dilinde birine) borç vermek
+Конвертировать : Dönüştürmek
+Леденеть : Donmak
+Лидерствовать : Liderlik yapmak
+Манить : İşaret vererek çağırmak
+Надоедать : Rahatsız etmek
+Надоедать : Bıktırmak
+Намекать : İma etmek
+Намекать : çıtlatmak
+Обижаться : Darılmak
+Обижаться : kırılmak
+Обмануть : Aldatmak
+обманывать : Aldatmak
+Обозначать : Belirtmek; ifade etmek
+Одобрять : Onaylamak
+Организовать : Organize etmek
+Останавливать : Durdurmak
+остановить : Durdurmak
+Отвыкать : Alışkanlıktan vazgeçmek
+Отказывать : Reddetmek
+отказать : Reddetmek
+Отпускать : Salmak
+отпустить : salıvermek
+Отражать : Yansıtmak; geri püskürtmek
+Отражать : yansıtmak
+Охладеть : Birinden, bir şeyden soğumak
+Ошибаться : Hata yapmak
+Ошибаться : yanılmak
+Переместить : Yerini değiştirmek
+Побеждать : Galip gelmek
+победить : Galip gelmek
+Поддерживать : Desteklemek
+Подозревать : Şüphelenmek
+Подтверждать : Doğrulamak
+Подтверждать : teyit etmek
+Покарать : Cezalandırmak
+Покорять : Fethetmek
+Посещать : Ziyaret etmek
+Посоветовать : Tavsiyede bulunmak
+Потешить : Eğlendirmek
+Практиковать : Pratik yapmak
+Предлагать : Önermek
+Предлагать : teklif etmek
+Прибывать : Gelmek
+прибыть : varmak
+Привыкать : Alışmak
+Приставать : Musallat olmak
+Приставать : yapışmak
+Приучать : Alıştırmak
+Приучать : eğitmek
+Проснуться : Uyanmak
+Прыгать : Zıplamak
+прыгнуть : Zıplamak
+Увеличивать : Arttırmak
+увеличить : Arttırmak
+Угощать : İkram etmek
+Уговорить : Razı etmek
+Угрожать : Tehdit etmek
+Ударить : Vurmak
+Умолять : Yalvarmak
+Уничтожить : Yok etmek
+Упадать : Düşmek
+Упоминать : Anmak
+Управлять : Yönetmek
+Ускорять : Hızlandırmak
+Уснуть : Uykuya dalmak
+Устраивать : Kurmak
+Финансировать : Finanse etmek
+Хвалить : Övmek
+Чихать : Hapşırmak
+Чихать : Hapşırmak
+Разбивать : Kırmak
+Разбивать : mahvetmek
+Разбудить : Uyandırmak
+Разделять : Bölmek
+Разрушать : Yıkmak
+Разрушать : mahvetmek
+Распускать : Azat etmek
+Рассмотреть : Gözden geçirmek
+Рассмотреть : incelemek
+Расчувствоваться : Duygulanmak
+Связать : Bağlamak
+Связать : Birleştirmek
+Скачать : İndirmek
+Скачать : İndirmek
+Следовать : Takip etmek
+Соблюдать : Uymak
+Сокращать : Azaltmak
+Суметь : Yapabilmek
+Суметь : Başarabilmek
+Соскучиться : Özlemek
+Состояться : Yapılmak
+Спорить : Tartışmak
+Спорить : münakaşa etmek
+Справиться : Başa çıkmak
+Строить : İnşa etmek
+Тренироваться : Antrenman yapmak
+Торговаться : Pazarlık etmek
+Отечество : Vatan
+Пытаться : denemek
+Различные : farklı
+Лентяй : Tembel
+Обманывать : Aldatmak; hile yapmak
+Ишак : Eşek
+Бросить : atmak
+Не женат : bekar
+Выздоравливай : Geçmiş olsun
+Поправляйся : Geçmiş olsun
+Возникнуть : ortaya çıkmak
+Битва : savaş
+Ерунда : Saçmalık
+Мелочи : Önemsiz şeyler; ufak tefek şeyler
+Позитивный : olumlu
+Негативный : Negatif
+Красть : Çalmak
+Скрываться : Saklanmak
+Неаккуратный : Özensiz
+Защищаться : kendini savunmak; korunmak
+Восторгаться : Hayran kalmak
+Восторг : Coşku
+Страдать : Acı çekmek
+Различие : Fark
+Истина : Gerçek
+Мощный : Güçlü
+Ощущать : Hissetmek
+Нечто : Bir şey
+Хранить : Saklamak
+Бодрый : Dinç
+Шалить : Yaramazlık yapmak
+Крепкий : Sağlam
+Отнять : Birinin elinden bir şey almak
+Передник : Mutfak önlüğü
+Поражаться : Şaşırmak
+Мертвец : Ceset
+Всевозможные : Her türlü
+Убавить : Azaltmak
+Жадный : Açgözlü
+Старательный : Çalışkan
+Трудолюбивый : Çalışkan
+Прогуливать : Kaytarmak
+Отремонтировать : Tamir etmek
+Подумать : Düşünmek
+Поссориться : Kavga etmek
+Предпочитать : Tercih etmek
+Лениться : Üşenmek
+Оглавление : İçindekiler
+Эпоха : Çağ
+Чудо : mucize
+Спелый : olgun
+Очевидец : görgü tanığı
+Навестить : Ziyaret etmek
+Произойти : Meydana gelmek
+щадить : acımak, merhamet etmek
+Оглянуться : geriye bakmak
+Чародей : büyücü
+Изображать : tasvir etmek, betimlemek
+Популярность : Popülerlik
+Государь : Hükümdar
+Хлебосольный : Misafirperver
+Лакей : Uşak
+Разрешать : İzin vermek
+Остерегаться : Sakınmak
+Искоренить : Kökünü kazımak
+Похитить : Kaçırmak
+Отпирать : Kilidini açmak
+Запирать : Kilitlemek
+Бодрствовать : Uyanık kalmak
+Пища : Yiyecek
+Откровенно : Açıkçası
+Предугадать : Öngörmek
+Творец : Yaratıcı
+Отвинтить : Sökmek
+Наклониться : Eğilmek
+Благополучно : Sağ salim
+Перебинтовать : Sargılamak
+Меткий : İsabetli
+Упрек : Sitem
+Слишком : Fazla
+Шиш : Hiçbir şey
+Веснушки : Çiller
+Инопланетянин : Uzaylı
+Хмурый : Asık suratlı
+Обнаженный : Çıplak
+Предел : Sınır
+Шофер : Şoför
+Озабочен : Endişeli
+Крутить : Çevirmek
+Крутиться : Dönmek
+Погасить : Söndürmek
+Заурядный : Sıradan
+Банкнота : Banknot
+Башмак : Ayakkabı
+Взобраться : Tırmanmak
+Статный : Gösterişli
+Трость : Baston
+Новобрачные : Yeni evliler
+Сиять : Parlamak
+Сотовый : Cep telefonu
+Ведущий : Sunucu
+Парадная : Bina girişi
+Набирать : Tuşlamak
+Непреложный : Değişmez
+Следить : İzlemek
+Разгадывать : Çözmek
+Осуществиться : Gerçekleşmek
+Густой : Yoğun
+Густой : Koyu
+Сломался : Bozuldu
+Испытывать : Deneyimlemek
+Одолжить : Ödünç vermek
+Приветствовать : Selamlamak
+Приветствовать : Karşılamak
+Отпустить : Bırakmak
+Миновать : Geçmek
+Раздувать : Şişirmek
+Растительное : Bitkisel
+Вырвать : Koparmak
+Лютый : Şiddetli
+Лютый : Acımasız
+Лютый : Sert
+Законченный : Bitmiş
+Законченный : Tamamlanmış
+Стоматолог : Diş hekimi
+Пресса : Basın
+Миф : Efsane
+Миф : Mit
+Континент : Kıta
+Хаотичный : Kaotik
+Хаотичный : Karmaşık
+Орнамент : Süs
+Монстр : Canavar
+Мораль : Ahlak
+Контрастный : Zıt
+Территория : Bölge
+Стаж : Kıdem; çalışma süresi
+Ограда : Çit
+Отрок : Genç
+Хилый : Cılız
+Ущерб : Zarar
+Поглощать : Soğurmak; yutmak/içine çekmek; tüketmek; tamamen meşgul etmek
+Кабала : Tutsaklık
+Кабала : Kölelik
+Переборщить : Aşırıya kaçmak
+Сладкоежка : Tatlıya düşkün
+Оракул : Kahin
+Кровля : Çatı
+Плоть : Et
+Плоть : Beden
+Благосостояние : Refah
+Прикалываться : Şakalaşmak
+Прикалываться : Dalga geçmek
+Путник : Yolcu
+Подлец : Alçak
+Приятель : Dost
+Приятель : Arkadaş
+Прохладно : Serin
+Способный : Yetenekli
+Шептать : Fısıldamak
+Недолюбливать : Hoşlanmamak
+Напевать : Mırıldanmak
+Просить : İstemek
+Влажный : Nemli
+Неприятность : Sıkıntı
+Безразличный : Kayıtsız
+Смеяться : Gülmek
+Плакать : Ağlamak
+Кричать : Bağırmak
+Дремать : Uyuklamak; kestirmek
+Маленький : Küçük
+Маленький : Ufak
+Несчастье : Talihsizlik; felaket
+Беда : Dert; bela
+Дождь : Yağmur
+Талантливый : Yetenekli
+Удивляться : Şaşırmak
+Удивляться : Hayret etmek
+Глупенький : Aptal
+Умненький : Akıllı
+Обеспокоен : Kaygılı
+Беспокойство : Endişe
+Волнение : Heyecan
+Бросать : Atmak
+Кидать : Fırlatmak
+Бедный : Fakir
+Небогатый : Yoksul
+Ужас : Dehşet
+Изумляться : Şaşırmak; hayrete düşmek
+Карликовый : Cüce
+Страсть : Tutku
+Любовь : Aşk
+Возмущение : İnfial; öfke; kızgınlık
+Недовольство : Memnuniyetsizlik
+Хладнокровно : Soğukkanlılıkla
+Спокойно : Sakin bir şekilde
+Сатира : Hiciv; yergi
+Юмор : Mizah
+Схватить : Yakalamak
+Взять : Almak
+Унывать : Üzülmek
+Грустить : Üzülmek
+Печалиться : Kederlenmek
+Конгресс : Kongre
+Конференция : Konferans
+Мрак : Karanlık
+Темнота : Karanlık
+Сожрать : (argo/kaba) Tıkınmak; mideye indirmek
+Съесть : Yemek
+Свалиться : Devrilmek
+Рухнуть : Çökmek
+Упасть : Düşmek
+Властелин : Efendi
+Повелитель : Hükümdar
+Порок : Kusur; kötü huy; ahlaksızlık
+Недостаток : Eksiklik
+Вскочить : Sıçramak
+Встать : Kalkmak
+Ярость : Öfke
+Бешенство : Cinnet
+Гнев : Gazap
+Раболепствовать : Yaltaklanmak
+Пресмыкаться : Yaltaklanmak
+Унижаться : Kendini aşağılamak; alçalmak
+Заискивать : Yaltaklanmak
+Боготворить : Tapmak
+Обожать : Bayılmak
+Антипатия : Antipati
+Неприязнь : Antipati; soğukluk
+Жестокий : Zalim
+Злой : Kötü
+Обличать : İfşa etmek
+Осуждать : Kınamak
+Элементарно : Basitçe
+Просто : Basit; sadece; sırf
+Коллекционировать : Koleksiyon yapmak
+Собирать : Toplamak
+Модель : Model
+Образец : Örnek
+Демонстрировать : Göstermek
+Показывать : Göstermek
+Фраза : İfade
+Предложение : Cümle
+Фрагмент : Parça
+Отрывок : Alıntı
+Идея : Fikir
+Мысль : Düşünce
+Интенсивный : Yoğun
+Усиленно : Yoğun bir şekilde
+Гид : Rehber
+Экскурсовод : Rehber
+Оптимальный : En uygun
+Лучший : En iyi
+Уик-энд : Hafta sonu
+Выходные : Hafta sonu
+Флексия : Çekim
+Окончание : Ek
+Персонаж : Karakter
+Герой : Kahraman
+Сюжет : Konu
+Содержание : İçerik
+Аббревиатура : Kısaltma
+Сокращение : Kısaltma
+Диалект : Diyalekt
+Наречие : Zarf
+Дискуссия : Tartışma
+Спор : Tartışma
+Рациональный : Rasyonel
+Разумный : Mantıklı
+Приемлемый : Makul
+Пунктуальный : Dakik
+Точный : Kesin
+Обязательный : Zorunlu
+Коммунальный : Belediye/şehir hizmetleriyle ilgili; komünal/ortak kullanıma ait
+Общественный : Kamu
+Суммировать : Özetlemek
+Сложить : Toplamak
+Варьировать : Değişmek
+Транспортировка : Taşıma
+Факультативный : Seçmeli
+Виртуальный : Sanal
+Дилетант : Amatör
+Миграция : Göç
+Аргументы : Argümanlar
+Компетентный : Yetkin
+Прогресс : İlerleme
+Прогресс : Gelişme
+Ирония : İroni
+Резерв : Rezerv
+Оригинал : Orijinal
+Конфликт : Çatışma
+Регресс : Gerileme
+Псевдоним : Takma ad
+Компенсировать : Telafi etmek
+Претензия : İddia
+Компромисс : Uzlaşma
+Гарантироваться : Garanti edilmek
+Гарантироваться : Güvence verilmek
+Коммуникация : İletişim
+Ландшафт : Manzara
+Фантазия : Fantezi
+Инцидент : Olay
+Сфера : Alan
+Утрировать : Abartmak
+Инициатива : Girişim
+Инициатива : Teşebbüs
+Инициатор : başlatıcı
+Инициатор : tetikleyici
+Инициатор : azmettirici
+Эрудиция : Bilgi
+Габарит : Boyut
+Ситуация : Durum
+Комплименты : İltifatlar
+Тезисы : Tezler
+Экстремальный : Aşırı
+Магия : Büyü
+Резонанс : Yankı
+Критерий : Kriter
+Экстренный : acil
+Экстренный : Acil; ivedi
+Инфекционный : Bulaşıcı
+Шарм : cazibe
+Шарм : çekicilik
+Котироваться : Değer görmek
+Суицид : intihar
+Прецедент : emsal
+Экспромт : hazırlık olmadan
+Поскольку : çünkü, -diği için
+Иными словами : başka bir deyişle
+Вознаграждение : ödül
+По причине чего-либо : bir şey yüzünden, nedeniyle
+Ограничиться чем-либо : yetinmek
+Содержаться : Bulunmak/içerilmek
+Существенно : önemli ölçüde
+Оказывать что-либо : yardım/etki göstermek
+Согласно чему-либо : bir şeye göre
+Помимо чего-либо : -e ek olarak, -in yanı sıra
+В качестве чего-либо : bir şey olarak
+Судя по : -e bakılırsa, -e dayanarak
+Наряду с чем-либо : -in yanı sıra, ile birlikte
+Относительно чего-либо : hakkında, -e ilişkin, -e kıyasla
+Ввиду чего-либо : nedeniyle, yüzden
+В связи с чем-либо : Bağlantılı olarak, sebebiyle
+Вследствие того что : ... nedeniyle; bunun sonucunda (kitabî/resmî)
+В частности : bilhassa
+Нога : bacak
+Ножка : bacak
+Ножечка : bacak
+Река : nehir
+Речка : nehir
+Речечка : nehir
+Конфета : şeker
+Конфетка : şeker
+Конфеточка : şeker
+Сумка : çanta
+Сумочка : çanta
+Улыбка : gülümseme
+Улыбочка : gülümseme
+Открытка : Kartpostal
+Открыточка : Küçük/sevimli kartpostal
+Карта : kart
+Карточка : kart
+Водка : vodka
+Водочка : vodka
+Лампа : lamba
+Лампочка : Ampul; küçük lamba
+Картошка : patates
+Картошечка : patates
+Подушка : yastık
+Подушечка : yastık
+Кошка : kedi
+Кошечка : kedi
+Книжка : kitap
+Книжечка : kitap
+Ложка : kaşık
+Ложечка : kaşık
+Билет : bilet
+Билетик : bilet
+Диктант : dikte
+Диктантик : Küçük/kısa dikte
+Словарь : sözlük
+Словарик : sözlük
+Текст : metin
+Текстик : metin
+Карандаш : kalem
+Карандашик : kalem
+Самолёт : uçak
+Самолётик : uçak
+Глаз : göz
+Глазик : göz
+Нос : burun
+Носик : burun
+Рот : ağız
+Ротик : ağız
+Зуб : diş
+Зубик : diş
+Автомобиль : araba
+Автомобильчик : araba
+Стул : sandalye
+Стульчик : sandalye
+Бокал : bardak
+Бокальчик : bardak
+Костюм : Takım elbise/kostüm
+Костюмчик : Küçük/sevimli takım elbise/kostüm
+Альбом : albüm
+Альбомчик : albüm
+Лимон : limon
+Лимончик : limon
+Апельсин : portakal
+Апельсинчик : portakal
+Ресторан : restoran
+Ресторанчик : restoran
+Трамвай : tramvay
+Трамвайчик : tramvay
+Город : şehir
+Городок : Küçük şehir/kasaba
+городочек : Küçük/sevimli kasaba
+Номер : numara
+Номерок : numara
+номерочек : numara
+Остров : ada
+Островок : Adacık; küçük ada
+островочек : Küçük/sevimli adacık
+Раз : kez
+Разок : kez
+разочек : kez
+Пирог : Turta; dolgulu fırın hamur işi
+Пирожок : İç dolgulu küçük hamur işi (piroşok)
+пирожочек : Çok küçük iç dolgulu hamur işi; piroşokun küçültme biçimi
+Друг : arkadaş
+Дружок : arkadaş
+дружочек : arkadaş
+День : gün
+Денёк : gün
+Денёчек : gün
+Час : Saat
+Часок : Saat
+часочек : Saat
+Месяц : Ay
+Месяцок : Ay
+месяцочек : Ay
+Чай : Çay
+Чаёк : Çay
+чаёчек : Çay
+Кофе : Kahve
+Кофеёк : Kahve
+Кофеёчек : Kahvecik; küçük/sevimli kahve
+Сахар : Şeker
+Сахарок : Şeker
+сахарочек : Şeker
+Артист : Sanatçı
+Артистка : Sanatçı
+Аспирант : Doktora öğrencisi
+Аспирантка : Doktora öğrencisi
+Магистрант : Yüksek lisans öğrencisi
+Магистрантка : Yüksek lisans öğrencisi
+Пианист : Piyanist
+Пианистка : Piyanist
+Умный : Akıllı/zeki
+Умнеть : Akıllanmak
+Танцовщик : Dansçı
+Разносчик : Dağıtıcı/seyyar satıcı
+Проситель : Ricacı
+Смотритель : Bekçi
+Мыслитель : Düşünür
+Слушатель : Dinleyici
+Спасатель : Kurtarıcı
+Двигатель : Motor
+Шутник : Şakacı
+Сборник : Derleme; seçki; derleme kitap
+Путешественник : Gezgin
+Обидчик : İnciten kişi; zorba
+Обманщик : Sahtekar, dolandırıcı
+Мойщик : Temizlikçi, bulaşıkçı
+Лётчик : Pilot
+Носильщик : Taşıyıcı
+Плательщик : Ödeyen; ödeme yapan kişi
+Морозильник : Buzluk
+Умывальник : Lavabo
+Кормилец : Ailenin geçimini sağlayan kişi
+Лежак : Şezlong
+Бегун : Koşucu
+Говорун : Geveze; çok konuşan kişi
+Молчун : Sessiz adam
+Знаток : Uzman
+Стрелок : Atıcı
+Заработок : Kazanç
+Каток : Buz pisti
+Пение : Şarkı Söyleme
+Заигрывание : Flörtleşme
+Курение : Sigara içme
+Волнение : Heyecan
+Уважение : Saygı
+Путешествие : Yolculuk
+Прибытие : Varış
+Предприятие : İşletme; kuruluş; fabrika
+Дружба : Arkadaşlık
+Просьба : İstek
+Ходьба : Yürüyüş
+Жалоба : Şikayet
+Беготня : Koşuşturma
+Инструктаж : Bilgilendirme/talimat
+Платёж : Ödeme
+Поступок : Davranış
+Жалость : Acıma
+Дурость : Aptallık
+Удача : Şans
+Удача : Talih
+Передача : Aktarım
+Передача : verme
+Ненависть : Nefret
+Выигрыш : Kazanç
+Проигрыш : Kayıp
+Божество : Tanrı/ilah
+Семейство : Aile
+Белок : Protein
+Желток : Yumurta sarısı
+Великан : Dev
+Левша : Solak
+Молодёжь : Gençlik
+Новатор : Yenilikçi
+Новатор : Yenilikçi
+Пустырь : Boş arsa
+Отчизна : Anavatan
+Доброта : İyilik
+Будущность : Gelecek
+Готовность : Hazır olma
+Общность : Birlik
+Молодость : Gençlik
+Знаменитость : Ünlü
+Большинство : Çoğunluk
+Меньшинство : Azınlık
+Братство : Kardeşlik
+Студенчество : Öğrencilik
+Спокойствие : Huzur
+Безработица : İşsizlik
+Быстрота : Çabukluk
+Новизна : Yenilik
+Дешевизна : Ucuzluk
+Дороговизна : Pahalılık
+Величина : Büyüklük
+Ширина : Genişlik
+Вышина : Yükseklik
+Низина : Ova
+Злоба : Kin
+Чайник : Çaydanlık
+Колхозник : Kolhoz işçisi; kolhoz üyesi
+Справочник : Kılavuz
+Полдник : İkindi ara öğünü
+Медвежонок : Ayı yavrusu
+Двоечник : Kötü öğrenci
+Травник : Aktar
+Водопроводчик : Tesisatçı
+Моряк : Denizci
+Земляк : Hemşeri
+Циркач : Sirk sanatçısı
+Скрипач : Kemancı
+Силач : Güçlü adam
+Москвич : Moskovalı
+Киевлянин : Kievli
+Библиотекарь : Kütüphaneci
+Аптекарь : Eczacı
+Букварь : Alfabe kitabı
+Кассир : Kasiyer
+Практикант : Stajyer
+Хлебница : Ekmek kutusu
+Сахарница : Şekerlik
+Супница : Çorba kasesi
+Салатница : Salata kasesi
+Кофейня : Kafe
+Свинья : Domuz
+Баран : Koç; erkek koyun
+Вершина : Tepe, zirve
+Сердцевина : Çekirdek
+Сердцевина : Öz
+Курятина : Tavuk eti
+Ректорат : Rektörlük
+Деканат : Dekanlık
+Пассажирка : Kadın yolcu
+Пассажир : Erkek yolcu
+Хозяйка : Sahip (kadın)
+Хозяин : Sahip (erkek)
+Певица : Şarkıcı (kadın)
+Певец : Şarkıcı (erkek)
+Однофамилица : Aynı soyada sahip (kadın)
+Однофамилец : Aynı soyada sahip (erkek)
+Медведица : Dişi ayı
+Тигрица : Dişi kaplan
+Слушательница : Dinleyici (kadın)
+Богиня : Tanrıça
+Стюардесса : Hostes
+Директриса : Müdire
+Удаться : Başarılı olmak
+Гордиться : Gurur duymak
+Понадобиться : Gerekmek; gerekli olmak
+Смеркаться : Kararmak
+Нездоровиться : kendini iyi hissetmemek; rahatsız hissetmek
+Дальний : Uzak
+Примитивный : İlkel
+Ультрафиолетовый : Ultraviyole
+Жук : Böcek
+Волосатые : Kıllı
+Пенистый : Köpüklü
+Фальшивый : Sahte
+Правдивый : Doğru
+Жалостливый : Merhametli
+Кокетливая : Cilveli
+Заметные успехи : Kayda değer başarılar
+Разводной мост : Açılır/kaldırma köprüsü
+Складной нож : Çakı
+Привычная работа : Alışılmış iş
+Стиральная машина : Çamaşır makinesi
+Влюбчивый парень : Çabuk âşık olan erkek/genç
+Улыбчивая : Gülümseyen
+Доверчивый : Aşırı güvenen
+Доверчивый : Saf
+Отзывчивый : Yardımsever; duyarlı
+Устойчивый климат : İstikrarlı/dengeli iklim
+Забывчивый сосед : Unutkan komşu
+Обидчивый приятель : Alıngan arkadaş
+Неотложная помощь : acil yardım; acil tıbbi yardım
+Маршрутное такси : Dolmuş
+Тушёное мясо : Güveçte pişirilmiş et; et yahnisi
+Сгущённое молоко : Yoğunlaştırılmış süt
+Сероватый : Grimsi
+Сладковатый : Tatlımsı
+Дороговатый : Biraz pahalı; nispeten pahalı
+Богатейший : Çok zengin
+Злейший : En kötü; en zalim
+Величайший : Çok büyük/ulu
+Ужаснейший : Çok korkunç
+Легковой : Binek
+Ближний : Yakın
+Здешний : Buranın
+Далёкий : Uzak
+Очистить : Temizlemek
+Потребить : Tüketmek
+Вредить : zarar vermek
+Проигрыватель : Oynatıcı
+Увлажнить : Nemlendirmek
+Производитель : Üretici
+Предохранить : korumak
+Отражатель : Yansıtıcı
+Излучать : yaymak
+Прыгун : Atlayan/zıplayan kişi; atlayıcı
+Врун : Yalancı
+Хвастун : palavracı
+Скакун : Yarış atı/koşu atı
+Ходок : Yürüyüşçü
+Поплавок : Şamandıra
+Кипяток : kaynar su
+Отпечаток : iz
+Подросток : ergen
+Пекарь : Fırıncı
+Звонарь : Çan çalan kişi
+Пахарь : Çiftçi; saban süren kişi
+Лекарь : hekim
+Экзаменатор : Sınav görevlisi; sınav yapan kişi
+Аккомпаниатор : eşlikçi
+Репетитор : Özel ders öğretmeni
+Вентилятор : vantilatör
+Дирижёр : Orkestra şefi
+Абонент : Abone
+Ассистент : Asistan
+Конкурент : Rakip
+Симулянт : Numaracı
+Рецензент : Değerlendirici/incelemeci
+Рецензировать : Değerlendirmek
+Оппонент : Rakip/karşı taraf
+Аттестат : Lise/ortaöğretim bitirme belgesi
+Грелка : Sıcak su torbası
+Зажигалка : Çakmak
+Открывалка : Açacak
+Парилка : Buhar odası (Rus banyosunda)
+Заколка : Saç tokası
+Лейка : Sulama kabı
+Послание : Mesaj/mektup
+Послать : Göndermek
+Растение : Bitki
+Издание : Yayın/basım
+Дыхание : Nefes
+Спасение : Kurtuluş
+Падение : Düşüş
+Жилище : Konut; mesken
+Заморозки : Don olayları
+Развитие : Gelişme/gelişim
+Воровство : Hırsızlık
+Утренник : Sabah gösterisi/çocuk etkinliği
+Рыжик : Kızıl saçlı kişi; kanlıca mantarı
+Воспитанник : Yetiştirilmiş/eğitilmiş kişi; öğrenci/çırak
+Воспитанный : Görgülü/eğitimli
+Воспитанник : öğrenci
+Воспитанник : çırak
+Тайник : Zula
+Честность : Dürüstlük
+Робость : Çekingenlik
+Сухость : Kuruluk
+Медлительность : Yavaşlık/ağırkanlılık
+Замкнутость : İçine kapanıklık
+Низость : Alçaklık
+Искренность : Samimiyet/içtenlik
+Обидчивость : Alınganlık
+Двор : Avlu
+Двор : Avlu
+Помощь : Yardım
+Виноград : Üzüm
+Цветы : Çiçekler
+Вопрос : Soru
+Задача : Görev/problem/alıştırma
+Лёд : Buz
+Градус : Derece
+Сон : Uyku/rüya
+Интриган : Entrikacı
+Интриган : entrikacı
+Интриган : Entrikacı
+Политикан : Politikacı
+Главарь : Elebaşı
+Главарь : Lider
+Бунтарь : Asi/isyancı
+Бунтарь : asi
+Бунтарь : isyancı
+Юбиляр : Jübilesi/yıldönümü kutlanan kişi; jübile sahibi
+Юбиляр : Jübilesi/yıldönümü kutlanan kişi; jübile sahibi
+Визитёр : Ziyaretçi
+Скандалист : kavgacı
+Теоретик : Teorisyen
+Цыганка : Roman kadın
+Гречанка : Yunan kadın
+Голубка : güvercin
+Полька : Polonyalı kadın
+Мастерица : Usta kadın; hünerli kadın
+Свидетельница : Kadın tanık
+Слониха : Dişi fil
+Зайчиха : Dişi tavşan
+Трусиха : Korkak kadın; korkak kişi
+Миллионерша : Kadın milyoner
+Библиотекарша : Kadın kütüphaneci (günlük dil)
+Сударыня : Hanımefendi; madam (eski hitap)
+Сударыня : madam
+Княгиня : Kneginya; knyaz/knezın eşi; kadın soylu
+Княгиня : Kneginya; knyaz/knezın eşi; kadın soylu
+Монахиня : Rahibe
+Монахиня : rahibe
+Рабыня : Kadın köle
+Лгунья : Yalancı kadın
+Драчунья : Kavgacı kadın
+Баронесса : Barones
+Волчонок : Yavru kurt
+Чертёнок : Küçük şeytan
+Лисёнок : Tilki yavrusu
+Мышонок : Küçük fare
+Виноградинка : Üzüm tanesi
+Картофелинка : Küçük patates
+Картошинка : Küçük patates
+Макаронинка : Makarna tanesi
+Чаинка : Çay yaprağı
+Снежинка : Kar tanesi
+Дождинка : Yağmur damlası
+Пыль : toz
+Пылинка : toz tanesi
+Жир : yağ
+Жиринка : Küçük yağ parçası; yağ tanesi
+Льдинка : Buz tanesi
+Собачий холод : Dondurucu/şiddetli soğuk
+Лисьи следы : Tilki izleri
+Птичий рынок : Kuş pazarı
+Рыбий жир : Balık yağı
+Рыбачья лодка : Balıkçı teknesi
+Девичий смех : Kız kahkahası
+Старушечья походка : Yaşlı kadın yürüyüşü
+Ребячий смех : Çocukça kahkaha
+Комариный укус : Sivrisinek ısırığı
+Морковный сок : Havuç suyu
+Лаборатория : laboratuvar
+Лабораторный : Laboratuvara ait; laboratuvarla ilgili
+Картофель : patates
+Картофельный : Patatesli; patatese ait
+Колокол : çan
+Колокольный звон : çan sesi
+Яблоко : elma
+Яблочный : Elmalı; elmaya ait
+Парус : yelken
+Парусное судно : yelkenli gemi
+Наука : bilim
+Научный : bilimsel
+Праздник : bayram
+Праздничный : Bayramlık; bayramla ilgili
+Война : savaş
+Военный : askeri
+Беличий хвост : sincap kuyruğu
+Белка : sincap
+Телячья отбивная : dana pirzola
+Телёнок : buzağı
+Поросячий визг : domuzcuk çığlığı
+Поросёнок : domuzcuk
+Лебяжий пух : kuğu tüyü
+Лебедь : kuğu
+Черепаший суп : kaplumbağa çorbası
+Черепаха : kaplumbağa
+Овечий тулуп : Koyun postundan palto/kürk
+Кроличья шубка : Tavşan kürkü; tavşan postundan kısa kürk
+Кролик : tavşan
+Крысиная нора : Sıçan deliği
+Крыса : sıçan
+Ювелирная работа : Kuyumcu işi; ince işçilik
+Ювелир : kuyumcu
+Профсоюзный лидер : sendika lideri
+Профсоюз : sendika
+Комплексный обед : Set/tabldot öğün
+Комплекс : kompleks
+Болезненный вид : Hastalıklı görünüm; hasta görünüş
+Индивидуальные занятия : Bireysel dersler
+Дневной свет : Gün ışığı
+Конституционная монархия : Anayasal monarşi
+Душевная забота : Gönülden/duygusal ilgi ve özen
+Врачебная помощь : Tıbbi yardım
+Судебный процесс : Dava
+Умственный труд : Zihinsel emek
+Женственная походка : Kadınsı yürüyüş
+Телевизионные передачи : Televizyon programları/yayınları
+Экзаменационная ведомость : Sınav not çizelgesi/not listesi
+Инстинктивное движение : İçgüdüsel hareket
+Восторженный отзыв : Övgü dolu/heyecanlı değerlendirme
+Песчаный пляж : Kumlu plaj
+Шариковая ручка : Tükenmez kalem
+Кленовый лист : Akçaağaç yaprağı
+Сосновый бор : Çam ormanı
+Шёлковый платок : İpek eşarp/başörtüsü
+Толковый словарь : Açıklamalı sözlük
+Хреновое положение : Berbat/kötü durum; içinden çıkılmaz hâl (argo)
+Курорт : Tatil/sağlık merkezi; kaplıca beldesi
+Ржаной : Çavdarlı; çavdardan yapılmış
+Стеклянные бусы : Cam boncuklar
+Коммуникабельный : İletişim kurmaktan kaçınmayan
+Квалифицированный : Nitelikli; kalifiye
+Эрудированный : Bilgili; kültürlü; çok okumuş
+Кожаное пальто : Deri palto/kaban
+Береговая охрана : Sahil güvenlik
+Подростковый период : Ergenlik dönemi
+Питьевая вода : İçme suyu
+Голосовая связь : Sesli haberleşim
+Канцелярские товары : Kırtasiye malzemeleri
+Соревнование : Yarışma
+Краеведческий : Yerel tarih ile ilgili
+Героическая борьба : Kahramanca mücadele
+Впечатлительный : Aşırı hassas, duygusal
+Обидчивый : Alıngan, gücenen
+Молчаливый : Sessiz, az konuşan
+Болтливый : Çok konuşan, geveze
+Задуматься : Düşünmek, düşünmeye dalmak
+Задумчивый : Düşünceli, dalgın
+Разобраться : Anlamak, çözümlemek
+Разборчивый : Seçici, ayırt edici
+Ревновать : Kıskanmak
+Ревнивый : Kıskanç
+Лгать : Yalan söylemek
+Лживый : Yalancı
+Выносить : Tahammül etmek
+Выносливый : Dayanıklı
+Выносливый : tahammüllü
+Усталый : Yorgun
+Умелый : Yetenekli
+Умелый : maharetli
+Отсталый : Geri kalmış
+Варёный : Haşlanmış
+Жареный : Kızarmış
+Мороженый : Dondurulmuş
+Крытый : Örtülü
+Крытый : üstü kapalı
+Крыть : Kapatmak
+Крыть : örtmek
+Рваный : Yırtık
+Рвать : Yırtmak
+Рвать : koparmak
+Краденый кошелёк : Çalınmış cüzdan
+Ворованный : Çalınmış
+Крашеный : Boyalı
+Красить : Boyamak
+Чищеный : Temizlenmiş
+Чищеный : ayıklanmış
+Печёный : Pişmiş
+Печёный : fırınlanmış
+Солёный : Tuzlu
+Солёный : tuzlanmış
+Солить : Tuzlamak
+Съедобный гриб : Yenilebilir mantar
+Лечебная грязь : Şifalı çamur
+Лечить : Tedavi etmek
+Швейная машина : Dikiş makinesi
+Шить : Dikmek
+Очаровательная девушка : Büyüleyici kız
+Очаровать : Büyülemek
+Очаровать : etkilemek
+Дыхательный аппарат : Solunum cihazı
+Повелительное наклонение : Emir kipi
+Повелеть : Emretmek
+Повелеть : emir vermek
+Предусмотрительный человек : İleri görüşlü
+Предусмотрительный человек : tedbirli kişi
+Предусмотреть : Öngörmek
+Предусмотреть : önceden düşünmek
+Страховая компания : Sigorta şirketi
+Страховать : Sigortalamak
+Торговый флот : Ticaret filosu
+Торговать : ticaret yapmak
+Жалкий вид : Acınası görünüm
+Терпимая боль : Katlanılabilir ağrı
+Изменяемая форма : Değiştirilebilir şekil
+Взрывчатые вещества : Patlayıcı maddeler
+Летучие вещества : Uçucu maddeler
+Ходячий больной : Yürüyen hasta
+Слабоватый : Biraz zayıf
+Слабоватый : zayıfımsı
+Великоватый : Biraz büyük
+Темноватый : Biraz koyu
+Темноватый : Biraz karanlık; biraz koyu
+Грубый : Kaba
+Розоватый : Pembemsi
+Крепковатый : Biraz sert
+Красноватый : Kırmızımsı
+Гостить : Misafir olmak
+Перчить : Biberlemek
+Смешить : Güldürmek
+Стыдить : Utandırmak
+Мусорить : Çöp atmak
+Рыбачить : Balık tutmak
+Бомбить : Bombalamak
+Белить : Beyazlatmak
+Глупить : Aptalca davranmak
+Хитрить : Kurnazlık yapmak
+Разнообразить : Çeşitlendirmek
+Холодить : Soğutmak
+Молодить : Gençleştirmek
+Старить : İhtiyarlatmak
+Старить : kocatmak
+Бодрить : Canlandırmak
+Бодрить : dinçleştirmek
+Фальшивить : Sahte davranmak
+Фальшивить : ikiyüzlülük etmek
+Ночевать : Gecelemek
+Линять : Tüy dökmek; rengini atmak/solmak
+Линять : solmak
+Зимовать : Kışı geçirmek
+Конспектировать : Özet çıkarmak
+Конспектировать : not tutmak
+Экранизировать : Sinemaya uyarlamak
+Группировать : Gruplamak
+Критиковать : Eleştirmek
+Пустовать : Boş olmak
+Адресовать : Adrese göndermek
+Маршировать : Rap rap yürümek
+Маршировать : yürüyüş yapmak
+Пломбировать : mühürlemek; plomba vurmak
+Пломбировать : (diş) dolgu yapmak
+Бездельничать : Aylaklık etmek
+Бездельничать : boş boş dolaşmak
+Секретничать : Gizlemek
+Секретничать : gizli tutmak
+Осторожничать : Çok dikkatli olmak
+Вредничать : İnat olsun diye ters davranmak; huysuzluk etmek
+Жадничать : Cimrilik yapmak
+Нервничать : Tedirgin olmak; huzursuzlanmak
+Кокетничать : Cilve yapmak
+Домовничать : Ev işlerini yönetmek
+Лодырь : Aylak
+Лодырь : tembel
+Нахал : Küstah
+Жулик : Dolandırıcı
+Жулик : Sahtekâr
+Мошенник : Dolandırıcı
+Попрошайка : Dilenci
+Подхалим : Yalaka
+Подхалим : dalkavuk
+Ябеда : İspiyoncu
+Безумствовать : Delice davranmak
+Безумствовать : Çılgınca davranmak
+Властвовать : Egemen olmak
+Геройствовать : Kahraman gibi davranmak
+Свидетельствовать : Tanıklık etmek
+Мужествовать : Cesur davranmak
+Мужествовать : yiğitlik göstermek
+Учительствовать : Öğretmenlik yapmak
+Ахать : Ah çekmek...
+Ахнуть : Birden “ah!” demek...
+Мяукать : Miyavlamak
+Мяукнуть : Miyavlamak
+Кричать : Bağırmak
+Крикнуть : Bağırmak
+Глядеть : Bakmak, seyretmek
+Глянуть : Göz atmak; şöyle bir bakmak
+Шептать : Fısıldamak
+Шепнуть : Fısıldamak
+Чихать : Hapşırmak, aksırmak
+Чихнуть : Hapşırmak, aksırmak
+Дуть : Esmek, üflemek
+Дунуть : Esmek, üflemek
+Совать : Sokmak
+Сунуть : Sokmak
+Махать : Sallamak
+Махнуть : Sallamak
+Толкать : İtmek
+Толкнуть : İtmek
+Рисковать : Risk almak
+Рискнуть : Risk almak
+Кидать : Atmak, fırlatmak
+Кинуть : Atmak, fırlatmak
+Трогать : Dokunmak
+Тронуть : Dokunmak
+Зевать : Esnemek
+Зевнуть : Esnemek
+Плевать : Tükürmek
+Плюнуть : Tükürmek
+Трясти : Silkelemek
+Тряхнуть : Silkelemek
+Выигрывать : Kazanmak
+Выиграть : Galip gelmek
+Посылать : Göndermek, yollamak
+Послать : Göndermek, yollamak
+Забирать : Almak, bir yerden gidip almak
+Забрать : Almak, bir yerden gidip almak
+Отбирать : Elinden almak, zorla almak
+Отобрать : Elinden almak, zorla almak
+Загорать : Güneşlenmek
+Загореть : Bronzlaşmak
+Отрывать : Kopartmak
+Оторвать : Kopartmak
+Отрабатывать : Çalışarak ödemek
+Отработать : Çalışarak ödemek
+Высмеивать : Alay etmek
+Высмеять : Alay etmek
+Узкий : Dar
+Крупный : Büyük, iri
+Глубокий : Derin
+Тайный : Gizli
+Явный : Açık, belli
+Любопытный : Meraklı
+Краткий : Kısa
+Внезапный : Ani
+Вдохновительный : İlham verici
+Чёрным-чёрно : Kapkaranlık
+Давным-давно : Çok uzun zaman önce
+Полным-полно : Dopdolu, tıklım tıklım
+Зелёным-зелено : Yemyeşil
+Светлым-светло : Aydınlık
+Пятью : beşle; beş ile
+Шестью : altıyla; altı ile
+Семью : yediyle; yedi ile
+Восемью : sekizle; sekiz ile
+Дважды : İki kez
+Трижды : Üç kez
+Четырежды : Dört kez
+Однажды : Bir kez, bir gün
+Единожды : Yalnızca bir kez
+Двое : İkisi
+Трое : Üçü
+Четверо : Dördü
+Пятеро : Beşi
+Шестеро : Altısı
+Семеро : Yedisi
+Восьмеро : Sekizi
+Девятеро : Dokuzu
+Десятеро : Onu
+Влететь : İçeriye uçularak girmek, hızla dalmak
+Взлететь : Yükselmek (fiyatlar vb. dahil)
+Вылечить : İyileştirmek
+Вытащить : Çekip çıkarmak
+Выгнать : Dışarı kovmak, kapı dışarı etmek
+Забросить : Bir yere/engelin arkasına atmak; bırakmak/terk etmek
+Дойти : Bir yere varmak
+Довезти : Araçla bir yere kadar bırakmak
+Доплатить : Üstünü ödemek, tamamlamak
+Записать : Not almak
+Зарегистрировать : Birini veya bir şeyi kaydetmek
+Законспектировать : Uzun yazıyı veya metni özetleyip yazıya dökmek
+Запить : Bir şeyi yuttuktan sonra hemen arkasından bir şey içmek
+Испечь : Hamurun fırına girip ekmek, kek vb. çıkması
+Истратить : Son kuruşuna / son damlasına / dibine kadar harcamak
+Набросить : Bir nesneyi başka bir şeyin üzerine atmak / serivermek
+Накинуть : Fiyatın veya verginin üstüne koymak
+Нажарить : Bol bol, yığınla kızartma yapıp ortaya koymak
+Наготовить : Çeşit çeşit, tabak tabak, fazlasıyla yemek yapmak
+Напугать : Korkutmak
+Наклеить : Bir şeyi bir yüzeyin üzerine yapıştırmak (afiş asmak vb.)
+Насмешить : Kahkahaya boğmak
+Напеть : Kendi kendine mırıldanmak
+Надстроить : Var olan yapının üzerine inşa etmek / kat çıkmak
+Недоспать : Uykusunu almamak
+Недооценить : Bir durumu, nesneyi veya kişiyi olduğundan değersiz/küçük görmek
+Обеднеть : Fakirleşmek (kesin)
+Ослабеть : Güçsüzleşmek (kesin)
+Оштрафовать : Para cezası kesmek (kesin)
+Опубликовать : Yayınlamak
+Отломать : Bir nesneyi ana bütünden ayırmak, bir parça koparmak (çikolatadan vb.)
+Отработать : Mesai/vardiyayı çalışarak doldurmak / borcu çalışarak ödemek
+Отойти : Bir noktadan uzaklaşmak
+Отнести : Bir nesneyi olduğu yerden alıp başka bir yere teslim etmek
+Переспорить : Bir tartışmada karşı tarafa üstün gelmek
+Перекричать : Daha yüksek sesle bağırarak birinin sesini bastırmak
+Переделать : Sıfırdan baştan yapmak ya da nesneyi/durumu başka bir şeye dönüştürmek
+Подрасти : biraz büyümek; boy atmak; büyüyüp gelişmek
+Подумать : Kısa süreli düşünmek
+Побежать : Koşmaya başlamak, fırlamak
+Подмести : Yeri süpürüp temizlemek
+Подсчитать : Saymak; hesaplamak
+Подсказать : Kopya vermek, ipucu fısıldamak
+Преувеличить : Abartmak
+Помолчать : Kısa bir süre sessiz kalmak
+Предчувствовать : İçine doğmak, önceden sezmek
+Предвидеть : Öngörmek, tahmin etmek
+Привезти : Birini veya bir şeyi araçla bir yere getirmek
+Привести : Bir insanı veya canlıyı elinden tutarak, eşlik ederek bir yere getirmek
+Проехать : Tünelin içinde geçip gitmek, durak kaçırmak, mesafe katetmek
+Продумать : Etraflıca, detaylıca düşünmek
+Прогреть : Bir şeyi derinlemesine, her yerini eşit ısıtmak
+Прожарить : Etin veya yemeğin içinin çiğ kalmayacak şekilde pişmesi
+Разрезать : Keserek parçalara ayırmak, bölmek
+Разглядеть : Seçip görmek; ayırt etmek; dikkatle görebilmek
+Растолстеть : Şişmanlamak
+Разбить : Kırmak, tuzla buz etmek
+Разбудить : Uyandırmak
+Разорвать : Yırtmak, koparmak
+Сочувствовать : acısını paylaşmak; duygudaşlık göstermek; haline üzülmek
+Съесть : Son kırıntısına kadar yemek, tabağı sıfırlamak
+Сыграть : Bir maçı, oyunu, müzik parçasını başlayıp bitirmek
+Сходить : Merdiven inmek, kısa süre bir yere gidip işini halledip dönmek
+Рассмотреть : Her açıdan, detaylıca incelemek
+Развеселить : Birini neşelendirmek
+Алогичный : Mantıklı olmayan
+Аморальный : Ahlak dışı
+Антифашистский : Faşist karşıtı
+Бесчеловечный : İnsanlık dışı, gaddarca, vahşice
+Безбилетный : Biletsiz
+Безлюдный : Issız, az insanlı / insansız
+Безрадостный : Neşesiz, hüzünlü, kasvetli
+Внутригосударственный : Devlet içi, yurtiçi
+Довоенный : Savaştan önce, savaşa kadarki
+Дореволюционный : Devrimden önce, devrime kadarki
+Заокеанский : Okyanus ötesi
+Международный : Uluslararası
+Межзвёздный : Yıldızlararası
+Надводный : Su üstü
+Наилучший : En iyi, mükemmel
+Невесёлый : Keyifsiz, neşesiz
+Небезопасный : Risk barındıran, güvenli olmayan
+Околоземный : Dünyaya yakın
+Позапрошлый : İki önceki; önceki dönemin de öncesindeki
+Супермодный : Aşırı trend, son derece moda, çok havalı
+Ультрасовременный : Ultra modern, çağın ötesinde
+Подводный : Su altı
+Предпраздничный : Bayram/özel gün öncesi
+Ничто : Hiçbir şey
+Никто : Hiç kimse
+Никакой : Hiçbir
+Ничей : Hiç kimsenin
+Нисколько : Zerre kadar, hiç de
+Нигде : Hiçbir yerde
+Никуда : Hiçbir yere
+Ниоткуда : Hiçbir yerden
+Никак : Hiçbir şekilde
+Нечего : Hiçbir şey yok (yapacak, söyleyecek vb.)
+Некого : Hiç kimse yok (konuşacak, suçlayacak vb.)
+Негде : Hiçbir yer yok (oturacak, duracak vb.)
+Некуда : (Gidilecek, kaçılacak) hiçbir yer yok
+Неоткуда : Hiçbir yerden...
+Некогда : Vakit yok
+Незачем : Gerek yok
+Некто : Kim olduğu bilinmeyen biri
+Нечто : Nesne olduğu belli ama ne olduğu bilinmiyor
+Некоторый : Bazı, birtakım
+Несколько : Birkaç, az sayıda
+Некогда : Bir zamanlar, eskiden
+Кое-кто : Belli bir kişi; kim olduğu belirtilmeyen biri; bazı kişiler
+Кое-что : Belli bir şey; ne olduğu belirtilmeyen bir şey
+Кое-где : Belirli bazı yerlerde; yer yer
+Кое-куда : Belli bir yere; nereye olduğu belirtilmeyen bir yere
+Кое-когда : Belirli bazı zamanlarda; bazen
+Кое-какой : Belli bir türden; birtakım; az çok
+Бесподобный : eşsiz, benzersiz, rakipsiz
+Наивысший : en yüksek, zirve
+Наименьший : en düşük, minimum
+Небезызвестный : herkesin yakından tanıdığı, bilinen
+Распрекрасный : fevkalade, aşırı mükemmel
+Безграмотный : cahil
+Противоестественный : doğa dışı, tabiata aykırı, anormal
+Антисанитарный : hijyenik olmayan, sağlık koşullarına aykırı
+Безобидный : zararsız, masumane, kimseyi kırmayan
+Дохристианский : Hristiyanlık öncesi
+Послегарантийный : garanti sonrası (teknolojik)
+Асимметричный : asimetrik
+Досрочный : vaktinden önce, erken
+Небезынтересный : kayda değer derecede ilginç
+Неискренний : yapmacık, samimi olmayan
+Иррациональный : irrasyonel, akıl dışı
+Сверхзвуковой : ses üstü, süpersonik
+Экстраординарный : sıra dışı, olağanüstü
+Преотличный : mükemmel ötesi
+Послеоперационный : ameliyat sonrası
+Предвыборный : seçim öncesi
+Соразмерный : orantılı
+Противовоздушный : hava savunma
+Безыскусный : doğal, sade, gösterişsiz
+Распоследний : en son / adi, en alt seviye
+Добрачный : evlilik öncesi
+Замогильный : kabir ötesi
+Пореформенный : reform sonrası
+Подопытный : denek
+Предумышленный : önceden tasarlanmış, kasıtlı
+Перетертый : püre/toz haline getirilmiş
+Обойти : (çukur, bina, kural, yasa) etrafından dolanarak geçmek
+Объехать : araçla etrafından dolanmak
+Обучить : bir mesleği, sanatı, işi birine detaylıca öğretmek
+Отвести : yürüyen bir canlıyı yürüyerek bir yere bırakmak, teslim etmek
+Отвезти : bir canlı veya cansız nesneyi araçla bir yere bırakmak
+Отремонтировать : tamir etmek
+Перевезти : Araçla bir yerden başka yere taşımak; nakletmek
+Перенести : bir etkinliği ertelemek / atlatmak, geçirmek
+Переболеть : hastalığı atlatmak, iyileşmek / takıntılı hevesin bitmesi
+Обыграть : rakibi yenmek
+Перезаниматься : aşırı ders çalışmak, aşırı antrenman yapmak
+Отцвести : çiçek dökmek, solmak
+Отомстить : intikam almak, öç almak
+Перехвалить : aşırı övmek, göklere çıkarmak
+Перехитрить : oyuna getirmek, kurnazlıkla üstün gelmek
+Перепробовать : mevcut olan her seçeneği denemek
+Обделить : hakkını yemek, payından mahrum bırakmak
+Отстирать : zorlu lekeyi çıkarmak
+Отблагодарить : (genellikle somut bir hediye, para veya büyük bir iyilikle) teşekkür etmek
+Отговорить : vazgeçirmek, aklını çelmek
+Пришить пуговицу : düğme dikmek
+Приоткрыть окно : pencereyi az açmak
+Прогулять урок : dersi asmak
+Проконсультировать аспиранта : doktora öğrencisine danışmanlık vermek
+Уложить вещи : eşya toplamak (valize vb.)
+Сбрить усы : bıyığı tamamen sıfıra vurmak
+Прожить два года : iki yıl yaşamak; iki yıl geçirmek
+Продемонстрировать свои знания : kendi bilgi ve birikimini göstermek
+Укачать ребенка : Bebeği sallayarak uyutmak; yatıştırmak
+Ушить брюки : bol gelen pantolonu daraltmak, küçültmek
+Развязать шнурки : ayakkabı bağcığını çözmek
+Расплести косу : saç örgüsünü açmak
+Разморозить овощи : dondurulmuş sebzeyi çözmek
+Разминировать поле : araziyi mayından temizlemek
+Распаковать вещи : bavul açmak, paket açmak
+Раскрошить хлеб : ekmeği ufalamak
+Скомкать бумагу : kağıdı buruşturmak
+Утаить что-то : bir haberi, gerçeği, parayı ya da delili başkalarından saklamak
+Антигриппин : Gribe karşı ilaç
+Безветрие : durgun hava, yaprak kıpırdamaması
+Безденежье : Parasızlık; para sıkıntısı
+Безделье : boş durma / işle meşgul olmama
+Безработица : İşsizlik
+Бесценок : Yok pahası; çok düşük fiyat
+Безотцовщина : babasızlık
+Безделушка : incik boncuk, işlevsiz süs eşyaları
+Выяснить : açığa çıkarmak, netleştirmek
+Затруднить : zorlaştırmak, güçleştirmek
+Засекретить : gizli tutmak
+Занизить : olduğundan küçük, az, eksik (fiyat) göstermek
+Завысить : olduğundan büyük, çok, fazla (fiyat) göstermek
+Наполнить : boş bir hacmi doldurmak (bardak, oda)
+Насытить : doyurmak
+Наскучить : can sıkmak, gına getirmek
+Озаглавить : başlık koymak
+Оздоровить : iyileştirmek, sağlığına kavuşturmak (sadece vücut değil)
+Охладить : soğutmak (duygu), serinletmek (madde)
+Осложнить : karmaşıklaştırmak
+Облегчить : kolaylaştırmak, hafifletmek
+Обновить : güncellemek
+Обезглавить : başını kesmek
+Отграничить : sınırlarını belirlemek
+Пояснить : izah etmek
+Удлинить : uzatmak (boyunu, süresini)
+Укоротить : kısaltmak (boyunu, süresini)
+Удвоить : iki katına çıkarmak
+Обнародовать : halka açıklamak, kamuoyuna duyurmak
+Повысить : yükseltmek, arttırmak, terfi ettirmek
+Разъяснить : detaylıca açıklamak, aydınlatmak
+Понизить : düşürmek, azaltmak, rütbesini indirmek
+Снизить : aşağı çekmek, indirmek (fiyatı/hızı)
+Отсвечивать : yansıma yapmak
+Распевать : bağıra çağıra şarkı söylemek
+Заменить : yerine yenisini koymak
+Сменить : değiştirmek
+Выстрелить : mermi sıkmak
+Пересадить : bir fidenin yerini değiştirmek
+Развесить : çamaşır asmak
+Межсезонье : mevsim geçişi/ticarette ölü sezon
+Напарник : bir işi, nöbeti, devriyeyi beraber yürüttüğün arkadaş
+Набережная : Rıhtım; su kenarındaki gezinti yolu
+Переулок : ara sokak
+Перемирие : ateşkes
+Перелесок : küçük ağaçlık alan
+Побережье : kıyı şeridi, bölgesi
+Подмосковье : Moskova çevre bölgesi
+Предчувствие : önsezi, içine doğma
+Приморье : sahil bölgesi, deniz kıyısı
+Собеседник : sohbet arkadaşı
+Сокурсник : dönem arkadaşı, sınıfdaş
+Послесловие : sonsöz
+Предисловие : önsöz
+Современник : çağdaş; aynı dönemde yaşamış/yaşayan kişi
+Сочувствие : Şefkat; duygudaşlık; acıyı paylaşma
+Созвездие : takımyıldız
+Небылица : uydurma, asılsız olay
+Незнайка : hiçbir şey bilmeyen, cahil
+Нехватка : Eksiklik; kıtlık
+Окурок : izmarit
+Походка : yürüyüş tarzı, biçimi
+Поведение : bir canlının çevresine sergilediği davranış, hal ve hareket
+Заморозки : Don olayları; soğuklar
+Перестрелка : silahlı çatışma
+Забег : koşu, depar, yarış
+Заезд : Tesise/otele giriş; varış; yarış turu veya serisi
+Поиск : arama, araştırma
+Настольный : masa ... (lambası, oyun)
+Бездомный : evsiz, sokaklara düşmüş
+Бессмысленный : anlamsız, manasız
+Бездетный : çocuksuz, çocuğu olmayan
+Безголосный : sesi çıkmayan/oy hakkı bulunmayan
+Загородный : şehir dışı, kır
+Междугородный : şehirler arası
+Надземный : yer üstü, toprağın üstünde
+Подмосковный : Moskova civarında
+Пригородный : Banliyöye ait; banliyö çevresindeki
+Безрезультатный : sonuçsuz, neticesiz
+Заграничный : yurtdışı, yabancı
+Посильный : yapılabilir, güç yeten
+Предновогодний : yılbaşı öncesi
+Приморский : deniz kenarındaki, sahil..., kıyı...
+Настенный : duvara asılı, monteli
+Безвинный : suçsuz, kabahatsiz (hukuki)
+Невинный : masum, saf
+Бездарный : yeteneksiz, kabiliyetsiz
+Неизменный : değişmez, kalıcı
+Незабываемый : unutulmaz
+Неузнаваемый : tanınmaz halde olan
+Чрезмерный : aşırı, haddinden fazla, ölçüsüz
+Несчастный : mutsuz, zavallı, talihsiz
+Заплаканный : Ağlamış; gözleri yaşlı
+Загрязненный : kirli, kirlenmiş
+Совместный : ortak... (proje, iş)
+Несчетный : sayılamayan
+Неустанный : yorulmak bilmeyen
+Неделимый : bölünemez, ayrılmaz
+Бездоказательный : kanıtsız, asılsız
+Нежданный : beklenmeyen, beklenmedik
+Неожиданный : beklenmeyen, beklenmedik
+Заспанный : uyku sersemi, uykulu
+Непобедимый : yenilmez, mağlup edilmez
+Отменить : iptal etmek
+Сболтнуть : ağzından kaçırmak
+Напевать : mırıldanmak, sessizce şarkı söylemek
+Вызванивать : birini telefonla ısrarla aramak, ulaşmaya çalışmak
+Взвесить : fiziksel olarak bir şeyin ağırlığını ölçmek/bir şeyin artı eksilerini tartmak
+Покашливать : hafifçe öksürmek
+Названивать : pes etmeden aramak
+Уснуть : uykuya dalmak
+Закусить : meze yemek, atıştırmak
+Разгуливать : aylak aylak dolaşmak
+Раздумывать : derin derin düşünmek, kafa yormak
+Всплакнуть : biraz ağlamak; hafifçe ağlamak; birkaç gözyaşı dökmek
+Недолюбливать : pek sevmemek, haz etmemek (nefret yok)
+Обанкротиться : iflas etmek, batmak
+Посчастливиться : şansı yaver gitmek, nasip olmak
+Распогодиться : havanın açması, güzelleşmesi
+Переговариваться : karşılıklı konuşmak, sohbet etmek
+Перезваниваться : karşılıklı telefonlaşmak
+Перешучиваться : karşılıklı şakalaşmak
+Перешептываться : fısıldaşmak
+Проснуться : uyanmak
+Заблудиться : kaybolmak, yolunu şaşırmak
+По-своему : kendine göre, kendine has
+По-прежнему : eskisi gibi, hala, aynı şekilde
+По-видимому : görünüşe göre, muhtemelen
+По-деловому : iş ciddiyetiyle, profesyonelce
+По-старому : eski usulle
+По-новому : yeni usulle
+По-разному : Farklı şekillerde; türlü türlü
+По-дружески : arkadaşça, dostça
+По-хозяйски : sahibiymiş gibi
+По-дурацки : aptalca, saçma bir şekilde
+По-женски : kadınlara özgü
+По-мужски : erkeklere özgü
+По-московски : Moskova usulü
+По-собачьи : köpek gibi
+Понапрасну : boşuna, boş yere
+Попусту : Boşuna; nafile
+Поровну : eşit olarak, yarı yarıya
+Подобру-поздорову : sağ salim, başı belaya girmeden
+Полегоньку : usulca, hafifçe
+Потихоньку : sessizce, gizlice, çaktırmadan
+Вручную : elle, manuel şekilde
+В открытую : açıkça, alenen, gizlenmeden
+Вскоре : kısa süre sonra, çok geçmeden
+Вдвойне : iki kat, çifte
+Втройне : üç kat, üç misli
+Вблизи : yakında, yakınlarda
+Вправо : sağa, sağ tarafa
+Вдалеке : uzakta, uzaklarda
+Вообще : genel olarak, aslında/hiç
+Вполне : tamamen, bütünüyle
+Влево : sola, sol tarafa
+Во-первых : ilk olarak
+Во-вторых : ikinci olarak
+В-третьих : üçüncü olarak
+Я выжат как лимон : limon gibi suyum çıktı
+Мне вообще не заходит : hiç sarmadı
+Это офигенно! : müthiş!
+Семь раз отмерь : İki ölç
+один раз отрежь : bir biç
+Оказывается : Meğer; sonradan anlaşıldı ki
+он был болен : O hastaydı
+Милашка картошка : tatlı/sevimli olan birini çağırma şekli
+У меня взрывается мозг! : beynim patlıyor
+Мне не зашло : hiç sarmadı / hoşuma gitmedi
+Предел : Sınır; limit; had
+Форма правления : yönetim şekli

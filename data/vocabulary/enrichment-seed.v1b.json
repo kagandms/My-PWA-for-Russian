@@ -1,0 +1,397 @@
+{
+  "schema_version": 1,
+  "enrichment_version": "1B",
+  "source": "phase-1b-curated-seed",
+  "method": "explicit-curated-candidates-only",
+  "entries": [
+    {
+      "surface_form": "Зарабатывать",
+      "entry_type": "lemma",
+      "sense_definition": "Para kazanmak",
+      "field": "aspect_pair",
+      "counterpart_surface_form": "Заработать",
+      "value": { "pair_type": "aspectual_pair", "aspect": "imperfective" },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.93
+    },
+    {
+      "surface_form": "Заработать",
+      "entry_type": "lemma",
+      "sense_definition": "Para kazanmak",
+      "field": "aspect_pair",
+      "counterpart_surface_form": "Зарабатывать",
+      "value": { "pair_type": "aspectual_pair", "aspect": "perfective" },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.93
+    },
+    {
+      "surface_form": "Подрабатывать",
+      "entry_type": "lemma",
+      "sense_definition": "Ek iş yapmak; ek işte çalışmak",
+      "field": "aspect_pair",
+      "counterpart_surface_form": "Подработать",
+      "value": { "pair_type": "aspectual_pair", "aspect": "imperfective" },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.9
+    },
+    {
+      "surface_form": "Подработать",
+      "entry_type": "lemma",
+      "sense_definition": "Ek iş yapmak; kısa süreli ek işte çalışmak",
+      "field": "aspect_pair",
+      "counterpart_surface_form": "Подрабатывать",
+      "value": { "pair_type": "aspectual_pair", "aspect": "perfective" },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.9
+    },
+    {
+      "surface_form": "Возражать",
+      "entry_type": "lemma",
+      "sense_definition": "İtiraz etmek",
+      "field": "aspect_pair",
+      "counterpart_surface_form": "Возразить",
+      "value": { "pair_type": "aspectual_pair", "aspect": "imperfective" },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.92
+    },
+    {
+      "surface_form": "Возразить",
+      "entry_type": "lemma",
+      "sense_definition": "İtiraz etmek",
+      "field": "aspect_pair",
+      "counterpart_surface_form": "Возражать",
+      "value": { "pair_type": "aspectual_pair", "aspect": "perfective" },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.92
+    },
+    {
+      "surface_form": "Анализировать",
+      "entry_type": "lemma",
+      "sense_definition": "Analiz etmek",
+      "field": "aspect_pair",
+      "counterpart_surface_form": "Проанализировать",
+      "value": { "pair_type": "aspectual_pair", "aspect": "imperfective" },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.91
+    },
+    {
+      "surface_form": "Проанализировать",
+      "entry_type": "lemma",
+      "sense_definition": "Analiz etmek",
+      "field": "aspect_pair",
+      "counterpart_surface_form": "Анализировать",
+      "value": { "pair_type": "aspectual_pair", "aspect": "perfective" },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.91
+    },
+    {
+      "surface_form": "Зависеть",
+      "entry_type": "lemma",
+      "sense_definition": "...-e bağlı olmak",
+      "field": "government",
+      "value": { "pattern": "зависеть от + GEN", "preposition": "от", "required_cases": ["genitive"] },
+      "source": "phase-1b-curated-seed:government",
+      "confidence": 0.94
+    },
+    {
+      "surface_form": "Зависеть",
+      "entry_type": "lemma",
+      "sense_definition": "...-e bağlı olmak",
+      "field": "preposition",
+      "value": "от",
+      "source": "phase-1b-curated-seed:government",
+      "confidence": 0.94
+    },
+    {
+      "surface_form": "Зависеть",
+      "entry_type": "lemma",
+      "sense_definition": "...-e bağlı olmak",
+      "field": "case",
+      "value": "genitive",
+      "source": "phase-1b-curated-seed:government",
+      "confidence": 0.94
+    },
+    {
+      "surface_form": "Сочувствовать",
+      "entry_type": "lemma",
+      "sense_definition": "acısını paylaşmak; duygudaşlık göstermek; haline üzülmek",
+      "field": "government",
+      "value": { "pattern": "сочувствовать кому?", "required_cases": ["dative"] },
+      "source": "phase-1b-curated-seed:government",
+      "confidence": 0.9
+    },
+    {
+      "surface_form": "Сочувствовать",
+      "entry_type": "lemma",
+      "sense_definition": "acısını paylaşmak; duygudaşlık göstermek; haline üzülmek",
+      "field": "case",
+      "value": "dative",
+      "source": "phase-1b-curated-seed:government",
+      "confidence": 0.9
+    },
+    {
+      "surface_form": "Зависеть",
+      "entry_type": "lemma",
+      "sense_definition": "...-e bağlı olmak",
+      "field": "collocation",
+      "value": "зависеть от обстоятельств",
+      "source": "phase-1b-curated-seed:collocation",
+      "confidence": 0.86
+    },
+    {
+      "surface_form": "Сочувствовать",
+      "entry_type": "lemma",
+      "sense_definition": "acısını paylaşmak; duygudaşlık göstermek; haline üzülmek",
+      "field": "collocation",
+      "value": "сочувствовать человеку",
+      "source": "phase-1b-curated-seed:collocation",
+      "confidence": 0.86
+    },
+    {
+      "surface_form": "Зарабатывать",
+      "entry_type": "lemma",
+      "sense_definition": "Para kazanmak",
+      "field": "collocation",
+      "value": "зарабатывать деньги",
+      "source": "phase-1b-curated-seed:collocation",
+      "confidence": 0.88
+    },
+    {
+      "surface_form": "Развивать навыки",
+      "entry_type": "phrase",
+      "sense_definition": "Becerileri geliştirmek",
+      "field": "collocation",
+      "value": "развивать навыки",
+      "source": "phase-1b-curated-seed:collocation",
+      "confidence": 0.99
+    },
+    {
+      "surface_form": "Зависеть",
+      "entry_type": "lemma",
+      "field": "word_family",
+      "target_surface_form": "Зависимость",
+      "value": { "relation_type": "word_family", "target_surface_form": "Зависимость" },
+      "source": "phase-1b-curated-seed:word-family",
+      "confidence": 0.9
+    },
+    {
+      "surface_form": "Зависимость",
+      "entry_type": "lemma",
+      "field": "word_family",
+      "target_surface_form": "Зависеть",
+      "value": { "relation_type": "word_family", "target_surface_form": "Зависеть" },
+      "source": "phase-1b-curated-seed:word-family",
+      "confidence": 0.9
+    },
+    {
+      "surface_form": "Сочувствовать",
+      "entry_type": "lemma",
+      "field": "word_family",
+      "target_surface_form": "Сочувствие",
+      "value": { "relation_type": "word_family", "target_surface_form": "Сочувствие" },
+      "source": "phase-1b-curated-seed:word-family",
+      "confidence": 0.9
+    },
+    {
+      "surface_form": "Сочувствие",
+      "entry_type": "lemma",
+      "field": "word_family",
+      "target_surface_form": "Сочувствовать",
+      "value": { "relation_type": "word_family", "target_surface_form": "Сочувствовать" },
+      "source": "phase-1b-curated-seed:word-family",
+      "confidence": 0.9
+    },
+    {
+      "surface_form": "Зависеть",
+      "entry_type": "lemma",
+      "field": "stress",
+      "value": "зави́сеть",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.95
+    },
+    {
+      "surface_form": "Зарабатывать",
+      "entry_type": "lemma",
+      "field": "stress",
+      "value": "зараба́тывать",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.92
+    },
+    {
+      "surface_form": "Заработать",
+      "entry_type": "lemma",
+      "field": "stress",
+      "value": "зарабо́тать",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.92
+    },
+    {
+      "surface_form": "Сочувствовать",
+      "entry_type": "lemma",
+      "field": "stress",
+      "value": "сочу́вствовать",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.9
+    },
+    {
+      "surface_form": "Возражать",
+      "entry_type": "lemma",
+      "field": "stress",
+      "value": "возража́ть",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.95
+    },
+    {
+      "surface_form": "Возразить",
+      "entry_type": "lemma",
+      "field": "stress",
+      "value": "возрази́ть",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.95
+    },
+    {
+      "surface_form": "Анализировать",
+      "entry_type": "lemma",
+      "field": "stress",
+      "value": "анализи́ровать",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.95
+    },
+    {
+      "surface_form": "Проанализировать",
+      "entry_type": "lemma",
+      "field": "stress",
+      "value": "проанализи́ровать",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.95
+    },
+    {
+      "surface_form": "Зависеть",
+      "entry_type": "lemma",
+      "field": "cefr",
+      "value": "B1",
+      "source": "phase-1b-curated-seed:cefr",
+      "confidence": 0.65
+    },
+    {
+      "surface_form": "Зарабатывать",
+      "entry_type": "lemma",
+      "field": "cefr",
+      "value": "B1",
+      "source": "phase-1b-curated-seed:cefr",
+      "confidence": 0.65
+    },
+    {
+      "surface_form": "Сочувствовать",
+      "entry_type": "lemma",
+      "field": "cefr",
+      "value": "B2",
+      "source": "phase-1b-curated-seed:cefr",
+      "confidence": 0.6
+    },
+    {
+      "surface_form": "Анализировать",
+      "entry_type": "lemma",
+      "field": "cefr",
+      "value": "B1",
+      "source": "phase-1b-curated-seed:cefr",
+      "confidence": 0.65
+    },
+    {
+      "surface_form": "Зависеть",
+      "entry_type": "lemma",
+      "field": "theme",
+      "value": "relationships_causality",
+      "source": "phase-1b-curated-seed:theme",
+      "confidence": 0.55
+    },
+    {
+      "surface_form": "Зарабатывать",
+      "entry_type": "lemma",
+      "field": "theme",
+      "value": "work_finance",
+      "source": "phase-1b-curated-seed:theme",
+      "confidence": 0.55
+    },
+    {
+      "surface_form": "Сочувствовать",
+      "entry_type": "lemma",
+      "field": "theme",
+      "value": "emotions_social",
+      "source": "phase-1b-curated-seed:theme",
+      "confidence": 0.55
+    },
+    {
+      "surface_form": "Анализировать",
+      "entry_type": "lemma",
+      "field": "theme",
+      "value": "education_work",
+      "source": "phase-1b-curated-seed:theme",
+      "confidence": 0.55
+    },
+    {
+      "surface_form": "Зависеть",
+      "entry_type": "lemma",
+      "field": "tag",
+      "value": "verb",
+      "source": "phase-1b-curated-seed:tag",
+      "confidence": 0.99
+    },
+    {
+      "surface_form": "Зарабатывать",
+      "entry_type": "lemma",
+      "field": "tag",
+      "value": "verb",
+      "source": "phase-1b-curated-seed:tag",
+      "confidence": 0.99
+    },
+    {
+      "surface_form": "Сочувствовать",
+      "entry_type": "lemma",
+      "field": "tag",
+      "value": "verb",
+      "source": "phase-1b-curated-seed:tag",
+      "confidence": 0.99
+    },
+    {
+      "surface_form": "Зависимость",
+      "entry_type": "lemma",
+      "field": "tag",
+      "value": "noun",
+      "source": "phase-1b-curated-seed:tag",
+      "confidence": 0.99
+    },
+    {
+      "surface_form": "Сочувствие",
+      "entry_type": "lemma",
+      "field": "tag",
+      "value": "noun",
+      "source": "phase-1b-curated-seed:tag",
+      "confidence": 0.99
+    }
+  ],
+  "ambiguous": [
+    {
+      "surface_form": "Привыкать",
+      "field": "aspect_pair",
+      "candidate_surface_forms": ["привыкнуть"],
+      "reason": "counterpart is absent from the v1 artifact; do not infer or create a pair",
+      "verification_status": "needs_review"
+    },
+    {
+      "surface_form": "Разрешать",
+      "field": "aspect_pair",
+      "candidate_surface_forms": ["Разрешить"],
+      "reason": "the shared Turkish gloss does not disambiguate the Russian senses; manual sense confirmation is required",
+      "verification_status": "needs_review"
+    }
+  ],
+  "sample_surface_forms": [
+    "Зависеть",
+    "Сочувствовать",
+    "Зарабатывать",
+    "Развивать навыки",
+    "Привыкать",
+    "Разрешать"
+  ]
+}

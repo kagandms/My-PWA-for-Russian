@@ -4,6 +4,17 @@
     "type": "module",
     "scripts": {
         "test": "node --test tests/*.test.js",
+        "vocab:freeze": "node scripts/freeze-vocabulary.mjs",
+        "vocab:dry-run": "node scripts/vocabulary-import.mjs",
+        "vocab:import": "node scripts/vocabulary-import.mjs --apply",
+        "vocab:migrate": "node scripts/migrate-vocabulary.mjs",
+        "vocab:enrichment:sample": "node scripts/vocabulary-enrichment.mjs --sample",
+        "vocab:enrichment": "node scripts/vocabulary-enrichment.mjs --apply",
+        "vocab:enrichment:corpus:sample": "node scripts/vocabulary-corpus-enrichment.mjs --sample",
+        "vocab:enrichment:corpus": "node scripts/vocabulary-corpus-enrichment.mjs --apply",
+        "vocab:enrichment:quality:sample": "node scripts/vocabulary-corpus-quality-gate.mjs --sample",
+        "vocab:enrichment:quality": "node scripts/vocabulary-corpus-quality-gate.mjs --apply",
+        "vocab:runtime:map": "node scripts/vocabulary-runtime-map.mjs --apply",
         "generate:vapid": "node scripts/generate-vapid-keys.mjs"
     },
     "dependencies": {

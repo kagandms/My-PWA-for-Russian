@@ -1,0 +1,566 @@
+{
+  "schema_version": 1,
+  "enrichment_version": "1B",
+  "artifact_type": "vocabulary-enrichment",
+  "generated_at": "2026-09-20T10:00:00.000Z",
+  "base_artifact": {
+    "schema_version": 1,
+    "import_batch_id": "import-128c08f1c905",
+    "source_file_name": "vocab_reviewed_v1.txt",
+    "source_sha256": "128c08f1c9056d2f45ca7fe78db4de24186f20813e7b10e52807e7454bbafd46",
+    "artifact_sha256": "6e5ea3130286e641eefc0464a20a197aab011255f752c82b1d228ddc92cf9a08"
+  },
+  "records": [
+    {
+      "enrichment_id": "enrich:a42894f919117be9fd28",
+      "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+      "sense_id": "sense:3588257e6a859cbb2d34",
+      "field": "aspect_pair",
+      "value": {
+        "pair_type": "aspectual_pair",
+        "aspect": "imperfective",
+        "counterpart_lexical_unit_id": "lu:a48da6910369d5aa5e83"
+      },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.93,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:b474a8627cb70fe2d7f2",
+      "lexical_unit_id": "lu:a48da6910369d5aa5e83",
+      "sense_id": "sense:834ab6f4d06d4afb963a",
+      "field": "aspect_pair",
+      "value": {
+        "pair_type": "aspectual_pair",
+        "aspect": "perfective",
+        "counterpart_lexical_unit_id": "lu:17c7e1c9a7d177c55779"
+      },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.93,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:2826cabe3418f57efdbc",
+      "lexical_unit_id": "lu:9d52803d74b3b569c6fc",
+      "sense_id": "sense:7d91471a1a1fde78a33f",
+      "field": "aspect_pair",
+      "value": {
+        "pair_type": "aspectual_pair",
+        "aspect": "imperfective",
+        "counterpart_lexical_unit_id": "lu:b9a4ca7b4470c36cb36f"
+      },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.9,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:4ce925f1540e85a84ad0",
+      "lexical_unit_id": "lu:b9a4ca7b4470c36cb36f",
+      "sense_id": "sense:f496138149b04047fdbf",
+      "field": "aspect_pair",
+      "value": {
+        "pair_type": "aspectual_pair",
+        "aspect": "perfective",
+        "counterpart_lexical_unit_id": "lu:9d52803d74b3b569c6fc"
+      },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.9,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:e013e3cafb5dbdcacb50",
+      "lexical_unit_id": "lu:74205e0ec4dd96158b30",
+      "sense_id": "sense:ba45ba68d14341f2bbe7",
+      "field": "aspect_pair",
+      "value": {
+        "pair_type": "aspectual_pair",
+        "aspect": "imperfective",
+        "counterpart_lexical_unit_id": "lu:c186ff5f9b24b0a5fac5"
+      },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.92,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:775f11fe0cb2b40110e4",
+      "lexical_unit_id": "lu:c186ff5f9b24b0a5fac5",
+      "sense_id": "sense:cac5eb372bf1822d6aed",
+      "field": "aspect_pair",
+      "value": {
+        "pair_type": "aspectual_pair",
+        "aspect": "perfective",
+        "counterpart_lexical_unit_id": "lu:74205e0ec4dd96158b30"
+      },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.92,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:4b0c78037513b286df8a",
+      "lexical_unit_id": "lu:08c50289fc9247f96151",
+      "sense_id": "sense:87253dd16b9f1bf311dd",
+      "field": "aspect_pair",
+      "value": {
+        "pair_type": "aspectual_pair",
+        "aspect": "imperfective",
+        "counterpart_lexical_unit_id": "lu:1791eabbcf418bce40e4"
+      },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.91,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:95e1b88920008eaa2419",
+      "lexical_unit_id": "lu:1791eabbcf418bce40e4",
+      "sense_id": "sense:b55d983b9c414c4db0ad",
+      "field": "aspect_pair",
+      "value": {
+        "pair_type": "aspectual_pair",
+        "aspect": "perfective",
+        "counterpart_lexical_unit_id": "lu:08c50289fc9247f96151"
+      },
+      "source": "phase-1b-curated-seed:aspect",
+      "confidence": 0.91,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:25a6e5b017f1589ac2d7",
+      "lexical_unit_id": "lu:1c9071d1dea0e863317b",
+      "sense_id": "sense:ce8d2c04f0378874dfe8",
+      "field": "government",
+      "value": {
+        "pattern": "зависеть от + GEN",
+        "preposition": "от",
+        "required_cases": [
+          "genitive"
+        ]
+      },
+      "source": "phase-1b-curated-seed:government",
+      "confidence": 0.94,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:04ead8aa1f50bee25b2d",
+      "lexical_unit_id": "lu:1c9071d1dea0e863317b",
+      "sense_id": "sense:ce8d2c04f0378874dfe8",
+      "field": "preposition",
+      "value": "от",
+      "source": "phase-1b-curated-seed:government",
+      "confidence": 0.94,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:614e5871f943012a6a68",
+      "lexical_unit_id": "lu:1c9071d1dea0e863317b",
+      "sense_id": "sense:ce8d2c04f0378874dfe8",
+      "field": "case",
+      "value": "genitive",
+      "source": "phase-1b-curated-seed:government",
+      "confidence": 0.94,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:d801d7dbab29e9c82aae",
+      "lexical_unit_id": "lu:78f330a7134b932d5704",
+      "sense_id": "sense:525423390bed10ea8002",
+      "field": "government",
+      "value": {
+        "pattern": "сочувствовать кому?",
+        "required_cases": [
+          "dative"
+        ]
+      },
+      "source": "phase-1b-curated-seed:government",
+      "confidence": 0.9,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:0aba5f66347b8e6faf00",
+      "lexical_unit_id": "lu:78f330a7134b932d5704",
+      "sense_id": "sense:525423390bed10ea8002",
+      "field": "case",
+      "value": "dative",
+      "source": "phase-1b-curated-seed:government",
+      "confidence": 0.9,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:d858dce39b0dd40302d2",
+      "lexical_unit_id": "lu:1c9071d1dea0e863317b",
+      "sense_id": "sense:ce8d2c04f0378874dfe8",
+      "field": "collocation",
+      "value": "зависеть от обстоятельств",
+      "source": "phase-1b-curated-seed:collocation",
+      "confidence": 0.86,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:e1cabce4abe51686f842",
+      "lexical_unit_id": "lu:78f330a7134b932d5704",
+      "sense_id": "sense:525423390bed10ea8002",
+      "field": "collocation",
+      "value": "сочувствовать человеку",
+      "source": "phase-1b-curated-seed:collocation",
+      "confidence": 0.86,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:299623300879e11a24cf",
+      "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+      "sense_id": "sense:3588257e6a859cbb2d34",
+      "field": "collocation",
+      "value": "зарабатывать деньги",
+      "source": "phase-1b-curated-seed:collocation",
+      "confidence": 0.88,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:d10f13acb639be8fc5d9",
+      "lexical_unit_id": "lu:1c9071d1dea0e863317b",
+      "sense_id": null,
+      "field": "word_family",
+      "value": {
+        "relation_type": "word_family",
+        "target_surface_form": "Зависимость",
+        "target_lexical_unit_id": "lu:bca270ce97a974591777"
+      },
+      "source": "phase-1b-curated-seed:word-family",
+      "confidence": 0.9,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:1095a34c99bd4dad8c1b",
+      "lexical_unit_id": "lu:bca270ce97a974591777",
+      "sense_id": null,
+      "field": "word_family",
+      "value": {
+        "relation_type": "word_family",
+        "target_surface_form": "Зависеть",
+        "target_lexical_unit_id": "lu:1c9071d1dea0e863317b"
+      },
+      "source": "phase-1b-curated-seed:word-family",
+      "confidence": 0.9,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:506743f452594651609e",
+      "lexical_unit_id": "lu:78f330a7134b932d5704",
+      "sense_id": null,
+      "field": "word_family",
+      "value": {
+        "relation_type": "word_family",
+        "target_surface_form": "Сочувствие",
+        "target_lexical_unit_id": "lu:e20b6cae2a3abb4d3b65"
+      },
+      "source": "phase-1b-curated-seed:word-family",
+      "confidence": 0.9,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:f1bfd6d93a6a7be28f5f",
+      "lexical_unit_id": "lu:e20b6cae2a3abb4d3b65",
+      "sense_id": null,
+      "field": "word_family",
+      "value": {
+        "relation_type": "word_family",
+        "target_surface_form": "Сочувствовать",
+        "target_lexical_unit_id": "lu:78f330a7134b932d5704"
+      },
+      "source": "phase-1b-curated-seed:word-family",
+      "confidence": 0.9,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:e24a5e4ee2f9408042ee",
+      "lexical_unit_id": "lu:1c9071d1dea0e863317b",
+      "sense_id": null,
+      "field": "stress",
+      "value": "зави́сеть",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.95,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:10326965f76bb9a4ed7d",
+      "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+      "sense_id": null,
+      "field": "stress",
+      "value": "зараба́тывать",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.92,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:ef3023d3d143f978008e",
+      "lexical_unit_id": "lu:a48da6910369d5aa5e83",
+      "sense_id": null,
+      "field": "stress",
+      "value": "зарабо́тать",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.92,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:f70407bb85fef69e4e59",
+      "lexical_unit_id": "lu:78f330a7134b932d5704",
+      "sense_id": null,
+      "field": "stress",
+      "value": "сочу́вствовать",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.9,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:0d1851766c2b66b34a8f",
+      "lexical_unit_id": "lu:74205e0ec4dd96158b30",
+      "sense_id": null,
+      "field": "stress",
+      "value": "возража́ть",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.95,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:e8b1eacc19ada6e90d0a",
+      "lexical_unit_id": "lu:c186ff5f9b24b0a5fac5",
+      "sense_id": null,
+      "field": "stress",
+      "value": "возрази́ть",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.95,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:066f2f6095f19a3a6fba",
+      "lexical_unit_id": "lu:08c50289fc9247f96151",
+      "sense_id": null,
+      "field": "stress",
+      "value": "анализи́ровать",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.95,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:bf1271a4c094e4dad8d7",
+      "lexical_unit_id": "lu:1791eabbcf418bce40e4",
+      "sense_id": null,
+      "field": "stress",
+      "value": "проанализи́ровать",
+      "source": "phase-1b-curated-seed:stress",
+      "confidence": 0.95,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:e0dae75b9a0c36df091f",
+      "lexical_unit_id": "lu:1c9071d1dea0e863317b",
+      "sense_id": null,
+      "field": "cefr",
+      "value": "B1",
+      "source": "phase-1b-curated-seed:cefr",
+      "confidence": 0.65,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:d1961ddd517c1e6fe1dd",
+      "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+      "sense_id": null,
+      "field": "cefr",
+      "value": "B1",
+      "source": "phase-1b-curated-seed:cefr",
+      "confidence": 0.65,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:014d6893546132a85819",
+      "lexical_unit_id": "lu:78f330a7134b932d5704",
+      "sense_id": null,
+      "field": "cefr",
+      "value": "B2",
+      "source": "phase-1b-curated-seed:cefr",
+      "confidence": 0.6,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:bbf849e93cc699a541e0",
+      "lexical_unit_id": "lu:08c50289fc9247f96151",
+      "sense_id": null,
+      "field": "cefr",
+      "value": "B1",
+      "source": "phase-1b-curated-seed:cefr",
+      "confidence": 0.65,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:1950c9b9ae6f1c4ed6ba",
+      "lexical_unit_id": "lu:1c9071d1dea0e863317b",
+      "sense_id": null,
+      "field": "theme",
+      "value": "relationships_causality",
+      "source": "phase-1b-curated-seed:theme",
+      "confidence": 0.55,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:9305fb5e3fdfb3c12a2a",
+      "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+      "sense_id": null,
+      "field": "theme",
+      "value": "work_finance",
+      "source": "phase-1b-curated-seed:theme",
+      "confidence": 0.55,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:60e6d70c86ed9bb094fa",
+      "lexical_unit_id": "lu:78f330a7134b932d5704",
+      "sense_id": null,
+      "field": "theme",
+      "value": "emotions_social",
+      "source": "phase-1b-curated-seed:theme",
+      "confidence": 0.55,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:1a2f3b86c25b293f06d6",
+      "lexical_unit_id": "lu:08c50289fc9247f96151",
+      "sense_id": null,
+      "field": "theme",
+      "value": "education_work",
+      "source": "phase-1b-curated-seed:theme",
+      "confidence": 0.55,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:713ccb2128e5eacb646e",
+      "lexical_unit_id": "lu:1c9071d1dea0e863317b",
+      "sense_id": null,
+      "field": "tag",
+      "value": "verb",
+      "source": "phase-1b-curated-seed:tag",
+      "confidence": 0.99,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:9548bce4e1d4fbdc6b1c",
+      "lexical_unit_id": "lu:17c7e1c9a7d177c55779",
+      "sense_id": null,
+      "field": "tag",
+      "value": "verb",
+      "source": "phase-1b-curated-seed:tag",
+      "confidence": 0.99,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:b5ced90dcd837a5119c8",
+      "lexical_unit_id": "lu:78f330a7134b932d5704",
+      "sense_id": null,
+      "field": "tag",
+      "value": "verb",
+      "source": "phase-1b-curated-seed:tag",
+      "confidence": 0.99,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:cc1dad393d42c9191fb3",
+      "lexical_unit_id": "lu:bca270ce97a974591777",
+      "sense_id": null,
+      "field": "tag",
+      "value": "noun",
+      "source": "phase-1b-curated-seed:tag",
+      "confidence": 0.99,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    },
+    {
+      "enrichment_id": "enrich:f0c1523c60043deb96a6",
+      "lexical_unit_id": "lu:e20b6cae2a3abb4d3b65",
+      "sense_id": null,
+      "field": "tag",
+      "value": "noun",
+      "source": "phase-1b-curated-seed:tag",
+      "confidence": 0.99,
+      "verification_status": "candidate",
+      "updated_at": "2026-09-20T10:00:00.000Z",
+      "exercise_eligible": false
+    }
+  ]
+}

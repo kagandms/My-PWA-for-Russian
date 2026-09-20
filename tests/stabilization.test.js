@@ -9,14 +9,19 @@ function readProjectFile(relativePath) {
     return fs.readFileSync(path.join(ROOT, relativePath), 'utf8');
 }
 
-test('Production Mode is fully removed from the runtime surface', () => {
+test('Production Mode uses the Phase 2B runtime surface without legacy production.js', () => {
     const indexHtml = readProjectFile('index.html');
     const appSource = readProjectFile('js/app.js');
     const serviceWorker = readProjectFile('sw.js');
 
-    assert.equal(indexHtml.includes('data-mode="production"'), false);
+    assert.equal(indexHtml.includes('data-mode="production"'), true);
+    assert.equal(indexHtml.includes('id="productionMode"'), true);
+    assert.equal(indexHtml.includes('js/production-core.js'), true);
+    assert.equal(indexHtml.includes('js/production-mode.js'), true);
     assert.equal(indexHtml.includes('js/production.js'), false);
-    assert.equal(appSource.includes("case 'production'"), false);
+    assert.equal(appSource.includes("case 'production'"), true);
+    assert.equal(serviceWorker.includes('./js/production-core.js'), true);
+    assert.equal(serviceWorker.includes('./js/production-mode.js'), true);
     assert.equal(serviceWorker.includes('./js/production.js'), false);
 });
 
@@ -59,6 +64,15 @@ test('strict data files stay aligned and every sentence is bilingual', () => {
             assert.equal(typeof row.tr, 'string');
         }
     }
+});
+
+test('verified Russian spelling corrections remain in the strict dictionary', () => {
+    const lines = readProjectFile('kelimeler_tam_strict.txt').split(/\r?\n/);
+
+    assert.equal(lines[158].split(' : ')[0], 'Ни бе ни ме ни кукареку');
+    assert.equal(lines[764].split(' : ')[0], 'Писька');
+    assert.equal(lines[1191].split(' : ')[0], 'Приемлемый');
+    assert.equal(lines[1368].split(' : ')[0], 'Кофеёчек');
 });
 
 test('cloud sync does not ship a shared client secret or endpoint', () => {

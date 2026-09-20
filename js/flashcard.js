@@ -197,7 +197,11 @@ class FlashcardMode {
 
     answer(isCorrect) {
         const word = this.words[this.currentIndex];
-        app.recordAnswer(word.id, isCorrect);
+        app.recordAnswer(word.id, isCorrect, {
+            skill: 'recognition',
+            exerciseType: 'flashcard',
+            senseId: word.senseIds?.[0] || null
+        });
 
         if (isCorrect) {
             this.correctCount++;
