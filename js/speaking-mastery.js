@@ -156,5 +156,5 @@
     }
 
     root.SpeakingMasteryReadModel = SpeakingMasteryReadModel;
+    root.speakingMasteryReadModel = root.speakingMasteryReadModel ?? new SpeakingMasteryReadModel();
 })(typeof window !== 'undefined' ? window : globalThis);
-

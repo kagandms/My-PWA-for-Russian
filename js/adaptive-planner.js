@@ -1,7 +1,7 @@
 (function exposeAdaptivePlanner(root) {
     const PLANNER_VERSION = 'adaptive-planner-v1';
     const POLICY_VERSION = 'adaptive-policy-v1';
-    const ESTIMATED_SECONDS = Object.freeze({ recognition: 20, recall: 45, production: 90, grammar: 60, error_review: 45 });
+    const ESTIMATED_SECONDS = Object.freeze({ recognition: 20, recall: 45, production: 90, grammar: 60, error_review: 45, speaking: 60 });
     const PRIORITY_WEIGHTS = Object.freeze({ recent_verified_error: 100, weak_recall: 60, weak_production: 45, grammar_weakness: 40, due_review: 30, repeated_incorrect: 20, new_item: 10, maintenance_review: 5 });
     const DEFAULT_POLICY = Object.freeze({ new_max_ratio: 0.35, max_items_per_sense: 1 });
 
@@ -77,7 +77,7 @@
         };
     }
 
-    function buildCandidates({ repository, masteryReadModel, errorStore, grammarRepository, now }) {
+    function buildCandidates({ repository, masteryReadModel, errorStore, grammarRepository, now, additionalCandidates = [] }) {
         const errors = getActiveErrors(errorStore);
         const candidates = errors.map(createErrorCandidate);
         const questions = repository?.getTypedRecallQuestions?.() || [];
@@ -130,7 +130,7 @@
             errors,
             now
         })));
-        return candidates;
+        return [...candidates, ...additionalCandidates.map(cloneValue)];
     }
 
     function sortCandidates(left, right) {

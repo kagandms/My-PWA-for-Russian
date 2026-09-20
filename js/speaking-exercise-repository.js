@@ -176,4 +176,5 @@
     }
 
     root.SpeakingExerciseRepository = SpeakingExerciseRepository;
+    root.speakingExerciseRepository = root.speakingExerciseRepository ?? new SpeakingExerciseRepository();
 })(typeof window !== 'undefined' ? window : globalThis);

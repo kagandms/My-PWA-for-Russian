@@ -98,6 +98,48 @@
                     <span class="mode-desc">Вопросы с выбором ответа</span>
                 </button>
 
+                <button class="mode-card" data-mode="typedRecall">
+                    <span class="mode-icon">⌨️</span>
+                    <span class="mode-title">Typed Recall</span>
+                    <span class="mode-desc">Türkçe anlamdan Rusça yaz</span>
+                </button>
+
+                <button class="mode-card" data-mode="production">
+                    <span class="mode-icon">✍️</span>
+                    <span class="mode-title">Production</span>
+                    <span class="mode-desc">Rusça cümlede hedef biçimi kullan</span>
+                </button>
+
+                <button class="mode-card" data-mode="adaptive">
+                    <span class="mode-icon">📅</span>
+                    <span class="mode-title">Bugünkü Çalışmam</span>
+                    <span class="mode-desc">Adaptif günlük çalışma</span>
+                </button>
+
+                <button class="mode-card" data-mode="speaking">
+                    <span class="mode-icon">🎙️</span>
+                    <span class="mode-title">Speaking</span>
+                    <span class="mode-desc">Read Aloud · Prompted · Free Speech</span>
+                </button>
+
+                <button class="mode-card" data-mode="analytics">
+                    <span class="mode-icon">📊</span>
+                    <span class="mode-title">Skill Analytics</span>
+                    <span class="mode-desc">Recognition · Recall · Production · Grammar</span>
+                </button>
+
+                <button class="mode-card" data-mode="errorNotebook">
+                    <span class="mode-icon">📓</span>
+                    <span class="mode-title">Error Notebook</span>
+                    <span class="mode-desc">Hata gözlemlerini incele</span>
+                </button>
+
+                <button class="mode-card" data-mode="grammarLab">
+                    <span class="mode-icon">🧠</span>
+                    <span class="mode-title">Grammar Lab</span>
+                    <span class="mode-desc">Kaynaklı grammar çalışmaları</span>
+                </button>
+
                 <button class="mode-card" data-mode="categories">
                     <span class="mode-icon">🗂️</span>
                     <span class="mode-title">Категории</span>
@@ -111,6 +153,97 @@
                 </button>
             </div>
         </main>
+
+        <!-- Adaptive Daily Mode -->
+        <section id="adaptiveMode" class="mode-screen hidden">
+            <div class="mode-header">
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>Bugünkü Çalışmam</h2>
+                <div class="progress-indicator" id="adaptiveProgress">0/0</div>
+            </div>
+            <div class="adaptive-container">
+                <div id="adaptiveStart" class="adaptive-start">
+                    <p class="adaptive-description">Güvenilir verilerine göre kısa bir çalışma oturumu seç.</p>
+                    <div class="adaptive-duration-options">
+                        <button class="modal-btn primary" data-adaptive-duration="10">10 dakika</button>
+                        <button class="modal-btn" data-adaptive-duration="20">20 dakika</button>
+                        <button class="modal-btn" data-adaptive-duration="30">30 dakika</button>
+                    </div>
+                    <label class="adaptive-speaking-optin">
+                        <input id="adaptiveIncludeSpeaking" type="checkbox">
+                        Speaking’i bu oturuma dahil et
+                    </label>
+                    <label class="adaptive-speaking-optin">
+                        <input id="adaptiveIncludeFreeSpeech" type="checkbox">
+                        Free Speech’i ayrıca dahil et
+                    </label>
+                    <button id="adaptiveResume" class="next-btn hidden">Devam eden oturuma dön</button>
+                    <p id="adaptiveStatus" class="production-status"></p>
+                </div>
+                <div id="adaptiveExercise" class="adaptive-exercise hidden">
+                    <p id="adaptiveModule" class="adaptive-module"></p>
+                    <p id="adaptivePrompt" class="question-word"></p>
+                    <label class="typed-recall-label" for="adaptiveInput">Cevabın</label>
+                    <textarea id="adaptiveInput" class="word-form-input adaptive-input" rows="3" autocomplete="off" autocapitalize="none"></textarea>
+                    <div id="adaptiveRecognitionControls" class="adaptive-recognition-controls hidden">
+                        <button id="adaptiveRecognizeKnown" class="control-btn correct">✅ Biliyorum</button>
+                        <button id="adaptiveRecognizeAgain" class="control-btn wrong">🔁 Tekrar</button>
+                    </div>
+                    <button id="adaptiveSubmit" class="next-btn">Cevabı kontrol et</button>
+                    <button id="adaptiveReviewDone" class="next-btn hidden">İncelemeyi tamamladım</button>
+                    <div id="adaptiveSpeakingControls" class="adaptive-speaking-controls hidden">
+                        <button id="adaptiveSpeakingStart" class="next-btn">Speaking Start</button>
+                        <button id="adaptiveSpeakingStop" class="modal-btn" disabled>Speaking Stop</button>
+                        <p id="adaptiveSpeakingStatus" class="production-status"></p>
+                    </div>
+                    <div id="adaptiveFeedback" class="quiz-feedback hidden" role="status" aria-live="polite"></div>
+                    <button id="adaptiveNext" class="next-btn hidden">Sonraki →</button>
+                    <button id="adaptivePause" class="modal-btn">Duraklat</button>
+                </div>
+                <div id="adaptiveCompletion" class="adaptive-completion hidden">
+                    <h3>Bugünkü çalışma tamamlandı</h3>
+                    <p id="adaptiveCompletionSummary"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speaking Mode -->
+        <section id="speakingMode" class="mode-screen hidden">
+            <div class="mode-header">
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>Speaking</h2>
+                <div class="progress-indicator" id="speakingExerciseType">Speaking</div>
+            </div>
+            <div class="speaking-container">
+                <p id="speakingPrompt" class="question-word"></p>
+                <p id="speakingTargets" class="speaking-targets"></p>
+                <div class="speaking-status-grid">
+                    <p id="speakingRecordingState" class="production-status"></p>
+                    <p id="speakingTranscriptState" class="production-status"></p>
+                </div>
+                <p id="speakingPrivacyNotice" class="speaking-privacy"></p>
+                <div class="speaking-controls">
+                    <button id="speakingStart" class="next-btn">Start</button>
+                    <button id="speakingStop" class="next-btn" disabled>Stop</button>
+                    <button id="speakingCancel" class="modal-btn" disabled>Cancel</button>
+                </div>
+                <div id="speakingResult" class="quiz-feedback" role="status" aria-live="polite"></div>
+                <div class="speaking-evaluation">
+                    <p id="speakingPronunciation">Pronunciation: not_evaluated</p>
+                    <p id="speakingStress">Stress: not_evaluated</p>
+                    <p id="speakingFluency">Fluency: not_evaluated</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skill Analytics Mode -->
+        <section id="analyticsMode" class="mode-screen hidden">
+            <div class="mode-header">
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>Skill Analytics</h2>
+            </div>
+            <div id="analyticsCards" class="analytics-cards" aria-live="polite"></div>
+        </section>
 
         <!-- Flashcard Mode -->
         <section id="flashcardMode" class="mode-screen hidden">
@@ -155,6 +288,33 @@
             </div>
         </section>
 
+        <!-- Error Notebook Mode -->
+        <section id="errorNotebookMode" class="mode-screen hidden">
+            <div class="mode-header">
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>Error Notebook</h2>
+            </div>
+            <div class="error-notebook-container">
+                <p id="errorNotebookSummary" class="production-status">Aktif hata gözlemleri: 0</p>
+                <div id="errorNotebookList" class="error-notebook-list" aria-live="polite">Henüz Error Notebook kaydı yok.</div>
+            </div>
+        </section>
+
+        <!-- Grammar Lab Mode -->
+        <section id="grammarLabMode" class="mode-screen hidden">
+            <div class="mode-header">
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>Grammar Lab</h2>
+                <div class="progress-indicator" id="grammarLabProgress">0/0</div>
+            </div>
+            <div class="grammar-lab-container">
+                <p id="grammarLabPrompt" class="question-word">Güvenilir ve puanlanabilir Grammar Lab alıştırması bulunamadı.</p>
+                <input id="grammarLabInput" class="word-form-input" type="text" autocomplete="off" autocapitalize="none">
+                <button id="grammarLabSubmit" class="next-btn">Cevabı kontrol et</button>
+                <div id="grammarLabFeedback" class="quiz-feedback" role="status" aria-live="polite"></div>
+            </div>
+        </section>
+
         <!-- Quiz Mode -->
         <section id="quizMode" class="mode-screen hidden">
             <div class="mode-header">
@@ -179,6 +339,48 @@
             <div class="quiz-feedback hidden" id="quizFeedback">
                 <p id="quizFeedbackText"></p>
                 <button class="next-btn" id="quizNext">Далее →</button>
+            </div>
+        </section>
+
+        <!-- Typed Recall Mode -->
+        <section id="typedRecallMode" class="mode-screen hidden">
+            <div class="mode-header">
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>Typed Recall</h2>
+                <div class="progress-indicator" id="typedRecallProgress">1/0</div>
+            </div>
+            <div class="typed-recall-container">
+                <div class="quiz-question">
+                    <p class="typed-recall-label">Türkçe anlam</p>
+                    <p class="question-word" id="typedRecallPrompt"></p>
+                </div>
+                <label class="typed-recall-label" for="typedRecallInput">Rusça cevabın</label>
+                <input id="typedRecallInput" class="word-form-input typed-recall-input" type="text" autocomplete="off" autocapitalize="none">
+                <button id="typedRecallSubmit" class="next-btn">Cevabı kontrol et</button>
+                <div id="typedRecallFeedback" class="quiz-feedback hidden" role="status" aria-live="polite"></div>
+                <button id="typedRecallNext" class="next-btn hidden">Sonraki soru →</button>
+            </div>
+        </section>
+
+        <!-- Production Mode -->
+        <section id="productionMode" class="mode-screen hidden">
+            <div class="mode-header">
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>Production</h2>
+                <div class="progress-indicator" id="productionProgress">1/0</div>
+            </div>
+            <div class="production-container">
+                <div class="quiz-question">
+                    <p class="typed-recall-label">Türkçe sense</p>
+                    <p class="question-word" id="productionPrompt"></p>
+                    <p class="production-instruction">Bu anlamı kullanarak Rusça bir cümle yaz.</p>
+                </div>
+                <label class="typed-recall-label" for="productionInput">Rusça cümlen</label>
+                <textarea id="productionInput" class="word-form-input production-input" rows="4" autocomplete="off" autocapitalize="none"></textarea>
+                <button id="productionSubmit" class="next-btn">Cümleyi kontrol et</button>
+                <div id="productionFeedback" class="quiz-feedback hidden" role="status" aria-live="polite"></div>
+                <button id="productionNext" class="next-btn hidden">Sonraki soru →</button>
+                <p id="productionStatus" class="production-status hidden" role="status"></p>
             </div>
         </section>
 
@@ -468,6 +670,33 @@
     <script src="js/user-words.js"></script>
     <script src="js/trash.js"></script>
     <script src="js/word-categories.js"></script>
+    <script>
+        window.VOCABULARY_RUNTIME_CONFIG = { USE_VOCABULARY_V1: true };
+    </script>
+    <script src="js/vocabulary-repository.js"></script>
+    <script src="js/learning-progress.js"></script>
+    <script src="js/typed-recall-core.js"></script>
+    <script src="js/production-core.js"></script>
+    <script src="js/error-taxonomy.js"></script>
+    <script src="js/error-notebook-core.js"></script>
+    <script src="js/error-notebook.js"></script>
+    <script src="js/speaking-core.js"></script>
+    <script src="js/speaking-capabilities.js"></script>
+    <script src="js/speech-recognition-adapter.js"></script>
+    <script src="js/audio-recorder-adapter.js"></script>
+    <script src="js/speaking-store.js"></script>
+    <script src="js/speaking-exercise-repository.js"></script>
+    <script src="js/speaking-mastery.js"></script>
+    <script src="js/speaking-error-bridge.js"></script>
+    <script src="js/speaking-adaptive-provider.js"></script>
+    <script src="js/grammar-repository.js"></script>
+    <script src="js/grammar-lab-core.js"></script>
+    <script src="js/grammar-progress.js"></script>
+    <script src="js/adaptive-mastery.js"></script>
+    <script src="js/adaptive-session-store.js"></script>
+    <script src="js/adaptive-planner.js"></script>
+    <script src="js/adaptive-analytics.js"></script>
+    <script src="js/adaptive-engine.js"></script>
     <script src="js/data.js"></script>
     <script src="js/srs.js"></script>
     <script src="js/mastered-manager.js"></script>
@@ -478,9 +707,16 @@
     <script src="js/goals.js"></script>
     <script src="js/notifications.js"></script>
     <script src="js/ai.js"></script>
+    <script src="js/speaking-mode.js"></script>
     <script src="js/app.js"></script>
     <script src="js/flashcard.js"></script>
     <script src="js/quiz.js"></script>
+    <script src="js/typed-recall.js"></script>
+    <script src="js/production-mode.js"></script>
+    <script src="js/adaptive-mode.js"></script>
+    <script src="js/analytics-mode.js"></script>
+    <script src="js/error-notebook-mode.js"></script>
+    <script src="js/grammar-lab-mode.js"></script>
     <script src="js/categories.js"></script>
 
     <script src="js/torfl.js"></script>
