@@ -157,7 +157,7 @@ test('adaptive mode exposes explicit speaking start/stop controls and completes 
             getCurrentItem: () => session.planned_items[0],
             completeItem: (itemId, outcome) => completed.push({ itemId, outcome })
         },
-        speakingMode: {
+        speakingController: {
             configureAdaptiveExercise: (item, callback) => { window.callback = callback; },
             start: () => Promise.resolve(true),
             stop: () => Promise.resolve({ event_id: 'event:1' })

@@ -16,10 +16,25 @@ test('wires Speaking card, screen, dependency order, and cache-safe backup key',
     assert.match(storage, /ru_tr_speaking_events_v1/);
 });
 
+test('keeps the Speaking controller when the DOM creates a named speakingMode property', () => {
+    const source = fs.readFileSync(path.join(ROOT, 'js/speaking-mode.js'), 'utf8');
+    const window = {
+        speakingMode: { id: 'speakingMode' },
+        addEventListener() {},
+        removeEventListener() {},
+        console
+    };
+    const context = { window, globalThis: window, console, structuredClone };
+    vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'js/speaking-core.js'), 'utf8'), context, { filename: 'speaking-core.js' });
+    vm.runInNewContext(source, context, { filename: 'speaking-mode.js' });
+
+    assert.equal(window.speakingController instanceof window.SpeakingMode, true);
+});
+
 test('disposes Speaking before App route replacement or close', () => {
     const app = fs.readFileSync(path.join(ROOT, 'js/app.js'), 'utf8');
 
-    assert.match(app, /speakingMode\?\.dispose/);
+    assert.match(app, /speakingController\?\.dispose/);
     assert.match(app, /sourceIndependentModes = \['errorNotebook', 'grammarLab', 'analytics', 'speaking'\]/);
 });
 

@@ -439,5 +439,7 @@
     }
 
     root.SpeakingMode = SpeakingMode;
-    root.speakingMode = root.speakingMode ?? new SpeakingMode();
+    root.speakingController = root.speakingController instanceof SpeakingMode
+        ? root.speakingController
+        : new SpeakingMode();
 })(typeof window !== 'undefined' ? window : globalThis);

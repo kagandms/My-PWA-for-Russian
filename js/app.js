@@ -630,7 +630,7 @@ class App {
             if (this.currentMode && this.currentMode !== mode) {
                 const prevScreen = document.getElementById(`${this.currentMode}Mode`);
                 if (prevScreen) prevScreen.classList.add('hidden');
-                if (this.currentMode === 'speaking') window.speakingMode?.dispose?.();
+                if (this.currentMode === 'speaking') window.speakingController?.dispose?.();
             }
             
             modeScreen.classList.remove('hidden');
@@ -654,7 +654,7 @@ class App {
                     window.adaptiveMode?.init();
                     break;
                 case 'speaking':
-                    window.speakingMode?.init();
+                    window.speakingController?.init();
                     break;
                 case 'analytics':
                     window.analyticsMode?.init();
@@ -694,7 +694,7 @@ class App {
 
     closeMode() {
         if (this.currentMode) {
-            if (this.currentMode === 'speaking') window.speakingMode?.dispose?.();
+            if (this.currentMode === 'speaking') window.speakingController?.dispose?.();
             const modeScreen = document.getElementById(`${this.currentMode}Mode`);
             if (modeScreen) {
                 modeScreen.classList.add('hidden');

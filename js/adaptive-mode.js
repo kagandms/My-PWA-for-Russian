@@ -121,7 +121,7 @@
 
         async startSpeaking() {
             const item = root.adaptiveEngine.getCurrentItem();
-            const speakingMode = root.speakingMode;
+            const speakingMode = root.speakingController;
             if (!item || !speakingMode?.configureAdaptiveExercise) return;
             speakingMode.configureAdaptiveExercise(item, event => {
                 if (event) this.finishAnswer(item, 'speaking_event_recorded');
@@ -138,7 +138,7 @@
         }
 
         async stopSpeaking() {
-            const speakingMode = root.speakingMode;
+            const speakingMode = root.speakingController;
             if (!speakingMode?.stop) return;
             this.element('adaptiveSpeakingStop').disabled = true;
             await speakingMode.stop();
