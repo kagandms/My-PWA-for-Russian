@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "artifact_type": "speaking-read-aloud-exercises",
+  "source": {
+    "file_name": "sentences_strict.json",
+    "source_sha256": "d16bdbd8d166057365b510a12c6b886931fa08d6f55b1e250cd1359a10c7bb3a"
+  },
+  "scored_read_aloud": [
+    {
+      "exercise_id": "speaking:read-aloud:line-4-0",
+      "source": { "source_line_number": 4, "sentence_index": 0 },
+      "expected_text": "После работы он решил учиться вечером, чтобы улучшить навыки программирования.",
+      "verification_status": "verified",
+      "exercise_eligible": true,
+      "targets": [
+        {
+          "lexical_unit_id": "lu:1c33c7a37e1bffd771f4",
+          "sense_id": "sense:f7afeaa5598fcd79fe79",
+          "target_surface": "учиться"
+        }
+      ]
+    },
+    {
+      "exercise_id": "speaking:read-aloud:line-6-0",
+      "source": { "source_line_number": 6, "sentence_index": 0 },
+      "expected_text": "Студент смог выучить весь сложный текст наизусть всего за несколько часов.",
+      "verification_status": "verified",
+      "exercise_eligible": true,
+      "targets": [
+        {
+          "lexical_unit_id": "lu:d2367f6eb7735d692b4a",
+          "sense_id": "sense:11cabaad3f2eb393e0bd",
+          "target_surface": "выучить"
+        }
+      ]
+    },
+    {
+      "exercise_id": "speaking:read-aloud:line-10-0",
+      "source": { "source_line_number": 10, "sentence_index": 0 },
+      "expected_text": "За время путешествия по Европе я смог научиться хорошо говорить по-английски.",
+      "verification_status": "verified",
+      "exercise_eligible": true,
+      "targets": [
+        {
+          "lexical_unit_id": "lu:5051c1e35edc166676c4",
+          "sense_id": "sense:7418b5b8cd05117193dd",
+          "target_surface": "научиться"
+        }
+      ]
+    }
+  ],
+  "practice_read_aloud": [
+    {
+      "exercise_id": "speaking:read-aloud:source-preserved-line-1-0",
+      "source": { "source_line_number": 1, "sentence_index": 0 },
+      "expected_text": "Встретив друга детства в другой стране, я понял, что мир тесен.",
+      "verification_status": "source_preserved",
+      "exercise_eligible": false,
+      "targets": [
+        {
+          "lexical_unit_id": "lu:0dae100e5b16e427dfbd",
+          "sense_id": "sense:ee9f274afccf79989cff",
+          "target_surface": "мир тесен"
+        }
+      ]
+    }
+  ],
+  "prompted_exercises": [
+    {
+      "exercise_id": "speaking:prompted:learning-cluster-1",
+      "prompt": "Используйте каждое из следующих слов в коротком ответе.",
+      "verification_status": "verified",
+      "exercise_eligible": true,
+      "targets": [
+        {
+          "lexical_unit_id": "lu:1c33c7a37e1bffd771f4",
+          "sense_id": "sense:f7afeaa5598fcd79fe79",
+          "target_surface": "учиться"
+        },
+        {
+          "lexical_unit_id": "lu:952fa4dd0f6496f1821a",
+          "sense_id": "sense:d781f79956e4df2bd625",
+          "target_surface": "учить"
+        },
+        {
+          "lexical_unit_id": "lu:d2367f6eb7735d692b4a",
+          "sense_id": "sense:11cabaad3f2eb393e0bd",
+          "target_surface": "выучить"
+        }
+      ]
+    }
+  ]
+}

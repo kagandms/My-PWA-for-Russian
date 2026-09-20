@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "artifact_type": "speaking-free-speech-topics",
+  "topics": [
+    {
+      "topic_id": "speaking:free:daily-routine",
+      "prompt_ru": "Расскажите о своём обычном дне.",
+      "prompt_tr": "Günlük rutininizi anlatın.",
+      "duration_seconds": 45
+    },
+    {
+      "topic_id": "speaking:free:travel-plan",
+      "prompt_ru": "Расскажите о путешествии, которое вы хотели бы совершить.",
+      "prompt_tr": "Yapmak istediğiniz bir seyahati anlatın.",
+      "duration_seconds": 45
+    },
+    {
+      "topic_id": "speaking:free:study-goal",
+      "prompt_ru": "Объясните, как вы изучаете русский язык.",
+      "prompt_tr": "Rusça nasıl çalıştığınızı açıklayın.",
+      "duration_seconds": 60
+    }
+  ]
+}
