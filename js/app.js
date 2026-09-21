@@ -32,6 +32,12 @@ class App {
             console.error('TRKI artifacts could not be loaded.', error);
         }
 
+        try {
+            await window.trkiListeningRepository?.load?.();
+        } catch (error) {
+            console.error('TRKI Listening artifacts could not be loaded.', error);
+        }
+
         window.storageManager?.migrateUserData();
         this.reloadUserDataManagers();
         this.setupNavigation();
@@ -601,7 +607,7 @@ class App {
         }
 
         const sourceIndependentModes = ['errorNotebook', 'grammarLab', 'analytics', 'speaking'];
-        const contentIndependentModes = [...sourceIndependentModes, 'trki'];
+        const contentIndependentModes = [...sourceIndependentModes, 'trki', 'trkiListening'];
         if (WORDS.length === 0 && !contentIndependentModes.includes(mode)) {
             this.showNoWords();
             return;
@@ -639,6 +645,7 @@ class App {
                 if (prevScreen) prevScreen.classList.add('hidden');
                 if (this.currentMode === 'speaking') window.speakingController?.dispose?.();
                 if (this.currentMode === 'trki') window.trkiController?.dispose?.();
+                if (this.currentMode === 'trkiListening') window.trkiListeningController?.dispose?.();
             }
             
             modeScreen.classList.remove('hidden');
@@ -676,6 +683,9 @@ class App {
                 case 'trki':
                     window.trkiController?.init();
                     break;
+                case 'trkiListening':
+                    window.trkiListeningController?.init();
+                    break;
                 case 'daily':
                     window.dailyMode?.init();
                     break;
@@ -707,6 +717,7 @@ class App {
         if (this.currentMode) {
             if (this.currentMode === 'speaking') window.speakingController?.dispose?.();
             if (this.currentMode === 'trki') window.trkiController?.dispose?.();
+            if (this.currentMode === 'trkiListening') window.trkiListeningController?.dispose?.();
             const modeScreen = document.getElementById(`${this.currentMode}Mode`);
             if (modeScreen) {
                 modeScreen.classList.add('hidden');

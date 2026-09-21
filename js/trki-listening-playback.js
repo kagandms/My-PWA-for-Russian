@@ -18,9 +18,11 @@
         };
     }
 
-    function create(policy) {
+    function create(policy, initialState = {}) {
         if (!Number.isInteger(policy?.max_plays) || policy.max_plays < 1) throw new Error('Listening max_plays is required.');
         const state = createInitialState(policy);
+        state.plays_consumed = Math.max(0, Math.min(policy.max_plays, Number(initialState.plays_consumed) || 0));
+        if (state.plays_consumed >= state.max_plays) state.status = 'max_plays_reached';
         let playSequence = 0;
 
         function getSnapshot() {

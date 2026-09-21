@@ -146,6 +146,12 @@
                     <span class="mode-desc">Grammar · Lexicon · Reading · Writing</span>
                 </button>
 
+                <button class="mode-card" data-mode="trkiListening">
+                    <span class="mode-icon">🎧</span>
+                    <span class="mode-title">TRKI Listening</span>
+                    <span class="mode-desc">Version-bound synthetic Listening practice</span>
+                </button>
+
                 <button class="mode-card" data-mode="categories">
                     <span class="mode-icon">🗂️</span>
                     <span class="mode-title">Категории</span>
@@ -370,6 +376,48 @@
                 <div id="trkiCompletionPanel" class="trki-completion hidden">
                     <p id="trkiSummary" class="production-status"></p>
                     <button id="trkiRestart" class="next-btn">Yeni oturum</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRKI Listening Mode -->
+        <section id="trkiListeningMode" class="mode-screen hidden">
+            <div class="mode-header">
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>TRKI Listening</h2>
+                <div class="progress-indicator" id="trkiListeningProgress">0/0</div>
+                <p id="trkiListeningTimer" class="production-status">Süre: 00:00</p>
+            </div>
+            <div class="trki-container">
+                <div id="trkiListeningStartPanel" class="trki-start-panel">
+                    <p class="production-status">Synthetic, non-official Listening fixture; local result only.</p>
+                    <div class="trki-controls">
+                        <label for="trkiListeningLevel">Seviye</label>
+                        <select id="trkiListeningLevel">
+                            <option value="B1">B1</option>
+                            <option value="B2">B2</option>
+                        </select>
+                    </div>
+                    <div class="trki-start-actions">
+                        <button id="trkiListeningStudyStart" class="next-btn">Study başlat</button>
+                        <button id="trkiListeningExamStart" class="modal-btn">Exam başlat</button>
+                    </div>
+                </div>
+                <div id="trkiListeningExercisePanel" class="trki-exercise-panel hidden">
+                    <p id="trkiListeningAudioStatus" class="trki-source-meta">Playback hazır değil.</p>
+                    <button id="trkiListeningPlay" class="next-btn">▶ Play</button>
+                    <p id="trkiListeningPrompt" class="question-word"></p>
+                    <div id="trkiListeningOptions" class="trki-options"></div>
+                    <label for="trkiListeningReselect" class="trki-source-meta">Restricted audio yeniden seç</label>
+                    <input id="trkiListeningReselect" type="file" accept="audio/*">
+                    <div class="trki-exercise-actions">
+                        <button id="trkiListeningSubmit" class="next-btn">Cevabı gönder</button>
+                        <button id="trkiListeningNext" class="next-btn">Sonraki →</button>
+                    </div>
+                    <p id="trkiListeningFeedback" class="quiz-feedback" role="status" aria-live="polite"></p>
+                </div>
+                <div id="trkiListeningCompletionPanel" class="trki-completion hidden">
+                    <p id="trkiListeningSummary" class="production-status"></p>
                 </div>
             </div>
         </section>
@@ -765,6 +813,13 @@
     <script src="js/trki-attempt-store.js"></script>
     <script src="js/trki-profile-store.js"></script>
     <script src="js/trki-local-import.js"></script>
+    <script src="js/trki-listening-core.js"></script>
+    <script src="js/trki-listening-repository.js"></script>
+    <script src="js/trki-listening-playback.js"></script>
+    <script src="js/trki-listening-audio.js"></script>
+    <script src="js/trki-listening-session-store.js"></script>
+    <script src="js/trki-listening-attempt-store.js"></script>
+    <script src="js/trki-listening-session-coordinator.js"></script>
     <script src="js/data.js"></script>
     <script src="js/srs.js"></script>
     <script src="js/mastered-manager.js"></script>

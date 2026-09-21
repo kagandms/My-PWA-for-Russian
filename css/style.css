@@ -2808,6 +2808,19 @@ body {
     border-radius: 16px;
 }
 
+.trki-listening-controls {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#trkiListeningReselect {
+    display: block;
+    margin: 1rem 0;
+    max-width: 100%;
+}
+
 .trki-controls,
 .trki-start-actions,
 .trki-exercise-actions {
