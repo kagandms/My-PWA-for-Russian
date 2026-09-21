@@ -56,6 +56,7 @@
         }
 
         async init() {
+            const configuredTrkiExercise = this.currentExercise?.trki_context ? cloneValue(this.currentExercise) : null;
             await this.exerciseRepository.load();
             this.exercisePool = [
                 ...this.exerciseRepository.getReadAloudExercises(),
@@ -68,7 +69,7 @@
                     targets: []
                 }))
             ];
-            this.currentExercise = this.exercisePool[0] ?? null;
+            this.currentExercise = configuredTrkiExercise || this.exercisePool[0] || null;
             this.capabilities = this.capabilityDetector?.detect?.({
                 window: this.browserWindow,
                 navigator: this.navigator
@@ -324,7 +325,8 @@
                     stress: 'not_evaluated',
                     fluency: 'not_evaluated',
                     overall: 'insufficient_evidence'
-                }
+                },
+                ...(this.currentExercise?.trki_context ? { trki_context: cloneValue(this.currentExercise.trki_context) } : {})
             };
         }
 

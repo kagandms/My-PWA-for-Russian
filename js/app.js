@@ -607,7 +607,7 @@ class App {
         }
 
         const sourceIndependentModes = ['errorNotebook', 'grammarLab', 'analytics', 'speaking'];
-        const contentIndependentModes = [...sourceIndependentModes, 'trki', 'trkiListening'];
+        const contentIndependentModes = [...sourceIndependentModes, 'trki', 'trkiListening', 'trkiSpeaking'];
         if (WORDS.length === 0 && !contentIndependentModes.includes(mode)) {
             this.showNoWords();
             return;
@@ -632,7 +632,8 @@ class App {
     }
 
     startMode(mode, questionCount = null, sessionOptions = {}) {
-        const modeScreen = document.getElementById(`${mode}Mode`);
+        const routedMode = mode === 'trkiSpeaking' ? 'speaking' : mode;
+        const modeScreen = document.getElementById(`${routedMode}Mode`);
         if (!modeScreen) return;
 
         const normalizedOptions = this.normalizeSessionOptions(sessionOptions);
@@ -640,7 +641,7 @@ class App {
         {
             document.getElementById('mainMenu').classList.add('hidden');
             
-            if (this.currentMode && this.currentMode !== mode) {
+            if (this.currentMode && this.currentMode !== routedMode) {
                 const prevScreen = document.getElementById(`${this.currentMode}Mode`);
                 if (prevScreen) prevScreen.classList.add('hidden');
                 if (this.currentMode === 'speaking') window.speakingController?.dispose?.();
@@ -649,10 +650,10 @@ class App {
             }
             
             modeScreen.classList.remove('hidden');
-            this.currentMode = mode;
+            this.currentMode = routedMode;
 
             // Mod'u başlat
-            switch (mode) {
+            switch (routedMode) {
                 case 'flashcard':
                     window.flashcardMode?.init(questionCount, normalizedOptions);
                     break;
@@ -669,6 +670,7 @@ class App {
                     window.adaptiveMode?.init();
                     break;
                 case 'speaking':
+                    if (mode === 'trkiSpeaking') window.trkiSpeakingController?.activate?.();
                     window.speakingController?.init();
                     break;
                 case 'analytics':
