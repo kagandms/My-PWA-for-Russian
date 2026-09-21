@@ -21,7 +21,9 @@
       "version": "accessed-2026-09-21",
       "title": "ТРКИ overview",
       "publisher": "A.S. Pushkin State Russian Language Institute",
-      "source_type": "official_reference",
+      "source_type": "official_trki_system",
+      "source_class": "trki_system",
+      "official_trki_provenance": true,
       "url": "https://www.pushkin.institute/certificates/trki/",
       "license": "unknown",
       "license_status": "unknown",
@@ -31,15 +33,17 @@
       "full_content_bundled": false,
       "license_scope": "metadata-only; no page content redistributed",
       "provenance_status": "catalogued",
-      "content_policy": "official-reference-metadata-only"
+      "content_policy": "official-trki-system-metadata-only"
     },
     {
-      "source_id": "src:official:pushkin-sample-tests",
-      "document_id": "doc:official:pushkin-sample-tests",
+      "source_id": "src:institutional:pushkin-sample-tests",
+      "document_id": "doc:institutional:pushkin-sample-tests",
       "version": "accessed-2026-09-21",
-      "title": "Online sample test blocks",
+      "title": "Pushkin Institute institutional online sample-test blocks",
       "publisher": "A.S. Pushkin State Russian Language Institute",
-      "source_type": "official_reference",
+      "source_type": "institutional_testing",
+      "source_class": "pushkin_institute_institutional_testing",
+      "official_trki_provenance": false,
       "url": "https://www.pushkin.institute/certificates/cct/tests-online/",
       "license": "unknown",
       "license_status": "unknown",
@@ -49,7 +53,7 @@
       "full_content_bundled": false,
       "license_scope": "metadata-only; no page content redistributed",
       "provenance_status": "catalogued",
-      "content_policy": "official-reference-metadata-only"
+      "content_policy": "institutional-testing-metadata-only"
     }
   ]
 }
