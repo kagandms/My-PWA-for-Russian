@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "artifact": "trki-exercises",
+  "artifact_version": "trki-exercises-v1",
+  "content_policy": "synthetic-fixture-only",
+  "exercises": [
+    {
+      "exercise_id": "trki:b1:grammar:genitive-1",
+      "level": "B1",
+      "section": "grammar",
+      "exercise_type": "multiple_choice",
+      "prompt": "У меня нет ___ сегодня.",
+      "options": ["времени", "время", "времена", "времению"],
+      "answer_key": { "option_index": 0 },
+      "numbering": { "section_number": 1, "item_number": 1 },
+      "source_reference": {
+        "source_id": "src:synthetic-trki-b1-b2",
+        "document_id": "doc:synthetic-trki-b1-b2",
+        "version": "2026-09-fixture",
+        "locator": "synthetic/grammar/1"
+      },
+      "verification_status": "verified",
+      "exercise_eligible": true,
+      "scoring": { "mode": "objective", "points": 1 },
+      "error_mapping": { "error_type": "trki.grammar.case.genitive", "error_subtype": "absence-negation" }
+    },
+    {
+      "exercise_id": "trki:b2:grammar:aspect-1",
+      "level": "B2",
+      "section": "grammar",
+      "exercise_type": "multiple_choice",
+      "prompt": "Когда он ___ работу, мы обсудим результат.",
+      "options": ["закончит", "заканчивал", "заканчивает", "закончить"],
+      "answer_key": { "option_index": 0 },
+      "numbering": { "section_number": 1, "item_number": 2 },
+      "source_reference": {
+        "source_id": "src:synthetic-trki-b1-b2",
+        "document_id": "doc:synthetic-trki-b1-b2",
+        "version": "2026-09-fixture",
+        "locator": "synthetic/grammar/2"
+      },
+      "verification_status": "verified",
+      "exercise_eligible": true,
+      "scoring": { "mode": "objective", "points": 1 },
+      "error_mapping": { "error_type": "trki.grammar.aspect", "error_subtype": "future-completion" }
+    },
+    {
+      "exercise_id": "trki:b1:lexicon:choice-1",
+      "level": "B1",
+      "section": "lexicon",
+      "exercise_type": "multiple_choice",
+      "prompt": "Выберите слово: человек, который учит студентов.",
+      "options": ["учитель", "ученик", "учёба", "учиться"],
+      "answer_key": { "option_index": 0 },
+      "numbering": { "section_number": 2, "item_number": 1 },
+      "source_reference": {
+        "source_id": "src:synthetic-trki-b1-b2",
+        "document_id": "doc:synthetic-trki-b1-b2",
+        "version": "2026-09-fixture",
+        "locator": "synthetic/lexicon/1"
+      },
+      "verification_status": "verified",
+      "exercise_eligible": true,
+      "scoring": { "mode": "objective", "points": 1 },
+      "error_mapping": { "error_type": "trki.lexicon.choice", "error_subtype": "derivational-choice" }
+    },
+    {
+      "exercise_id": "trki:b2:lexicon:candidate-1",
+      "level": "B2",
+      "section": "lexicon",
+      "exercise_type": "multiple_choice",
+      "prompt": "Выберите наиболее точное слово для официального обсуждения.",
+      "options": ["переговоры", "разговор", "болтовня", "встреча"],
+      "answer_key": { "option_index": 0 },
+      "numbering": { "section_number": 2, "item_number": 2 },
+      "source_reference": {
+        "source_id": "src:synthetic-trki-b1-b2",
+        "document_id": "doc:synthetic-trki-b1-b2",
+        "version": "2026-09-fixture",
+        "locator": "synthetic/lexicon/2"
+      },
+      "verification_status": "candidate",
+      "exercise_eligible": false,
+      "scoring": { "mode": "objective", "points": 1 }
+    },
+    {
+      "exercise_id": "trki:b1:reading:1",
+      "level": "B1",
+      "section": "reading",
+      "exercise_type": "multiple_choice",
+      "prompt": "Почему Анна пошла в библиотеку?",
+      "passage": "Анна готовилась к экзамену и искала тихое место для работы. Поэтому она пошла в библиотеку после занятий.",
+      "options": ["Чтобы встретить друга", "Чтобы подготовиться к экзамену", "Чтобы купить книгу", "Чтобы пообедать"],
+      "answer_key": { "option_index": 1 },
+      "numbering": { "section_number": 3, "item_number": 1 },
+      "passage_alignment": { "passage_id": "passage:b1-library", "paragraph_ids": ["p1"] },
+      "source_reference": {
+        "source_id": "src:synthetic-trki-b1-b2",
+        "document_id": "doc:synthetic-trki-b1-b2",
+        "version": "2026-09-fixture",
+        "locator": "synthetic/reading/b1/1"
+      },
+      "verification_status": "verified",
+      "exercise_eligible": true,
+      "scoring": { "mode": "objective", "points": 1 },
+      "error_mapping": { "error_type": "trki.reading.inference", "error_subtype": "explicit-cause" }
+    },
+    {
+      "exercise_id": "trki:b2:reading:1",
+      "level": "B2",
+      "section": "reading",
+      "exercise_type": "multiple_choice",
+      "prompt": "Какой вывод можно сделать из текста?",
+      "passage": "Небольшая команда изменила расписание встреч, чтобы участники могли заранее подготовить вопросы. Через месяц обсуждения стали короче, а решения — яснее.",
+      "options": ["Встречи отменили", "Подготовка улучшила результат обсуждений", "Команда стала больше", "Вопросы перестали быть важными"],
+      "answer_key": { "option_index": 1 },
+      "numbering": { "section_number": 3, "item_number": 2 },
+      "passage_alignment": { "passage_id": "passage:b2-team", "paragraph_ids": ["p1"] },
+      "source_reference": {
+        "source_id": "src:synthetic-trki-b1-b2",
+        "document_id": "doc:synthetic-trki-b1-b2",
+        "version": "2026-09-fixture",
+        "locator": "synthetic/reading/b2/1"
+      },
+      "verification_status": "verified",
+      "exercise_eligible": true,
+      "scoring": { "mode": "objective", "points": 1 },
+      "error_mapping": { "error_type": "trki.reading.inference", "error_subtype": "conclusion" }
+    },
+    {
+      "exercise_id": "trki:b1:writing:1",
+      "level": "B1",
+      "section": "writing",
+      "exercise_type": "writing_prompt",
+      "prompt": "Напишите короткое сообщение другу о планах на выходные.",
+      "source_reference": {
+        "source_id": "src:synthetic-trki-b1-b2",
+        "document_id": "doc:synthetic-trki-b1-b2",
+        "version": "2026-09-fixture",
+        "locator": "synthetic/writing/b1/1"
+      },
+      "verification_status": "candidate",
+      "exercise_eligible": false,
+      "scoring": { "mode": "practice_only" },
+      "ai_candidate": true
+    },
+    {
+      "exercise_id": "trki:b2:writing:1",
+      "level": "B2",
+      "section": "writing",
+      "exercise_type": "writing_prompt",
+      "prompt": "Напишите аргументированный текст о пользе гибкого графика работы.",
+      "source_reference": {
+        "source_id": "src:synthetic-trki-b1-b2",
+        "document_id": "doc:synthetic-trki-b1-b2",
+        "version": "2026-09-fixture",
+        "locator": "synthetic/writing/b2/1"
+      },
+      "verification_status": "candidate",
+      "exercise_eligible": false,
+      "scoring": { "mode": "practice_only" },
+      "ai_candidate": true
+    }
+  ]
+}

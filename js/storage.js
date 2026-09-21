@@ -14,6 +14,9 @@ class StorageManager {
             'ru_tr_user_words',
             'ru_tr_deleted_words',
             'ru_tr_speaking_events_v1',
+            'ru_tr_trki_sessions_v1',
+            'ru_tr_trki_attempts_v1',
+            'ru_tr_trki_profile_v1',
             'dailyWordsDate',
             'dailyWordsIds',
             'theme'

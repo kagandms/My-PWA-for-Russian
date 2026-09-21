@@ -2,7 +2,8 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v66';
+const CACHE_NAME = 'rutr-v67';
+// Phase 6 runtime revision: phase6-trki-1
 const ASSETS = [
     './',
     './index.html',
@@ -31,8 +32,10 @@ const ASSETS = [
     './js/typed-recall.js',
     './js/production-mode.js',
     './js/error-taxonomy.js',
+    './js/trki-error-taxonomy.js',
     './js/error-notebook-core.js',
     './js/error-notebook.js',
+    './js/trki-error-bridge.js',
     './js/speaking-core.js',
     './js/speaking-capabilities.js',
     './js/speech-recognition-adapter.js',
@@ -50,11 +53,19 @@ const ASSETS = [
     './js/adaptive-planner.js',
     './js/adaptive-analytics.js',
     './js/adaptive-engine.js',
+    './js/trki-validator.js',
+    './js/trki-repository.js',
+    './js/trki-timer.js',
+    './js/trki-session-store.js',
+    './js/trki-attempt-store.js',
+    './js/trki-profile-store.js',
+    './js/trki-local-import.js',
     './js/error-notebook-mode.js',
     './js/grammar-lab-mode.js',
     './js/adaptive-mode.js',
     './js/analytics-mode.js',
     './js/speaking-mode.js',
+    './js/trki-mode.js',
     './js/daily.js',
     './js/torfl.js',
     './js/chart.min.js',
@@ -71,6 +82,8 @@ const ASSETS = [
     './data/grammar/contrast-training.v1.json',
     './data/speaking/read-aloud-exercises.v1.json',
     './data/speaking/free-speech-topics.v1.json',
+    './data/trki/source-catalog.v1.json',
+    './data/trki/exercises.v1.json',
     './manifest.json',
     './icon-192.png',
     './icon-512.png'

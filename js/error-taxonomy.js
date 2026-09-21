@@ -18,7 +18,12 @@
         'relative-clause',
         'recall.mismatch',
         'speaking.transcript_mismatch',
-        'speaking.transcript_target_not_observed'
+        'speaking.transcript_target_not_observed',
+        'trki.grammar.case.genitive',
+        'trki.grammar.aspect',
+        'trki.lexicon.choice',
+        'trki.reading.inference',
+        'trki.word_formation'
     ]);
     const DETECTION_METHODS = Object.freeze(['deterministic', 'reviewed', 'inferred']);
     const VERIFICATION_STATUSES = Object.freeze(['verified', 'candidate', 'unverified', 'needs_review']);
@@ -36,7 +41,12 @@
         spelling: 'spelling',
         'recall.mismatch': null,
         'speaking.transcript_mismatch': null,
-        'speaking.transcript_target_not_observed': null
+        'speaking.transcript_target_not_observed': null,
+        'trki.grammar.case.genitive': null,
+        'trki.grammar.aspect': null,
+        'trki.lexicon.choice': null,
+        'trki.reading.inference': null,
+        'trki.word_formation': null
     });
 
     function assertSupported(value, values, label) {

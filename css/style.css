@@ -2801,3 +2801,56 @@ body {
     color: var(--text-secondary);
     line-height: 1.5;
 }
+/* TRKI */
+.trki-container {
+    padding: 1rem;
+    background: var(--bg-card);
+    border-radius: 16px;
+}
+
+.trki-controls,
+.trki-start-actions,
+.trki-exercise-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.trki-controls select {
+    min-width: 7rem;
+    padding: 0.55rem;
+    border: 1px solid var(--border-color, #d7dbea);
+    border-radius: 8px;
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.trki-passage {
+    padding: 0.9rem;
+    border-left: 4px solid var(--primary-color, #667eea);
+    background: rgba(102, 126, 234, 0.08);
+    line-height: 1.6;
+}
+
+.trki-source-meta,
+.trki-writing-meta {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.trki-options {
+    display: grid;
+    gap: 0.6rem;
+    margin: 1rem 0;
+}
+
+.trki-option {
+    text-align: left;
+}
+
+.trki-completion {
+    padding: 2rem 1rem;
+    text-align: center;
+}

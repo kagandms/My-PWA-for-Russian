@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "artifact": "trki-source-catalog",
+  "catalog_version": "trki-source-catalog-v1",
+  "sources": [
+    {
+      "source_id": "src:synthetic-trki-b1-b2",
+      "document_id": "doc:synthetic-trki-b1-b2",
+      "version": "2026-09-fixture",
+      "title": "Synthetic TRKI B1/B2 practice fixture",
+      "publisher": "Ru-Tr test fixture",
+      "source_type": "synthetic",
+      "license": "test-only",
+      "license_scope": "repository-local synthetic content",
+      "provenance_status": "verified",
+      "content_policy": "synthetic-not-official"
+    },
+    {
+      "source_id": "src:official:pushkin-trki-overview",
+      "document_id": "doc:official:pushkin-trki-overview",
+      "version": "accessed-2026-09-21",
+      "title": "ТРКИ overview",
+      "publisher": "A.S. Pushkin State Russian Language Institute",
+      "source_type": "official_reference",
+      "url": "https://www.pushkin.institute/certificates/trki/",
+      "license": "unknown",
+      "license_status": "unknown",
+      "redistribution_status": "no_explicit_permission_identified",
+      "license_assessment_date": "2026-09-21",
+      "license_assessment_evidence": "Official TRKI page and linked institutional policy/footer reviewed; no explicit content redistribution license identified.",
+      "full_content_bundled": false,
+      "license_scope": "metadata-only; no page content redistributed",
+      "provenance_status": "catalogued",
+      "content_policy": "official-reference-metadata-only"
+    },
+    {
+      "source_id": "src:official:pushkin-sample-tests",
+      "document_id": "doc:official:pushkin-sample-tests",
+      "version": "accessed-2026-09-21",
+      "title": "Online sample test blocks",
+      "publisher": "A.S. Pushkin State Russian Language Institute",
+      "source_type": "official_reference",
+      "url": "https://www.pushkin.institute/certificates/cct/tests-online/",
+      "license": "unknown",
+      "license_status": "unknown",
+      "redistribution_status": "no_explicit_permission_identified",
+      "license_assessment_date": "2026-09-21",
+      "license_assessment_evidence": "Official sample-test page and linked institutional policy/footer reviewed; no explicit content redistribution license identified.",
+      "full_content_bundled": false,
+      "license_scope": "metadata-only; no page content redistributed",
+      "provenance_status": "catalogued",
+      "content_policy": "official-reference-metadata-only"
+    }
+  ]
+}

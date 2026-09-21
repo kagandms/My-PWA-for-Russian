@@ -14,7 +14,7 @@ function getAssets(source) {
     return [...block.matchAll(/^\s*['"](\.\/[^'"]+)['"],?$/gm)].map(match => match[1]);
 }
 
-test('ships every Speaking runtime and versioned artifact in the v66 cache', () => {
+test('ships every Speaking runtime and versioned artifact in the v67 cache', () => {
     const source = readServiceWorker();
     const assets = getAssets(source);
     const expectedAssets = [
@@ -32,7 +32,7 @@ test('ships every Speaking runtime and versioned artifact in the v66 cache', () 
         './data/speaking/free-speech-topics.v1.json'
     ];
 
-    assert.match(source, /rutr-v66/u);
+    assert.match(source, /rutr-v67/u);
     for (const asset of expectedAssets) {
         assert.ok(assets.includes(asset), `missing ${asset}`);
         assert.equal(fs.existsSync(path.join(ROOT, asset.slice(2))), true, `missing file ${asset}`);

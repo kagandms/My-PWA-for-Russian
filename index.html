@@ -140,6 +140,12 @@
                     <span class="mode-desc">Kaynaklı grammar çalışmaları</span>
                 </button>
 
+                <button class="mode-card" data-mode="trki">
+                    <span class="mode-icon">🎓</span>
+                    <span class="mode-title">TRKI B1/B2</span>
+                    <span class="mode-desc">Grammar · Lexicon · Reading · Writing</span>
+                </button>
+
                 <button class="mode-card" data-mode="categories">
                     <span class="mode-icon">🗂️</span>
                     <span class="mode-title">Категории</span>
@@ -312,6 +318,59 @@
                 <input id="grammarLabInput" class="word-form-input" type="text" autocomplete="off" autocapitalize="none">
                 <button id="grammarLabSubmit" class="next-btn">Cevabı kontrol et</button>
                 <div id="grammarLabFeedback" class="quiz-feedback" role="status" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- TRKI B1/B2 Mode -->
+        <section id="trkiMode" class="mode-screen hidden">
+            <div class="mode-header">
+                <button class="back-btn" data-back>← Назад</button>
+                <h2>TRKI B1/B2</h2>
+                <div class="progress-indicator" id="trkiProgress">0/0</div>
+                <p id="trkiTimer" class="production-status">Süre: 00:00</p>
+            </div>
+            <div class="trki-container">
+                <div id="trkiStartPanel" class="trki-start-panel">
+                    <p class="production-status" id="trkiStatus">Synthetic fixture içerikleriyle yerel TRKI pratiği.</p>
+                    <div class="trki-controls">
+                        <label for="trkiLevel">Seviye</label>
+                        <select id="trkiLevel">
+                            <option value="B1">B1</option>
+                            <option value="B2">B2</option>
+                        </select>
+                        <label for="trkiSection">Bölüm</label>
+                        <select id="trkiSection">
+                            <option value="all">Tümü</option>
+                            <option value="grammar">Grammar</option>
+                            <option value="lexicon">Lexicon</option>
+                            <option value="reading">Reading</option>
+                            <option value="writing">Writing</option>
+                        </select>
+                    </div>
+                    <div class="trki-start-actions">
+                        <button id="trkiStudyStart" class="next-btn">Study başlat</button>
+                        <button id="trkiExamStart" class="modal-btn">Exam başlat</button>
+                    </div>
+                </div>
+                <div id="trkiExercisePanel" class="trki-exercise-panel hidden">
+                    <p id="trkiSectionLabel" class="adaptive-module"></p>
+                    <p id="trkiSourceMeta" class="trki-source-meta"></p>
+                    <p id="trkiPrompt" class="question-word"></p>
+                    <p id="trkiPassage" class="trki-passage"></p>
+                    <div id="trkiOptions" class="trki-options"></div>
+                    <textarea id="trkiWritingInput" class="word-form-input hidden" rows="6" autocomplete="off"></textarea>
+                    <p id="trkiWritingMeta" class="trki-writing-meta hidden"><span id="trkiWritingCount">Kelime sayısı: 0</span> · Otomatik veya resmî değerlendirme yok.</p>
+                    <div class="trki-exercise-actions">
+                        <button id="trkiSubmit" class="next-btn">Cevabı gönder</button>
+                        <button id="trkiPause" class="modal-btn">Duraklat</button>
+                    </div>
+                    <p id="trkiFeedback" class="quiz-feedback" role="status" aria-live="polite"></p>
+                    <button id="trkiNext" class="next-btn hidden">Sonraki →</button>
+                </div>
+                <div id="trkiCompletionPanel" class="trki-completion hidden">
+                    <p id="trkiSummary" class="production-status"></p>
+                    <button id="trkiRestart" class="next-btn">Yeni oturum</button>
+                </div>
             </div>
         </section>
 
@@ -678,8 +737,10 @@
     <script src="js/typed-recall-core.js"></script>
     <script src="js/production-core.js"></script>
     <script src="js/error-taxonomy.js"></script>
+    <script src="js/trki-error-taxonomy.js"></script>
     <script src="js/error-notebook-core.js"></script>
     <script src="js/error-notebook.js"></script>
+    <script src="js/trki-error-bridge.js"></script>
     <script src="js/speaking-core.js"></script>
     <script src="js/speaking-capabilities.js"></script>
     <script src="js/speech-recognition-adapter.js"></script>
@@ -697,6 +758,13 @@
     <script src="js/adaptive-planner.js"></script>
     <script src="js/adaptive-analytics.js"></script>
     <script src="js/adaptive-engine.js"></script>
+    <script src="js/trki-validator.js"></script>
+    <script src="js/trki-repository.js"></script>
+    <script src="js/trki-timer.js"></script>
+    <script src="js/trki-session-store.js"></script>
+    <script src="js/trki-attempt-store.js"></script>
+    <script src="js/trki-profile-store.js"></script>
+    <script src="js/trki-local-import.js"></script>
     <script src="js/data.js"></script>
     <script src="js/srs.js"></script>
     <script src="js/mastered-manager.js"></script>
@@ -714,6 +782,7 @@
     <script src="js/typed-recall.js"></script>
     <script src="js/production-mode.js"></script>
     <script src="js/adaptive-mode.js"></script>
+    <script src="js/trki-mode.js"></script>
     <script src="js/analytics-mode.js"></script>
     <script src="js/error-notebook-mode.js"></script>
     <script src="js/grammar-lab-mode.js"></script>
