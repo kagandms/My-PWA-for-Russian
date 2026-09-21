@@ -2,8 +2,8 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v67';
-// Phase 6 runtime revision: phase6-trki-1
+const CACHE_NAME = 'rutr-v68';
+// Phase 7 runtime revision: phase7-trki-listening-1
 const ASSETS = [
     './',
     './index.html',
@@ -60,6 +60,14 @@ const ASSETS = [
     './js/trki-attempt-store.js',
     './js/trki-profile-store.js',
     './js/trki-local-import.js',
+    './js/trki-listening-core.js',
+    './js/trki-listening-repository.js',
+    './js/trki-listening-playback.js',
+    './js/trki-listening-audio.js',
+    './js/trki-listening-session-store.js',
+    './js/trki-listening-attempt-store.js',
+    './js/trki-listening-session-coordinator.js',
+    './js/trki-speaking-coordinator.js',
     './js/error-notebook-mode.js',
     './js/grammar-lab-mode.js',
     './js/adaptive-mode.js',
@@ -84,6 +92,7 @@ const ASSETS = [
     './data/speaking/free-speech-topics.v1.json',
     './data/trki/source-catalog.v1.json',
     './data/trki/exercises.v1.json',
+    './data/trki/listening-packages.v1.json',
     './manifest.json',
     './icon-192.png',
     './icon-512.png'
@@ -104,6 +113,7 @@ const NETWORK_FIRST_PATHS = new Set([
     '/data/grammar/contrast-training.v1.json',
     '/data/speaking/read-aloud-exercises.v1.json',
     '/data/speaking/free-speech-topics.v1.json',
+    '/data/trki/listening-packages.v1.json',
     '/manifest.json'
 ]);
 

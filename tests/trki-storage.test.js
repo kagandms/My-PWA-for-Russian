@@ -20,6 +20,8 @@ test('adds only the three TRKI user namespaces to the normal backup allowlist', 
     localStorage.setItem('ru_tr_trki_sessions_v1', '{}');
     localStorage.setItem('ru_tr_trki_attempts_v1', '{}');
     localStorage.setItem('ru_tr_trki_profile_v1', '{}');
+    localStorage.setItem('ru_tr_trki_listening_sessions_v1', '{"restricted":true}');
+    localStorage.setItem('ru_tr_trki_listening_attempts_v1', '{"restricted":true}');
     localStorage.setItem('ru_tr_trki_source_content_v1', 'restricted');
     const window = { localStorage, WORDS: [] };
     vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'js/storage.js'), 'utf8'), {
@@ -36,4 +38,6 @@ test('adds only the three TRKI user namespaces to the normal backup allowlist', 
         ru_tr_trki_profile_v1: '{}'
     });
     assert.equal(window.storageManager.userDataKeys.includes('ru_tr_trki_source_content_v1'), false);
+    assert.equal(window.storageManager.userDataKeys.includes('ru_tr_trki_listening_sessions_v1'), false);
+    assert.equal(window.storageManager.userDataKeys.includes('ru_tr_trki_listening_attempts_v1'), false);
 });
