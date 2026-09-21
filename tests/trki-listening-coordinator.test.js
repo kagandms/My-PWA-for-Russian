@@ -149,6 +149,24 @@ test('starts synthetic Study without autoplay and consumes one logical play', as
     assert.equal(coordinator.getViewState().session.audio_bindings['audio-1'].plays_consumed, 1);
 });
 
+test('renders the replay cap after a duplicate play request reaches the package maximum', async () => {
+    const { coordinator } = createCoordinator();
+    await coordinator.init();
+    await coordinator.start('study');
+
+    await coordinator.play();
+    coordinator.handleAudioEvent('playing');
+    coordinator.handleAudioEvent('ended');
+    await coordinator.play();
+    coordinator.handleAudioEvent('playing');
+    coordinator.handleAudioEvent('ended');
+
+    const result = await coordinator.play();
+
+    assert.equal(result.status, 'max_plays_reached');
+    assert.equal(coordinator.getViewState().playback.status, 'max_plays_reached');
+});
+
 test('persists playback and restores active session without playing on reload', async () => {
     const first = createCoordinator();
     await first.coordinator.init();

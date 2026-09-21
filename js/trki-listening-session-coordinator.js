@@ -188,7 +188,10 @@
             if (!this.session || !this.playback || this.session.session_status !== 'active') return null;
             const requested = this.playback.requestPlay();
             this.persistPlayback();
-            if (requested.status !== 'play_requested') return requested;
+            if (requested.status !== 'play_requested') {
+                this.render();
+                return requested;
+            }
             const item = this.getCurrentItem();
             const binding = this.session.audio_bindings[item.audio.audio_id];
             if (item.audio.storage_mode === 'local_restricted' && binding.availability !== 'available') {
@@ -288,6 +291,8 @@
             this.session = this.sessionStore.completeItem(this.session.session_id, item.identity.key, { result: 'submitted' });
             if (this.session.session_status === 'completed') {
                 this.finishSummary();
+                this.disposeAudio();
+                this.render();
                 return this.session;
             }
             this.configureCurrentItem();
@@ -388,7 +393,10 @@
             const timer = getElement(this.document, 'trkiListeningTimer');
             if (timer && this.session) timer.textContent = `Süre: ${formatSeconds(this.sessionStore.getElapsedSeconds(this.session.session_id))}`;
             const progress = getElement(this.document, 'trkiListeningProgress');
-            if (progress && this.session) progress.textContent = `${this.session.current_index + 1}/${this.queue.length}`;
+            if (progress && this.session) {
+                const progressIndex = Math.min(this.session.current_index + 1, this.queue.length);
+                progress.textContent = `${progressIndex}/${this.queue.length}`;
+            }
             const question = getElement(this.document, 'trkiListeningPrompt');
             if (question) question.textContent = this.getCurrentItem()?.question.prompt || '';
             const status = getElement(this.document, 'trkiListeningAudioStatus');
@@ -402,7 +410,9 @@
             const summary = getElement(this.document, 'trkiListeningSummary');
             if (summary && this.summary) summary.textContent = this.summary.comparable ? 'Yerel sonuç hazır.' : 'Teknik olarak kullanılamayan içerik nedeniyle sonuç karşılaştırılamaz.';
             const feedback = getElement(this.document, 'trkiListeningFeedback');
-            if (feedback && this.hasSubmitted) feedback.textContent = 'Yanıt kaydedildi; sonuç yerel ve paket sürümüne bağlıdır.';
+            if (feedback) feedback.textContent = this.hasSubmitted
+                ? 'Yanıt kaydedildi; sonuç yerel ve paket sürümüne bağlıdır.'
+                : '';
             const options = getElement(this.document, 'trkiListeningOptions');
             if (!options || !this.getCurrentItem()) return;
             options.innerHTML = '';
