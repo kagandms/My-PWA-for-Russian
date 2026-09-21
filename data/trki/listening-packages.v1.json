@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "artifact": "trki-listening-packages",
+  "artifact_version": "trki-listening-packages-v1",
+  "content_policy": "synthetic-not-official",
+  "packages": [
+    {
+      "package_id": "trki-listening-synthetic-b1",
+      "package_version": "1.0.0",
+      "package_hash": "sha256:package-synthetic-b1-v1",
+      "level": "B1",
+      "source": {
+        "source_id": "src:synthetic-trki-b1-b2",
+        "document_id": "doc:synthetic-trki-b1-b2",
+        "version": "2026-09-fixture",
+        "source_type": "synthetic",
+        "source_class": "synthetic_fixture",
+        "official_trki_provenance": false,
+        "content_policy": "synthetic-not-official",
+        "license": "test-only",
+        "redistribution_status": "allowed_for_repository_fixture",
+        "full_content_bundled": true,
+        "provenance_status": "verified"
+      },
+      "tasks": [
+        {
+          "task_id": "trki-listening-synthetic-b1-task-1",
+          "task_type": "multiple_choice",
+          "task_hash": "sha256:task-synthetic-b1-v1",
+          "audio": {
+            "audio_id": "synthetic-tone-b1-task-1",
+            "audio_hash": "sha256:audio-synthetic-tone-b1-task-1",
+            "mime_type": "audio/wav",
+            "duration_ms": 1200,
+            "storage_mode": "bundled_synthetic"
+          },
+          "replay_policy": {
+            "max_plays": 2,
+            "pause_allowed": false,
+            "seek_allowed": false,
+            "autoplay": false
+          },
+          "replay_policy_hash": "sha256:replay-synthetic-b1-task-1",
+          "transcript": "Анна читает.",
+          "transcript_hash": "sha256:transcript-synthetic-b1-task-1",
+          "questions": [
+            {
+              "question_id": "trki-listening-synthetic-b1-q-1",
+              "prompt": "Что делает Анна?",
+              "options": ["Читает", "Спит"],
+              "answer_key": { "option_index": 0 },
+              "answer_key_hash": "sha256:answer-synthetic-b1-q-1",
+              "alignment": { "audio_id": "synthetic-tone-b1-task-1", "offset_ms": 0, "duration_ms": 1200 },
+              "alignment_hash": "sha256:alignment-synthetic-b1-q-1",
+              "question_hash": "sha256:question-synthetic-b1-q-1",
+              "numbering": { "section_number": 1, "item_number": 1 },
+              "verification_status": "verified",
+              "exercise_eligible": true
+            },
+            {
+              "question_id": "trki-listening-synthetic-b1-q-2",
+              "prompt": "Кто читает?",
+              "options": ["Анна", "Олег"],
+              "answer_key": { "option_index": 0 },
+              "answer_key_hash": "sha256:answer-synthetic-b1-q-2",
+              "alignment": { "audio_id": "synthetic-tone-b1-task-1", "offset_ms": 0, "duration_ms": 1200 },
+              "alignment_hash": "sha256:alignment-synthetic-b1-q-2",
+              "question_hash": "sha256:question-synthetic-b1-q-2",
+              "numbering": { "section_number": 1, "item_number": 2 },
+              "verification_status": "verified",
+              "exercise_eligible": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
