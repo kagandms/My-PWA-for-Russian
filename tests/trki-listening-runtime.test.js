@@ -20,11 +20,11 @@ test('wires Listening and TRKI Speaking routes with dependency order', () => {
     assert.match(app, /trkiSpeaking/u);
 });
 
-test('ships only synthetic Listening metadata and static runtime modules in v70', () => {
+test('ships only synthetic Listening metadata and static runtime modules in v71', () => {
     const source = read('sw.js');
     const assetsBlock = source.match(/const ASSETS = \[(.*?)\];/s)?.[1] || '';
 
-    assert.match(source, /rutr-v70/u);
+    assert.match(source, /rutr-v71/u);
     for (const asset of [
         './js/trki-listening-core.js',
         './js/trki-listening-repository.js',

@@ -23,7 +23,7 @@ test('wires the TRKI mode, artifacts, persisted stores, and controller in depend
     assert.match(serviceWorker, /\.\/js\/trki-mode\.js/u);
     assert.match(serviceWorker, /\.\/data\/trki\/source-catalog\.v1\.json/u);
     assert.match(serviceWorker, /\.\/data\/trki\/exercises\.v1\.json/u);
-    assert.match(serviceWorker, /rutr-v70/u);
+    assert.match(serviceWorker, /rutr-v71/u);
 });
 
 test('TRKI artifacts are synthetic fixtures and objective records carry source references', () => {

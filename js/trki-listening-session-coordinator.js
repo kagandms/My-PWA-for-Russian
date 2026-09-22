@@ -56,8 +56,8 @@
         bindControls() {
             if (this.boundControls) return;
             this.boundControls = true;
-            getElement(this.document, 'trkiListeningStudyStart')?.addEventListener('click', () => { void this.start('study'); });
-            getElement(this.document, 'trkiListeningExamStart')?.addEventListener('click', () => { void this.start('exam'); });
+            getElement(this.document, 'trkiListeningStudyStart')?.addEventListener('click', () => { void this.startFromUi('study'); });
+            getElement(this.document, 'trkiListeningExamStart')?.addEventListener('click', () => { void this.startFromUi('exam'); });
             getElement(this.document, 'trkiListeningPlay')?.addEventListener('click', () => { void this.play(); });
             getElement(this.document, 'trkiListeningSubmit')?.addEventListener('click', () => this.submit());
             getElement(this.document, 'trkiListeningNext')?.addEventListener('click', () => this.next());
@@ -100,18 +100,34 @@
             return createDefaultAudioAdapter();
         }
 
-        buildQueue() {
-            return (this.repository?.getObjectiveTasks?.() || []).flatMap((task) => task.questions.map((question) => ({
-                ...cloneValue(task),
-                question: cloneValue(question),
-                identity: root.TrkiListeningCore.createIdentity({
-                    package_id: task.package.package_id,
-                    package_version: task.package.package_version,
-                    task_id: task.task_id,
-                    audio_id: task.audio.audio_id,
-                    question_id: question.question_id
-                })
-            })));
+        buildQueue(level = null) {
+            return (this.repository?.getObjectiveTasks?.() || [])
+                .filter((task) => !level || task.package.level === level)
+                .flatMap((task) => task.questions.map((question) => ({
+                    ...cloneValue(task),
+                    question: cloneValue(question),
+                    identity: root.TrkiListeningCore.createIdentity({
+                        package_id: task.package.package_id,
+                        package_version: task.package.package_version,
+                        task_id: task.task_id,
+                        audio_id: task.audio.audio_id,
+                        question_id: question.question_id
+                    })
+                })));
+        }
+
+        getSelectedLevel() {
+            const selectedLevel = getElement(this.document, 'trkiListeningLevel')?.value;
+            return ['B1', 'B2'].includes(selectedLevel) ? selectedLevel : 'B1';
+        }
+
+        async startFromUi(mode) {
+            try {
+                await this.start(mode);
+            } catch (error) {
+                const status = getElement(this.document, 'trkiListeningStartStatus');
+                if (status) status.textContent = error.message || 'TRKI Listening oturumu başlatılamadı.';
+            }
         }
 
         createAudioBindings(queue) {
@@ -132,11 +148,12 @@
                 return this.getViewState();
             }
             this.mode = mode;
-            this.queue = this.buildQueue();
-            if (!this.queue.length) throw new Error('No verified TRKI Listening content is available.');
+            const level = this.getSelectedLevel();
+            this.queue = this.buildQueue(level);
+            if (!this.queue.length) throw new Error(`No verified TRKI Listening content is available for ${level}.`);
             this.session = this.sessionStore.createSession({
                 mode,
-                level: this.queue[0].package.level,
+                level,
                 duration_seconds: mode === 'exam' ? 45 * 60 : 20 * 60,
                 planned_items: this.queue.map((item) => ({ item_id: item.identity.key, identity: item.identity.parts })),
                 audio_bindings: this.createAudioBindings(this.queue)
@@ -151,7 +168,7 @@
         restoreSession(session) {
             this.session = cloneValue(session);
             this.mode = session.mode;
-            this.queue = this.buildQueue();
+            this.queue = this.buildQueue(session.level);
             this.queue = this.queue.filter((item) => session.planned_items.some((planned) => planned.item_id === item.identity.key));
             if (this.queue.length !== session.planned_items.length) throw new Error('Persisted TRKI Listening content is unavailable.');
             Object.entries(session.audio_bindings || {}).forEach(([audioId, binding]) => {

@@ -167,6 +167,15 @@ test('renders the replay cap after a duplicate play request reaches the package 
     assert.equal(coordinator.getViewState().playback.status, 'max_plays_reached');
 });
 
+test('does not silently substitute B1 content when B2 is selected without an artifact', async () => {
+    const { coordinator } = createCoordinator();
+    coordinator.document.getElementById('trkiListeningLevel').value = 'B2';
+
+    await coordinator.init();
+
+    await assert.rejects(() => coordinator.start('study'), /No verified TRKI Listening content is available for B2/u);
+});
+
 test('persists playback and restores active session without playing on reload', async () => {
     const first = createCoordinator();
     await first.coordinator.init();

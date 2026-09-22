@@ -2,8 +2,8 @@
  * Service Worker - Offline Desteği
  */
 
-const CACHE_NAME = 'rutr-v70';
-// Phase 7 runtime revision: phase7-trki-listening-3
+const CACHE_NAME = 'rutr-v71';
+// Phase 7 runtime revision: phase7-trki-listening-4
 const ASSETS = [
     './',
     './index.html',
